@@ -44,11 +44,7 @@
     <link rel="stylesheet" href="./assets/vendor/libs/apex-charts/apex-charts.css" />
     <link rel="stylesheet" href="./assets/vendor/libs/select2/select2.css" />
     <link rel="stylesheet" href="./assets/vendor/libs/bootstrap-select/bootstrap-select.css" />
-    <link rel="stylesheet" href="./assets/vendor/libs/datatables-bs5/datatables.bootstrap5.css" />
-    <link rel="stylesheet" href="./assets/vendor/libs/datatables-responsive-bs5/responsive.bootstrap5.css" />
-    <link rel="stylesheet" href="./assets/vendor/libs/datatables-checkboxes-jquery/datatables.checkboxes.css" />
-    <link rel="stylesheet" href="./assets/vendor/libs/datatables-buttons-bs5/buttons.bootstrap5.css" />
-   
+    
    
     <link rel="stylesheet" href="./assets/vendor/css/rtl/theme-default.css" class="template-customizer-theme-css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
@@ -993,108 +989,143 @@
                 <div class="col-xl">
                   <div class="card mb-4">
                     <div class="card-body p-4">
-                      <h4 class="py-3 mb-4 text-title-hadeer"><span class="text-muted fw-medium"></span>  ادخال قيود اليوميةالعامة</h4>
-                      <div class="row">
-                        <div class="col-md-6">
-                          <div class="img-daily">
-                            <img src="./assets/img/new-img/dazzle-signing-a-financial-contract.gif" alt="invoice">
-                          </div>
-                        </div>
-                        <div class="col-md-6">
-                          <form class="row component-form mt-4 pt-4 justify-content-md-start justify-content-center">
-                            <div class="col-11 col-lg-6 mb-3">
-                              <label class="form-label" for="basic-default-fullname">تاريخ دفتر اليومية<span class="start-form">*</span></label>
-                              <input type="date" class="form-control" id="basic-default-fullname" placeholder=" تاريخ دفتر اليومية">
-                            </div>
-                         
-         
-                            <div class="col-11 col-lg-6 mb-3">
-                              <label class="form-label" for="basic-default-line">   :تاريخ المستند<span class="start-form">*</span></label>
-                              <input type="date" class="form-control" id="basic-default-line" >
-      
-                            </div>
-                            <div class="col-11 col-lg-6 mb-3">
-                              <label class="form-label" for="basic-default-locetion">مرجع السند:<span class="start-form">*</span></label>
-                              <input type="text" class="form-control" id="basic-default-locetion" placeholder="مرجع السند ">
-      
-                            </div>
-                            <div class="col-11 col-lg-6 mb-3">
-                            
-                              <label for="select5Basic" class="form-label">   العملة<span class="start-form">*</span></label>
-                              <select id="select5Basic" class="select2 form-select" data-allow-clear="true">
-                                <option value="AK">  ريال سعودى</option>
-                                <option value="HI">Hawaii</option>
-                                <option value="CA">California</option>
-                                <option value="NV">Nevada</option>
-                                <option value="OR">Oregon</option>
-                            
-                              </select>
-                          
-                            </div>
-                            <div class="col-11 col-lg-6 mb-3">
-                              <label class="form-label" for="basic-default-phone">  تاريخ الحدث<span class="start-form">*</span></label>
-                              <input type="date" id="basic-default-phone" class="form-control phone-mask" placeholder="  تاريخ الحدث">
-                            </div>
-              
-                            <div class="col-11 col-lg-6 mb-3">
-                              <label class="form-label" for="basic-default-emile">  مرجع المصدر<span class="start-form">*</span></label>
-                              <input type="text" class="form-control" id="basic-default-emile" placeholder="مرجع المصدر">
-      
-                            </div>
-                          
-                            <div class="col-11 col-lg-12 mb-3">
-                              <label class="form-label" for="basic-default-emile">    اختر الملف<span class="start-form">*</span></label>
-                              <input type="file" class="form-control" id="basic-default-emile">
-      
-                            </div>
-                            <div class="col-11 col-lg-12 mb-3">
-                              <label class="form-label" for="basic-default-emile">   البيان<span class="start-form">*</span></label>
-                              <textarea  class="form-control" id="basic-default-emile" rows="5"> </textarea>
-      
-                            </div>
-                         
-                        
-                          </form>
-                          
-                        
+                      <h4 class="py-3 text-title-hadeer"><span class="text-muted fw-medium"></span>  ادخال قيود اليوميةالعامة</h4>
+                         <div class="from-cllapse pt-4">
+                            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">القيود اليومية  </button>
+                            <div class="collapse multi-collapse show" id="multiCollapseExample1">
+                              <div class="card card-body">
+                                <form class="row component-form pt-4 justify-content-md-start justify-content-center">
+                                  <div class="col-11 col-lg-4 mb-3">
+                                    <label class="form-label" for="basic-default-fullname">تاريخ دفتر اليومية<span class="start-form">*</span></label>
+                                    <input type="date" class="form-control" id="basic-default-fullname" placeholder=" تاريخ دفتر اليومية">
+                                  </div>
+                               
+               
+                                  <div class="col-11 col-lg-4 mb-3">
+                                    <label class="form-label" for="basic-default-line">   :تاريخ المستند<span class="start-form">*</span></label>
+                                    <input type="date" class="form-control" id="basic-default-line" >
+            
+                                  </div>
+                                  <div class="col-11 col-lg-4 mb-3">
+                                    <label class="form-label" for="basic-default-locetion">مرجع السند:<span class="start-form">*</span></label>
+                                    <input type="text" class="form-control" id="basic-default-locetion" placeholder="مرجع السند ">
+            
+                                  </div>
+                                  <div class="col-11 col-lg-4 mb-3">
+                                  
+                                    <label for="select5Basic" class="form-label">   العملة<span class="start-form">*</span></label>
+                                    <select id="select5Basic" class="select2 form-select" data-allow-clear="true">
+                                      <option value="AK">  ريال سعودى</option>
+                                      <option value="HI">Hawaii</option>
+                                      <option value="CA">California</option>
+                                      <option value="NV">Nevada</option>
+                                      <option value="OR">Oregon</option>
+                                  
+                                    </select>
+                                
+                                  </div>
+                                  <div class="col-11 col-lg-4 mb-3">
+                                    <label class="form-label" for="basic-default-phone">  تاريخ الحدث<span class="start-form">*</span></label>
+                                    <input type="date" id="basic-default-phone" class="form-control phone-mask" placeholder="  تاريخ الحدث">
+                                  </div>
                     
-                        </div>
-                      </div>
-                      <div class="table-responsive text-nowrap rounded card-datatable">
-                        <h4 class="py-3 mb-4 text-title-hadeer"><span class="text-muted fw-medium"></span>    بنود الحركة</h4>
+                                  <div class="col-11 col-lg-4 mb-3">
+                                    <label class="form-label" for="basic-default-emile">  مرجع المصدر<span class="start-form">*</span></label>
+                                    <input type="text" class="form-control" id="basic-default-emile" placeholder="مرجع المصدر">
+            
+                                  </div>
+                                
+                                  <div class="col-11 col-lg-4 mb-3">
+                                    <label class="form-label" for="basic-default-emile">    اختر الملف<span class="start-form">*</span></label>
+                                    <div class="input-group btn-upload">   
+                                      <span class="input-group-btn">
+                                         <div class="btn btn-upload-input">
+                                            <span class="glyphicon glyphicon-folder-open"></span>
+                                             <span class="btn-upload-input-title"><i class="fa fa-upload fw"></i>Choose File</span>
+                                             <input type="file" name="input-file-preview"/> <!-- rename it -->
+                                          </div>
+                                      </span>                
+                                    </div>
+                                   
+                                  </div>
+                                </form>                       
+                              
+                              </div>
+                            </div>
+                     
+                         </div>
+                         <div class="from-cllapse pt-4">
 
-                        <table class="table table-bordered table-hover rounded datatables-basic " id="my-table">
-                          <thead class="table-light">
-                            <tr class="fw-bold">
-                              <th class="fw-bold">التسلسل</th>
-                              <th class="fw-bold">اسم الحساب</th>
-                              <th class="fw-bold">مدين</th>
-                              <th class="fw-bold"> دائن</th>
-                              <th class="fw-bold">مركز التكلفة</th>
-                              <th class="fw-bold"> البيان</th>
-                              <th class="fw-bold"> Actions</th>
-                            </tr>
-                          </thead>
-                          <tbody class="table-border-bottom-0">
-                            <tr>
-                              <td>
-                               1
-                              </td>
-                              <td>  <input type="text" /> </td>
-                        
-                              <td>   <input type="text" />  </td>
-                              <td>   <input type="text" /> </td>
-                              <td>   <input type="text" /> </td>
-                              <td>  <input type="text" />   </td>
-                              <td>
-                                <input type="text" />
-                              </td>
-                            </tr>
-                            
-                            
-                          </tbody>
-                        </table>
-                      </div>
+                              <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">بنود الحركة  </button>
+                              <div class="collapse multi-collapse show" id="multiCollapseExample2">
+                                <div class="card card-body">
+                                  <div class="table-responsive text-nowrap rounded card-datatable">
+
+                                    <table class="table table-bordered table-hover rounded datatables-basic " id="my-table">
+                                      <thead class="table-light">
+                                        <tr class="fw-bold">
+                                          <th class="fw-bold">التسلسل</th>
+                                          <th class="fw-bold">اسم الحساب</th>
+                                          <th class="fw-bold">مدين</th>
+                                          <th class="fw-bold"> دائن</th>
+                                          <th class="fw-bold">مركز التكلفة</th>
+                                          <th class="fw-bold"> البيان</th>
+                                          <th class="fw-bold"> Actions</th>
+                                        </tr>
+                                      </thead>
+                                      <tbody class="table-border-bottom-0">
+                                        <tr>
+                                          <td></td>
+                                          <td> <input type="text"class="form-control"> </td>
+                                    
+                                          <td> <input type="text" maxlength="8" class="form-control">   </td>
+                                          <td> <input type="text" maxlength="8" class="form-control">     </td>
+                                          <td>  
+                                            <select class="form-select form-control" aria-label="Default select example">
+                                              <option selected>Open this select menu</option>
+                                              <option value="1">One</option>
+                                              <option value="2">Two</option>
+                                              <option value="3">Three</option>
+                                            </select>
+                                          </td>
+                                          <td><input type="text" class="form-control"></td>
+                                          <td class="d-flex">
+                                            <a class="bg-success text-bg-success p-1 d-flex align-items-center justify-content-center me-3 rounded" href="" title="تعديل"><i class="ti ti-pencil  fs-4"></i> </a>
+                                            <a class="bg-danger text-bg-danger p-1 d-flex align-items-center justify-content-center me-3 rounded" href="javascript:void(0);" title="حذف"><i class="ti ti-trash  fs-4"></i> </a>
+                                          
+                                          </td>
+                                        </tr>
+                                      </tbody>
+                                      <tfoot>
+                                        <tr>
+                                             <td></td>
+                                             <td class="title-table">الاجمالى</td>
+                                             <td></td>
+                                             <td>100%</td>
+                                             <td></td>
+                                             <td></td>
+                                        </tr>
+                                        <tr>
+                                          <td></td>
+                                          <td class="title-table">الفرق</td>
+                                          <td></td>
+                                          <td>100%</td>
+                                          <td></td>
+                                          <td></td>
+                                     </tr>
+                                      </tfoot>
+                                    </table>
+
+                                   <div class="col-11 col-lg-12 mb-3">
+                                    <label class="form-label" for="basic-default-emile">   البيان<span class="start-form">*</span></label>
+                                    <textarea  class="form-control" id="basic-default-emile" rows="5"> </textarea>
+            
+                                  </div>
+                                  </div>
+                                
+                                </div>
+                              </div>
+                        </div>
                       <div class="col-12 col-lg-8 pt-4">
                         <button type="submit" class="btn btn-primary  waves-effect waves-light">حفظ</button>
                         <a href="" class="btn btn-label-secondary waves-effect mx-3 mt-md-0 mt-4">مشاهدة الكل</a>
@@ -1133,7 +1164,6 @@
           </div>
           <!--/ Content wrapper -->
         </div>
-
         <!--/ Layout container -->
       </div>
     </div>
@@ -1216,10 +1246,33 @@
      <script src="./assets/vendor/js/chart.js"></script>
      <script src="./assets/js/dashboards-crm.js"></script>
      <script src="./assets/js/forms-selects.js"></script>
-     <script src="./assets/js/tables-datatables-basic.js"></script>
+<script>
+  'use strict';
+$(function() {
+   var btnTitle = $(".btn-upload-input-title").html();
+   var btnTitleHtml = $.parseHTML(btnTitle);
+   $(".btn-upload-input input:file").change(function (){
+      console.log("im clicked" + this.files.length);
+      if( this.files && this.files.length >= 1 ) {
+         var file = this.files[0];
+            var reader = new FileReader();
+            // Set preview image into the popover data-content
+            reader.onload = function (e) {
+               $(".btn-upload-input-title").text(file.name);
+            }
+            reader.readAsDataURL(file);
+      }
+      else {
+         $(".btn-upload-input-title").html(btnTitle);
+      }
+        
+    });   
+});
+
+</script>
 
      <script>
-  $('table').on('keydown','input',function (e) {
+  $('table').on('keydown','input','tr',function (e) {
     var keyCode = e.keyCode;
     if (keyCode !== 9) return;
     var $this = $(this),
@@ -1229,6 +1282,7 @@
         $lastTr.after($lastTr.clone());
     }
 });
+
       </script>
 
   </body>
