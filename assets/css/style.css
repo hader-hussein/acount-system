@@ -405,3 +405,7 @@ color: #dbdade !important;
 .img-daily img{
 width: 100%;
 }
+.dt-action-buttons .create-new{
+  display: none !important;
+  
+}
