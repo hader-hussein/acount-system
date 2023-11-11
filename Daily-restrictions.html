@@ -1096,7 +1096,7 @@
                                           </td>
                                         </tr>
                                       </tbody>
-                                      <tfoot>
+                                      <!-- <tfoot>
                                         <tr>
                                              <td></td>
                                              <td class="title-table">الاجمالى</td>
@@ -1113,7 +1113,7 @@
                                           <td></td>
                                           <td></td>
                                      </tr>
-                                      </tfoot>
+                                      </tfoot> -->
                                     </table>
 
                                    <div class="col-11 col-lg-12 mb-3">
@@ -1272,13 +1272,14 @@ $(function() {
 </script>
 
      <script>
-  $('table').on('keydown','input','tr',function (e) {
+  $('table').on('keydown','tr td',function (e) {
     var keyCode = e.keyCode;
     if (keyCode !== 9) return;
     var $this = $(this),
         $lastTr = $('tr:last', $('table')),
         $lastTd = $('td:last', $lastTr);
     if (($(e.target).closest('td')).is($lastTd)) {
+      
         $lastTr.after($lastTr.clone());
     }
 });
