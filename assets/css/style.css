@@ -444,3 +444,8 @@ margin: 0;
   color: #333;
 }
 }
+@media (min-width:990px) {
+  .title-m{
+    width: 37%;
+  }
+}
