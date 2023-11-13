@@ -990,160 +990,199 @@
                   <div class="card mb-4">
                     <div class="card-body p-4">
                       <h4 class="py-3 text-title-hadeer"><span class="text-muted fw-medium"></span>  ادخال قيود اليوميةالعامة</h4>
-                         <div class="from-cllapse pt-4">
-                            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">القيود اليومية  </button>
-                            <div class="collapse multi-collapse show" id="multiCollapseExample1">
-                              <div class="card card-body">
-                                <form class="row component-form pt-4 justify-content-md-start justify-content-center">
-                                  <div class="col-11 col-lg-4 mb-3">
-                                    <label class="form-label" for="basic-default-fullname">تاريخ دفتر اليومية<span class="start-form">*</span></label>
-                                    <input type="date" class="form-control" id="basic-default-fullname" placeholder=" تاريخ دفتر اليومية">
-                                  </div>
-                               
-               
-                                  <div class="col-11 col-lg-4 mb-3">
-                                    <label class="form-label" for="basic-default-line">   :تاريخ المستند<span class="start-form">*</span></label>
-                                    <input type="date" class="form-control" id="basic-default-line" >
-            
-                                  </div>
-                                  <div class="col-11 col-lg-4 mb-3">
-                                    <label class="form-label" for="basic-default-locetion">مرجع السند:<span class="start-form">*</span></label>
-                                    <input type="text" class="form-control" id="basic-default-locetion" placeholder="مرجع السند ">
-            
-                                  </div>
-                                  <div class="col-11 col-lg-4 mb-3">
-                                  
-                                    <label for="select5Basic" class="form-label">   العملة<span class="start-form">*</span></label>
-                                    <select id="select5Basic" class="select2 form-select" data-allow-clear="true">
-                                      <option value="AK">  ريال سعودى</option>
-                                      <option value="HI">Hawaii</option>
-                                      <option value="CA">California</option>
-                                      <option value="NV">Nevada</option>
-                                      <option value="OR">Oregon</option>
-                                  
-                                    </select>
+                      <div class="accordion from-cllapse" id="accordionExample">
+                        <div class="accordion-item">
+                          <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                              القيود اليومية
+                            </button>
+                          </h2>
+                          <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                              <form class="row component-form pt-4 justify-content-md-start justify-content-center align-items-end">
+                                <div class="col-11 col-lg-4 mb-3">
+                                  <label class="form-label" for="basic-default-fullname">تاريخ دفتر اليومية<span class="start-form">*</span></label>
+                                  <input type="date" class="form-control" id="basic-default-fullname" placeholder=" تاريخ دفتر اليومية">
+                                </div>
+                             
+             
+                                <div class="col-11 col-lg-4 mb-3">
+                                  <label class="form-label" for="basic-default-line">   :تاريخ المستند<span class="start-form">*</span></label>
+                                  <input type="date" class="form-control" id="basic-default-line" >
+          
+                                </div>
+                                <div class="col-11 col-lg-4 mb-3">
+                                  <label class="form-label" for="basic-default-locetion">مرجع السند:<span class="start-form">*</span></label>
+                                  <input type="text" class="form-control" id="basic-default-locetion" placeholder="مرجع السند ">
+          
+                                </div>
+                                <div class="col-11 col-lg-4 mb-3">
                                 
-                                  </div>
-                                  <div class="col-11 col-lg-4 mb-3">
-                                    <label class="form-label" for="basic-default-phone">  تاريخ الحدث<span class="start-form">*</span></label>
-                                    <input type="date" id="basic-default-phone" class="form-control phone-mask" placeholder="  تاريخ الحدث">
-                                  </div>
-                    
-                                  <div class="col-11 col-lg-4 mb-3">
-                                    <label class="form-label" for="basic-default-emile">  مرجع المصدر<span class="start-form">*</span></label>
-                                    <input type="text" class="form-control" id="basic-default-emile" placeholder="مرجع المصدر">
-            
-                                  </div>
+                                  <label for="select5Basic" class="form-label">   العملة<span class="start-form">*</span></label>
+                                  <select id="select5Basic" class="select2 form-select" data-allow-clear="true">
+                                    <option value="AK">  ريال سعودى</option>
+                                    <option value="HI">Hawaii</option>
+                                    <option value="CA">California</option>
+                                    <option value="NV">Nevada</option>
+                                    <option value="OR">Oregon</option>
                                 
-                                  <div class="col-11 col-lg-4 mb-3">
-                                    <label class="form-label" for="basic-default-emile">    اختر الملف<span class="start-form">*</span></label>
-                                    <div class="input-group btn-upload">   
-                                      <span class="input-group-btn">
-                                         <div class="btn btn-upload-input">
-                                            <span class="glyphicon glyphicon-folder-open"></span>
-                                             <span class="btn-upload-input-title"><i class="fa fa-upload fw"></i>Choose File</span>
-                                             <input type="file" name="input-file-preview"/> <!-- rename it -->
-                                          </div>
-                                      </span>                
-                                    </div>
-                                   
-                                  </div>
-                                </form>                       
+                                  </select>
                               
-                              </div>
-                            </div>
-                     
-                         </div>
-                         <div class="from-cllapse pt-4">
-
-                              <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">بنود الحركة  </button>
-                              <div class="collapse multi-collapse show" id="multiCollapseExample2">
-                                <div class="card card-body">
-                                  <div class="table-responsive text-nowrap rounded card-datatable">
-
-                                    <table class="table table-bordered table-hover rounded datatables-basic " id="my-table">
-                                      <thead class="table-light">
-                                        <tr class="fw-bold">
-                                          <th class="fw-bold">م</th>
-                                          <th class="fw-bold">اسم الحساب</th>
-                                          <th class="fw-bold">مدين</th>
-                                          <th class="fw-bold"> دائن</th>
-                                          <th class="fw-bold">مركز التكلفة</th>
-                                          <th class="fw-bold"> البيان</th>
-                                          <th class="fw-bold"> Actions</th>
-                                        </tr>
-                                      </thead>
-                                      <tbody class="table-border-bottom-0">
-                                        <tr>
-                                          <td></td>
-                                          <td class="w-25"> 
-                                            <select class="form-select form-control" aria-label="Default select example">
-                                              <option selected>Open this select menu</option>
-                                              <option value="1">One</option>
-                                              <option value="2">Two</option>
-                                              <option value="3">Three</option>
-                                            </select>
-                                          
-                                          </td>
-                                    
-                                          <td> <input type="text" maxlength="9" class="form-control">   </td>
-                                          <td> <input type="text" maxlength="9" class="form-control">     </td>
-                                          <td>  
-                                            <select class="form-select form-control" aria-label="Default select example">
-                                              <option selected>Open this select menu</option>
-                                              <option value="1">One</option>
-                                              <option value="2">Two</option>
-                                              <option value="3">Three</option>
-                                            </select>
-                                          </td>
-                                          <td class="w-25"><input type="text" class="form-control"></td>
-                                          <td class="d-flex">
-                                            <a class="bg-success text-bg-success p-1 d-flex align-items-center justify-content-center me-3 rounded" href="" title="تعديل"><i class="ti ti-pencil  fs-4"></i> </a>
-                                            <a class="bg-danger text-bg-danger p-1 d-flex align-items-center justify-content-center me-3 rounded" href="javascript:void(0);" title="حذف"><i class="ti ti-trash  fs-4"></i> </a>
-                                          
-                                          </td>
-                                        </tr>
-                                      </tbody>
-                                  
-                                    </table>
-                                    <div class="table">
-                                      
-                                        <div class="d-flex justify-content-between w-50" style=" border-bottom: 1px solid #c1c0c8; padding: 10px;">
-                                             <h6 class="title-table fw-bold">الاجمالى</h6>
-                                             <div class="d-flex justify-content-between title-m">
-                                              <div>100%</div>
-                                              <div>100%</div>
-                                             </div>
-                                             
-                                             
+                                </div>
+                                <div class="col-11 col-lg-4 mb-3">
+                                  <label class="form-label" for="basic-default-phone">  تاريخ الحدث<span class="start-form">*</span></label>
+                                  <input type="date" id="basic-default-phone" class="form-control phone-mask" placeholder="  تاريخ الحدث">
+                                </div>
+                  
+                                <div class="col-11 col-lg-4 mb-3">
+                                  <label class="form-label" for="basic-default-emile">  مرجع المصدر<span class="start-form">*</span></label>
+                                  <input type="text" class="form-control" id="basic-default-emile" placeholder="مرجع المصدر">
+          
+                                </div>
+                              
+                              
+                                
+                                <div class="col-11 col-lg-12 mb-3">
+                                  <label class="form-label" for="basic-default-emile">   البيان<span class="start-form">*</span></label>
+                                  <textarea  class="form-control" id="basic-default-emile" rows="5"> </textarea>
+          
+                                </div>
+                                <div class="col-11 col-lg-4 mb-3">
+                                  <label class="form-label" for="basic-default-emile">    اختر الملف<span class="start-form">*</span></label>
+                                  <div class="input-group btn-upload">   
+                                    <span class="input-group-btn">
+                                       <div class="btn btn-upload-input">
+                                          <span class="glyphicon glyphicon-folder-open"></span>
+                                           <span class="btn-upload-input-title"><i class="fa fa-upload fw"></i>Choose File</span>
+                                           <input type="file" name="input-file-preview"/> <!-- rename it -->
                                         </div>
-                                        <div class="d-flex justify-content-between w-50" style=" border-bottom: 1px solid #c1c0c8; padding: 10px;">
-                                      
-                                          <h6 class="title-table fw-bold">الفرق</h6>
-                                         
-                                          <div class="d-flex justify-content-between title-m">
-                                            <div>100%</div>
-                                            <div>100%</div>
-                                           </div>
-                                       
+                                    </span>                
+                                  </div>
+                                 
+                                </div>
+                                <div class="col-11 col-lg-8 text-end mb-3">
+                                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    اضافة عملة
+                                  </button>
+                                </div>
+                              </form> 
+                              <!-- Modal  اضافة عملة-->
+                                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                      <div class="modal-dialog">
+                                        <div class="modal-content">
+                                          <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="exampleModalLabel">اضافة عملة جديدة</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                          </div>
+                                          <div class="modal-body">
+                                           <form>
+                                            <div class="col-11 col-lg-12 mb-3">
+                                              <label class="form-label" for="basic-default-locetion"> اسم العملة:<span class="start-form">*</span></label>
+                                              <input type="text" class="form-control" id="basic-default-locetion" placeholder=" اسم العملة ">
+                      
+                                            </div>
+                                           </form>
+                                          </div>
+                                          <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary">Save changes</button>
+                                          </div>
                                         </div>
                                       </div>
-                                    
-                                 
-                                   <div class="col-11 col-lg-12 mb-3">
-                                    <label class="form-label" for="basic-default-emile">   البيان<span class="start-form">*</span></label>
-                                    <textarea  class="form-control" id="basic-default-emile" rows="5"> </textarea>
-            
-                                  </div>
-                                  </div>
-                                
-                                </div>
-                              </div>
+                                    </div>  
+                            </div>
+                          </div>
                         </div>
-                      <div class="col-12 col-lg-8 pt-4">
+                        <div class="accordion-item">
+                          <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                              بنود الحركة
+                            </button>
+                          </h2>
+                          <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                              <div class="table-responsive text-nowrap rounded card-datatable pt-4 pb-4">
+
+                                <table class="table table-bordered table-hover rounded datatables-basic " id="my-table">
+                                  <thead class="table-light">
+                                    <tr class="fw-bold">
+                                      <th class="fw-bold">م</th>
+                                      <th class="fw-bold">اسم الحساب</th>
+                                      <th class="fw-bold">مدين</th>
+                                      <th class="fw-bold"> دائن</th>
+                                      <th class="fw-bold">مركز التكلفة</th>
+                                      <th class="fw-bold"> البيان</th>
+                                      <th class="fw-bold"> Actions</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody class="table-border-bottom-0">
+                                    <tr>
+                                      <td></td>
+                                      <td class="w-25"> 
+                                        <select class="form-select form-control" aria-label="Default select example">
+                                          <option selected>Open this select menu</option>
+                                          <option value="1">One</option>
+                                          <option value="2">Two</option>
+                                          <option value="3">Three</option>
+                                        </select>
+                                      
+                                      </td>
+                                
+                                      <td> <input type="text" maxlength="9" class="form-control">   </td>
+                                      <td> <input type="text" maxlength="9" class="form-control">     </td>
+                                      <td>  
+                                        <select class="form-select form-control" aria-label="Default select example">
+                                          <option selected>Open this select menu</option>
+                                          <option value="1">One</option>
+                                          <option value="2">Two</option>
+                                          <option value="3">Three</option>
+                                        </select>
+                                      </td>
+                                      <td class="w-25"><input type="text" class="form-control"></td>
+                                      <td class="d-flex">
+                                        <a class="bg-success text-bg-success p-1 d-flex align-items-center justify-content-center me-3 rounded" href="" title="تعديل"><i class="ti ti-pencil  fs-4"></i> </a>
+                                        <a class="bg-danger text-bg-danger p-1 d-flex align-items-center justify-content-center me-3 rounded" href="javascript:void(0);" title="حذف"><i class="ti ti-trash  fs-4"></i> </a>
+                                      
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                              
+                                </table>
+                                <div class=" w-100 pt-4 pb-4 px-4 ">
+                                  
+                                    <div class="d-flex justify-content-between w-50 align-items-center" style=" border-bottom: 1px solid #c1c0c8; padding: 10px;">
+                                         <h6 class="title-table fw-bold fs-5 mb-0">الاجمالى</h6>
+                                         <div class="d-flex justify-content-between title-m">
+                                          <div class="fw-bold fs-5">100%</div>
+                                          <div class="fw-bold fs-5">100%</div>
+                                         </div>
+                                         
+                                         
+                                    </div>
+                                    <div class="d-flex justify-content-between w-50 align-items-center" style=" border-bottom: 1px solid #c1c0c8; padding: 10px;">
+                                  
+                                      <h6 class="title-table fw-bold fs-5 mb-0">الفرق</h6>
+                                     
+                                      <div class="d-flex justify-content-between title-m">
+                                        <div class="fw-bold fs-5">100%</div>
+                                        <div class="fw-bold fs-5">100%</div>
+                                       </div>
+                                   
+                                    </div>
+
+
+                                </div>
+                                
+                             
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                       
+                      </div>
+                      <div class="col-12 w-100 pt-4 pb-4 px-4 fixed-bottom buttom-fixed">
                         <button type="submit" class="btn btn-primary  waves-effect waves-light">حفظ</button>
                         <a href="" class="btn btn-label-secondary waves-effect mx-3 mt-md-0 mt-4">مشاهدة الكل</a>
-                       </div>
+                      </div>
                     </div>
                   </div>
                  </div>
@@ -1155,7 +1194,12 @@
             </div>
           
             <!--/ Content -->
-
+            <div class="alert alert-primary w-100" role="alert">
+             
+              Ctrl+s يحفظ!---
+              Ctrl+p للطباعه!---
+             Crrl+x للحذف
+            </div>
             <!-- Footer -->
             <footer class="content-footer footer bg-footer-theme">
               <div class="container-xxl">
@@ -1261,30 +1305,7 @@
      <script src="./assets/vendor/js/chart.js"></script>
      <script src="./assets/js/dashboards-crm.js"></script>
      <script src="./assets/js/forms-selects.js"></script>
-<script>
-  'use strict';
-$(function() {
-   var btnTitle = $(".btn-upload-input-title").html();
-   var btnTitleHtml = $.parseHTML(btnTitle);
-   $(".btn-upload-input input:file").change(function (){
-      console.log("im clicked" + this.files.length);
-      if( this.files && this.files.length >= 1 ) {
-         var file = this.files[0];
-            var reader = new FileReader();
-            // Set preview image into the popover data-content
-            reader.onload = function (e) {
-               $(".btn-upload-input-title").text(file.name);
-            }
-            reader.readAsDataURL(file);
-      }
-      else {
-         $(".btn-upload-input-title").html(btnTitle);
-      }
-        
-    });   
-});
-
-</script>
+<script src="./assets/vendor/js/upload.js"></script>
 
      <script>
   $('table').on('keydown','tr td',function (e) {
@@ -1294,12 +1315,13 @@ $(function() {
     var $this = $(this),
         $lastTr = $('tr:last', $('table')),
         $lastTd = $('td:last', $lastTr);
-        
+
+    
     if (($(e.target).closest('td')).is($lastTd)) {
+     
+
         $lastTr.after($lastTr.clone());
-       
-
-
+      
     }
     
 });
