@@ -26,4 +26,32 @@ $(function(){
         });
     }, 8000);
 });
+//nav
+let togglee =document.querySelector('.navbar-toggler');
+let vavber = document.querySelector('.nav-sidebar');
+let minber = document.querySelector('.bg-dark-navber');
+let contentd = document.querySelector('.content-admin');
+togglee.onclick = function(){
+  vavber.classList.toggle('active');
+  minber.classList.toggle('active');
+  contentd.classList.toggle('active');
+}
+///////
+function readURL(input) {
+  if (input.files && input.files[0]) {
+      var reader = new FileReader();
 
+      reader.onload = function (e) {
+          $('#file_upload')
+              .attr('src', e.target.result);
+      };
+      reader.readAsDataURL(input.files[0]);
+  }
+}
+$('.accordion-button').on('keydown',function (e) {
+ 
+ 
+   $('.accordion-collapse').toggle("show")
+   
+ })
+    

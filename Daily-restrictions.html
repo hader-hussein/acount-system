@@ -45,7 +45,8 @@
     <link rel="stylesheet" href="./assets/vendor/libs/select2/select2.css" />
     <link rel="stylesheet" href="./assets/vendor/libs/bootstrap-select/bootstrap-select.css" />
     
-   
+    <link href="https://kendo.cdn.telerik.com/themes/7.0.1/default/default-main.css" rel="stylesheet" />
+    
     <link rel="stylesheet" href="./assets/vendor/css/rtl/theme-default.css" class="template-customizer-theme-css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
     <!-- Helpers -->
@@ -55,6 +56,7 @@
     <script src="./assets/vendor/js/template-customizer.js"></script>
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="./assets/js/config.js"></script>
+    
   </head>
 
   <body>
@@ -62,7 +64,7 @@
     <div class="layout-wrapper layout-navbar-full layout-horizontal layout-without-menu">
       <div class="layout-container">
         <!-- Navbar -->
-        <nav class="layout-navbar navbar navbar-expand-xl align-items-center bg-navbar-theme" id="layout-navbar">
+        <nav class="layout-navbar navbar bg-dark-navber navbar-expand-xl align-items-center bg-navbar-theme" id="layout-navbar">
           <div class="container-xxl">
             <div class="navbar-brand app-brand demo d-none d-xl-flex  py-0 me-4">
               <a href="index.html" class="app-brand-link gap-2">
@@ -71,11 +73,14 @@
             
                 </span>
               </a>
-
-              <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-xl-none">
+            
+              <!-- <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-xl-none">
                 <i class="ti ti-x ti-sm align-middle"></i>
+              </a> -->
+              <a href="javascript:void(0);" class="layout-menu-toggle navbar-toggler menu-link text-large ms-auto">
+                <i class="fa-solid fa-bars  d-none d-xl-block ti-sm align-middle"></i>
+                <i class="ti ti-x d-block d-xl-none ti-sm align-middle"></i>
               </a>
-              
             </div>
 
             <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
@@ -579,8 +584,10 @@
         <div class="layout-page">
           <!-- Content wrapper -->
           <div class="content-wrapper">
+            
             <!-- Menu -->
-              <aside id="layout-menu" class="layout-menu-horizontal menu-horizontal menu bg-menu-theme flex-grow-0">
+
+              <aside id="layout-menu" class="nav-sidebar layout-menu-horizontal menu-horizontal menu bg-menu-theme flex-grow-0">
                 <div class="container-xxl d-flex h-100">
                   <ul class="menu-inner">
                     <!-- Dashboards -->
@@ -982,19 +989,29 @@
                 </div>
               </aside>
             <!-- / Menu -->
+          
             <!-- Content -->
            
-            <div class="container-xxl flex-grow-1 container-p-y">
+            <div class="container-xxl flex-grow-1 container-p-y content-admin">
               <div class="row">
                 <div class="col-xl">
                   <div class="card mb-4">
-                    <div class="card-body p-4">
-                      <h4 class="py-3 text-title-hadeer"><span class="text-muted fw-medium"></span>  ادخال قيود اليوميةالعامة</h4>
+                    <div class="card-body p-4 pt-2">
+                      <h4 class="py-1 text-title-hadeer"><span class="text-muted fw-medium"></span>  ادخال قيود اليوميةالعامة</h4>
                       <div class="accordion from-cllapse" id="accordionExample">
                         <div class="accordion-item">
                           <h2 class="accordion-header">
                             <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                              القيود اليومية
+                              <div class="d-flex justify-content-between">
+                                <div>
+                                  تاريخ دفتر اليومية: <span class="mx-2">14/11/2023</span>
+
+                                </div>
+                                <div>
+                                    مرجعة السند: <span class="mx-2">14/11/2023</span>
+
+                                </div>
+                              </div>
                             </button>
                           </h2>
                           <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
@@ -1017,16 +1034,22 @@
           
                                 </div>
                                 <div class="col-11 col-lg-4 mb-3">
-                                
                                   <label for="select5Basic" class="form-label">   العملة<span class="start-form">*</span></label>
-                                  <select id="select5Basic" class="select2 form-select" data-allow-clear="true">
-                                    <option value="AK">  ريال سعودى</option>
-                                    <option value="HI">Hawaii</option>
-                                    <option value="CA">California</option>
-                                    <option value="NV">Nevada</option>
-                                    <option value="OR">Oregon</option>
-                                
-                                  </select>
+
+                                  <div class="input-groupe">
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                      <i class="fa-solid fa-plus"></i>
+                                    </button>
+                                    <select id="select5Basic" class="select2 form-select" data-allow-clear="true">
+                                      <option value="AK">  ريال سعودى</option>
+                                      <option value="HI">Hawaii</option>
+                                      <option value="CA">California</option>
+                                      <option value="NV">Nevada</option>
+                                      <option value="OR">Oregon</option>
+                                  
+                                    </select>
+                                    </div>
+                                 
                               
                                 </div>
                                 <div class="col-11 col-lg-4 mb-3">
@@ -1060,11 +1083,7 @@
                                   </div>
                                  
                                 </div>
-                                <div class="col-11 col-lg-8 text-end mb-3">
-                                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                    اضافة عملة
-                                  </button>
-                                </div>
+                               
                               </form> 
                               <!-- Modal  اضافة عملة-->
                                     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -1102,7 +1121,7 @@
                             <div class="accordion-body">
                               <div class="table-responsive text-nowrap rounded card-datatable pt-4 pb-4">
 
-                                <table class="table table-bordered table-hover rounded datatables-basic " id="my-table">
+                                <table class="table table-bordered table-hover rounded tabel-table" id="my-table">
                                   <thead class="table-light">
                                     <tr class="fw-bold">
                                       <th class="fw-bold">م</th>
@@ -1118,14 +1137,13 @@
                                     <tr>
                                       <td></td>
                                       <td class="w-25"> 
-                                        <select class="form-select form-control" aria-label="Default select example">
-                                          <option selected>Open this select menu</option>
-                                          <option value="1">One</option>
-                                          <option value="2">Two</option>
-                                          <option value="3">Three</option>
-                                        </select>
-                                      
-                                      </td>
+                                        <div class="k-d-flex k-flex-col k-flex-1">
+                                          <select id="multicolumncombobox" class="multicolumin"></select>
+                              
+                                         
+                                      </div>            
+                                    
+                                       </td>
                                 
                                       <td> <input type="text" maxlength="9" class="form-control">   </td>
                                       <td> <input type="text" maxlength="9" class="form-control">     </td>
@@ -1179,9 +1197,28 @@
                         </div>
                        
                       </div>
-                      <div class="col-12 w-100 pt-4 pb-4 px-4 fixed-bottom buttom-fixed">
-                        <button type="submit" class="btn btn-primary  waves-effect waves-light">حفظ</button>
-                        <a href="" class="btn btn-label-secondary waves-effect mx-3 mt-md-0 mt-4">مشاهدة الكل</a>
+                      <div class="pt-2 pb-2 px-2 buttom-fixed">
+                        <div class=" w-100 p-2 ">
+                                  
+                          <div class="d-flex justify-content-between  align-items-center" style=" border-bottom: 1px solid #c1c0c8; padding: 10px;">
+                               <h6 class="title-table fw-bold fs-5 mb-0">الاجمالى</h6>
+                                <div class="fw-bold fs-5">100%</div>
+                               
+                          </div>
+                          <div class="d-flex justify-content-between align-items-center" style=" border-bottom: 1px solid #c1c0c8; padding: 10px;">
+                        
+                            <h6 class="title-table fw-bold fs-5 mb-0">الفرق</h6>
+                           
+                              <div class="fw-bold fs-5">100%</div>
+
+                          </div>
+
+
+                      </div>
+                        <button type="submit" class="btn btn-primary  waves-effect waves-light" title="حفظ"><i class="fa-solid fa-download"></i></button>
+                        <a href="" class="btn btn-label-secondary waves-effect mx-3 mt-md-0" title="مشاهدة الكل"> 
+                          <i class="ti-xs me-1 ti ti-eye-check me-1"></i>
+                        </a>
                       </div>
                     </div>
                   </div>
@@ -1194,7 +1231,7 @@
             </div>
           
             <!--/ Content -->
-            <div class="alert alert-primary w-100" role="alert">
+            <div class="alert alert-primary text-black" role="alert">
              
               Ctrl+s يحفظ!---
               Ctrl+p للطباعه!---
@@ -1290,7 +1327,6 @@
     <!-- Vendors JS -->
     <script src="./assets/vendor/libs/apex-charts/apexcharts.js"></script>
   
-
     
     <!-- Main JS -->
     <script src="./assets/js/main.js"></script>
@@ -1305,10 +1341,43 @@
      <script src="./assets/vendor/js/chart.js"></script>
      <script src="./assets/js/dashboards-crm.js"></script>
      <script src="./assets/js/forms-selects.js"></script>
-<script src="./assets/vendor/js/upload.js"></script>
+    <script src="./assets/vendor/js/upload.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script> -->
+    
+    <script src="https://kendo.cdn.telerik.com/2023.3.1010/js/kendo.all.min.js"></script>
 
-     <script>
-  $('table').on('keydown','tr td',function (e) {
+    
+<script>
+  $(document).ready(function() {
+      var multiComboBox = $("#multicolumncombobox").kendoMultiColumnComboBox({
+          dataTextField: "ContactName",
+          dataValueField: "CustomerID",
+          height: 400,
+          columns: [
+              {
+                  field: "ContactName", title: "Contact Name", template: "<span class='customer-photo'" +
+                      "style='background-image: url(../content/web/Customers/#:data.CustomerID#.jpg);'></span>" +
+                      "<span class='customer-name'>#: ContactName #</span>", width: 200
+              },
+              { field: "ContactTitle", title: "Contact Title", width: 200 },
+              { field: "CompanyName", title: "Company Name", width: 200 }
+          ],
+          footerTemplate: 'Total #: instance.dataSource.total() # items found',
+          filter: "contains",
+          filterFields: ["ContactName", "ContactTitle", "CompanyName"],
+          dataSource: {
+              type: "odata",
+              transport: {
+                  read: "https://demos.telerik.com/kendo-ui/service/Northwind.svc/Customers"
+              }
+          }
+      }).data("kendoMultiColumnComboBox");
+  });
+</script>
+<script>
+
+      
+  $('.tabel-table').on('keydown','tr td',function (e) {
     var keyCode = e.keyCode;
     if (keyCode !== 9) return;
 
@@ -1325,8 +1394,7 @@
     }
     
 });
-
-      </script>
+   </script>
 
   </body>
 </html>
