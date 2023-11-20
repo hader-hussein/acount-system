@@ -44,9 +44,8 @@
     <link rel="stylesheet" href="./assets/vendor/libs/apex-charts/apex-charts.css" />
     <link rel="stylesheet" href="./assets/vendor/libs/select2/select2.css" />
     <link rel="stylesheet" href="./assets/vendor/libs/bootstrap-select/bootstrap-select.css" />
-    
-    <link href="https://kendo.cdn.telerik.com/themes/7.0.1/default/default-main.css" rel="stylesheet" />
-    
+
+    <link rel="stylesheet" href="./assets/dropdowntree.css" />
     <link rel="stylesheet" href="./assets/vendor/css/rtl/theme-default.css" class="template-customizer-theme-css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
     <!-- Helpers -->
@@ -592,7 +591,7 @@
                   <ul class="menu-inner">
                     <!-- Dashboards -->
                     <li class="menu-item ">
-                      <a href="javascript:void(0)" class="menu-link ">
+                      <a href="index.html" class="menu-link ">
                         <i class="menu-icon tf-icons ti ti-smart-home"></i>
                         <div data-i18n="الرئيسية">الرئيسية</div>
                       </a>
@@ -1137,23 +1136,14 @@
                                     <tr>
                                       <td></td>
                                       <td class="w-25"> 
-                                        <div class="k-d-flex k-flex-col k-flex-1">
-                                          <select id="multicolumncombobox" class="multicolumin"></select>
-                              
-                                         
-                                      </div>            
-                                    
+                                            <div class="dropdown dropdown-tree" id="firstDropDownTree"></div>
+
                                        </td>
                                 
                                       <td> <input type="text" maxlength="9" class="form-control">   </td>
                                       <td> <input type="text" maxlength="9" class="form-control">     </td>
                                       <td>  
-                                        <select class="form-select form-control" aria-label="Default select example">
-                                          <option selected>Open this select menu</option>
-                                          <option value="1">One</option>
-                                          <option value="2">Two</option>
-                                          <option value="3">Three</option>
-                                        </select>
+                                        <div class="dropdown dropdown-tree" id="firstDropDownTree2"></div>
                                       </td>
                                       <td class="w-25"><input type="text" class="form-control"></td>
                                       <td class="d-flex">
@@ -1189,8 +1179,16 @@
 
 
                                 </div>
-                                
-                             
+                                <div>
+                                  <button type="submit" class="btn btn-primary  waves-effect waves-light" title="حفظ"><i class="fa-solid fa-check mx-2"></i>حفظ</button>
+                                  <a href="" class="btn btn-label-secondary waves-effect mx-3 mt-md-0" title="مشاهدة الكل"> 
+                                    <i class="ti-xs me-1 ti ti-eye-check me-1"></i>مشاهدة الكل
+                                  </a>
+                                  <div class="dropdown dropdown-tree" id="firstDropDownTree"></div>
+
+
+                                </div>
+
                               </div>
                             </div>
                           </div>
@@ -1215,10 +1213,11 @@
 
 
                       </div>
-                        <button type="submit" class="btn btn-primary  waves-effect waves-light" title="حفظ"><i class="fa-solid fa-download"></i></button>
+                        <button type="submit" class="btn btn-primary  waves-effect waves-light" title="حفظ"><i class="fa-solid fa-check"></i></button>
                         <a href="" class="btn btn-label-secondary waves-effect mx-3 mt-md-0" title="مشاهدة الكل"> 
                           <i class="ti-xs me-1 ti ti-eye-check me-1"></i>
                         </a>
+
                       </div>
                     </div>
                   </div>
@@ -1229,7 +1228,7 @@
               
              
             </div>
-          
+
             <!--/ Content -->
             <div class="alert alert-primary text-black" role="alert">
              
@@ -1341,39 +1340,11 @@
      <script src="./assets/vendor/js/chart.js"></script>
      <script src="./assets/js/dashboards-crm.js"></script>
      <script src="./assets/js/forms-selects.js"></script>
-    <script src="./assets/vendor/js/upload.js"></script>
-    <!-- <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script> -->
-    
-    <script src="https://kendo.cdn.telerik.com/2023.3.1010/js/kendo.all.min.js"></script>
+     <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    
-<script>
-  $(document).ready(function() {
-      var multiComboBox = $("#multicolumncombobox").kendoMultiColumnComboBox({
-          dataTextField: "ContactName",
-          dataValueField: "CustomerID",
-          height: 400,
-          columns: [
-              {
-                  field: "ContactName", title: "Contact Name", template: "<span class='customer-photo'" +
-                      "style='background-image: url(../content/web/Customers/#:data.CustomerID#.jpg);'></span>" +
-                      "<span class='customer-name'>#: ContactName #</span>", width: 200
-              },
-              { field: "ContactTitle", title: "Contact Title", width: 200 },
-              { field: "CompanyName", title: "Company Name", width: 200 }
-          ],
-          footerTemplate: 'Total #: instance.dataSource.total() # items found',
-          filter: "contains",
-          filterFields: ["ContactName", "ContactTitle", "CompanyName"],
-          dataSource: {
-              type: "odata",
-              transport: {
-                  read: "https://demos.telerik.com/kendo-ui/service/Northwind.svc/Customers"
-              }
-          }
-      }).data("kendoMultiColumnComboBox");
-  });
-</script>
+     <script src="./assets/dropdowntree.js"></script>
+    <script src="./assets/vendor/js/upload.js"></script>
+
 <script>
 
       
