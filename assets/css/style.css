@@ -519,3 +519,8 @@ box-shadow: 0 -0.125rem 0.25rem rgba(165, 163, 174, 0.3);
 .open>.dropdown-menu {
   display: block !important;
 }
+.k-treeview-leaf:hover, .k-treeview-leaf.k-hover {
+  
+  background-color: rgb(var(--theme-color))!important;
+  color: #fff !important;
+}
