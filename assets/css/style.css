@@ -524,3 +524,7 @@ box-shadow: 0 -0.125rem 0.25rem rgba(165, 163, 174, 0.3);
   background-color: rgb(var(--theme-color))!important;
   color: #fff !important;
 }
+.alert-primary{
+  background-color: rgb(var(--theme-color))!important;
+  color: #fff !important;
+}

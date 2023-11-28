@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 
+
 <html
   lang="en"
   class="light-style layout-menu-fixed layout-compact"
@@ -41,9 +42,10 @@
     <link rel="stylesheet" href="./assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
     <link rel="stylesheet" href="./assets/vendor/libs/typeahead-js/typeahead.css" />
     <link rel="stylesheet" href="./assets/vendor/libs/apex-charts/apex-charts.css" />
+    <link rel="stylesheet" href="./assets/vendor/libs/select2/select2.css" />
+    <link rel="stylesheet" href="./assets/vendor/libs/bootstrap-select/bootstrap-select.css" />
 
-   
-   
+    <link href="./assets/default-ocean-blue.css" rel="stylesheet">
     <link rel="stylesheet" href="./assets/vendor/css/rtl/theme-default.css" class="template-customizer-theme-css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
     <!-- Helpers -->
@@ -53,6 +55,7 @@
     <script src="./assets/vendor/js/template-customizer.js"></script>
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="./assets/js/config.js"></script>
+    
   </head>
 
   <body>
@@ -580,419 +583,660 @@
         <div class="layout-page">
           <!-- Content wrapper -->
           <div class="content-wrapper">
+            
             <!-- Menu -->
-            <aside id="layout-menu" class="nav-sidebar layout-menu-horizontal menu-horizontal menu bg-menu-theme flex-grow-0">
-              <div class="container-xxl d-flex h-100">
-                <ul class="menu-inner">
-                  <!-- Dashboards -->
-                  <li class="menu-item active">
-                    <a href="index.html" class="menu-link ">
-                      <i class="menu-icon tf-icons ti ti-smart-home"></i>
-                      <div data-i18n="الرئيسية">الرئيسية</div>
-                    </a>
-                  
-                  </li>
 
-                  <!-- stations -->
-                  <li class="menu-item">
-                    <a href="javascript:void(0)" class="menu-link menu-toggle">
-                      <i class="menu-icon tf-icons ti ti-layout-sidebar"></i>
-                      <div data-i18n="التعريفات">التعريفات</div>
-                    </a>
-
-                    <ul class="menu-sub">
-                      <li class="menu-item">
-                        <a href="" class="menu-link">
-                          <i class="menu-icon tf-icons ti ti-menu-2"></i>
-                          <div data-i18n="الفروع"> الفروع</div>
-                        </a>
-                      </li>
-                      <li class="menu-item">
-                        <a href="" class="menu-link" target="_blank">
-                          <i class="menu-icon tf-icons ti ti-layout-distribute-vertical"></i>
-                          <div data-i18n="المستخدمين ">  المستخدمين</div>
-                        </a>
-                      </li>
-                      <li class="menu-item">
-                        <a href="" class="menu-link">
-                          <i class="menu-icon tf-icons ti ti-maximize"></i>
-                          <div data-i18n="المجموعات ">المجموعات </div>
-                        </a>
-                      </li>
-                      <li class="menu-item">
-                        <a href="" class="menu-link">
-                          <i class="menu-icon tf-icons ti ti-arrows-maximize"></i>
-                          <div data-i18n="صلاحيات الدليل المحاسبي">صلاحيات الدليل المحاسبي </div>
-                        </a>
-                      </li>
-                      <li class="menu-item">
-                        <a href="" class="menu-link">
-                          <i class="menu-icon tf-icons ti ti-square"></i>
-                          <div data-i18n="السنوات المالية">السنوات المالية </div>
-                        </a>
-                      </li>
-                      <li class="menu-item">
-                        <a href="" class="menu-link">
-                          <i class="menu-icon tf-icons ti ti-square"></i>
-                          <div data-i18n="العملاء">العملاء  </div>
-                        </a>
-                      </li>
-                      <li class="menu-item">
-                        <a href="" class="menu-link">
-                          <i class="menu-icon tf-icons ti ti-arrows-maximize"></i>
-                          <div data-i18n="الأصناف">الاصناف </div>
-                        </a>
-                      </li>
-                      <li class="menu-item">
-                        <a href="" class="menu-link">
-                          <i class="menu-icon tf-icons ti ti-arrows-maximize"></i>
-                          <div data-i18n="الإعدادت">الإعدادت </div>
-                        </a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="menu-item">
-                    <a class="menu-link menu-toggle" href="javascript:void(0)">
-                      <i class="menu-icon tf-icons ti ti-file-description"></i>
-                      <div data-i18n="الدليل المحاسبي">الدليل المحاسبي</div>
-                     </a>
-                     <ul class="menu-sub">
-                      <li class="menu-item">
-                        <a href="" class="menu-link">
-                          <i class="menu-icon tf-icons ti ti-files"></i>
-                          <div data-i18n="حسابالتصنيفات">  حسابالتصنيفات</div>
-                        </a>
-                      </li>
-                      <li class="menu-item">
-                        <a href="" class="menu-link">
-                          <i class="menu-icon tf-icons ti ti-layout-grid-add"></i>
-
-                          <div data-i18n="اضافه حساب">  اضافه حساب</div>
-                        </a>
-                      </li>
-                      <li class="menu-item">
-                        <a href="" class="menu-link">
-                          <i class="menu-icon tf-icons ti ti-forms"></i>
-                          <div data-i18n="نقل حركات الحسابات">  نقل حركات الحسابات</div>
-                        </a>
-                      </li> <li class="menu-item">
-                        <a href="" class="menu-link">
-                          <i class="menu-icon tf-icons ti ti-color-swatch"></i>
-                          <div data-i18n="شجرة الحسابات">  شجرة الحسابات</div>
-                        </a>
-                      </li>
-
-                    </li> <li class="menu-item">
-                      <a href="" class="menu-link">
-                        <i class="menu-icon tf-icons ti ti-text-wrap-disabled"></i>
-                        <div data-i18n="إعدادات المستويات">   إعدادات المستويات</div>
+              <aside id="layout-menu" class="nav-sidebar layout-menu-horizontal menu-horizontal menu bg-menu-theme flex-grow-0">
+                <div class="container-xxl d-flex h-100">
+                  <ul class="menu-inner">
+                    <!-- Dashboards -->
+                    <li class="menu-item ">
+                      <a href="index.html" class="menu-link ">
+                        <i class="menu-icon tf-icons ti ti-smart-home"></i>
+                        <div data-i18n="الرئيسية">الرئيسية</div>
                       </a>
+                    
                     </li>
-                    </ul>
-                  </li>
-                  <!-- Settings -->
+
+                    <!-- stations -->
+                    <li class="menu-item">
+                      <a href="javascript:void(0)" class="menu-link menu-toggle">
+                        <i class="menu-icon tf-icons ti ti-layout-sidebar"></i>
+                        <div data-i18n="التعريفات">التعريفات</div>
+                      </a>
+
+                      <ul class="menu-sub">
+                        <li class="menu-item">
+                          <a href="" class="menu-link">
+                            <i class="menu-icon tf-icons ti ti-menu-2"></i>
+                            <div data-i18n="الفروع"> الفروع</div>
+                          </a>
+                        </li>
+                        <li class="menu-item">
+                          <a href="" class="menu-link" target="_blank">
+                            <i class="menu-icon tf-icons ti ti-layout-distribute-vertical"></i>
+                            <div data-i18n="المستخدمين ">  المستخدمين</div>
+                          </a>
+                        </li>
+                        <li class="menu-item">
+                          <a href="" class="menu-link">
+                            <i class="menu-icon tf-icons ti ti-maximize"></i>
+                            <div data-i18n="المجموعات ">المجموعات </div>
+                          </a>
+                        </li>
+                        <li class="menu-item">
+                          <a href="" class="menu-link">
+                            <i class="menu-icon tf-icons ti ti-arrows-maximize"></i>
+                            <div data-i18n="صلاحيات الدليل المحاسبي">صلاحيات الدليل المحاسبي </div>
+                          </a>
+                        </li>
+                        <li class="menu-item">
+                          <a href="" class="menu-link">
+                            <i class="menu-icon tf-icons ti ti-square"></i>
+                            <div data-i18n="السنوات المالية">السنوات المالية </div>
+                          </a>
+                        </li>
+                        <li class="menu-item">
+                          <a href="" class="menu-link">
+                            <i class="menu-icon tf-icons ti ti-square"></i>
+                            <div data-i18n="العملاء">العملاء  </div>
+                          </a>
+                        </li>
+                        <li class="menu-item">
+                          <a href="" class="menu-link">
+                            <i class="menu-icon tf-icons ti ti-arrows-maximize"></i>
+                            <div data-i18n="الأصناف">الاصناف </div>
+                          </a>
+                        </li>
+                        <li class="menu-item">
+                          <a href="" class="menu-link">
+                            <i class="menu-icon tf-icons ti ti-arrows-maximize"></i>
+                            <div data-i18n="الإعدادت">الإعدادت </div>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="menu-item">
+                      <a class="menu-link menu-toggle" href="javascript:void(0)">
+                        <i class="menu-icon tf-icons ti ti-file-description"></i>
+                        <div data-i18n="الدليل المحاسبي">الدليل المحاسبي</div>
+                       </a>
+                       <ul class="menu-sub">
+                        <li class="menu-item">
+                          <a href="" class="menu-link">
+                            <i class="menu-icon tf-icons ti ti-files"></i>
+                            <div data-i18n="حسابالتصنيفات">  حسابالتصنيفات</div>
+                          </a>
+                        </li>
+                        <li class="menu-item">
+                          <a href="" class="menu-link">
+                            <i class="menu-icon tf-icons ti ti-layout-grid-add"></i>
+
+                            <div data-i18n="اضافه حساب">  اضافه حساب</div>
+                          </a>
+                        </li>
+                        <li class="menu-item">
+                          <a href="" class="menu-link">
+                            <i class="menu-icon tf-icons ti ti-forms"></i>
+                            <div data-i18n="نقل حركات الحسابات">  نقل حركات الحسابات</div>
+                          </a>
+                        </li> 
+                        <li class="menu-item">
+                          <a href="" class="menu-link">
+                            <i class="menu-icon tf-icons ti ti-color-swatch"></i>
+                            <div data-i18n="شجرة الحسابات">  شجرة الحسابات</div>
+                          </a>
+                        </li>
+                        <li class="menu-item">
+                          <a href="" class="menu-link">
+                            <i class="menu-icon tf-icons ti ti-text-wrap-disabled"></i>
+                            <div data-i18n="إعدادات المستويات">   إعدادات المستويات</div>
+                          </a>
+                        </li>
+                       
+                      
+                      </ul>
+                    </li>
+                    <!-- Settings -->
+                    <li class="menu-item active">
+                      <a href="javascript:void(0)" class="menu-link menu-toggle">
+                        <i class="menu-icon tf-icons ti ti-layout-grid-add"></i>
+                        <div data-i18n="الحركات">الحركات </div>
+                      </a>
+                      <ul class="menu-sub">
+                        <li class="menu-item ">
+                          <a href="Daily-restrictions.html" class="menu-link">
+                            <i class="menu-icon tf-icons ti ti-file"></i>
+                            <div data-i18n="قيد اليومية"> قيد اليومية  </div>
+                          </a>
+                        </li>
+                        <li class="menu-item active">
+                          <a href="DailyPayments.html" class="menu-link">
+                            <i class="menu-icon tf-icons ti ti-file-dollar"></i>
+                            <div data-i18n=" المدفوعات"> المدفوعات   </div>
+                          </a>
+                        </li>
+                        <li class="menu-item">
+                          <a href="DailyDeposits.html" class="menu-link">
+                            <i class="menu-icon tf-icons ti ti-maximize"></i>
+                            
+                            <div data-i18n=" الإيدعات"> الإيدعات   </div>
+                          </a>
+                        </li>
+                        <li class="menu-item">
+                          <a href="" class="menu-link">
+                            <i class="menu-icon tf-icons ti ti-maximize"></i>
+
+                            
+                            <div data-i18n=" الشيكات">  الشيكات  </div>
+                          </a>
+                        </li>
+                        <li class="menu-item">
+                          <a href="Daily-receipt-voucher.html" class="menu-link">
+                            <i class="menu-icon tf-icons ti ti-file-description"></i>
+                            <div data-i18n=" سند القبض">  سند القبض  </div>
+                          </a>
+                        </li>
+                        <li class="menu-item">
+                          <a href="Daily-receipt-Bill.html" class="menu-link">
+                            <i class="menu-icon tf-icons ti ti-file-description"></i>
+                            
+                            <div data-i18n=" سند الصرف">  سند الصرف  </div>
+                          </a>
+                        </li>
+                        <li class="menu-item">
+                          <a href="" class="menu-link">
+                            <i class="menu-icon tf-icons ti ti-box-multiple"></i>
+                            <div data-i18n=" التحويل بين الحسابات البنكية">  التحويل بين الحسابات البنكية  </div>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+
+                    <!-- Ratings -->
+                    <li class="menu-item">
+                      <a href="javascript:void(0)" class="menu-link menu-toggle">
+                        <i class="menu-icon tf-icons ti ti-box-multiple"></i>
+                        <div data-i18n="العمليات">العمليات </div>
+                      </a>
+                      <ul class="menu-sub">
+                        <li class="menu-item">
+                          <a href="" target="_blank" class="menu-link">
+                            <i class="menu-icon tf-icons ti ti-lifebuoy"></i>
+                            <div data-i18n="الإيرادات">الإيرادات </div>
+                          </a>
+                        </li>
+                        <li class="menu-item">
+                          <a
+                            href=""
+                            target="_blank"
+                            class="menu-link">
+                            <i class="menu-icon tf-icons ti ti-file-description"></i>
+                            <div data-i18n="معدل تبادل العملات  ">معدل تبادل العملات </div>
+                          </a>
+                        </li>
+                        <li class="menu-item">
+                          <a
+                            href=""
+                            target="_blank"
+                            class="menu-link">
+                            <i class="menu-icon tf-icons ti ti-arrows-maximize"></i>
+                            <div data-i18n="الموازنات "> الموازنات </div>
+                          </a>
+                        </li>
+                        <li class="menu-item">
+                          <a
+                            href=""
+                            target="_blank"
+                            class="menu-link">
+                            <i class="menu-icon tf-icons ti ti-file-dollar"></i>
+                            
+                            <div data-i18n="تسوية الحساب البنكي ">تسوية الحساب البنكي </div>
+                          </a>
+                        </li>
+                        <li class="menu-item">
+                          <a
+                            href=""
+                            target="_blank"
+                            class="menu-link">
+                            <i class="menu-icon tf-icons ti ti-file-dollar"></i>
+                            <div data-i18n="  إعادة تقييم حسابات العملة ">  إعادة تقييم حسابات العملة </div>
+                          </a>
+                        </li>
+                        <li class="menu-item">
+                          <a
+                            href=""
+                            target="_blank"
+                            class="menu-link">
+                            <i class="menu-icon tf-icons ti ti-forms"></i>
+                            <div data-i18n="     استيراد قيود اليومية ">    استيراد قيود اليومية  </div>
+                          </a>
+                        </li>
+                        <li class="menu-item">
+                          <a
+                            href=""
+                            target="_blank"
+                            class="menu-link">
+                            <i class="menu-icon tf-icons ti ti-lock"></i>
+                            <div data-i18n="       إقفال السنة ">      إقفال السنة  </div>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                    <!-- Subscriptions -->
                   <li class="menu-item">
                     <a href="javascript:void(0)" class="menu-link menu-toggle">
                       <i class="menu-icon tf-icons ti ti-layout-grid-add"></i>
-                      <div data-i18n="الحركات">الحركات </div>
+                      <div data-i18n="الضرائب">الضرائب</div>
                     </a>
                     <ul class="menu-sub">
+                      
                       <li class="menu-item">
-                        <a href="Daily-restrictions.html" class="menu-link">
-                          <i class="menu-icon tf-icons ti ti-file"></i>
-                          <div data-i18n="قيد اليومية"> قيد اليومية  </div>
+                        <a href="" class="menu-link">
+                          <i class="menu-icon tf-icons ti ti-files"></i>
+                          <div data-i18n="فواتير الإيراد">فواتير الإيراد</div>
                         </a>
-                      </li>
-                      <li class="menu-item">
-                        <a href="DailyPayments.html" class="menu-link">
-                          <i class="menu-icon tf-icons ti ti-file-dollar"></i>
-                          <div data-i18n=" المدفوعات"> المدفوعات   </div>
-                        </a>
-                      </li>
-                      <li class="menu-item">
-                        <a href="DailyDeposits.html" class="menu-link">
-                          <i class="menu-icon tf-icons ti ti-maximize"></i>
-                          
-                          <div data-i18n=" الإيدعات"> الإيدعات   </div>
-                        </a>
+                      
                       </li>
                       <li class="menu-item">
                         <a href="" class="menu-link">
-                          <i class="menu-icon tf-icons ti ti-maximize"></i>
-
-                          
-                          <div data-i18n=" الشيكات">  الشيكات  </div>
+                          <i class="menu-icon tf-icons ti ti-files"></i>
+                          <div data-i18n=" فواتير المصروف"> فواتير المصروف</div>
                         </a>
+                      
                       </li>
                       <li class="menu-item">
-                        <a href="Daily-receipt-voucher.html" class="menu-link">
-                          <i class="menu-icon tf-icons ti ti-file-description"></i>
-                          <div data-i18n=" سند القبض">  سند القبض  </div>
+                        <a href="" class="menu-link">
+                          <i class="menu-icon tf-icons ti ti-id"></i>
+                          <div data-i18n="  النموذج الضريبي">  النموذج الضريبي</div>
                         </a>
+                      
                       </li>
                       <li class="menu-item">
-                        <a href="Daily-receipt-Bill.html" class="menu-link">
-                          <i class="menu-icon tf-icons ti ti-file-description"></i>
-                          
-                          <div data-i18n=" سند الصرف">  سند الصرف  </div>
+                        <a href="" class="menu-link">
+                          <i class="menu-icon tf-icons ti ti-brand-tabler"></i>
+                          <div data-i18n="   طباعة النموذج">   طباعة النموذج</div>
                         </a>
+                      
                       </li>
                       <li class="menu-item">
                         <a href="" class="menu-link">
                           <i class="menu-icon tf-icons ti ti-box-multiple"></i>
-                          <div data-i18n=" التحويل بين الحسابات البنكية">  التحويل بين الحسابات البنكية  </div>
+                          <div data-i18n="      تقرير القيمة المضافة">     تقرير القيمة المضافة </div>
                         </a>
+                      
                       </li>
                     </ul>
                   </li>
-
-                  <!-- Ratings -->
-                  <li class="menu-item">
-                    <a href="javascript:void(0)" class="menu-link menu-toggle">
-                      <i class="menu-icon tf-icons ti ti-box-multiple"></i>
-                      <div data-i18n="العمليات">العمليات </div>
-                    </a>
-                    <ul class="menu-sub">
-                      <li class="menu-item">
-                        <a href="" target="_blank" class="menu-link">
-                          <i class="menu-icon tf-icons ti ti-lifebuoy"></i>
-                          <div data-i18n="الإيرادات">الإيرادات </div>
-                        </a>
-                      </li>
-                      <li class="menu-item">
-                        <a
-                          href=""
-                          target="_blank"
-                          class="menu-link">
-                          <i class="menu-icon tf-icons ti ti-file-description"></i>
-                          <div data-i18n="معدل تبادل العملات  ">معدل تبادل العملات </div>
-                        </a>
-                      </li>
-                      <li class="menu-item">
-                        <a
-                          href=""
-                          target="_blank"
-                          class="menu-link">
-                          <i class="menu-icon tf-icons ti ti-arrows-maximize"></i>
-                          <div data-i18n="الموازنات "> الموازنات </div>
-                        </a>
-                      </li>
-                      <li class="menu-item">
-                        <a
-                          href=""
-                          target="_blank"
-                          class="menu-link">
-                          <i class="menu-icon tf-icons ti ti-file-dollar"></i>
-                          
-                          <div data-i18n="تسوية الحساب البنكي ">تسوية الحساب البنكي </div>
-                        </a>
-                      </li>
-                      <li class="menu-item">
-                        <a
-                          href=""
-                          target="_blank"
-                          class="menu-link">
-                          <i class="menu-icon tf-icons ti ti-file-dollar"></i>
-                          <div data-i18n="  إعادة تقييم حسابات العملة ">  إعادة تقييم حسابات العملة </div>
-                        </a>
-                      </li>
-                      <li class="menu-item">
-                        <a
-                          href=""
-                          target="_blank"
-                          class="menu-link">
-                          <i class="menu-icon tf-icons ti ti-forms"></i>
-                          <div data-i18n="     استيراد قيود اليومية ">    استيراد قيود اليومية  </div>
-                        </a>
-                      </li>
-                      <li class="menu-item">
-                        <a
-                          href=""
-                          target="_blank"
-                          class="menu-link">
-                          <i class="menu-icon tf-icons ti ti-lock"></i>
-                          <div data-i18n="       إقفال السنة ">      إقفال السنة  </div>
-                        </a>
-                      </li>
-                    </ul>
-                  </li>
-                  <!-- Subscriptions -->
-                <li class="menu-item">
-                  <a href="javascript:void(0)" class="menu-link menu-toggle">
-                    <i class="menu-icon tf-icons ti ti-layout-grid-add"></i>
-                    <div data-i18n="الضرائب">الضرائب</div>
-                  </a>
-                  <ul class="menu-sub">
-                    
+                    <!-- تقارير الفلتر -->
                     <li class="menu-item">
-                      <a href="" class="menu-link">
-                        <i class="menu-icon tf-icons ti ti-files"></i>
-                        <div data-i18n="فواتير الإيراد">فواتير الإيراد</div>
-                      </a>
-                    
-                    </li>
-                    <li class="menu-item">
-                      <a href="" class="menu-link">
-                        <i class="menu-icon tf-icons ti ti-files"></i>
-                        <div data-i18n=" فواتير المصروف"> فواتير المصروف</div>
-                      </a>
-                    
-                    </li>
-                    <li class="menu-item">
-                      <a href="" class="menu-link">
-                        <i class="menu-icon tf-icons ti ti-id"></i>
-                        <div data-i18n="  النموذج الضريبي">  النموذج الضريبي</div>
-                      </a>
-                    
-                    </li>
-                    <li class="menu-item">
-                      <a href="" class="menu-link">
-                        <i class="menu-icon tf-icons ti ti-brand-tabler"></i>
-                        <div data-i18n="   طباعة النموذج">   طباعة النموذج</div>
-                      </a>
-                    
-                    </li>
-                    <li class="menu-item">
-                      <a href="" class="menu-link">
+                      <a href="javascript:void(0)" class="menu-link menu-toggle">
                         <i class="menu-icon tf-icons ti ti-box-multiple"></i>
-                        <div data-i18n="      تقرير القيمة المضافة">     تقرير القيمة المضافة </div>
+                        <div data-i18n="تقارير الفلتر">تقارير الفلتر</div>
                       </a>
-                    
+                      <ul class="menu-sub">
+                        
+                        <li class="menu-item">
+                          <a href="" class="menu-link">
+                            <i class="menu-icon tf-icons ti ti-files"></i>
+                            <div data-i18n=" الإستعلام عن دفتر اليومية"> الإستعلام عن دفتر اليومية</div>
+                          </a>
+                        
+                        </li>
+                        <li class="menu-item">
+                          <a href="" class="menu-link">
+                            <i class="menu-icon tf-icons ti ti-files"></i>
+                            <div data-i18n="  قائمة الدخل">  قائمة الدخل</div>
+                          </a>
+                        
+                        </li>
+                        <li class="menu-item">
+                          <a href="" class="menu-link">
+                            <i class="menu-icon tf-icons ti ti-id"></i>
+                            <div data-i18n="   الميزانية العمومية">   الميزانية العمومية</div>
+                          </a>
+                        
+                        </li>
+                        <li class="menu-item">
+                          <a href="" class="menu-link">
+                            <i class="menu-icon tf-icons ti ti-brand-tabler"></i>
+                            <div data-i18n="    ميزان المراجعة">    ميزان المراجعة</div>
+                          </a>
+                        
+                        </li>
+                        <li class="menu-item">
+                          <a href="" class="menu-link">
+                            <i class="menu-icon tf-icons ti ti-box-multiple"></i>
+                            <div data-i18n="        الاستعلام عن الاستاذ العام">     الاستعلام عن الاستاذ العام   </div>
+                          </a>
+                        
+                        </li>
+                        <li class="menu-item">
+                          <a href="" class="menu-link">
+                            <i class="menu-icon tf-icons ti ti-box-multiple"></i>
+                            <div data-i18n="  كشف الأرصدة   ">      كشف الأرصدة  </div>
+                          </a>
+                        
+                        </li>
+                        <li class="menu-item">
+                          <a href="" class="menu-link">
+                            <i class="menu-icon tf-icons ti ti-box-multiple"></i>
+                            <div data-i18n="    حركات المستخدمين       ">        حركات المستخدمين   </div>
+                          </a>
+                        
+                        </li>
+                      </ul>
+                    </li>
+                     <!--  تقارير الطباعة -->
+                     <li class="menu-item">
+                      <a href="javascript:void(0)" class="menu-link menu-toggle">
+                        <i class="menu-icon tf-icons ti ti-box-multiple"></i>
+                        <div data-i18n=" تقارير الطباعة"> تقارير الطباعة</div>
+                      </a>
+                      <ul class="menu-sub">
+                        
+                        <li class="menu-item">
+                          <a href="" class="menu-link">
+                            <i class="menu-icon tf-icons ti ti-files"></i>
+                            <div data-i18n="    قائمة القيود اليومية">  قائمة القيود اليومية</div>
+                          </a>
+                        
+                        </li>
+                        <li class="menu-item">
+                          <a href="" class="menu-link">
+                            <i class="menu-icon tf-icons ti ti-files"></i>
+                            <div data-i18n="   حركات الاستاذ العام">   حركات الاستاذ العام</div>
+                          </a>
+                        
+                        </li>
+                        <li class="menu-item">
+                          <a href="" class="menu-link">
+                            <i class="menu-icon tf-icons ti ti-id"></i>
+                            <div data-i18n="    ملخص القيود">    ملخص القيود</div>
+                          </a>
+                        
+                        </li>
+                        <li class="menu-item">
+                          <a href="" class="menu-link">
+                            <i class="menu-icon tf-icons ti ti-brand-tabler"></i>
+                            <div data-i18n="     الميزانية العمومية">    الميزانية العمومية </div>
+                          </a>
+                        
+                        </li>
+                        <li class="menu-item">
+                          <a href="" class="menu-link">
+                            <i class="menu-icon tf-icons ti ti-box-multiple"></i>
+                            <div data-i18n=" ميزان المراجعة "> ميزان المراجعة  </div>
+                          </a>
+                        
+                        </li>
+                        <li class="menu-item">
+                          <a href="" class="menu-link">
+                            <i class="menu-icon tf-icons ti ti-box-multiple"></i>
+                            <div data-i18n="  كشف الأرصدة   ">      كشف الأرصدة  </div>
+                          </a>
+                        
+                        </li>
+                        <li class="menu-item">
+                          <a href="" class="menu-link">
+                            <i class="menu-icon tf-icons ti ti-box-multiple"></i>
+                            <div data-i18n="    قائمة الدخل        ">         قائمة الدخل   </div>
+                          </a>
+                        
+                        </li>
+                      </ul>
                     </li>
                   </ul>
-                </li>
-                  <!-- تقارير الفلتر -->
-                  <li class="menu-item">
-                    <a href="javascript:void(0)" class="menu-link menu-toggle">
-                      <i class="menu-icon tf-icons ti ti-box-multiple"></i>
-                      <div data-i18n="تقارير الفلتر">تقارير الفلتر</div>
-                    </a>
-                    <ul class="menu-sub">
-                      
-                      <li class="menu-item">
-                        <a href="" class="menu-link">
-                          <i class="menu-icon tf-icons ti ti-files"></i>
-                          <div data-i18n=" الإستعلام عن دفتر اليومية"> الإستعلام عن دفتر اليومية</div>
-                        </a>
-                      
-                      </li>
-                      <li class="menu-item">
-                        <a href="" class="menu-link">
-                          <i class="menu-icon tf-icons ti ti-files"></i>
-                          <div data-i18n="  قائمة الدخل">  قائمة الدخل</div>
-                        </a>
-                      
-                      </li>
-                      <li class="menu-item">
-                        <a href="" class="menu-link">
-                          <i class="menu-icon tf-icons ti ti-id"></i>
-                          <div data-i18n="   الميزانية العمومية">   الميزانية العمومية</div>
-                        </a>
-                      
-                      </li>
-                      <li class="menu-item">
-                        <a href="" class="menu-link">
-                          <i class="menu-icon tf-icons ti ti-brand-tabler"></i>
-                          <div data-i18n="    ميزان المراجعة">    ميزان المراجعة</div>
-                        </a>
-                      
-                      </li>
-                      <li class="menu-item">
-                        <a href="" class="menu-link">
-                          <i class="menu-icon tf-icons ti ti-box-multiple"></i>
-                          <div data-i18n="        الاستعلام عن الاستاذ العام">     الاستعلام عن الاستاذ العام   </div>
-                        </a>
-                      
-                      </li>
-                      <li class="menu-item">
-                        <a href="" class="menu-link">
-                          <i class="menu-icon tf-icons ti ti-box-multiple"></i>
-                          <div data-i18n="  كشف الأرصدة   ">      كشف الأرصدة  </div>
-                        </a>
-                      
-                      </li>
-                      <li class="menu-item">
-                        <a href="" class="menu-link">
-                          <i class="menu-icon tf-icons ti ti-box-multiple"></i>
-                          <div data-i18n="    حركات المستخدمين       ">        حركات المستخدمين   </div>
-                        </a>
-                      
-                      </li>
-                    </ul>
-                  </li>
-                   <!--  تقارير الطباعة -->
-                   <li class="menu-item">
-                    <a href="javascript:void(0)" class="menu-link menu-toggle">
-                      <i class="menu-icon tf-icons ti ti-box-multiple"></i>
-                      <div data-i18n=" تقارير الطباعة"> تقارير الطباعة</div>
-                    </a>
-                    <ul class="menu-sub">
-                      
-                      <li class="menu-item">
-                        <a href="" class="menu-link">
-                          <i class="menu-icon tf-icons ti ti-files"></i>
-                          <div data-i18n="    قائمة القيود اليومية">  قائمة القيود اليومية</div>
-                        </a>
-                      
-                      </li>
-                      <li class="menu-item">
-                        <a href="" class="menu-link">
-                          <i class="menu-icon tf-icons ti ti-files"></i>
-                          <div data-i18n="   حركات الاستاذ العام">   حركات الاستاذ العام</div>
-                        </a>
-                      
-                      </li>
-                      <li class="menu-item">
-                        <a href="" class="menu-link">
-                          <i class="menu-icon tf-icons ti ti-id"></i>
-                          <div data-i18n="    ملخص القيود">    ملخص القيود</div>
-                        </a>
-                      
-                      </li>
-                      <li class="menu-item">
-                        <a href="" class="menu-link">
-                          <i class="menu-icon tf-icons ti ti-brand-tabler"></i>
-                          <div data-i18n="     الميزانية العمومية">    الميزانية العمومية </div>
-                        </a>
-                      
-                      </li>
-                      <li class="menu-item">
-                        <a href="" class="menu-link">
-                          <i class="menu-icon tf-icons ti ti-box-multiple"></i>
-                          <div data-i18n=" ميزان المراجعة "> ميزان المراجعة  </div>
-                        </a>
-                      
-                      </li>
-                      <li class="menu-item">
-                        <a href="" class="menu-link">
-                          <i class="menu-icon tf-icons ti ti-box-multiple"></i>
-                          <div data-i18n="  كشف الأرصدة   ">      كشف الأرصدة  </div>
-                        </a>
-                      
-                      </li>
-                      <li class="menu-item">
-                        <a href="" class="menu-link">
-                          <i class="menu-icon tf-icons ti ti-box-multiple"></i>
-                          <div data-i18n="    قائمة الدخل        ">         قائمة الدخل   </div>
-                        </a>
-                      
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-            </aside>
+                </div>
+              </aside>
             <!-- / Menu -->
+          
             <!-- Content -->
            
-            <div class="container-xxl flex-grow-1 container-p-y">
-              <h4 class="py-3 mb-4 text-title-hadeer"><span class="text-muted fw-medium"></span> Dashboard</h4>
+            <div class="container-xxl flex-grow-1 container-p-y content-admin">
+              <div class="row">
+                <div class="col-xl">
+                  <div class="card mb-4">
+                    <div class="card-body p-4 pt-2">
+                      <h4 class="py-1 text-title-hadeer"><span class="text-muted fw-medium"></span>    المدفوعات</h4>
+                      <div class="accordion from-cllapse" id="accordionExample">
+                        <div class="accordion-item">
+                          <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                              <div class="d-flex justify-content-between">
+                                <div>
+                                  تاريخ  المدفوعات: <span class="mx-2">14/11/2023</span>
+
+                                </div>
+                                <div>
+                                    مرجعة السند: <span class="mx-2">14/11/2023</span>
+
+                                </div>
+                              </div>
+                            </button>
+                          </h2>
+                          <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                              <form class="row component-form pt-4 justify-content-md-start justify-content-center align-items-end">
+                                <div class="col-11 col-lg-4 mb-3">
+                                  <label class="form-label" for="basic-default-fullname">تاريخ  الحركة<span class="start-form">*</span></label>
+                                  <input type="date" class="form-control" id="basic-default-fullname" placeholder=" تاريخ الحركة ">
+                                </div>
+                                <div class="col-11 col-lg-4 mb-3">
+                                  <label for="select5Basic" class="form-label">   الدفع الى:<span class="start-form">*</span></label>
+
+                                    <select id="select5Basic" class="select2 form-select" data-allow-clear="true">
+                                      <option value="AK">   متنوعة</option>
+                                      <option value="HI">Hawaii</option>
+                                      <option value="CA">California</option>
+                                      <option value="NV">Nevada</option>
+                                      <option value="OR">Oregon</option>
+                                  
+                                    </select>
+
+                                </div>
+                                <div class="col-11 col-lg-4 mb-3">
+                                  <label for="select2Basic" class="form-label">   الدفع من:<span class="start-form">*</span></label>
+
+                                    <select id="select2Basic" class="select2 form-select" data-allow-clear="true">
+                                      <option value="AK">   البنك الاهلى</option>
+                                      <option value="HI">Hawaii</option>
+                                      <option value="CA">California</option>
+                                      <option value="NV">Nevada</option>
+                                      <option value="OR">Oregon</option>
+                                  
+                                    </select>
+
+                                </div>
+                                
+                                <div class="col-11 col-lg-4 mb-3">
+                                  <label class="form-label" for="basic-default-locetion">مرجع السند:<span class="start-form">*</span></label>
+                                  <input type="text" class="form-control" id="basic-default-locetion" placeholder="مرجع السند ">
+          
+                                </div>
+                                <div class="col-11 col-lg-4 mb-3">
+                                  <label class="form-label" for="basic-default-locetion"> لامر:<span class="start-form">*</span></label>
+                                  <input type="text" class="form-control" id="basic-default-locetion" placeholder=" لامر ">
+          
+                                </div>
+                              
+                                <div class="col-11 col-lg-4 mb-3">
+                                  <label class="form-label" for="basic-default-phone">   رصيد البنك:<span class="start-form">*</span></label>
+                                  <input type="text" id="basic-default-phone" class="form-control phone-mask" placeholder="   رصيد البنك">
+                                </div>
+                                <div class="col-11 col-lg-4 mb-3">
+                                  <label for="select2Basic" class="form-label">    الفرع:<span class="start-form">*</span></label>
+
+                                    <select id="select2Basic" class="select2 form-select" data-allow-clear="true">
+                                      <option value="AK">    البار</option>
+                                      <option value="HI">Hawaii</option>
+                                      <option value="CA">California</option>
+                                      <option value="NV">Nevada</option>
+                                      <option value="OR">Oregon</option>
+                                  
+                                    </select>
+
+                                </div>
+                                <div class="col-11 col-lg-4 mb-3">
+                                  <label for="select5Basic" class="form-label">   العملة<span class="start-form">*</span></label>
+
+                                  <div class="input-groupe">
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                      <i class="fa-solid fa-plus"></i>
+                                    </button>
+                                    <select id="select5Basic" class="select2 form-select" data-allow-clear="true">
+                                      <option value="AK">  ريال سعودى</option>
+                                      <option value="HI">Hawaii</option>
+                                      <option value="CA">California</option>
+                                      <option value="NV">Nevada</option>
+                                      <option value="OR">Oregon</option>
+                                  
+                                    </select>
+                                    </div>
+                                 
+                              
+                                </div>
+                              
+                              
+                                
+                                <div class="col-11 col-lg-12 mb-3">
+                                  <label class="form-label" for="basic-default-emile">   البيان<span class="start-form">*</span></label>
+                                  <textarea  class="form-control" id="basic-default-emile" rows="5"> </textarea>
+          
+                                </div>
+                              
+                               
+                              </form> 
+                              <!-- Modal  اضافة عملة-->
+                                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                      <div class="modal-dialog">
+                                        <div class="modal-content">
+                                          <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="exampleModalLabel">اضافة عملة جديدة</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                          </div>
+                                          <div class="modal-body">
+                                           <form>
+                                            <div class="col-11 col-lg-12 mb-3">
+                                              <label class="form-label" for="basic-default-locetion"> اسم العملة:<span class="start-form">*</span></label>
+                                              <input type="text" class="form-control" id="basic-default-locetion" placeholder=" اسم العملة ">
+                      
+                                            </div>
+                                           </form>
+                                          </div>
+                                          <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary">Save changes</button>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>  
+                            </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item">
+                          <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                              بنود الدفعة
+                            </button>
+                          </h2>
+                          <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                              <div class="table-responsive text-nowrap rounded card-datatable pt-4 pb-4">
+
+                                <table class="table table-bordered table-hover rounded tabel-table" id="my-table">
+                                  <thead class="table-light">
+                                    <tr class="fw-bold">
+                                   
+                                      <th class="fw-bold">كود الحساب</th>
+                                      <th class="fw-bold">وصف الحساب</th>
+                                      <th class="fw-bold"> قيمة</th>
+                                      <th class="fw-bold">مركز التكلفة</th>
+                                      <th class="fw-bold"> البيان</th>
+                                      <th class="fw-bold"> Actions</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody class="table-border-bottom-0">
+                                    <tr>
+                                  
+                                      <td class="w-20"> 
+                                        <input type="text" maxlength="9" class="form-control">
+                                            
+                                              
+                                       </td>
+                                
+                                      <td class="w-20"> <input type="text" maxlength="9" class="form-control">   </td>
+                                      <td> <input type="text" maxlength="9" class="form-control">     </td>
+                                      <td class="w-20">  
+                                        <input id="dropdowntree-tow"/>
+                                      </td>
+                                      <td class="w-20"><input type="text" class="form-control"></td>
+                                      <td class="d-flex">
+                                        <a class="bg-success text-bg-success p-1 d-flex align-items-center justify-content-center me-3 rounded" href="" title="تعديل"><i class="ti ti-pencil  fs-4"></i> </a>
+                                        <a class="bg-danger text-bg-danger p-1 d-flex align-items-center justify-content-center me-3 rounded" href="javascript:void(0);" title="حذف"><i class="ti ti-trash  fs-4"></i> </a>
+                                      
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                              
+                                </table>
+                                <div class=" w-100 pt-4 pb-4 px-4 ">
+                                  
+                                    <div class="d-flex justify-content-between w-70 align-items-center" style=" border-bottom: 1px solid #c1c0c8; padding: 10px;">
+                                         <h6 class="title-table fw-bold fs-5 mb-0">الاجمالى</h6>
+                                         <div class="d-flex justify-content-between title-m">
+                                          <div class="fw-bold fs-5">100%</div>
+                                         
+                                         </div>
+                                         
+                                         
+                                    </div>
+                        
+
+                                </div>
+                                <div>
+                                  <button type="submit" class="btn btn-primary  waves-effect waves-light" title="حفظ"><i class="fa-solid fa-check mx-2"></i>حفظ</button>
+                                  <a href="" class="btn btn-label-secondary waves-effect mx-3 mt-md-0" title="مشاهدة الكل"> 
+                                    <i class="ti-xs me-1 ti ti-eye-check me-1"></i>مشاهدة الكل
+                                  </a>
+                                  <div class="dropdown dropdown-tree" id="firstDropDownTree"></div>
+
+
+                                </div>
+
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                       
+                      </div>
+                      <div class="pt-2 pb-2 px-2 buttom-fixed">
+                        <div class=" w-100 p-2 ">
+                                  
+                          <div class="d-flex justify-content-between  align-items-center" style=" border-bottom: 1px solid #c1c0c8; padding: 10px;">
+                               <h6 class="title-table fw-bold fs-5 mb-0">الاجمالى</h6>
+                                <div class="fw-bold fs-5">100%</div>
+                               
+                          </div>
+                          
+
+
+                      </div>
+                        <button type="submit" class="btn btn-primary  waves-effect waves-light" title="حفظ"><i class="fa-solid fa-check"></i></button>
+                        <a href="" class="btn btn-label-secondary waves-effect mx-3 mt-md-0" title="مشاهدة الكل"> 
+                          <i class="ti-xs me-1 ti ti-eye-check me-1"></i>
+                        </a>
+
+                      </div>
+                    </div>
+                  </div>
+                 </div>
+              </div>
 
              
               
              
             </div>
-          
+
             <!--/ Content -->
             <div class="alert alert-primary text-black" role="alert">
              
@@ -1022,7 +1266,6 @@
           </div>
           <!--/ Content wrapper -->
         </div>
-
         <!--/ Layout container -->
       </div>
     </div>
@@ -1056,6 +1299,7 @@
               </div>
           </div>
          </div>
+         
     </div>
     
 </div>
@@ -1080,14 +1324,16 @@
     <script src="./assets/vendor/js/menu.js"></script>
 
     <!-- endbuild -->
+    <script src="./assets/vendor/libs/datatables-bs5/datatables-bootstrap5.js"></script>
 
     <!-- Vendors JS -->
     <script src="./assets/vendor/js/dropdown-hover.js"></script>
     <script src="./assets/vendor/js/mega-dropdown.js"></script>
+    <script src="./assets/vendor/libs/select2/select2.js"></script>
+    <script src="./assets/vendor/libs/bootstrap-select/bootstrap-select.js"></script>
     <!-- Vendors JS -->
     <script src="./assets/vendor/libs/apex-charts/apexcharts.js"></script>
   
-
     
     <!-- Main JS -->
     <script src="./assets/js/main.js"></script>
@@ -1101,7 +1347,31 @@
 
      <script src="./assets/vendor/js/chart.js"></script>
      <script src="./assets/js/dashboards-crm.js"></script>
-     <script src="./assets/dropdowntree.js"></script>
-     <script src="./assets/vendor/js/upload.js"></script>
+     <script src="./assets/js/forms-selects.js"></script>
+     <script src="./assets/kendo.all.min.js"></script>
+    <script src="./assets/vendor/js/upload.js"></script>
+
+<script>
+
+      
+  $('.tabel-table').on('keydown','tr td',function (e) {
+    var keyCode = e.keyCode;
+    if (keyCode !== 9) return;
+
+    var $this = $(this),
+        $lastTr = $('tr:last', $('table')),
+        $lastTd = $('td:last', $lastTr);
+
+    
+    if (($(e.target).closest('td')).is($lastTd)) {
+     
+
+        $lastTr.after($lastTr.clone());
+      
+    }
+    
+});
+   </script>
+
   </body>
 </html>
