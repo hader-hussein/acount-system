@@ -117,7 +117,7 @@ document.addEventListener("keydown", handleKeyboardShortcut);
 document.getElementById("saveButton").addEventListener("click", displayPrintoutMessage);
 
 document.addEventListener('keydown', (event) => {
-    if(event.ctrlKey && event.key == "Enter") {
+    if(event.key == "Enter") {
     alert("Ctrl+Enter key pressed");
     save();
   }
