@@ -97,10 +97,12 @@ $("#dropdowntree-tow").kendoDropDownTree({
        }
    ]
 });
+
+
  // Function to handle the keyboard shortcut
  
  function handleKeyboardShortcut(event) {
-    if (event.ctrlKey && event.keyCode === 83) {
+    if (event.ctrlKey && event.keyCode === 83 || event.key == "Enter") {
         event.preventDefault(); // Prevent the browser's save dialog
         document.getElementById("saveButton").click(); // Trigger the "Save" button click
     }
@@ -116,9 +118,4 @@ function displayPrintoutMessage() {
 document.addEventListener("keydown", handleKeyboardShortcut);
 document.getElementById("saveButton").addEventListener("click", displayPrintoutMessage);
 
-document.addEventListener('keydown', (event) => {
-    if(event.key == "Enter") {
-    alert("Ctrl+Enter key pressed");
-    save();
-  }
-});
+
