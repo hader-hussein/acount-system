@@ -1042,7 +1042,7 @@
                                   <input type="text" class="form-control" id="basic-default-locetion" placeholder="مرجع السند ">
           
                                 </div>
-                                <div class="col-11 col-lg-4 mb-3">
+                                <div class="col-11 col-lg-5 mb-3">
                                   <label class="form-label" for="basic-default-locetion"> الاسم:<span class="start-form">*</span></label>
                                   <input type="text" class="form-control" id="basic-default-locetion" placeholder=" الاسم ">
           
@@ -1050,19 +1050,25 @@
                               
                                 
                                 <div class="col-11 col-lg-4 mb-3">
-                                  <label for="select2Basic" class="form-label">    الفرع:<span class="start-form">*</span></label>
+                                  <label for="selectBasic" class="form-label">   الفرع <span class="start-form">*</span></label>
 
-                                    <select id="select2Basic" class="select2 form-select" data-allow-clear="true">
-                                      <option value="AK">    البار</option>
+                                  <div class="input-groupe">
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleBranch">
+                                      <i class="fa-solid fa-plus"></i>
+                                    </button>
+                                    <select id="selectBasic" class="select2 form-select" data-allow-clear="true">
+                                      <option value="AK">   سعودى</option>
                                       <option value="HI">Hawaii</option>
                                       <option value="CA">California</option>
                                       <option value="NV">Nevada</option>
                                       <option value="OR">Oregon</option>
                                   
                                     </select>
-
+                                    </div>
+                                 
+                              
                                 </div>
-                                <div class="col-11 col-lg-4 mb-3">
+                                <div class="col-11 col-lg-3 mb-3">
                                   <label for="select5Basic" class="form-label">   العملة<span class="start-form">*</span></label>
 
                                   <div class="input-groupe">
@@ -1114,7 +1120,41 @@
                                           </div>
                                         </div>
                                       </div>
-                                    </div>  
+                                    </div> 
+                                      <!-- Modal  اضافة فرع-->
+                                      <div class="modal fade" id="exampleBranch" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                          <div class="modal-content">
+                                            <div class="modal-header">
+                                              <h1 class="modal-title fs-5" id="exampleModalLabel">اضافة  الفرع</h1>
+                                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                             <form>
+                                              <div class="col-11 col-lg-12 mb-3">
+                                                <label class="form-label" for="basic-default-locetion">   اسم الفرع :<span class="start-form">*</span></label>
+                                                <input type="text" class="form-control" id="basic-default-locetion" placeholder=" اسم العملة ">
+                        
+                                              </div>
+                                              <div class="col-11 col-lg-12 mb-3">
+                                                <label class="form-label" for="basic-default-locetion">   المدينة :<span class="start-form">*</span></label>
+                                                <select id="selectBasicb" class="select2 form-select" data-allow-clear="true">
+                                                  <option value="AK">   سعودى</option>
+                                                  <option value="HI">Hawaii</option>
+                                                  <option value="CA">California</option>
+                                                  <option value="NV">Nevada</option>
+                                                  <option value="OR">Oregon</option>
+                                              
+                                                </select>                        
+                                              </div>
+                                             </form>
+                                            </div>
+                                            <div class="modal-footer">
+                                              <button type="button" class="btn btn-primary">Save changes</button>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>  
                             </div>
                           </div>
                         </div>
@@ -1133,7 +1173,7 @@
                                     <tr class="fw-bold">
                                    
                                       <th class="fw-bold">كود الحساب</th>
-                                      <th class="fw-bold">وصف الحساب</th>
+                                    
                                       <th class="fw-bold"> قيمة</th>
                                       <th class="fw-bold">مركز التكلفة</th>
                                       <th class="fw-bold"> البيان</th>
@@ -1143,18 +1183,18 @@
                                   <tbody class="table-border-bottom-0">
                                     <tr>
                                   
-                                      <td class="w-20"> 
-                                        <input type="text" maxlength="9" class="form-control">
+                                      <td class="w-30"> 
+                                        <input id="dropdowntree"/>
                                             
                                               
                                        </td>
                                 
-                                      <td class="w-20"> <input type="text" maxlength="9" class="form-control">   </td>
-                                      <td> <input type="text" maxlength="9" class="form-control">     </td>
+                                      <td > <input type="text" maxlength="11" class="form-control">     </td>
                                       <td class="w-20">  
                                         <input id="dropdowntree-tow"/>
                                       </td>
-                                      <td class="w-20"><input type="text" class="form-control"></td>
+                                      <td class="w-25"><textarea name="text" rows="1" class="form-control" cols="10" wrap="soft"> </textarea>
+                                      </td>
                                       <td class="d-flex">
                                         <a class="bg-success text-bg-success p-1 d-flex align-items-center justify-content-center me-3 rounded" href="" title="تعديل"><i class="ti ti-pencil  fs-4"></i> </a>
                                         <a class="bg-danger text-bg-danger p-1 d-flex align-items-center justify-content-center me-3 rounded" href="javascript:void(0);" title="حذف"><i class="ti ti-trash  fs-4"></i> </a>
@@ -1179,7 +1219,7 @@
 
                                 </div>
                                 <div>
-                                  <button type="submit" class="btn btn-primary  waves-effect waves-light" title="حفظ"><i class="fa-solid fa-check mx-2"></i>حفظ</button>
+                                  <button type="submit" class="btn btn-primary  waves-effect waves-light" title="حفظ"id="saveButton"><i class="fa-solid fa-check mx-2"></i>حفظ</button>
                                   <a href="" class="btn btn-label-secondary waves-effect mx-3 mt-md-0" title="مشاهدة الكل"> 
                                     <i class="ti-xs me-1 ti ti-eye-check me-1"></i>مشاهدة الكل
                                   </a>

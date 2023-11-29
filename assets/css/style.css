@@ -473,15 +473,25 @@ position: fixed;
 box-shadow: 0 -0.125rem 0.25rem rgba(165, 163, 174, 0.3);
   }
 }
-[dir=rtl] .buttom-fixed {
+[dir="rtl"] .buttom-fixed {
   right: auto;
   left: 0;
+}
+[dir="ltr"] .buttom-fixed {
+  left:auto;
+  right: 0;
 }
 .alert{
   display: flex;
   top: 15%;
   position: absolute !important;
+ 
+}
+[dir="rtl"] .alert{
   left:0px
+}
+[dir="ltr"] .alert{
+  right:0px
 }
 .input-groupe{
   display: grid;
@@ -527,4 +537,7 @@ box-shadow: 0 -0.125rem 0.25rem rgba(165, 163, 174, 0.3);
 .alert-primary{
   background-color: rgb(var(--theme-color))!important;
   color: #fff !important;
+}
+.w-30 {
+  width: 30% !important;
 }

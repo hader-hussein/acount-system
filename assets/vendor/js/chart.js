@@ -18,15 +18,16 @@ const updateRoot = value => root.style.setProperty("--theme-color", `var(--${val
 
 for(const input of inputs) {
   if(theme && input.value === theme) {
-   
+  
     input.checked = true;
-    
+  
     updateRoot(theme);
+   
   }
   
   input.onchange = e => {
     updateRoot(e.target.value);
-    e.preventDefault()
+   
 
     localStorage.setItem("theme-color", e.target.value);
   }
