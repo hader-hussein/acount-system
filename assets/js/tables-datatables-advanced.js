@@ -127,6 +127,13 @@ $(function () {
         { data: 'post' },
         { data: 'city' },
         { data: 'start_date' },
+        { data: 'salary' },
+        { data: 'full_name' },
+        { data: 'email' },
+        { data: 'post' },
+        { data: 'city' },
+        { data: 'start_date' },
+        { data: 'salary' },
         { data: 'salary' }
       ],
       orderCellsTop: true,

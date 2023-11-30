@@ -483,7 +483,7 @@ box-shadow: 0 -0.125rem 0.25rem rgba(165, 163, 174, 0.3);
 }
 .alert{
   display: flex;
-  top: 15%;
+  top: 12%;
   position: absolute !important;
  
 }
@@ -540,4 +540,11 @@ box-shadow: 0 -0.125rem 0.25rem rgba(165, 163, 174, 0.3);
 }
 .w-30 {
   width: 30% !important;
+}
+.tabel-all .table th {
+  padding-right: 5px !important;
+  padding-left: 5px !important;
+  font-weight: bold;
+  background-color: rgb(var(--theme-color))!important;
+  color: #fff !important;
 }
