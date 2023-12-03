@@ -48,6 +48,16 @@
     <link href="./assets/default-ocean-blue.css" rel="stylesheet">
     <link rel="stylesheet" href="./assets/vendor/css/rtl/theme-default.css" class="template-customizer-theme-css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
+    <!---->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write(decodeURIComponent('%3Cscript src="js/jquery.min.js"%3E%3C/script%3E'))</script>
+        <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/23.1.6/css/dx.material.blue.light.css" />
+        <script src="https://cdn3.devexpress.com/jslib/23.1.6/js/dx.all.js"></script><script>window.jQuery || document.write(decodeURIComponent('%3Cscript src="js/jquery.min.js"%3E%3C/script%3E'))</script>
+        <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/23.1.6/css/dx.material.blue.light.css" />
+    <!---->
+  
+    
     <!-- Helpers -->
     <script src="./assets/vendor/js/helpers.js"></script>
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
@@ -55,7 +65,7 @@
     <script src="./assets/vendor/js/template-customizer.js"></script>
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="./assets/js/config.js"></script>
-    
+  
   </head>
 
   <body>
@@ -1012,30 +1022,26 @@
                       <div class="row">
                         <div class="col-12">
                           <div class="card">
-                          
-                            <div class="card-datatable tabel-all">
-                              <table class="dt-column-search datatables-basic table table-responsive table-bordered">
-                                <thead>
-                                  <tr>
-                                    <th>تاريخ الحركة</th>
-                                    <th>نوع الحركة</th>
-                                    <th>حركة السند</th>
-                                    <th>الفرع</th>
-                                    <th>مرجعه السند</th>
-                                    <th>التسلسل الشهر</th>
-                                    <th> القيمة</th>
-                                    <th>البيان </th>
-                                    <th> المستخدم</th>
-                                    <th> تعديل بواسطة</th>
-                                    <th> action</th>
-                                    <th> المرفق</th>
-                                    <th> تحويل الى افتتاحى</th>
-                                  </tr>
-                                </thead>
-                            
-                              
-                              </table>
+                            <div class="dx-viewport">
+                              <div class="demo-container">
+                                <div id="gridContainer"></div>
+                                <div class="options">
+                                  <div class="caption">Options</div>
+                                  <div class="option">
+                                    <span>Apply Filter</span>
+                                    <div id="useFilterApplyButton"></div>
+                                  </div>
+                                  <div class="option">
+                                    <div id="filterRow"></div>
+                                  </div>
+                                  <div class="option">
+                                    <div id="headerFilter"></div>
+                                  </div>
+                                </div>
+                              </div>
                             </div>
+                            
+                          
                           </div>
                         </div>
                       </div>
@@ -1048,9 +1054,10 @@
 
              
               
-             
-            </div>
+              <button class="btn"id="saveButton" style="display: none;"></button>
 
+            </div>
+            <!---->
             <!--/ Content -->
             <div class="alert alert-primary text-black" role="alert">
              
@@ -1127,7 +1134,7 @@
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
 
-    <script src="./assets/vendor/libs/jquery/jquery.js"></script>
+    <!-- <script src="./assets/vendor/libs/jquery/jquery.js"></script> -->
     <script src="./assets/vendor/libs/popper/popper.js"></script>
     <script src="./assets/vendor/js/bootstrap.js"></script>
     <script src="./assets/vendor/libs/node-waves/node-waves.js"></script>
@@ -1165,9 +1172,8 @@
      <script src="./assets/kendo.all.min.js"></script>
     <script src="./assets/vendor/js/upload.js"></script>
     <!--tabel-data-->
-    <script src="./assets/js/tables-datatables-advanced.js"></script>
-    <script src="./assets/js/table-datatables-basic.js"></script>
-
+    <script src="./assets/js/devdata.js"></script>
+    <script src="./assets/js/dev-index.js"></script>
     <!--end-->
 
 <script>

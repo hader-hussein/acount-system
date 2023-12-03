@@ -548,3 +548,30 @@ box-shadow: 0 -0.125rem 0.25rem rgba(165, 163, 174, 0.3);
   background-color: rgb(var(--theme-color))!important;
   color: #fff !important;
 }
+#gridContainer {
+  height: 550px;
+}
+
+.dx-viewport .options {
+  padding: 20px;
+  margin-top: 20px;
+  background-color: rgba(191, 191, 191, 0.15);
+}
+
+.dx-viewport .caption {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.dx-viewport .option {
+  margin-top: 10px;
+}
+
+.dx-viewport .option > span {
+  margin-right: 10px;
+}
+
+.dx-viewport .option > .dx-selectbox {
+  display: inline-block;
+  vertical-align: middle;
+}

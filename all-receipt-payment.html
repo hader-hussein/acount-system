@@ -48,6 +48,15 @@
     <link href="./assets/default-ocean-blue.css" rel="stylesheet">
     <link rel="stylesheet" href="./assets/vendor/css/rtl/theme-default.css" class="template-customizer-theme-css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
+     <!---->
+
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+     <script>window.jQuery || document.write(decodeURIComponent('%3Cscript src="js/jquery.min.js"%3E%3C/script%3E'))</script>
+         <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/23.1.6/css/dx.material.blue.light.css" />
+         <script src="https://cdn3.devexpress.com/jslib/23.1.6/js/dx.all.js"></script><script>window.jQuery || document.write(decodeURIComponent('%3Cscript src="js/jquery.min.js"%3E%3C/script%3E'))</script>
+         <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/23.1.6/css/dx.material.blue.light.css" />
+     <!---->
+   
     <!-- Helpers -->
     <script src="./assets/vendor/js/helpers.js"></script>
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
@@ -1008,53 +1017,30 @@
                           </div>
                       </div>
                      <!-- Column Search -->
-                    <section id="column-search-datatable">
+                     <section id="column-search-datatable">
                       <div class="row">
                         <div class="col-12">
                           <div class="card">
-                          
-                            <div class="card-datatable tabel-all">
-                              <table class="dt-column-search datatables-basic table table-responsive table-bordered">
-                                <thead>
-                                  <tr>
-                                    <th>تاريخ الحركة</th>
-                                    <th>نوع الحركة</th>
-                                    <th>حركة السند</th>
-                                    <th>مرجعه السند</th>
-                                    <th> القيمة</th>
-                                    <th>البيان </th>
-                                    <th> المستخدم</th>
-                                   
-                                    <th> action</th>
-                                    
-                                  </tr>
-                                </thead>
-                                <tbody>
-                                  <tr>
-                                    <td>
-                                   1-3-2023
-                                    </td>
-                                    <td>سندات الصرف </td>
-                                    <td></td>
-                                    <td>1</td>
-                                    <td>5.00</td>
-                                    <td></td>
-                                    <td>admin</td>
-                                    <td>
-                                      <div class="d-flex">
-                                        <button class="btn bg-primary text-bg-primary p-1 d-flex align-items-center justify-content-center me-3 rounded" title="اظهر البيانات"><i class=" ti ti-eye-check fs-4"></i> </button>
-                                        <a class="bg-gray text-bg-success p-1 d-flex align-items-center justify-content-center me-3 rounded" href="" title="طباعة"><i class="ti ti-printer  fs-4"></i> </a>
-                                        <a class="bg-success text-bg-success p-1 d-flex align-items-center justify-content-center me-3 rounded" href="" title="تعديل"><i class="ti ti-pencil  fs-4"></i> </a>
-                                        <a class="bg-danger text-bg-danger p-1 d-flex align-items-center justify-content-center me-3 rounded" href="javascript:void(0);" title="حذف"><i class="ti ti-trash  fs-4"></i> </a>
-                                      
-                                      </div>
-                                    </td>
-                                  </tr>
-                                 
-                                </tbody>
-                               
-                              </table>
+                            <div class="dx-viewport">
+                              <div class="demo-container">
+                                <div id="gridContainer"></div>
+                                <div class="options">
+                                  <div class="caption">Options</div>
+                                  <div class="option">
+                                    <span>Apply Filter</span>
+                                    <div id="useFilterApplyButton"></div>
+                                  </div>
+                                  <div class="option">
+                                    <div id="filterRow"></div>
+                                  </div>
+                                  <div class="option">
+                                    <div id="headerFilter"></div>
+                                  </div>
+                                </div>
+                              </div>
                             </div>
+                            
+                          
                           </div>
                         </div>
                       </div>
@@ -1146,7 +1132,7 @@
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
 
-    <script src="./assets/vendor/libs/jquery/jquery.js"></script>
+    <!-- <script src="./assets/vendor/libs/jquery/jquery.js"></script> -->
     <script src="./assets/vendor/libs/popper/popper.js"></script>
     <script src="./assets/vendor/js/bootstrap.js"></script>
     <script src="./assets/vendor/libs/node-waves/node-waves.js"></script>
@@ -1184,8 +1170,8 @@
      <script src="./assets/kendo.all.min.js"></script>
     <script src="./assets/vendor/js/upload.js"></script>
     <!--tabel-data-->
-    <script src="./assets/js/tables-datatables-advanced.js"></script>
-    <script src="./assets/js/table-datatables-basic.js"></script>
+    <script src="./assets/js/devdata.js"></script>
+    <script src="./assets/js/dev-index.js"></script>
 
     <!--end-->
 
