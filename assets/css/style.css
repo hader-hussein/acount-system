@@ -601,3 +601,6 @@ color: #fff;
 .dx-datagrid .dx-header-filter-empty {
   color: rgb(255 255 255) !important;
 }
+[dir="rtl"] .dx-searchbox.dx-editor-filled .dx-texteditor-input{
+padding-right: 40px;
+}
