@@ -604,3 +604,13 @@ color: #fff;
 [dir="rtl"] .dx-searchbox.dx-editor-filled .dx-texteditor-input{
 padding-right: 40px;
 }
+.card-hover-border-gray:hover{
+border-bottom: 2px solid var(--theme-color);
+}
+.avatar-content{
+  color: rgb(var(--theme-color))!important;
+}
+.accordion-powers .accordion-button::after {
+
+display: none;
+}

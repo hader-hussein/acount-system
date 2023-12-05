@@ -44,19 +44,10 @@
     <link rel="stylesheet" href="./assets/vendor/libs/apex-charts/apex-charts.css" />
     <link rel="stylesheet" href="./assets/vendor/libs/select2/select2.css" />
     <link rel="stylesheet" href="./assets/vendor/libs/bootstrap-select/bootstrap-select.css" />
-    <link rel="stylesheet" type="text/css" href="./assets/vendor/libs/datatables-bs5/datatables.bootstrap5.css"> 
+
     <link href="./assets/default-ocean-blue.css" rel="stylesheet">
     <link rel="stylesheet" href="./assets/vendor/css/rtl/theme-default.css" class="template-customizer-theme-css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
-     <!---->
-
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-     <script>window.jQuery || document.write(decodeURIComponent('%3Cscript src="js/jquery.min.js"%3E%3C/script%3E'))</script>
-         <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/23.1.6/css/dx.material.blue.light.css" />
-         <script src="https://cdn3.devexpress.com/jslib/23.1.6/js/dx.all.js"></script><script>window.jQuery || document.write(decodeURIComponent('%3Cscript src="js/jquery.min.js"%3E%3C/script%3E'))</script>
-         <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/23.1.6/css/dx.material.blue.light.css" />
-     <!---->
-   
     <!-- Helpers -->
     <script src="./assets/vendor/js/helpers.js"></script>
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
@@ -608,7 +599,7 @@
                     </li>
 
                     <!-- stations -->
-                    <li class="menu-item">
+                    <li class="menu-item active">
                       <a href="javascript:void(0)" class="menu-link menu-toggle">
                         <i class="menu-icon tf-icons ti ti-layout-sidebar"></i>
                         <div data-i18n="التعريفات">التعريفات</div>
@@ -657,7 +648,7 @@
                             <div data-i18n="الأصناف">الاصناف </div>
                           </a>
                         </li>
-                        <li class="menu-item">
+                        <li class="menu-item active">
                           <a href="Settings.html" class="menu-link">
                             <i class="menu-icon tf-icons ti ti-arrows-maximize"></i>
                             <div data-i18n="الإعدادت">الإعدادت </div>
@@ -689,8 +680,8 @@
                             <i class="menu-icon tf-icons ti ti-forms"></i>
                             <div data-i18n="نقل حركات الحسابات">  نقل حركات الحسابات</div>
                           </a>
-                        </li>
-                         <li class="menu-item">
+                        </li> 
+                        <li class="menu-item">
                           <a href="" class="menu-link">
                             <i class="menu-icon tf-icons ti ti-color-swatch"></i>
                             <div data-i18n="شجرة الحسابات">  شجرة الحسابات</div>
@@ -702,23 +693,24 @@
                             <div data-i18n="إعدادات المستويات">   إعدادات المستويات</div>
                           </a>
                         </li>
+                       
+                      
                       </ul>
-                    </li> 
-
+                    </li>
                     <!-- Settings -->
-                    <li class="menu-item active">
+                    <li class="menu-item">
                       <a href="javascript:void(0)" class="menu-link menu-toggle">
                         <i class="menu-icon tf-icons ti ti-layout-grid-add"></i>
                         <div data-i18n="الحركات">الحركات </div>
                       </a>
                       <ul class="menu-sub">
-                        <li class="menu-item">
+                        <li class="menu-item ">
                           <a href="Daily-restrictions.html" class="menu-link">
                             <i class="menu-icon tf-icons ti ti-file"></i>
                             <div data-i18n="قيد اليومية"> قيد اليومية  </div>
                           </a>
                         </li>
-                        <li class="menu-item">
+                        <li class="menu-item ">
                           <a href="DailyPayments.html" class="menu-link">
                             <i class="menu-icon tf-icons ti ti-file-dollar"></i>
                             <div data-i18n=" المدفوعات"> المدفوعات   </div>
@@ -739,13 +731,13 @@
                             <div data-i18n=" الشيكات">  الشيكات  </div>
                           </a>
                         </li>
-                        <li class="menu-item active">
+                        <li class="menu-item">
                           <a href="Daily-receipt-voucher.html" class="menu-link">
                             <i class="menu-icon tf-icons ti ti-file-description"></i>
                             <div data-i18n=" سند القبض">  سند القبض  </div>
                           </a>
                         </li>
-                        <li class="menu-item ">
+                        <li class="menu-item">
                           <a href="Daily-receipt-Bill.html" class="menu-link">
                             <i class="menu-icon tf-icons ti ti-file-description"></i>
                             
@@ -1006,59 +998,99 @@
                 <div class="col-xl">
                   <div class="card mb-4">
                     <div class="card-body p-4 pt-2">
-                      <div class="row d-flex justify-content-between  mb-3 align-items-center pt-4">
-                          <div class="col">
-                            <strong class="text-title-hadeer text-tilte-b"><span class="text-muted fw-medium"> سندات القبض</span>  </strong>
-
-                          </div>
-                          <div class="col text-end">
-                            <a href="Daily-receipt-voucher.html" class="btn btn-primary waves-effect waves-light">اضافه </a>
-
-                          </div>
-                      </div>
-                     <!-- Column Search -->
-                    
-                            <!-- Column Search -->
-                    <section id="column-search-datatable">
-                      <div class="row">
-                        <div class="col-12">
-                          <div class="card">
-                            <div class="dx-viewport">
-                              <div class="demo-container">
-                                <div id="gridContainer"></div>
-                                <div class="options">
-                                  <div class="caption">Options</div>
-                                  <div class="option">
-                                    <span>Apply Filter</span>
-                                    <div id="useFilterApplyButton"></div>
-                                  </div>
-                                  <div class="option">
-                                    <div id="filterRow"></div>
-                                  </div>
-                                  <div class="option">
-                                    <div id="headerFilter"></div>
-                                  </div>
-                                </div>
-                              </div>
+                        <div class="row d-flex justify-content-between  mb-3 align-items-center pt-4">
+                            <div class="col">
+                              <strong class="text-title-hadeer text-tilte-b"><span class="text-muted fw-medium"> اعدادت حسابات المستخدمين</span>  </strong>
+  
                             </div>
-                            
-                          
-                          </div>
+                            <div class="col text-end">
+                              <button class="btn btn-primary waves-effect waves-light"data-bs-toggle="modal" data-bs-target="#createModal">انشاء مستخدم جديد </button>
+  
+                            </div>
+                                <!-- Modal --create-->
+                                    <div class="modal fade" id="createModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                      <div class="modal-dialog modal-xl">
+                                        <div class="modal-content">
+                                          <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="exampleModalLabel">انشاء حساب المستخدم </h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                          </div>
+                                          <div class="modal-body">
+                                            <form class="row component-form pt-4 justify-content-md-start justify-content-center align-items-end">
+                                              <div class="col-11 col-lg-6 mb-3">
+                                                <label class="form-label" for="basic-default-phone">    user login:</label>
+                                                <input type="text" id="basic-default-phone" class="form-control phone-mask" placeholder="     admin">
+                                              </div>
+                                              <div class="col-11 col-lg-6 mb-3">
+                                                <label class="form-label" for="basic-default-phone">    كلمة المرور :</label>
+                                                <input type="password" id="basic-default-phone" class="form-control phone-mask" placeholder="     admin">
+                                              </div>
+                                              <div class="col-11 col-lg-6 mb-3">
+                                                <label class="form-label" for="basic-default-phone">    تاكيد كلمة المرور :</label>
+                                                <input type="password" id="basic-default-phone" class="form-control phone-mask" placeholder="     admin">
+                                              </div>
+                                              <div class="col-11 col-lg-6 mb-3">
+                                                <label class="form-label" for="basic-default-phone">    الاسم بالكامل :</label>
+                                                <input type="text" id="basic-default-phone" class="form-control phone-mask" placeholder="     admin">
+                                              </div>
+                                              <div class="col-11 col-lg-6 mb-3">
+                                                <label class="form-label" for="basic-default-phone">    رقم الهاتف:</label>
+                                                <input type="text" id="basic-default-phone" class="form-control phone-mask" placeholder="    رقم الهاتف">
+                                              </div>
+                                              <div class="col-11 col-lg-6 mb-3">
+                                                <label class="form-label" for="basic-default-phone">     البريد الاكترونى:</label>
+                                                <input type="email" id="basic-default-phone" class="form-control phone-mask" placeholder="     البريد الاكترونى">
+                                              </div>
+                                              <div class="col-11 col-lg-6 mb-3">
+                                                <label for="selectBasic" class="form-label">    مجموعة الصلاحيات </label>
+                                                
+                                                  <select id="selectBasic" class="select2 form-select" data-allow-clear="true">
+                                                    <option value="AK">   مدير النظام</option>
+                                                    <option value="HI">Hawaii</option>
+                                                    <option value="CA">California</option>
+                                                    <option value="NV">Nevada</option>
+                                                    <option value="OR">Oregon</option>
+                                                
+                                                  </select>
+                                              </div>
+                                              <div class="col-11 col-lg-6 mb-3">
+                                                <label for="selectBasic1" class="form-label">    الغة </label>
+                                                
+                                                  <select id="selectBasic1" class="select2 form-select" data-allow-clear="true">
+                                                    <option value="AK">   العربية</option>
+                                                    <option value="HI">Hawaii</option>
+                                                    <option value="CA">California</option>
+                                                    <option value="NV">Nevada</option>
+                                                    <option value="OR">Oregon</option>
+                                                
+                                                  </select>
+                                            
+                                              
+                                            
+                                              </div>
+                                            </form>
+                                          </div>
+                                          <div class="modal-footer justify-content-start">
+                                            <button type="button" class="btn btn-primary">انشاء مستخدم</button>
+                                            <button type="button" class="btn btn-secondary">اظهار المستخدمين</button>
+                                          
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  <!---->
                         </div>
-                      </div>
-                    </section>
-                    <!--/ Column Search -->
-                            <!-- <div class="card-datatable tabel-all">
-                              <table class="dt-column-search datatables-basic table table-responsive table-bordered">
+                          <!---->
+                            <div class="card-datatable tabel-all">
+                              <table class="table table-responsive table-bordered">
                                 <thead>
                                   <tr>
-                                    <th>تاريخ الحركة</th>
-                                    <th>نوع الحركة</th>
-                                    <th>حركة السند</th>
-                                    <th>مرجعه السند</th>
-                                    <th> القيمة</th>
-                                    <th>البيان </th>
-                                    <th> المستخدم</th>
+                                    <th> اسم الدخول</th>
+                                    <th> الاسم بالكامل</th>
+                                    <th> رقم الهاتف</th>
+                                    <th> البريد الاكترونى</th>
+                                    <th> مجموعة الصلاحيات</th>
+                                    <th>تغير كلمة المرور </th>
                                    
                                     <th> action</th>
                                     
@@ -1067,19 +1099,16 @@
                                 <tbody>
                                   <tr>
                                     <td>
-                                   1-3-2023
+                                   admin
                                     </td>
-                                    <td>سندات الصرف </td>
-                                    <td></td>
-                                    <td>1</td>
-                                    <td>5.00</td>
-                                    <td></td>
-                                    <td>admin</td>
+                                    <td> admin </td>
+                                    <td>258963</td>
+                                    <td>admin@yahoo.com</td>
+                                    <td>مدير النظام</td>
+                                    <td>تغير كلمة المرور</td>
                                     <td>
                                       <div class="d-flex">
-                                        <button class="btn bg-primary text-bg-primary p-1 d-flex align-items-center justify-content-center me-3 rounded" title="اظهر البيانات"><i class=" ti ti-eye-check fs-4"></i> </button>
-                                        <a class="bg-gray text-bg-success p-1 d-flex align-items-center justify-content-center me-3 rounded" href="" title="طباعة"><i class="ti ti-printer  fs-4"></i> </a>
-                                        <a class="bg-success text-bg-success p-1 d-flex align-items-center justify-content-center me-3 rounded" href="" title="تعديل"><i class="ti ti-pencil  fs-4"></i> </a>
+                                        <button class="btn bg-success text-bg-success p-1 d-flex align-items-center justify-content-center me-3 rounded" data-bs-toggle="modal" data-bs-target="#editModal"title="تعديل"><i class="ti ti-pencil  fs-4"></i> </button>
                                         <a class="bg-danger text-bg-danger p-1 d-flex align-items-center justify-content-center me-3 rounded" href="javascript:void(0);" title="حذف"><i class="ti ti-trash  fs-4"></i> </a>
                                       
                                       </div>
@@ -1089,17 +1118,78 @@
                                 </tbody>
                                
                               </table>
-                            </div> -->
+                            </div> 
                         
-                    <!--/ Column Search -->
-                    </div>
+                  <!---->
                   </div>
                  </div>
               </div>
-
-             
+              <!-- Modal --edit-->
+              <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-xl">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="exampleModalLabel">اعداادت حاسبات المستخدمين </h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <form class="row component-form pt-4 justify-content-md-start justify-content-center align-items-end">
+                        <div class="col-11 col-lg-6 mb-3">
+                          <label class="form-label" for="basic-default-phone">    user login:</label>
+                          <input type="text" id="basic-default-phone" class="form-control phone-mask" placeholder="     admin">
+                        </div>
+                        <div class="col-11 col-lg-6 mb-3">
+                          <label class="form-label" for="basic-default-phone">    الاسم بالكامل :</label>
+                          <input type="text" id="basic-default-phone" class="form-control phone-mask" placeholder="     admin">
+                        </div>
+                        <div class="col-11 col-lg-6 mb-3">
+                          <label class="form-label" for="basic-default-phone">    رقم الهاتف:</label>
+                          <input type="text" id="basic-default-phone" class="form-control phone-mask" placeholder="    رقم الهاتف">
+                        </div>
+                        <div class="col-11 col-lg-6 mb-3">
+                          <label class="form-label" for="basic-default-phone">     البريد الاكترونى:</label>
+                          <input type="email" id="basic-default-phone" class="form-control phone-mask" placeholder="     البريد الاكترونى">
+                        </div>
+                        <div class="col-11 col-lg-6 mb-3">
+                          <label for="selectBasic" class="form-label">    مجموعة الصلاحيات </label>
+                          
+                            <select id="selectBasic" class="select2 form-select" data-allow-clear="true">
+                              <option value="AK">   مدير النظام</option>
+                              <option value="HI">Hawaii</option>
+                              <option value="CA">California</option>
+                              <option value="NV">Nevada</option>
+                              <option value="OR">Oregon</option>
+                          
+                            </select>
+                        </div>
+                        <div class="col-11 col-lg-6 mb-3">
+                          <label for="selectBasic1" class="form-label">    الغة </label>
+                          
+                            <select id="selectBasic1" class="select2 form-select" data-allow-clear="true">
+                              <option value="AK">   العربية</option>
+                              <option value="HI">Hawaii</option>
+                              <option value="CA">California</option>
+                              <option value="NV">Nevada</option>
+                              <option value="OR">Oregon</option>
+                          
+                            </select>
+                       
+                         
+                      
+                        </div>
+                      </form>
+                    </div>
+                    <div class="modal-footer justify-content-start">
+                      <button type="button" class="btn btn-primary">تحديث</button>
+                      <button type="button" class="btn btn-secondary">اظهار المستخدمين</button>
+                    
+                    </div>
+                  </div>
+                </div>
+              </div>
+             <!---->
               <button class="btn"id="saveButton" style="display: none;"></button>
- 
+
              
             </div>
 
@@ -1179,7 +1269,7 @@
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
 
-    <!-- <script src="./assets/vendor/libs/jquery/jquery.js"></script> -->
+    <script src="./assets/vendor/libs/jquery/jquery.js"></script>
     <script src="./assets/vendor/libs/popper/popper.js"></script>
     <script src="./assets/vendor/js/bootstrap.js"></script>
     <script src="./assets/vendor/libs/node-waves/node-waves.js"></script>
@@ -1216,11 +1306,6 @@
      <script src="./assets/js/forms-selects.js"></script>
      <script src="./assets/kendo.all.min.js"></script>
     <script src="./assets/vendor/js/upload.js"></script>
-    <!--tabel-data-->
-    <script src="./assets/js/devdata.js"></script>
-    <script src="./assets/js/dev-index.js"></script>
-
-    <!--end-->
 
 <script>
 

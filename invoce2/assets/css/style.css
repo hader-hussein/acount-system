@@ -1,0 +1,360 @@
+body{
+     margin: 0px;
+     padding: 0px;
+     box-sizing: border-box;
+     font-family: 'Cairo', sans-serif !important;
+ }
+ h1,h2,h3,h4,h5,h6{
+     margin: 0px;
+ }
+ body, html {height: 100%;}
+ p {
+   
+    margin-block-start: 0.25em;
+    margin-block-end: 0.25em;
+ }
+ .container{
+     padding: 0px 30px;
+    
+ }
+a{
+     text-decoration: none;
+}
+
+.d-flex{
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     flex-wrap: wrap
+}
+.content-content{
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -250px;
+}
+
+@media (max-width:768px) {
+    .content-content{
+        margin: 0 auto -250px;
+
+    }
+}
+ 
+.nav{
+    position: relative;
+}
+
+    .triangle{
+        clip-path: polygon(15% -2%, 104% 80%, 204% -5%);
+        background-color: #005289;
+        height: 250px;
+        position: absolute;
+        width: 100%;
+        z-index: 60;
+    }
+    .triangle-footer{
+        clip-path: polygon(104% 103%, -3% -1%, -1% 103%);
+        background-color: #005289;
+        height: 250px;
+        position: absolute;
+        width: 80%;
+        z-index: 60;  
+        left:0px
+    }
+    .triangle-tow{
+        clip-path: polygon(15% -2%, 83% 80%, 204% -5%);
+        background-color: #F59E24;
+        height: 205px; 
+        width: 90%;
+        right: 0px;
+    }
+    .triangle-tow-footer{
+        clip-path: polygon(100% 104%, 17% 1%, -1% 108%);
+        background-color: #F59E24;
+        height: 250px;
+        width: 90%;
+        left:0px
+       
+    }
+    .logo-prend{
+        position: absolute;
+    }
+    .invoice-content{
+        background-color: #F1F1F1;
+        width: 35%;
+        position: absolute;
+        top: 0px;
+        clip-path: polygon(50% 0%, 100% 10%, -129% 198%, -19% -4%);
+        height: 300px;
+        left: 0px;
+    }
+    .invoice-content-footer{
+        background-color: #F1F1F1;
+        width: 26%;
+        position: absolute;
+        top: 0px;
+        height: 250px;
+        clip-path: polygon(103% -3%, -3% 102%, 100% 101%);
+        right: 0px;
+    }
+    .content-box{
+        color: #17273F !important;
+    }
+
+
+.logo-prend{
+    top: 10px;
+    
+    float: right;
+    text-align: right;
+    right: 0px;
+    z-index: 1000;
+}
+
+.logo-prend img{
+    width: 100px;
+    height: 70px;
+}
+.logo-prend h6{
+    color: #F1F1F1;
+    font-size: 16px;
+    font-weight: bold;
+}
+.invoice-content{
+    background-color: #F1F1F1;
+    width: 35%;
+    top: 0px;
+    
+}
+ table{
+  
+     margin-top: 10px;
+     margin-bottom: 10px;
+    
+ }
+
+ tr th:first-child {
+    background-color: #F59E24
+  
+ }
+ 
+ 
+ tr td{
+    background-color: #E8E7EC;
+ }
+ .content-table::-webkit-scrollbar {
+width: 0px;
+ }
+ .table-responsive {
+     overflow-x: auto;
+     -webkit-overflow-scrolling: touch;
+    -overflow-scrolling: touch;
+ }
+ .text-nowrap {
+     white-space: nowrap !important;
+ }
+ 
+ table, th{
+     color: #fff;
+     font-size: 16px;
+ }
+ table, td{
+     color: #414042;
+     text-align: center;
+ }
+ table thead{
+     background-color: #005389;
+    
+ }
+ table, th, td {
+     border: 1px solid #F1F1F1;
+     border-collapse: collapse;
+   }
+   th, td {
+     padding: 5px;
+    
+   }
+ 
+  .footer-left a{
+   
+    color: #F1F1F1;
+    font-size: 16px;
+    font-weight: 400;
+  }
+ 
+  .content-box i{
+    background-color: #005389;
+    padding: 8px;
+    font-size: 16px;
+    color: #F1F1F1;
+    border-radius: 8px;
+  }
+  [dir="rtl"] .content-box i {
+    margin-left: 10px;
+}
+[dir="ltr"] .content-box i {
+    margin-right: 10px;
+}
+.title-footer{
+    padding: 5px 0px;
+    text-align: right;
+    font-weight: bold;
+    line-height: 16px;
+    font-size: 20px;
+    text-transform: capitalize;
+    color: #17273F;
+}
+.title-payment{
+    font-weight: bold;
+    line-height: 16px;
+    font-size: 20px;
+    color: #005389;
+    text-transform: capitalize;
+}
+.p-payment{
+ color: #17273F;
+ font-size: 16px;
+ font-weight: 400;
+ line-height: 22px;
+
+}
+.p-payment span{
+    font-weight: bold;
+    text-transform: capitalize;
+    font-size: 18px;
+}
+[dir="ltr"] .p-payment span{
+padding-right: 10px;
+}
+[dir="rtl"] .p-payment span{
+    padding-left: 10px;
+    }
+    .content-title{
+        display: grid;
+        grid-template-columns: 1fr 1fr; 
+    }
+    .title-conditens{
+        
+        padding: 10px 5px;
+        color: #005389;
+        font-size: 18px;
+    }
+    .title-to{
+        background-color: #FA9A20 ;
+        color:  #fff;
+        padding: 10px 5px;
+        font-size: 18px;
+        text-align: center;
+        font-weight: bold;
+    }
+    .p-lorem{
+        padding: 10px 0px;
+    }
+    .p-lorem p{
+        text-wrap: wrap;
+        color: #17273F;
+        font-size: 16px;
+        line-height: 20px;
+    }
+    @media (min-width: 768px) {
+        .p-lorem{
+width: 50%;
+        }
+    }
+    .hadeer-nav{
+        background-color: #17273F;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+.hadeer-nav h6{
+color: #FA9A20;
+font-weight: bold;
+font-size: 16px;
+text-align: center;
+}
+.title-had-to{
+    padding-top: 20px;
+    color: #FA9A20;
+    text-transform: capitalize;
+    font-size: 20px;
+}
+
+.contact-content{
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 30px;
+    color: #17273F;
+    line-height: 24px;
+}
+.contact-content span{
+    font-size: 16px;
+    font-weight: 400;
+}
+.title-hadeer{
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 30px;
+    text-transform:uppercase;
+    padding-bottom: 10px;
+    color: #07507B;
+    padding-bottom: 0px;
+}
+@media (max-width:699px) {
+    .title-hadeer{
+        font-size: 18px;
+    }
+}
+.inoice-to{
+    font-size: 20px;
+    color: #414042;
+    
+}
+.text-center{
+    text-align: center;
+}
+.content-inoice-to{
+    width: 80%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: auto;
+}
+[dir="ltr"] .content-invoiceto{
+    border-right:2px solid #414042 ;
+}
+[dir="rtl"] .content-invoiceto{
+    border-left:2px solid #414042 ;
+}
+.content-footer{
+    position: relative;
+}
+#push_footer {
+    height: 200px; /* قيمة ثابتة */
+  }
+   .content-footer{
+    bottom: 0px;
+    height: 200px;
+   }
+[dir="rtl"] .invoice-content{
+text-align: left;
+}
+.content-f{
+    z-index: 100;
+    position: absolute;
+    top: 30%;
+    width: 100%;
+}
+
+.contact-content i {
+    background-color: #005389;
+    padding: 8px;
+    font-size: 16px;
+    color: #F1F1F1;
+    border-radius: 8px;
+}
+[dir="ltr"] .contact-content i {
+    margin-right: 10px;
+}
