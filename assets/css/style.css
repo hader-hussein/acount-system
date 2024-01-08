@@ -397,7 +397,7 @@ select:focus>option:checked
 color: #dbdade !important;
 
 }
-#my-table.table:not(.table-dark) thead:not(.table-dark) th {
+.table:not(.table-dark) thead:not(.table-dark) th {
   color: #fff !important;
 }
 
