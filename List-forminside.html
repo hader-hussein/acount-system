@@ -599,7 +599,7 @@
                     </li>
 
                     <!-- stations -->
-                    <li class="menu-item">
+                    <li class="menu-item active">
                       <a href="javascript:void(0)" class="menu-link menu-toggle">
                         <i class="menu-icon tf-icons ti ti-layout-sidebar"></i>
                         <div data-i18n="التعريفات">التعريفات</div>
@@ -648,7 +648,7 @@
                             <div data-i18n="الأصناف">الاصناف </div>
                           </a>
                         </li>
-                        <li class="menu-item">
+                        <li class="menu-item active">
                           <a href="Settings.html" class="menu-link">
                             <i class="menu-icon tf-icons ti ti-arrows-maximize"></i>
                             <div data-i18n="الإعدادت">الإعدادت </div>
@@ -698,7 +698,7 @@
                       </ul>
                     </li>
                     <!-- Settings -->
-                    <li class="menu-item active">
+                    <li class="menu-item">
                       <a href="javascript:void(0)" class="menu-link menu-toggle">
                         <i class="menu-icon tf-icons ti ti-layout-grid-add"></i>
                         <div data-i18n="الحركات">الحركات </div>
@@ -710,7 +710,7 @@
                             <div data-i18n="قيد اليومية"> قيد اليومية  </div>
                           </a>
                         </li>
-                        <li class="menu-item active">
+                        <li class="menu-item ">
                           <a href="DailyPayments.html" class="menu-link">
                             <i class="menu-icon tf-icons ti ti-file-dollar"></i>
                             <div data-i18n=" المدفوعات"> المدفوعات   </div>
@@ -994,291 +994,63 @@
             <!-- Content -->
            
             <div class="container-xxl flex-grow-1 container-p-y content-admin">
-              <div class="row">
+              <div class="row mx-0">
                 <div class="col-xl">
-                  <div class="card mb-4">
-                    <div class="card-body p-4 pt-2">
-                      <h4 class="py-1 text-title-hadeer"><span class="text-muted fw-medium"></span>    المدفوعات</h4>
-                      <div class="accordion from-cllapse" id="accordionExample">
-                        <form class="row component-form pt-4 justify-content-md-start justify-content-center align-items-end">
-
-                          <div class="accordion-item">
-                            <h2 class="accordion-header">
-                              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                <div class="d-flex justify-content-between">
-                                  <div>
-                                    تاريخ  المدفوعات: <span class="mx-2">14/11/2023</span>
-
-                                  </div>
-                                  <div>
-                                      مرجعة السند: <span class="mx-2">14/11/2023</span>
-
-                                  </div>
-                                </div>
-                              </button>
-                            </h2>
-                            <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-                              <div class="accordion-body">
-                                <div class="row mx-0 component-form pt-4 justify-content-md-start justify-content-center align-items-end">
-                                  <div class="col-11 col-lg-4 mb-3">
-                                    <label class="form-label" for="basic-default-fullname">تاريخ  الحركة<span class="start-form">*</span></label>
-                                    <input type="date" class="form-control" id="basic-default-fullname" placeholder=" تاريخ الحركة ">
-                                  </div>
-                                  <div class="col-11 col-lg-4 mb-3">
-                                    <label for="select5Basic" class="form-label">   الدفع الى:<span class="start-form">*</span></label>
-
-                                      <select id="select5Basic" class="select2 form-select" data-allow-clear="true">
-                                        <option value="AK">   متنوعة</option>
-                                        <option value="HI">Hawaii</option>
-                                        <option value="CA">California</option>
-                                        <option value="NV">Nevada</option>
-                                        <option value="OR">Oregon</option>
-                                    
-                                      </select>
-
-                                  </div>
-                                  <div class="col-11 col-lg-4 mb-3">
-                                    <label for="select2Basic" class="form-label">   الدفع من:<span class="start-form">*</span></label>
-
-                                      <select id="select2Basic" class="select2 form-select" data-allow-clear="true">
-                                        <option value="AK">   البنك الاهلى</option>
-                                        <option value="HI">Hawaii</option>
-                                        <option value="CA">California</option>
-                                        <option value="NV">Nevada</option>
-                                        <option value="OR">Oregon</option>
-                                    
-                                      </select>
-
-                                  </div>
-                                  
-                                  <div class="col-11 col-lg-4 mb-3">
-                                    <label class="form-label" for="basic-default-locetion">مرجع السند:<span class="start-form">*</span></label>
-                                    <input type="text" class="form-control" id="basic-default-locetion" placeholder="مرجع السند ">
-            
-                                  </div>
-                                  <div class="col-11 col-lg-4 mb-3">
-                                    <label class="form-label" for="basic-default-locetion"> لامر:<span class="start-form">*</span></label>
-                                    <input type="text" class="form-control" id="basic-default-locetion" placeholder=" لامر ">
-            
-                                  </div>
-                                
-                                  <div class="col-11 col-lg-4 mb-3">
-                                    <label class="form-label" for="basic-default-phone">   رصيد البنك:<span class="start-form">*</span></label>
-                                    <input type="text" id="basic-default-phone" class="form-control phone-mask" placeholder="   رصيد البنك">
-                                  </div>
-                                  <div class="col-11 col-lg-4 mb-3">
-                                    <label for="selectBasic" class="form-label">   الفرع <span class="start-form">*</span></label>
-
-                                    <div class="input-groupe">
-                                      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleBranch">
-                                        <i class="fa-solid fa-plus"></i>
-                                      </button>
-                                      <select id="selectBasic" class="select2 form-select" data-allow-clear="true">
-                                        <option value="AK">   سعودى</option>
-                                        <option value="HI">Hawaii</option>
-                                        <option value="CA">California</option>
-                                        <option value="NV">Nevada</option>
-                                        <option value="OR">Oregon</option>
-                                    
-                                      </select>
-                                      </div>
-                                  
-                                
-                                  </div>
-                                  <div class="col-11 col-lg-4 mb-3">
-                                    <label for="select5Basic" class="form-label">   العملة<span class="start-form">*</span></label>
-
-                                    <div class="input-groupe">
-                                      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                        <i class="fa-solid fa-plus"></i>
-                                      </button>
-                                      <select id="select5Basic" class="select2 form-select" data-allow-clear="true">
-                                        <option value="AK">  ريال سعودى</option>
-                                        <option value="HI">Hawaii</option>
-                                        <option value="CA">California</option>
-                                        <option value="NV">Nevada</option>
-                                        <option value="OR">Oregon</option>
-                                    
-                                      </select>
-                                      </div>
-                                  
-                                
-                                  </div>
-                                  <div class="col-11 col-lg-12 mb-3">
-                                    <label class="form-label" for="basic-default-emile">   البيان<span class="start-form">*</span></label>
-                                    <textarea  class="form-control" id="basic-default-emile" rows="5"> </textarea>
-            
-                                  </div>
-                              
-                                
-                                </div> 
-                               
-                              </div>
-                            </div>
-                          </div>
-                          <!--item-->
-                          <div class="accordion-item">
-                            <h2 class="accordion-header">
-                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                بنود الدفعة
-                              </button>
-                            </h2>
-                            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                              <div class="accordion-body">
-                                <div class="table-responsive text-nowrap rounded card-datatable pt-4 pb-4">
-
-                                  <table class="table table-bordered table-hover rounded tabel-table" id="my-table">
+                     <div class="card mb-4">
+                        <div class="card-body p-4 pt-2">
+                                <strong class="text-title-hadeer text-tilte-b"><span class="text-muted fw-medium">     نموذج قائمة الداخل     </span>  </strong>
+                                <div class="card-datatable text-nowrap rounded pt-4">
+                                  <table class="table table-bordered table-hover rounded dt-row-grouping">
                                     <thead class="table-light">
                                       <tr class="fw-bold">
-                                    
-                                        <th class="fw-bold">كود الحساب</th>
+                                        <th class="fw-bold">التسلسل</th>
                                       
-                                        <th class="fw-bold"> قيمة</th>
-                                        <th class="fw-bold">مركز التكلفة</th>
-                                        <th class="fw-bold"> البيان</th>
-                                        <th class="fw-bold"> Actions</th>
+                                        <th class="fw-bold">       البيان</th>
+                                        <th class="fw-bold">     اسم الحساب</th>
+                                        
+                                    
                                       </tr>
                                     </thead>
                                     <tbody class="table-border-bottom-0">
                                       <tr>
-                                    
-                                        <td class="w-30"> 
-                                          <input id="dropdowntree"/>
-                                              
-                                                
+                                        <td>
+                                         #1
                                         </td>
-                                  
-                                        <td > <input type="text" maxlength="11" class="form-control">     </td>
-                                        <td class="w-20">  
-                                          <input id="dropdowntree-tow"/>
+                                        <td>
+                                          <input type="text" class="form-control" id="basic-default-emile" placeholder=" اجمالى المصروفات">
+                                         </td>
+                                        <td>  اجمالى المصروفات</td>
+
+                                      </tr>
+                                      <tr>
+                                        <td>
+                                         #2
                                         </td>
-                                        <td class="w-25"><textarea name="text" rows="1" class="form-control" cols="10" wrap="soft"> </textarea>
-                                        </td>
-                                        <td class="d-flex">
-                                          <a class="bg-success text-bg-success p-1 d-flex align-items-center justify-content-center me-3 rounded" href="" title="تعديل"><i class="ti ti-pencil  fs-4"></i> </a>
-                                          <a class="bg-danger text-bg-danger p-1 d-flex align-items-center justify-content-center me-3 rounded" href="javascript:void(0);" title="حذف"><i class="ti ti-trash  fs-4"></i> </a>
-                                        
-                                        </td>
+                                        <td>
+                                          <input type="text" class="form-control" id="basic-default-emile" placeholder=" اجمالى المصروفات">
+                                         </td>
+                                        <td>   المصروفات الادراية والعمومية</td>
+
                                       </tr>
                                     </tbody>
-                                
-                                  </table>
-                                  <div class=" w-100 pt-4 pb-4 px-4 ">
                                     
-                                      <div class="d-flex justify-content-between w-70 align-items-center" style=" border-bottom: 1px solid #c1c0c8; padding: 10px;">
-                                          <h6 class="title-table fw-bold fs-5 mb-0">الاجمالى</h6>
-                                          <div class="d-flex justify-content-between title-m">
-                                            <div class="fw-bold fs-5">100%</div>
-                                          
-                                          </div>
-                                          
-                                          
-                                      </div>
-                          
-
-                                  </div>
-                                  <div>
-                                    <button type="submit" class="btn btn-primary  waves-effect waves-light" title="حفظ"><i class="fa-solid fa-check mx-2"></i>حفظ</button>
-                                    <a href="all-receipt-payment.html" class="btn btn-label-secondary waves-effect mx-3 mt-md-0" title="مشاهدة الكل"> 
-                                      <i class="ti-xs me-1 ti ti-eye-check me-1"></i>مشاهدة الكل
-                                    </a>
-                                    <div class="dropdown dropdown-tree" id="firstDropDownTree"></div>
-
-
-                                  </div>
-
+                                  </table>
                                 </div>
-                              </div>
-                            </div>
-                          </div>
-                        <!--item-->
-                       </form>
-                      </div>
-                       <!-- Modal  اضافة عملة-->
-                       <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                          <div class="modal-content">
-                            <div class="modal-header">
-                              <h1 class="modal-title fs-5" id="exampleModalLabel">اضافة عملة جديدة</h1>
-                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                            <form>
-                              <div class="col-11 col-lg-12 mb-3">
-                                <label class="form-label" for="basic-default-locetion"> اسم العملة:<span class="start-form">*</span></label>
-                                <input type="text" class="form-control" id="basic-default-locetion" placeholder=" اسم العملة ">
-        
-                              </div>
-                            </form>
-                            </div>
-                            <div class="modal-footer">
-                              <button type="button" class="btn btn-primary">Save changes</button>
-                            </div>
-                          </div>
-                        </div>
-                      </div>  
-
-                      <!-- Modal  اضافة فرع-->
-                      <div class="modal fade" id="exampleBranch" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                          <div class="modal-content">
-                            <div class="modal-header">
-                              <h1 class="modal-title fs-5" id="exampleModalLabel">اضافة  الفرع</h1>
-                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                            <form>
-                              <div class="col-11 col-lg-12 mb-3">
-                                <label class="form-label" for="basic-default-locetion">   اسم الفرع :<span class="start-form">*</span></label>
-                                <input type="text" class="form-control" id="basic-default-locetion" placeholder=" اسم العملة ">
-        
-                              </div>
-                              <div class="col-11 col-lg-12 mb-3">
-                                <label class="form-label" for="basic-default-locetion">   المدينة :<span class="start-form">*</span></label>
-                                <select id="selectBasicb" class="select2 form-select" data-allow-clear="true">
-                                  <option value="AK">   سعودى</option>
-                                  <option value="HI">Hawaii</option>
-                                  <option value="CA">California</option>
-                                  <option value="NV">Nevada</option>
-                                  <option value="OR">Oregon</option>
-                              
-                                </select>                        
-                              </div>
-                            </form>
-                            </div>
-                            <div class="modal-footer">
-                              <button type="button" class="btn btn-primary">Save changes</button>
-                            </div>
-                          </div>
-                        </div>
-                      </div>  
-                      <!---->
-                      <div class="pt-2 pb-2 px-2 buttom-fixed">
-                        <div class=" w-100 p-2 ">
+                                <div class="col-12 text-center mt-3">
+                                  <button type="submit" class="btn btn-primary  waves-effect waves-light" title="حفظ" id="saveButton"><i class="fa-solid fa-check mx-2"></i>  
+                                    حفظ البيانات
+                                  </button>
                                   
-                          <div class="d-flex justify-content-between  align-items-center" style=" border-bottom: 1px solid #c1c0c8; padding: 10px;">
-                               <h6 class="title-table fw-bold fs-5 mb-0">الاجمالى</h6>
-                                <div class="fw-bold fs-5">100%</div>
-                               
-                          </div>
-                          
-
-
-                      </div>
-                        <button type="submit" class="btn btn-primary  waves-effect waves-light" title="حفظ"id="saveButton"><i class="fa-solid fa-check"></i></button>
-                        <a href="all-receipt-payment.html" class="btn btn-label-secondary waves-effect mx-3 mt-md-0" title="مشاهدة الكل"> 
-                          <i class="ti-xs me-1 ti ti-eye-check me-1"></i>
-                        </a>
-
-                      </div>
-                      <!---->
-                    </div>
-                  </div>
+                                </div>
+                                
+                        
+                        </div>
+                     </div>
                  </div>
               </div>
+          
+              <button class="btn"id="saveButton" style="display: none;"></button>
 
-             
-              
              
             </div>
 
@@ -1289,8 +1061,6 @@
               Ctrl+p للطباعه!---
              Crrl+x للحذف
             </div>
-            <!--keyboard shortcut-->
-         
             <!-- Footer -->
             <footer class="content-footer footer bg-footer-theme">
               <div class="container-xxl">
@@ -1397,28 +1167,6 @@
      <script src="./assets/js/forms-selects.js"></script>
      <script src="./assets/kendo.all.min.js"></script>
     <script src="./assets/vendor/js/upload.js"></script>
-
-<script>
-
-      
-  $('.tabel-table').on('keydown','tr td',function (e) {
-    var keyCode = e.keyCode;
-    if (keyCode !== 9) return;
-
-    var $this = $(this),
-        $lastTr = $('tr:last', $('table')),
-        $lastTd = $('td:last', $lastTr);
-
-    
-    if (($(e.target).closest('td')).is($lastTd)) {
-     
-
-        $lastTr.after($lastTr.clone());
-      
-    }
-    
-});
-   </script>
 
   </body>
 </html>

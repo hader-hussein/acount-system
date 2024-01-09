@@ -400,7 +400,10 @@ color: #dbdade !important;
 .table:not(.table-dark) thead:not(.table-dark) th {
   color: #fff !important;
 }
-
+.table-tfoot tr .one-toot{
+  background-color:rgb(var(--theme-color))!important;
+  color: #fff !important;
+}
 
 .form-label {
   font-size: 1rem  !important;

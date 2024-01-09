@@ -999,6 +999,8 @@
                     <div class="card-body p-4 pt-2">
                       <h4 class="py-1 text-title-hadeer"><span class="text-muted fw-medium"></span>  ادخال قيود اليوميةالعامة</h4>
                       <div class="accordion from-cllapse" id="accordionExample">
+                        <form class="row mx-0 component-form pt-4 justify-content-md-start justify-content-center align-items-end">
+
                         <div class="accordion-item">
                           <h2 class="accordion-header">
                             <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -1016,7 +1018,7 @@
                           </h2>
                           <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                              <form class="row component-form pt-4 justify-content-md-start justify-content-center align-items-end">
+                              <div class="row component-form pt-4 justify-content-md-start justify-content-center align-items-end">
                                 <div class="col-11 col-lg-4 mb-3">
                                   <label class="form-label" for="basic-default-fullname">تاريخ دفتر اليومية<span class="start-form">*</span></label>
                                   <input type="date" class="form-control" id="basic-default-fullname" placeholder=" تاريخ دفتر اليومية">
@@ -1103,67 +1105,12 @@
                                 </div>
                               
                                
-                              </form> 
-                              <!-- Modal  اضافة عملة-->
-                                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                      <div class="modal-dialog">
-                                        <div class="modal-content">
-                                          <div class="modal-header">
-                                            <h1 class="modal-title fs-5" id="exampleModalLabel">اضافة عملة جديدة</h1>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                          </div>
-                                          <div class="modal-body">
-                                           <form>
-                                            <div class="col-11 col-lg-12 mb-3">
-                                              <label class="form-label" for="basic-default-locetion"> اسم العملة:<span class="start-form">*</span></label>
-                                              <input type="text" class="form-control" id="basic-default-locetion" placeholder=" اسم العملة ">
-                      
-                                            </div>
-                                           </form>
-                                          </div>
-                                          <div class="modal-footer">
-                                            <button type="button" class="btn btn-primary">Save changes</button>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>  
-                                      <!-- Modal  اضافة فرع-->
-                                      <div class="modal fade" id="exampleBranch" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog">
-                                          <div class="modal-content">
-                                            <div class="modal-header">
-                                              <h1 class="modal-title fs-5" id="exampleModalLabel">اضافة  الفرع</h1>
-                                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                            </div>
-                                            <div class="modal-body">
-                                             <form>
-                                              <div class="col-11 col-lg-12 mb-3">
-                                                <label class="form-label" for="basic-default-locetion">   اسم الفرع :<span class="start-form">*</span></label>
-                                                <input type="text" class="form-control" id="basic-default-locetion" placeholder=" اسم العملة ">
-                        
-                                              </div>
-                                              <div class="col-11 col-lg-12 mb-3">
-                                                <label class="form-label" for="basic-default-locetion">   المدينة :<span class="start-form">*</span></label>
-                                                <select id="selectBasicb" class="select2 form-select" data-allow-clear="true">
-                                                  <option value="AK">   سعودى</option>
-                                                  <option value="HI">Hawaii</option>
-                                                  <option value="CA">California</option>
-                                                  <option value="NV">Nevada</option>
-                                                  <option value="OR">Oregon</option>
-                                              
-                                                </select>                        
-                                              </div>
-                                             </form>
-                                            </div>
-                                            <div class="modal-footer">
-                                              <button type="button" class="btn btn-primary">Save changes</button>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>  
+                              </div> 
+                             
                             </div>
                           </div>
                         </div>
+                        <!--accordion-item-->
                         <div class="accordion-item">
                           <h2 class="accordion-header">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
@@ -1248,8 +1195,67 @@
                             </div>
                           </div>
                         </div>
-                       
+                         <!--accordion-item-->
+
+                       </form>
                       </div>
+                       <!-- Modal  اضافة عملة-->
+                       <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h1 class="modal-title fs-5" id="exampleModalLabel">اضافة عملة جديدة</h1>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                             <form>
+                              <div class="col-11 col-lg-12 mb-3">
+                                <label class="form-label" for="basic-default-locetion"> اسم العملة:<span class="start-form">*</span></label>
+                                <input type="text" class="form-control" id="basic-default-locetion" placeholder=" اسم العملة ">
+        
+                              </div>
+                             </form>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-primary">Save changes</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>  
+                        <!-- Modal  اضافة فرع-->
+                        <div class="modal fade" id="exampleBranch" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">اضافة  الفرع</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                              </div>
+                              <div class="modal-body">
+                               <form>
+                                <div class="col-11 col-lg-12 mb-3">
+                                  <label class="form-label" for="basic-default-locetion">   اسم الفرع :<span class="start-form">*</span></label>
+                                  <input type="text" class="form-control" id="basic-default-locetion" placeholder=" اسم العملة ">
+          
+                                </div>
+                                <div class="col-11 col-lg-12 mb-3">
+                                  <label class="form-label" for="basic-default-locetion">   المدينة :<span class="start-form">*</span></label>
+                                  <select id="selectBasicb" class="select2 form-select" data-allow-clear="true">
+                                    <option value="AK">   سعودى</option>
+                                    <option value="HI">Hawaii</option>
+                                    <option value="CA">California</option>
+                                    <option value="NV">Nevada</option>
+                                    <option value="OR">Oregon</option>
+                                
+                                  </select>                        
+                                </div>
+                               </form>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>  
                       <div class="pt-2 pb-2 px-2 buttom-fixed">
                         <div class=" w-100 p-2 ">
                                   
