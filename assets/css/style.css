@@ -448,8 +448,9 @@ box-shadow: 0 -0.125rem 0.25rem rgba(165, 163, 174, 0.3);
 }
 .alert{
   display: flex;
-  top: 12%;
+  top: 20%;
   position: absolute !important;
+  z-index: 10000;
  
 }
 [dir="rtl"] .alert{
@@ -478,13 +479,7 @@ box-shadow: 0 -0.125rem 0.25rem rgba(165, 163, 174, 0.3);
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
-.nav-sidebar{
-  height: 0px;
-}
-.nav-sidebar.active {
-  height:58px;
 
-}
 [dir="rtl"] .content-admin.active {
   margin-top: 45px;
 }
@@ -581,4 +576,67 @@ display: none;
 }
 .user-seting{
   cursor: pointer;
+}
+.component-form .accordion-header{
+  background-color: rgb(var(--theme-color))!important;
+  color: #fff;
+  border-radius: 8px;
+}
+.img-porfoil {
+  position: relative;
+}
+.avatar-edit {
+  position: absolute;
+  z-index: 700;
+  bottom: 2px;
+}
+
+.avatar-edit {
+  left: 54%;
+}
+.avatar-edit input {
+  display: none;
+}
+.avatar-preview {
+  width: 130px;
+  height: 130px;
+  position: relative;
+  border: 6px solid var(--theme-color);
+  box-shadow: 0px 2px 4px 0px rgb(0 0 0 / 10%);
+  margin: 0 auto;
+
+}
+.avatar-preview > div {
+  width: 100%;
+  height: 100%;
+  /* border-radius: 100%; */
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.avatar-edit input + label {
+  display: flex;
+  width: 34px;
+  height: 34px;
+  margin-bottom: 0;
+  border-radius: 100%;
+  background: #FFFFFF;
+  border: 1px solid transparent;
+  box-shadow: 0px 2px 4px 0px rgb(0 0 0 / 12%);
+  cursor: pointer;
+  font-weight: normal;
+  transition: all 0.2s ease-in-out;
+  align-items: center;
+  justify-content: center;
+}
+.avatar-edit input + label:after {
+  content: "";
+  font-family: 'FontAwesome';
+  color: #000000;
+  position: absolute;
+  top: 7px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  margin: auto;
+  background-image: url(../img/avatars/pen.png);
 }

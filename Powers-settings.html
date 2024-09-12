@@ -1017,7 +1017,7 @@
           
             <!-- Content -->
            
-            <div class="container-xxl flex-grow-1 container-p-y content-admin">
+            <div class="container-xxl flex-grow-1 container-p-y content-admin pt-5 mt-4">
               <div class="card comonent-hader-top">
                 <div class="card-body py-2 px-md-2 px-2 pb-3 card-widget-separator">
                   <strong class="py-md-3 px-md-3 m text-title-hadeer text-tilte-b"><span class="text-muted">
@@ -1029,338 +1029,364 @@
               </div>
               <div class="card comonent-hader-top p-2 mt-4">
                            
-                    
-                      <form class="row component-form pt-4 justify-content-md-start justify-content-center align-items-end">
-                        <div class="col-12 col-lg-4 mb-3">
-                          <label for="selectBasic" class="form-label">     الدور الوظيفى </label>
-                          
-                            <select id="selectBasic" class="select2 form-select" data-allow-clear="true">
-                              <option value="AK">    دور وظيفى جديد</option>
-                              <option value="HI">الاستعلامات</option>
-                              <option value="CA">مدير النظام</option>
-                              <option value="NV">مندوب المبيعات</option>
-                              <option value="OR">مدير المخزون</option>
-                          
-                            </select>
+              
+                <!-- Role cards -->
+                <div class="row g-4">
+                  <div class="col-xl-4 col-lg-6 col-md-6">
+                    <div class="card">
+                      <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                          <h6 class="fw-normal mb-2">Total 4 users</h6>
+                          <ul class="list-unstyled d-flex align-items-center avatar-group mb-0">
+                            <li
+                              data-bs-toggle="tooltip"
+                              data-popup="tooltip-custom"
+                              data-bs-placement="top"
+                              title="Vinnie Mostowy"
+                              class="avatar avatar-sm pull-up">
+                              <img class="rounded-circle" src="./assets/img/avatars/5.png" alt="Avatar" />
+                            </li>
+                            <li
+                              data-bs-toggle="tooltip"
+                              data-popup="tooltip-custom"
+                              data-bs-placement="top"
+                              title="Allen Rieske"
+                              class="avatar avatar-sm pull-up">
+                              <img class="rounded-circle" src="./assets/img/avatars/12.png" alt="Avatar" />
+                            </li>
+                            <li
+                              data-bs-toggle="tooltip"
+                              data-popup="tooltip-custom"
+                              data-bs-placement="top"
+                              title="Julee Rossignol"
+                              class="avatar avatar-sm pull-up">
+                              <img class="rounded-circle" src="./assets/img/avatars/6.png" alt="Avatar" />
+                            </li>
+                            <li
+                              data-bs-toggle="tooltip"
+                              data-popup="tooltip-custom"
+                              data-bs-placement="top"
+                              title="Kaith D'souza"
+                              class="avatar avatar-sm pull-up">
+                              <img class="rounded-circle" src="./assets/img/avatars/3.png" alt="Avatar" />
+                            </li>
+                            <li
+                              data-bs-toggle="tooltip"
+                              data-popup="tooltip-custom"
+                              data-bs-placement="top"
+                              title="John Doe"
+                              class="avatar avatar-sm pull-up">
+                              <img class="rounded-circle" src="./assets/img/avatars/1.png" alt="Avatar" />
+                            </li>
+                          </ul>
                         </div>
-                        <div class="col-12 col-lg-4 mb-3">
-                          <label class="form-label" for="basic-default-phone">     اسم الدور الوظيفى :</label>
-                          <input type="text" id="basic-default-phone" class="form-control phone-mask" placeholder=" الاسم">
-                        </div>
-                        <div class="col-12 col-lg-4 mb-3">
-                          <label class="form-label" for="basic-default-phone">     وصف الدور الوظيفى :</label>
-                          <input type="text" id="basic-default-phone" class="form-control phone-mask" placeholder="     admin">
-                        </div>
-                        <!---->
-                          <div class="accordion-powers accordion row mx-0 px-0" id="accordionExample">
-                            <div class="accordion-item col-md-6 col-lg-4 mb-2">
-                              <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" >
-                                  
-                                  <div class="d-flex w-100 justify-content-between">
-                                    <label class="form-check-label w-100" for="flexCheckDefault">
-                                      اعدادت الشركة
-                                    </label>
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                    
-                                  </div>
-                                </button>
-                              </h2>
-                            </div>
-                            <div class="accordion-item col-md-6 col-lg-4 mb-2">
-                              <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button">
-                                    
-                                    <div class="d-flex w-100 justify-content-between">
-                                      <label class="form-check-label w-100" for="flexCheckDefault1">
-                                        اعدادات حاسبات المستخدمين
-                                      </label>
-                                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault1">
-                                      
-                                    </div>
-                                </button>
-                              </h2>
-                          
-                            </div>
-                            <div class="accordion-item col-md-6 col-lg-4 mb-2">
-                              <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" >
-                                   
-                                    <div class="d-flex w-100 justify-content-between">
-                                      <label class="form-check-label w-100" for="flexCheckDefault2">
-                                        اعدادات الوصول
-                                      </label>
-                                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault2">
-                                      
-                                    </div>
-                                </button>
-                              </h2>
-                            
-                            </div>
-                            <!---->
-                            <div class="accordion-item col-md-6 col-lg-4 mb-2">
-                              <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" >
-                                  
-                                  <div class="d-flex w-100 justify-content-between">
-                                    <label class="form-check-label w-100" for="flexCheckDefault3">
-                                      السنوات المالية
-                                    </label>
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault3">
-                                    
-                                  </div>
-                                </button>
-                              </h2>
-                            </div>
-                            <div class="accordion-item col-md-6 col-lg-4 mb-2">
-                              <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button">
-                                    
-                                    <div class="d-flex w-100 justify-content-between">
-                                      <label class="form-check-label w-100" for="flexCheckDefault4">
-                                       الاعدادات العامة للنظام  والاستاذ العام
-                                      </label>
-                                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault4">
-                                      
-                                    </div>
-                                </button>
-                              </h2>
-                          
-                            </div>
-                            <div class="accordion-item col-md-6 col-lg-4 mb-2">
-                              <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" >
-                                   
-                                    <div class="d-flex w-100 justify-content-between">
-                                      <label class="form-check-label w-100" for="flexCheckDefault5">
-                                       الاقسام الفرعية
-                                      </label>
-                                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault5">
-                                      
-                                    </div>
-                                </button>
-                              </h2>
-                            
-                            </div>
-                            <!---->
-                             <!---->
-                             <div class="accordion-item col-md-6 col-lg-4 mb-2">
-                              <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" >
-                                  
-                                  <div class="d-flex w-100 justify-content-between">
-                                    <label class="form-check-label w-100" for="flexCheckDefault6">
-                                     اقفال السنة
-                                    </label>
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault6">
-                                    
-                                  </div>
-                                </button>
-                              </h2>
-                            </div>
-                            <div class="accordion-item col-md-6 col-lg-4 mb-2">
-                              <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" >
-                                    
-                                    <div class="d-flex w-100 justify-content-between">
-                                      <label class="form-check-label w-100" for="flexCheckDefault7">
-                                       نقل حركة حساب
-                                      </label>
-                                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault7">
-                                      
-                                    </div>
-                                </button>
-                              </h2>
-                          
-                            </div>
-                            <div class="accordion-item col-md-6 col-lg-4 mb-2">
-                              <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" >
-                                   
-                                    <div class="d-flex w-100 justify-content-between">
-                                      <label class="form-check-label w-100" for="flexCheckDefault8">
-                                      الغاء الحركة
-                                      </label>
-                                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault8">
-                                      
-                                    </div>
-                                </button>
-                              </h2>
-                            
-                            </div>
-                            <div class="accordion-item col-md-6 col-lg-4 mb-2">
-                              <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" >
-                                   
-                                    <div class="d-flex w-100 justify-content-between">
-                                      <label class="form-check-label w-100" for="flexCheckDefault9">
-                                      النموذج الضريبى
-                                      </label>
-                                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault9">
-                                      
-                                    </div>
-                                </button>
-                              </h2>
-                            
-                            </div>
-                           
-                            <!---->
-                            <div class="accordion-item col-md-6 col-lg-4 mb-2">
-                              <h2 class="accordion-header">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                  <div class="d-flex w-100 justify-content-between">
-                                    <label class="form-check-label w-100" for="flexCheckDefault10">
-                                    المدفوعات
-                                    </label>
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault10">
-                                    
-                                  </div>
-                                </button>
-                              </h2>
-                              <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                                <div class="accordion-body row row-cols-lg-2 pt-2 row-cols-md-2 row-cols-1 mx-0">
-                                  <div class="col form-check mb-2">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault11">
-                                    <label class="form-check-label" for="flexCheckDefault11">
-                                       حفظ المدفوعات
-                                    </label>
-                                  </div>
-                                  <div class="col form-check mb-2">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked12" checked>
-                                    <label class="form-check-label" for="flexCheckChecked12">
-                                      عرض المدفوعات
-                                    </label>
-                                  </div>
-                                  <div class="col form-check mb-2">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault13">
-                                    <label class="form-check-label" for="flexCheckDefault13">
-                                       حذف المدفوعات
-                                    </label>
-                                  </div>
-                                  <div class="col form-check mb-2">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked14">
-                                    <label class="form-check-label" for="flexCheckChecked14">
-                                      تعديل المدفوعات
-                                    </label>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <!---->
-                            <!---->
-                            <div class="accordion-item col-md-6 col-lg-4 mb-2">
-                              <h2 class="accordion-header">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapsetow" aria-expanded="true" aria-controls="collapsetow">
-                                  <div class="d-flex w-100 justify-content-between">
-                                    <label class="form-check-label w-100" for="flexCheckDefault15">
-                                    القيود
-                                    </label>
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault15">
-                                    
-                                  </div>
-                                </button>
-                              </h2>
-                              <div id="collapsetow" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                                <div class="accordion-body row row-cols-lg-2 row-cols-md-2 row-cols-1 mx-0 pt-2">
-                                  <div class="col form-check mb-2">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault16">
-                                    <label class="form-check-label" for="flexCheckDefault16">
-                                       حفظ قيد اليومي
-                                    </label>
-                                  </div>
-                                  <div class="col form-check mb-2">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked17">
-                                    <label class="form-check-label" for="flexCheckChecked17">
-                                      عرض القيود اليومية
-                                    </label>
-                                  </div>
-                                  <div class="col form-check mb-2">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault18">
-                                    <label class="form-check-label" for="flexCheckDefault18">
-                                       حذف القيود اليومية
-                                    </label>
-                                  </div>
-                                  <div class="col form-check mb-2">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked19">
-                                    <label class="form-check-label" for="flexCheckChecked19">
-                                      تعديل القيود اليومية
-                                    </label>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <!---->
-                              <!---->
-                              <div class="accordion-item col-md-6 col-lg-4 mb-2">
-                                <h2 class="accordion-header">
-                                  <button class="accordion-button collapsed" type="button" >
-                                    
-                                    <div class="d-flex w-100 justify-content-between">
-                                      <label class="form-check-label w-100" for="flexCheckDefault20">
-                                        الايرادات والمصروفات المستحقة
-                                      </label>
-                                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault20">
-                                      
-                                    </div>
-                                  </button>
-                                </h2>
-                              </div>
-                              <!---->
-                               <!---->
-                               <div class="accordion-item col-md-6 col-lg-4 mb-2">
-                                <h2 class="accordion-header">
-                                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapsethere" aria-expanded="true" aria-controls="collapsetow">
-                                    <div class="d-flex w-100 justify-content-between">
-                                      <label class="form-check-label w-100" for="flexCheckDefault21">
-                                        الايدعات
-                                      </label>
-                                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault21">
-                                      
-                                    </div>
-                                  </button>
-                                </h2>
-                                <div id="collapsethere" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                                  <div class="accordion-body row row-cols-lg-2 pt-2 row-cols-md-2 row-cols-1 mx-0">
-                                    <div class="col form-check mb-2">
-                                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault22">
-                                      <label class="form-check-label" for="flexCheckDefault22">
-                                         حفظ  الايدعات
-                                      </label>
-                                    </div>
-                                    <div class="col form-check mb-2">
-                                      <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked23">
-                                      <label class="form-check-label" for="flexCheckChecked23">
-                                        عرض  الايدعات
-                                      </label>
-                                    </div>
-                                    <div class="col form-check mb-2">
-                                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault24">
-                                      <label class="form-check-label" for="flexCheckDefault24">
-                                         حذف  الايدعات
-                                      </label>
-                                    </div>
-                                    <div class="col form-check mb-2">
-                                      <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked25">
-                                      <label class="form-check-label" for="flexCheckChecked25">
-                                        تعديل  الايدعات
-                                      </label>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <!---->
+                        <div class="d-flex justify-content-between align-items-end mt-1">
+                          <div class="role-heading">
+                            <h4 class="mb-1">Administrator</h4>
+                            <a
+                              href="javascript:;"
+                              data-bs-toggle="modal"
+                              data-bs-target="#addRoleModal"
+                              class="role-edit-modal"
+                              ><span>Edit Role</span></a
+                            >
                           </div>
-                          <div class="pt-4 text-center">
-                            <button type="submit" class="btn btn-primary  waves-effect waves-light" title="حفظ" id="saveButton"><i class="fa-solid fa-check mx-2"></i>حفظ</button>
+                          <a href="javascript:void(0);" class="text-muted"><i class="ti ti-copy ti-md"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-4 col-lg-6 col-md-6">
+                    <div class="card">
+                      <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                          <h6 class="fw-normal mb-2">Total 7 users</h6>
+                          <ul class="list-unstyled d-flex align-items-center avatar-group mb-0">
+                            <li
+                              data-bs-toggle="tooltip"
+                              data-popup="tooltip-custom"
+                              data-bs-placement="top"
+                              title="Jimmy Ressula"
+                              class="avatar avatar-sm pull-up">
+                              <img class="rounded-circle" src="./assets/img/avatars/4.png" alt="Avatar" />
+                            </li>
+                            <li
+                              data-bs-toggle="tooltip"
+                              data-popup="tooltip-custom"
+                              data-bs-placement="top"
+                              title="John Doe"
+                              class="avatar avatar-sm pull-up">
+                              <img class="rounded-circle" src="./assets/img/avatars/1.png" alt="Avatar" />
+                            </li>
+                            <li
+                              data-bs-toggle="tooltip"
+                              data-popup="tooltip-custom"
+                              data-bs-placement="top"
+                              title="Kristi Lawker"
+                              class="avatar avatar-sm pull-up">
+                              <img class="rounded-circle" src="./assets/img/avatars/2.png" alt="Avatar" />
+                            </li>
+                            <li
+                              data-bs-toggle="tooltip"
+                              data-popup="tooltip-custom"
+                              data-bs-placement="top"
+                              title="Kaith D'souza"
+                              class="avatar avatar-sm pull-up">
+                              <img class="rounded-circle" src="./assets/img/avatars/3.png" alt="Avatar" />
+                            </li>
+                            <li
+                              data-bs-toggle="tooltip"
+                              data-popup="tooltip-custom"
+                              data-bs-placement="top"
+                              title="Danny Paul"
+                              class="avatar avatar-sm pull-up">
+                              <img class="rounded-circle" src="./assets/img/avatars/7.png" alt="Avatar" />
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-end mt-1">
+                          <div class="role-heading">
+                            <h4 class="mb-1">Manager</h4>
+                            <a
+                              href="javascript:;"
+                              data-bs-toggle="modal"
+                              data-bs-target="#addRoleModal"
+                              class="role-edit-modal"
+                              ><span>Edit Role</span></a
+                            >
                           </div>
-                        <!---->
-                      </form>
+                          <a href="javascript:void(0);" class="text-muted"><i class="ti ti-copy ti-md"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-4 col-lg-6 col-md-6">
+                    <div class="card">
+                      <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                          <h6 class="fw-normal mb-2">Total 5 users</h6>
+                          <ul class="list-unstyled d-flex align-items-center avatar-group mb-0">
+                            <li
+                              data-bs-toggle="tooltip"
+                              data-popup="tooltip-custom"
+                              data-bs-placement="top"
+                              title="Andrew Tye"
+                              class="avatar avatar-sm pull-up">
+                              <img class="rounded-circle" src="./assets/img/avatars/6.png" alt="Avatar" />
+                            </li>
+                            <li
+                              data-bs-toggle="tooltip"
+                              data-popup="tooltip-custom"
+                              data-bs-placement="top"
+                              title="Rishi Swaat"
+                              class="avatar avatar-sm pull-up">
+                              <img class="rounded-circle" src="./assets/img/avatars/9.png" alt="Avatar" />
+                            </li>
+                            <li
+                              data-bs-toggle="tooltip"
+                              data-popup="tooltip-custom"
+                              data-bs-placement="top"
+                              title="Rossie Kim"
+                              class="avatar avatar-sm pull-up">
+                              <img class="rounded-circle" src="./assets/img/avatars/12.png" alt="Avatar" />
+                            </li>
+                            <li
+                              data-bs-toggle="tooltip"
+                              data-popup="tooltip-custom"
+                              data-bs-placement="top"
+                              title="Kim Merchent"
+                              class="avatar avatar-sm pull-up">
+                              <img class="rounded-circle" src="./assets/img/avatars/10.png" alt="Avatar" />
+                            </li>
+                            <li
+                              data-bs-toggle="tooltip"
+                              data-popup="tooltip-custom"
+                              data-bs-placement="top"
+                              title="Sam D'souza"
+                              class="avatar avatar-sm pull-up">
+                              <img class="rounded-circle" src="./assets/img/avatars/13.png" alt="Avatar" />
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-end mt-1">
+                          <div class="role-heading">
+                            <h4 class="mb-1">Users</h4>
+                            <a
+                              href="javascript:;"
+                              data-bs-toggle="modal"
+                              data-bs-target="#addRoleModal"
+                              class="role-edit-modal"
+                              ><span>Edit Role</span></a
+                            >
+                          </div>
+                          <a href="javascript:void(0);" class="text-muted"><i class="ti ti-copy ti-md"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-4 col-lg-6 col-md-6">
+                    <div class="card">
+                      <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                          <h6 class="fw-normal mb-2">Total 3 users</h6>
+                          <ul class="list-unstyled d-flex align-items-center avatar-group mb-0">
+                            <li
+                              data-bs-toggle="tooltip"
+                              data-popup="tooltip-custom"
+                              data-bs-placement="top"
+                              title="Kim Karlos"
+                              class="avatar avatar-sm pull-up">
+                              <img class="rounded-circle" src="./assets/img/avatars/3.png" alt="Avatar" />
+                            </li>
+                            <li
+                              data-bs-toggle="tooltip"
+                              data-popup="tooltip-custom"
+                              data-bs-placement="top"
+                              title="Katy Turner"
+                              class="avatar avatar-sm pull-up">
+                              <img class="rounded-circle" src="./assets/img/avatars/9.png" alt="Avatar" />
+                            </li>
+                            <li
+                              data-bs-toggle="tooltip"
+                              data-popup="tooltip-custom"
+                              data-bs-placement="top"
+                              title="Peter Adward"
+                              class="avatar avatar-sm pull-up">
+                              <img class="rounded-circle" src="./assets/img/avatars/4.png" alt="Avatar" />
+                            </li>
+                            <li
+                              data-bs-toggle="tooltip"
+                              data-popup="tooltip-custom"
+                              data-bs-placement="top"
+                              title="Kaith D'souza"
+                              class="avatar avatar-sm pull-up">
+                              <img class="rounded-circle" src="./assets/img/avatars/10.png" alt="Avatar" />
+                            </li>
+                            <li
+                              data-bs-toggle="tooltip"
+                              data-popup="tooltip-custom"
+                              data-bs-placement="top"
+                              title="John Parker"
+                              class="avatar avatar-sm pull-up">
+                              <img class="rounded-circle" src="./assets/img/avatars/11.png" alt="Avatar" />
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-end mt-1">
+                          <div class="role-heading">
+                            <h4 class="mb-1">Support</h4>
+                            <a
+                              href="javascript:;"
+                              data-bs-toggle="modal"
+                              data-bs-target="#addRoleModal"
+                              class="role-edit-modal"
+                              ><span>Edit Role</span></a
+                            >
+                          </div>
+                          <a href="javascript:void(0);" class="text-muted"><i class="ti ti-copy ti-md"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-4 col-lg-6 col-md-6">
+                    <div class="card">
+                      <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                          <h6 class="fw-normal mb-2">Total 2 users</h6>
+                          <ul class="list-unstyled d-flex align-items-center avatar-group mb-0">
+                            <li
+                              data-bs-toggle="tooltip"
+                              data-popup="tooltip-custom"
+                              data-bs-placement="top"
+                              title="Kim Merchent"
+                              class="avatar avatar-sm pull-up">
+                              <img class="rounded-circle" src="./assets/img/avatars/10.png" alt="Avatar" />
+                            </li>
+                            <li
+                              data-bs-toggle="tooltip"
+                              data-popup="tooltip-custom"
+                              data-bs-placement="top"
+                              title="Sam D'souza"
+                              class="avatar avatar-sm pull-up">
+                              <img class="rounded-circle" src="./assets/img/avatars/13.png" alt="Avatar" />
+                            </li>
+                            <li
+                              data-bs-toggle="tooltip"
+                              data-popup="tooltip-custom"
+                              data-bs-placement="top"
+                              title="Nurvi Karlos"
+                              class="avatar avatar-sm pull-up">
+                              <img class="rounded-circle" src="./assets/img/avatars/5.png" alt="Avatar" />
+                            </li>
+                            <li
+                              data-bs-toggle="tooltip"
+                              data-popup="tooltip-custom"
+                              data-bs-placement="top"
+                              title="Andrew Tye"
+                              class="avatar avatar-sm pull-up">
+                              <img class="rounded-circle" src="./assets/img/avatars/8.png" alt="Avatar" />
+                            </li>
+                            <li
+                              data-bs-toggle="tooltip"
+                              data-popup="tooltip-custom"
+                              data-bs-placement="top"
+                              title="Rossie Kim"
+                              class="avatar avatar-sm pull-up">
+                              <img class="rounded-circle" src="./assets/img/avatars/9.png" alt="Avatar" />
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-end mt-1">
+                          <div class="role-heading">
+                            <h4 class="mb-1">Restricted User</h4>
+                            <a
+                              href="javascript:;"
+                              data-bs-toggle="modal"
+                              data-bs-target="#addRoleModal"
+                              class="role-edit-modal"
+                              ><span>Edit Role</span></a
+                            >
+                          </div>
+                          <a href="javascript:void(0);" class="text-muted"><i class="ti ti-copy ti-md"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-4 col-lg-6 col-md-6">
+                    <div class="card h-100">
+                      <div class="row h-100">
+                        <div class="col-sm-5">
+                          <div class="d-flex align-items-end h-100 justify-content-center mt-sm-0 mt-3">
+                            <img
+                              src="./assets/img/illustrations/add-new-roles.png"
+                              class="img-fluid mt-sm-4 mt-md-0"
+                              alt="add-new-roles"
+                              width="83" />
+                          </div>
+                        </div>
+                        <div class="col-sm-7">
+                          <div class="card-body text-sm-end text-center ps-sm-0">
+                            <button
+                              data-bs-target="#addRoleModal"
+                              data-bs-toggle="modal"
+                              class="btn btn-primary mb-2 text-nowrap add-new-role">
+                              Add New Role
+                            </button>
+                            <p class="mb-0 mt-1">Add role, if it does not exist</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                </div>
+                <!--/ Role cards -->
                    
           
               <button class="btn"id="saveButton" style="display: none;"></button>
 
              
-            </div>
+              </div>
 
             <!--/ Content -->
             <div class="alert alert-primary text-black" role="alert">
@@ -1369,26 +1395,269 @@
               Ctrl+p للطباعه!---
              Crrl+x للحذف
             </div>
-            <!-- Footer -->
-            <footer class="content-footer footer bg-footer-theme">
-              <div class="container-xxl">
-                <div
-                  class="footer-container d-flex align-items-center justify-content-center py-2 flex-md-row flex-column">
-                  <div>
-                    ©
-                    <script>
-                      document.write(new Date().getFullYear());
-                    </script>
-                    , made with ❤️ by Raito <a href="#" target="_blank" class="fw-medium">Raito</a>
+            <!-- Add Role Modal -->
+            <div class="modal fade" id="addRoleModal" tabindex="-1" aria-hidden="true">
+              <div class="modal-dialog modal-lg modal-dialog-centered modal-add-new-role">
+                <div class="modal-content p-3 p-md-5">
+                  <button
+                    type="button"
+                    class="btn-close btn-pinned"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+                  <div class="modal-body">
+                    <div class="text-center mb-4">
+                      <h3 class="role-title mb-2">Add New Role</h3>
+                      <p class="text-muted">Set role permissions</p>
+                    </div>
+                    <!-- Add role form -->
+                    <form id="addRoleForm" class="row g-3" onsubmit="return false">
+                      <div class="col-12 mb-4">
+                        <label class="form-label" for="modalRoleName">Role Name</label>
+                        <input
+                          type="text"
+                          id="modalRoleName"
+                          name="modalRoleName"
+                          class="form-control"
+                          placeholder="Enter a role name"
+                          tabindex="-1" />
+                      </div>
+                      <div class="col-12">
+                        <h5>Role Permissions</h5>
+                        <!-- Permission table -->
+                        <div class="table-responsive">
+                          <table class="table table-flush-spacing">
+                            <tbody>
+                              <tr>
+                                <td class="text-nowrap fw-medium">
+                                  Administrator Access
+                                  <i
+                                    class="ti ti-info-circle"
+                                    data-bs-toggle="tooltip"
+                                    data-bs-placement="top"
+                                    title="Allows a full access to the system"></i>
+                                </td>
+                                <td>
+                                  <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="selectAll" />
+                                    <label class="form-check-label" for="selectAll"> Select All </label>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td class="text-nowrap fw-medium">User Management</td>
+                                <td>
+                                  <div class="d-flex">
+                                    <div class="form-check me-3 me-lg-5">
+                                      <input class="form-check-input" type="checkbox" id="userManagementRead" />
+                                      <label class="form-check-label" for="userManagementRead"> Read </label>
+                                    </div>
+                                    <div class="form-check me-3 me-lg-5">
+                                      <input class="form-check-input" type="checkbox" id="userManagementWrite" />
+                                      <label class="form-check-label" for="userManagementWrite"> Write </label>
+                                    </div>
+                                    <div class="form-check">
+                                      <input class="form-check-input" type="checkbox" id="userManagementCreate" />
+                                      <label class="form-check-label" for="userManagementCreate"> Create </label>
+                                    </div>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td class="text-nowrap fw-medium">Content Management</td>
+                                <td>
+                                  <div class="d-flex">
+                                    <div class="form-check me-3 me-lg-5">
+                                      <input class="form-check-input" type="checkbox" id="contentManagementRead" />
+                                      <label class="form-check-label" for="contentManagementRead"> Read </label>
+                                    </div>
+                                    <div class="form-check me-3 me-lg-5">
+                                      <input class="form-check-input" type="checkbox" id="contentManagementWrite" />
+                                      <label class="form-check-label" for="contentManagementWrite"> Write </label>
+                                    </div>
+                                    <div class="form-check">
+                                      <input class="form-check-input" type="checkbox" id="contentManagementCreate" />
+                                      <label class="form-check-label" for="contentManagementCreate"> Create </label>
+                                    </div>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td class="text-nowrap fw-medium">Disputes Management</td>
+                                <td>
+                                  <div class="d-flex">
+                                    <div class="form-check me-3 me-lg-5">
+                                      <input class="form-check-input" type="checkbox" id="dispManagementRead" />
+                                      <label class="form-check-label" for="dispManagementRead"> Read </label>
+                                    </div>
+                                    <div class="form-check me-3 me-lg-5">
+                                      <input class="form-check-input" type="checkbox" id="dispManagementWrite" />
+                                      <label class="form-check-label" for="dispManagementWrite"> Write </label>
+                                    </div>
+                                    <div class="form-check">
+                                      <input class="form-check-input" type="checkbox" id="dispManagementCreate" />
+                                      <label class="form-check-label" for="dispManagementCreate"> Create </label>
+                                    </div>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td class="text-nowrap fw-medium">Database Management</td>
+                                <td>
+                                  <div class="d-flex">
+                                    <div class="form-check me-3 me-lg-5">
+                                      <input class="form-check-input" type="checkbox" id="dbManagementRead" />
+                                      <label class="form-check-label" for="dbManagementRead"> Read </label>
+                                    </div>
+                                    <div class="form-check me-3 me-lg-5">
+                                      <input class="form-check-input" type="checkbox" id="dbManagementWrite" />
+                                      <label class="form-check-label" for="dbManagementWrite"> Write </label>
+                                    </div>
+                                    <div class="form-check">
+                                      <input class="form-check-input" type="checkbox" id="dbManagementCreate" />
+                                      <label class="form-check-label" for="dbManagementCreate"> Create </label>
+                                    </div>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td class="text-nowrap fw-medium">Financial Management</td>
+                                <td>
+                                  <div class="d-flex">
+                                    <div class="form-check me-3 me-lg-5">
+                                      <input class="form-check-input" type="checkbox" id="finManagementRead" />
+                                      <label class="form-check-label" for="finManagementRead"> Read </label>
+                                    </div>
+                                    <div class="form-check me-3 me-lg-5">
+                                      <input class="form-check-input" type="checkbox" id="finManagementWrite" />
+                                      <label class="form-check-label" for="finManagementWrite"> Write </label>
+                                    </div>
+                                    <div class="form-check">
+                                      <input class="form-check-input" type="checkbox" id="finManagementCreate" />
+                                      <label class="form-check-label" for="finManagementCreate"> Create </label>
+                                    </div>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td class="text-nowrap fw-medium">Reporting</td>
+                                <td>
+                                  <div class="d-flex">
+                                    <div class="form-check me-3 me-lg-5">
+                                      <input class="form-check-input" type="checkbox" id="reportingRead" />
+                                      <label class="form-check-label" for="reportingRead"> Read </label>
+                                    </div>
+                                    <div class="form-check me-3 me-lg-5">
+                                      <input class="form-check-input" type="checkbox" id="reportingWrite" />
+                                      <label class="form-check-label" for="reportingWrite"> Write </label>
+                                    </div>
+                                    <div class="form-check">
+                                      <input class="form-check-input" type="checkbox" id="reportingCreate" />
+                                      <label class="form-check-label" for="reportingCreate"> Create </label>
+                                    </div>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td class="text-nowrap fw-medium">API Control</td>
+                                <td>
+                                  <div class="d-flex">
+                                    <div class="form-check me-3 me-lg-5">
+                                      <input class="form-check-input" type="checkbox" id="apiRead" />
+                                      <label class="form-check-label" for="apiRead"> Read </label>
+                                    </div>
+                                    <div class="form-check me-3 me-lg-5">
+                                      <input class="form-check-input" type="checkbox" id="apiWrite" />
+                                      <label class="form-check-label" for="apiWrite"> Write </label>
+                                    </div>
+                                    <div class="form-check">
+                                      <input class="form-check-input" type="checkbox" id="apiCreate" />
+                                      <label class="form-check-label" for="apiCreate"> Create </label>
+                                    </div>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td class="text-nowrap fw-medium">Repository Management</td>
+                                <td>
+                                  <div class="d-flex">
+                                    <div class="form-check me-3 me-lg-5">
+                                      <input class="form-check-input" type="checkbox" id="repoRead" />
+                                      <label class="form-check-label" for="repoRead"> Read </label>
+                                    </div>
+                                    <div class="form-check me-3 me-lg-5">
+                                      <input class="form-check-input" type="checkbox" id="repoWrite" />
+                                      <label class="form-check-label" for="repoWrite"> Write </label>
+                                    </div>
+                                    <div class="form-check">
+                                      <input class="form-check-input" type="checkbox" id="repoCreate" />
+                                      <label class="form-check-label" for="repoCreate"> Create </label>
+                                    </div>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td class="text-nowrap fw-medium">Payroll</td>
+                                <td>
+                                  <div class="d-flex">
+                                    <div class="form-check me-3 me-lg-5">
+                                      <input class="form-check-input" type="checkbox" id="payrollRead" />
+                                      <label class="form-check-label" for="payrollRead"> Read </label>
+                                    </div>
+                                    <div class="form-check me-3 me-lg-5">
+                                      <input class="form-check-input" type="checkbox" id="payrollWrite" />
+                                      <label class="form-check-label" for="payrollWrite"> Write </label>
+                                    </div>
+                                    <div class="form-check">
+                                      <input class="form-check-input" type="checkbox" id="payrollCreate" />
+                                      <label class="form-check-label" for="payrollCreate"> Create </label>
+                                    </div>
+                                  </div>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                        <!-- Permission table -->
+                      </div>
+                      <div class="col-12 text-center mt-4">
+                        <button type="submit" class="btn btn-primary me-sm-3 me-1">Submit</button>
+                        <button
+                          type="reset"
+                          class="btn btn-label-secondary"
+                          data-bs-dismiss="modal"
+                          aria-label="Close">
+                          Cancel
+                        </button>
+                      </div>
+                    </form>
+                    <!--/ Add role form -->
                   </div>
-            
                 </div>
               </div>
-            </footer>
-            <!-- / Footer -->
+            </div>
+            <!--/ Add Role Modal -->
+
+        
 
             <div class="content-backdrop fade"></div>
           </div>
+              <!-- Footer -->
+              <footer class="content-footer footer bg-footer-theme">
+                <div class="container-xxl">
+                  <div
+                    class="footer-container d-flex align-items-center justify-content-center py-2 flex-md-row flex-column">
+                    <div>
+                      ©
+                      <script>
+                        document.write(new Date().getFullYear());
+                      </script>
+                      , made with ❤️ by Raito <a href="#" target="_blank" class="fw-medium">Raito</a>
+                    </div>
+              
+                  </div>
+                </div>
+              </footer>
+              <!-- / Footer -->
           <!--/ Content wrapper -->
         </div>
         <!--/ Layout container -->
