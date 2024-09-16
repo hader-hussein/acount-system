@@ -26,28 +26,24 @@ $(function(){
         });
     }, 8000);
 });
-//nav
-// let togglee =document.querySelector('.navbar-toggler');
-// let vavber = document.querySelector('.nav-sidebar');
-// let minber = document.querySelector('.bg-dark-navber');
-// let contentd = document.querySelector('.content-admin');
-// togglee.onclick = function(){
-//   vavber.classList.toggle('active');
-//   minber.classList.toggle('active');
-//   contentd.classList.toggle('active');
-// }
-///////
-function readURL(input) {
-  if (input.files && input.files[0]) {
-      var reader = new FileReader();
 
-      reader.onload = function (e) {
-          $('#file_upload')
-              .attr('src', e.target.result);
-      };
-      reader.readAsDataURL(input.files[0]);
-  }
-}
+$('.tabel-table').on('keydown','tr td',function (e) {
+    var keyCode = e.keyCode;
+    if (keyCode !== 9) return;
+
+    var $this = $(this),
+        $lastTr = $('tr:last', $('table')),
+        $lastTd = $('td:last', $lastTr);
+
+    
+    if (($(e.target).closest('td')).is($lastTd)) {
+     
+
+        $lastTr.after($lastTr.clone());
+      
+    }
+    
+});
 $('.accordion-button').on('keydown',function (e) {
  
  
@@ -56,47 +52,47 @@ $('.accordion-button').on('keydown',function (e) {
    
  })
  /***firstDropDownTree */
-$("#dropdowntree").kendoDropDownTree({
-   placeholder: "Select ...",
-   filter: "startswith",
-   dataSource: [
-       {
-           text: "Furniture", expanded: true, items: [
-               { text: "Tables & Chairs" },
-               { text: "Sofas" },
-               { text: "Occasional Furniture" }
-           ]
-       },
-       {
-           text: "Decor", items: [
-               { text: "Bed Linen" },
-               { text: "Curtains & Blinds" },
-               { text: "Carpets" }
-           ]
-       }
-   ]
-});
+// $("#dropdowntree").kendoDropDownTree({
+//    placeholder: "Select ...",
+//    filter: "startswith",
+//    dataSource: [
+//        {
+//            text: "Furniture", expanded: true, items: [
+//                { text: "Tables & Chairs" },
+//                { text: "Sofas" },
+//                { text: "Occasional Furniture" }
+//            ]
+//        },
+//        {
+//            text: "Decor", items: [
+//                { text: "Bed Linen" },
+//                { text: "Curtains & Blinds" },
+//                { text: "Carpets" }
+//            ]
+//        }
+//    ]
+// });
 /**tow */
-$("#dropdowntree-tow").kendoDropDownTree({
-   placeholder: "Select ...",
-   filter: "startswith",
-   dataSource: [
-       {
-           text: "Furniture", expanded: true, items: [
-               { text: "Tables & Chairs" },
-               { text: "Sofas" },
-               { text: "Occasional Furniture" }
-           ]
-       },
-       {
-           text: "Decor", items: [
-               { text: "Bed Linen" },
-               { text: "Curtains & Blinds" },
-               { text: "Carpets" }
-           ]
-       }
-   ]
-});
+// $("#dropdowntree-tow").kendoDropDownTree({
+//    placeholder: "Select ...",
+//    filter: "startswith",
+//    dataSource: [
+//        {
+//            text: "Furniture", expanded: true, items: [
+//                { text: "Tables & Chairs" },
+//                { text: "Sofas" },
+//                { text: "Occasional Furniture" }
+//            ]
+//        },
+//        {
+//            text: "Decor", items: [
+//                { text: "Bed Linen" },
+//                { text: "Curtains & Blinds" },
+//                { text: "Carpets" }
+//            ]
+//        }
+//    ]
+// });
 
 
  // Function to handle the keyboard shortcut
@@ -132,3 +128,72 @@ function readURL(input) {
   $("#imageUpload").change(function() {
     readURL(this);
   });
+
+/**upload-file */
+    const uploadArea = document.querySelector('.upload-area');
+    const fileList = document.querySelector('.file-list');
+
+    uploadArea.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      uploadArea.style.border = '2px dashed #007bff';
+    });
+
+    uploadArea.addEventListener('dragleave', () => {
+      uploadArea.style.border = '2px dashed #ccc';
+    });
+
+    uploadArea.addEventListener('drop', (e) => {
+      e.preventDefault();
+      uploadArea.style.border = '2px dashed #ccc';
+      const files = e.dataTransfer.files;
+      handleFiles(files);
+    });
+
+    uploadArea.addEventListener('click', () => {
+      const input = document.createElement('input');
+      input.type = 'file';
+      input.multiple = true;
+      input.click();
+      input.addEventListener('change', () => {
+        const files = input.files;
+        handleFiles(files);
+      });
+    });
+
+    function handleFiles(files) {
+      for (const file of files) {
+        const listItem = document.createElement('li');
+        listItem.innerHTML = `
+          <span class="file-name">${file.name}</span>
+          <span class="file-size">${formatFileSize(file.size)}</span>
+          <button type="button" class="remove-button" data-file-name="${file.name}">Remove</button>
+        `;
+        fileList.appendChild(listItem);
+      }
+
+      const removeButtons = document.querySelectorAll('.remove-button');
+      removeButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const fileName = button.dataset.fileName;
+          removeFile(fileName);
+        });
+      });
+    }
+
+    function formatFileSize(bytes) {
+      if (bytes < 1024) return bytes + ' B';
+      if (bytes < 1048576) return (bytes / 1024).toFixed(1) + ' KB';
+      if (bytes < 1073741824) return (bytes / 1048576).toFixed(1) + ' MB';
+      return (bytes / 1073741824).toFixed(1) + ' GB';
+    }
+
+    function removeFile(fileName) {
+  const listItems = fileList.children;
+  for (const item of listItems) {
+    if (item.querySelector('.file-name').textContent === fileName) {
+      item.remove();
+      break;
+    }
+  }
+}
+  

@@ -640,3 +640,66 @@ display: none;
   margin: auto;
   background-image: url(../img/avatars/pen.png);
 }
+.bg-danger{
+  background-color: #EA5455!important;
+}
+
+.upload-area {
+
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+border: 2px dashed #ccc;
+border-radius: 5px;
+cursor: pointer;
+margin-bottom: 10px;
+}
+
+.upload-area i {
+font-size: 2em;
+color: #ccc;
+}
+
+.upload-area p {
+font-size: 1em;
+color: #ccc;
+margin-top: 10px;
+}
+
+.upload-area:hover {
+border-color: #007bff;
+}
+
+.file-list {
+list-style: none;
+padding: 0;
+}
+
+.file-list li {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 10px;
+margin-bottom: 5px;
+background-color: #f2f2f2;
+border-radius: 5px;
+}
+
+.file-name {
+font-weight: bold;
+}
+
+.file-size {
+font-size: 0.8em;
+color: #666;
+}
+
+.remove-button {
+background-color: #dc3545;
+color: #fff;
+padding: 5px 10px;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+}
