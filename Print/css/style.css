@@ -239,3 +239,7 @@ background-color: #14aae2!important;
     color: #fff;
  
   }
+  ul{
+    padding-inline-start: 0px;
+
+  }

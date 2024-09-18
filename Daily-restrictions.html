@@ -1016,25 +1016,25 @@
                         <div class="accordion-body">
                           <div
                             class="row component-form pt-4 justify-content-md-start justify-content-center align-items-end">
-                            <div class="col-12 col-lg-3 mb-3">
+                            <div class="col-12 col-lg-3 col-md-4 mb-3">
                               <label class="form-label" for="basic-default-fullname">تاريخ دفتر اليومية<span
                                   class="start-form">*</span></label>
                               <input type="date" class="form-control" id="basic-default-fullname"
                                 placeholder=" تاريخ دفتر اليومية" />
                             </div>
 
-                            <div class="col-12 col-lg-3 mb-3">
+                            <div class="col-12 col-lg-3 col-md-4 mb-3">
                               <label class="form-label" for="basic-default-line">
                                 :تاريخ المستند<span class="start-form">*</span></label>
                               <input type="date" class="form-control" id="basic-default-line" />
                             </div>
-                            <div class="col-12 col-lg-3 mb-3">
+                            <div class="col-12 col-lg-3 col-md-4 mb-3">
                               <label class="form-label" for="basic-default-locetion">مرجع السند:<span
                                   class="start-form">*</span></label>
                               <input type="text" class="form-control" id="basic-default-locetion"
                                 placeholder="مرجع السند " />
                             </div>
-                            <div class="col-12 col-lg-3 mb-3">
+                            <div class="col-12 col-lg-3 col-md-4 mb-3">
                               <label for="select5Basic" class="form-label">
                                 العملة<span class="start-form">*</span></label>
 
@@ -1052,7 +1052,7 @@
                                 </select>
                               </div>
                             </div>
-                            <div class="col-12 col-lg-3 mb-3">
+                            <div class="col-12 col-lg-3 col-md-4 mb-3">
                               <label for="selectBasic" class="form-label">
                                 الفرع <span class="start-form">*</span></label>
 
@@ -1070,27 +1070,23 @@
                                 </select>
                               </div>
                             </div>
-                            <div class="col-12 col-lg-3 mb-3">
+                            <div class="col-12 col-lg-3 col-md-4 mb-3">
                               <label class="form-label" for="basic-default-phone">
                                 تاريخ الحدث<span class="start-form">*</span></label>
                               <input type="date" id="basic-default-phone" class="form-control phone-mask"
                                 placeholder="  تاريخ الحدث" />
                             </div>
 
-                            <div class="col-12 col-lg-3 mb-3">
+                            <div class="col-12 col-lg-3 col-md-4 mb-3">
                               <label class="form-label" for="basic-default-emile">
                                 مرجع المصدر<span class="start-form">*</span></label>
                               <input type="text" class="form-control" id="basic-default-emile"
                                 placeholder="مرجع المصدر" />
                             </div>
-                            <div class="col-12 col-lg-12 mb-3">
-                              <label class="form-label" for="basic-default-emile">
+                            <div class="col-12 col-lg-3 col-md-4 mb-3">
+                              <label class="form-label" for="basic-default-file">
                                 اختر الملف<span class="start-form">*</span></label>
-                              <div class="upload-area">
-                                <i class="fas fa-file-upload"></i>
-                                <p>Drag and drop files here or click here</p>
-                              </div>
-                              <ul class="file-list"></ul>
+                                <input type="file" class="form-control" id="basic-default-file" />
                             </div>
 
                             <div class="col-12 col-lg-12 mb-3">
@@ -1116,14 +1112,14 @@
                           <div class="table-responsive text-nowrap rounded card-datatable pt-4 pb-4">
                             <table class="table table-bordered table-hover rounded tabel-table" id="my-table">
                               <thead class="table-light">
-                                <tr class="fw-bold">
+                                <tr class="fw-bold text-center">
                                   <th class="fw-bold">م</th>
                                   <th class="fw-bold">اسم الحساب</th>
                                   <th class="fw-bold">مدين</th>
                                   <th class="fw-bold">دائن</th>
                                   <th class="fw-bold">مركز التكلفة</th>
                                   <th class="fw-bold">البيان</th>
-                                  <th class="fw-bold">Actions</th>
+                                  <th class="fw-bold px-1">Actions</th>
                                 </tr>
                               </thead>
                               <tbody class="table-border-bottom-0">
@@ -1146,10 +1142,10 @@
                                     <textarea name="text" rows="1" class="form-control" cols="10" wrap="soft">
                                       </textarea>
                                   </td>
-                                  <td class="d-flex">
+                                  <td class="d-flex px-1 justify-content-center">
                                     <a class="bg-primary text-bg-primary p-1 d-flex align-items-center justify-content-center me-3 rounded add-row"
                                       href="javascript:void(0);" title="اضافة">
-                                      <i class="fa-solid fa-plus fs-4"></i>
+                                      <i class="fa-solid fa-plus fs-5"></i>
                                     </a>
                                   </td>
                                 </tr>
@@ -1300,7 +1296,7 @@
           </div>
 
           <!--/ Content -->
-          <div class="alert alert-primary text-black" role="alert">
+          <div class="alert alert-primary " role="alert">
             Ctrl+s يحفظ!--- Ctrl+p للطباعه!--- Crrl+x للحذف
           </div>
           <!-- Footer -->
@@ -1458,7 +1454,7 @@
         $newRow
           .find(".d-flex")
           .append(
-            '<a class="bg-danger text-bg-danger p-1 d-flex align-items-center justify-content-center me-3 rounded delete-row" href="javascript:void(0);" title="حذف"><i class="fa-solid fa-trash fs-4"></i></a>'
+            '<a class="bg-danger text-bg-danger p-1 d-flex align-items-center justify-content-center me-3 rounded delete-row" href="javascript:void(0);" title="حذف"><i class="fa-solid fa-trash fs-5"></i></a>'
           );
 
         // Clear values

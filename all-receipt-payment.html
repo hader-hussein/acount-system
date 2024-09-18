@@ -1037,7 +1037,7 @@
           
             <!-- Content -->
            
-            <div class="container-xxl flex-grow-1 container-p-y content-admin">
+            <div class="container-xxl flex-grow-1 container-p-y content-admin pt-5 mt-4">
               <div class="card comonent-hader-top">
                 <div class="card-body py-2 px-md-4 px-2 card-widget-separator">
                   <div class="row mx-0 d-flex flex-wrap  justify-content-between  mb-3 align-items-center pt-2">
@@ -1057,37 +1057,50 @@
              </div>
                   <div class="card comonent-hader-top mt-4">
                     <div class="card-body p-4 pt-2">
-                      
-                     <!-- Column Search -->
-                     <section id="column-search-datatable">
-                      <div class="row">
-                        <div class="col-12">
-                          <div class="card">
-                            <div class="dx-viewport">
-                              <div class="demo-container">
-                                <div id="gridContainer"></div>
-                                <div class="options">
-                                  <div class="caption">Options</div>
-                                  <div class="option">
-                                    <span>Apply Filter</span>
-                                    <div id="useFilterApplyButton"></div>
-                                  </div>
-                                  <div class="option">
-                                    <div id="filterRow"></div>
-                                  </div>
-                                  <div class="option">
-                                    <div id="headerFilter"></div>
-                                  </div>
+                      <div class="card-datatable tabel-all">
+                        <table class="table table-responsive table-bordered">
+                          <thead>
+                             <tr class="text-center">
+                              <th>#</th>
+                              <th>تاريخ الحركة</th>
+                              <th>نوع الحركة</th>
+                              <th>حركة السند</th>
+                              <th>مرجع السند</th>
+
+                              <th>قيمة </th>
+                              <th>البيان</th>
+                              <th>المستخدم</th>
+                              
+                              <th >action</th>
+                             </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                             
+                             
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td>
+                                <div class="d-flex justify-content-center">
+                                    <a class="btn bg-primary text-bg-primary p-1 d-flex align-items-center justify-content-center me-3 rounded" href="view-daily.html" title="عرض"><i class="fa-solid fa-book-open"></i> </a>
+
+                                  <a class="btn bg-success text-bg-success p-1 d-flex align-items-center justify-content-center me-3 rounded" href="edit-DailyPayments.html" title="تعديل"><i class="ti ti-pencil  fs-4"></i> </a>
+                                  <a class="bg-danger text-bg-danger p-1 d-flex align-items-center justify-content-center me-3 rounded" href="javascript:void(0);" title="حذف"><i class="ti ti-trash  fs-4"></i> </a>
+                                
                                 </div>
-                              </div>
-                            </div>
-                            
-                          
-                          </div>
-                        </div>
+                              </td>
+                             
+
+                            </tr>
+                          </tbody>
+                       </table>
                       </div>
-                    </section>
-                    <!--/ Column Search -->
                     </div>
                   </div>
 
@@ -1097,7 +1110,7 @@
             </div>
 
             <!--/ Content -->
-            <div class="alert alert-primary text-black" role="alert">
+            <div class="alert alert-primary" role="alert">
              
               Ctrl+s يحفظ!---
               Ctrl+p للطباعه!---
