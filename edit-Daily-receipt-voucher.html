@@ -546,7 +546,6 @@
 
                 </li>
 
-                <!-- stations -->
                 <!-- Settings -->
                 <li class="menu-item">
                   <a href="javascript:void(0)" class="menu-link menu-toggle">
@@ -642,6 +641,7 @@
                     </li>
                   </ul>
                 </li>
+                <!---->
                 <li class="menu-item">
                   <a class="menu-link menu-toggle" href="javascript:void(0)">
                     <i class="menu-icon tf-icons ti ti-file-description"></i>
@@ -679,7 +679,6 @@
                   </ul>
                 </li>
                 <!-- Settings -->
-                <!-- Settings -->
                 <li class="menu-item active">
                   <a href="javascript:void(0)" class="menu-link menu-toggle">
                     <i class="menu-icon tf-icons ti ti-layout-grid-add"></i>
@@ -692,10 +691,10 @@
                         <div data-i18n="Journal entry"> قيد اليومية </div>
                       </a>
                     </li>
-                    <li class="menu-item active">
+                    <li class="menu-item">
                       <a href="DailyPayments.html" class="menu-link">
                         <i class="menu-icon tf-icons ti ti-file-dollar"></i>
-                        <div data-i18n="Payments"> المدفوعات </div>
+                        <div data-i18n=" Payments"> المدفوعات </div>
                       </a>
                     </li>
                     <li class="menu-item">
@@ -713,7 +712,7 @@
                         <div data-i18n=" checks"> الشيكات </div>
                       </a>
                     </li>
-                    <li class="menu-item">
+                    <li class="menu-item active">
                       <a href="Daily-receipt-voucher.html" class="menu-link">
                         <i class="menu-icon tf-icons ti ti-file-description"></i>
                         <div data-i18n="  Arrest document"> سند القبض </div>
@@ -963,12 +962,12 @@
                 <div class="row mx-0 d-flex flex-wrap  justify-content-between  mb-3 align-items-center pt-2">
                   <div class="col col-md-8 col-12  mb-md-4 mb-2 ">
                     <strong class="py-md-3 px-md-3 text-title-hadeer text-tilte-b"><span class="text-muted fw-medium">
-                        تعديل المدفوعات</span> </strong>
+                        تعديل سند القبض </span> </strong>
 
 
                   </div>
                   <div class="col text-end">
-                    <a href="all-receipt-payment.html" class="btn btn-primary waves-effect waves-light btn-add"> <i
+                    <a href="all-receipt-voucher.html" class="btn btn-primary waves-effect waves-light btn-add"> <i
                         class="ti-xs me-1 ti ti-eye-check me-1"></i> مشاهدة الكل</a>
 
                   </div>
@@ -977,10 +976,10 @@
               </div>
 
             </div>
-            <div class="comonent-hader-top mt-4">
+            <div class="card comonent-hader-top mt-4">
               <div class="card-body p-1 pt-2">
                 <div class="accordion from-cllapse" id="accordionExample">
-                  <form class="row component-form  justify-content-md-start justify-content-center align-items-end" action="createSuccess-payment.html">
+                  <form class="row component-form pt-4 mx-0" action="./Print/Arrest-document.html">
 
                     <div class="accordion-item">
                       <h2 class="accordion-header">
@@ -988,7 +987,7 @@
                           data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                           <div class="d-flex justify-content-between">
                             <div>
-                              تاريخ المدفوعات: <span class="mx-2">14/11/2023</span>
+                              تاريخ السند: <span class="mx-2">14/11/2023</span>
 
                             </div>
                             <div>
@@ -1001,63 +1000,29 @@
                       <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
                           <div
-                            class="row mx-0 component-form pt-4 justify-content-md-start justify-content-center align-items-end">
-                            <div class="col-12 col-lg-3 col-md-4 mb-3">
+                            class="row component-form pt-4 justify-content-md-start justify-content-center align-items-end">
+                            <div class="col-12 col-lg-3 col-md-6 mb-3">
                               <label class="form-label" for="basic-default-fullname">تاريخ الحركة<span
                                   class="start-form">*</span></label>
                               <input type="date" class="form-control" id="basic-default-fullname"
                                 placeholder=" تاريخ الحركة ">
                             </div>
-                            <div class="col-12 col-lg-3 col-md-4 mb-3">
-                              <label for="select5Basic" class="form-label"> الدفع الى:<span
+                            <div class="col-12 col-lg-3 col-md-6 mb-3">
+                              <label for="select" class="form-label"> حساب المدين:<span
                                   class="start-form">*</span></label>
+                              <input id="dropdowntree" class="dropdowntree-tow " style="padding: 0.31rem 0.875rem;" />
 
-                              <select id="select5Basic" class="select2 form-select" data-allow-clear="true">
-                                <option value="AK"> متنوعة</option>
-                                <option value="HI">Hawaii</option>
-                                <option value="CA">California</option>
-                                <option value="NV">Nevada</option>
-                                <option value="OR">Oregon</option>
 
-                              </select>
 
                             </div>
-                            <div class="col-12 col-lg-3 col-md-4 mb-3">
-                              <label for="select2Basic" class="form-label"> الدفع من:<span
-                                  class="start-form">*</span></label>
-
-                              <select id="select2Basic" class="select2 form-select" data-allow-clear="true">
-                                <option value="AK"> البنك الاهلى</option>
-                                <option value="HI">Hawaii</option>
-                                <option value="CA">California</option>
-                                <option value="NV">Nevada</option>
-                                <option value="OR">Oregon</option>
-
-                              </select>
-
-                            </div>
-
-                            <div class="col-12 col-lg-3 col-md-4 mb-3">
+                            <div class="col-12 col-lg-3 col-md-6 mb-3">
                               <label class="form-label" for="basic-default-locetion">مرجع السند:<span
                                   class="start-form">*</span></label>
                               <input type="text" class="form-control" id="basic-default-locetion"
                                 placeholder="مرجع السند ">
 
                             </div>
-                            <div class="col-12 col-lg-3 col-md-4 mb-3">
-                              <label class="form-label" for="basic-default-locetion"> لامر:<span
-                                  class="start-form">*</span></label>
-                              <input type="text" class="form-control" id="basic-default-locetion" placeholder=" لامر ">
-
-                            </div>
-
-                            <div class="col-12 col-lg-3 col-md-4 mb-3">
-                              <label class="form-label" for="basic-default-phone"> رصيد البنك:<span
-                                  class="start-form">*</span></label>
-                              <input type="text" id="basic-default-phone" class="form-control phone-mask"
-                                placeholder="   رصيد البنك">
-                            </div>
-                            <div class="col-12 col-lg-3 col-md-4 mb-3">
+                            <div class="col-12 col-lg-3 col-md-6 mb-3">
                               <label for="selectBasic" class="form-label"> الفرع <span
                                   class="start-form">*</span></label>
 
@@ -1078,7 +1043,14 @@
 
 
                             </div>
-                            <div class="col-12 col-lg-3 col-md-4 mb-3">
+                            <div class="col-12 col-lg-6 mb-3">
+                              <label class="form-label" for="basic-default-locetion"> الاسم:<span
+                                  class="start-form">*</span></label>
+                              <input type="text" class="form-control" id="basic-default-locetion" placeholder=" الاسم ">
+
+                            </div>
+
+                            <div class="col-11 col-lg-3 mb-3">
                               <label for="select5Basic" class="form-label"> العملة<span
                                   class="start-form">*</span></label>
 
@@ -1106,18 +1078,16 @@
 
                             </div>
 
-
                           </div>
 
                         </div>
                       </div>
                     </div>
-                    <!--item-->
                     <div class="accordion-item">
                       <h2 class="accordion-header">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                           data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                          بنود الدفعة
+                          بنود النقدية المودعة
                         </button>
                       </h2>
                       <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
@@ -1154,10 +1124,10 @@
                                   <td class="w-25"><textarea name="text" rows="1" class="form-control" cols="10"
                                       wrap="soft"> </textarea>
                                   </td>
-                                  <td class="d-flex">
-                                    <a class="bg-primary text-bg-primary p-1 d-flex align-items-center justify-content-center me-3 rounded add-row"
+                                  <td class="d-flex justify-content-center">
+                                    <a class="bg-primary text-bg-primary p-1 d-flex align-items-center justify-content-center  rounded add-row"
                                       href="javascript:void(0);" title="اضافة">
-                                      <i class="fa-solid fa-plus fs-5"></i>
+                                      <i class="fa-solid fa-plus fs-4"></i>
                                     </a>
                                   </td>
                                 </tr>
@@ -1191,32 +1161,33 @@
                       </div>
                     </div>
                     <div class="pt-2">
-                      <button type="submit" class="btn btn-primary  waves-effect waves-light" title="حفظ"><i
-                          class="fa-solid fa-check mx-2"></i>حفظ</button>
+                      <button type="submit" class="btn btn-primary  waves-effect waves-light" title="حفظ"
+                        id="saveButton"><i class="fa-solid fa-check mx-2"></i>حفظ</button>
 
                     </div>
-                    <!--item-->
-                    <div class="pt-2 pb-2 px-2 buttom-fixed" style="width: 15%;">
-                      <div class=" w-100 p-2 ">
-    
-                        <div class="d-flex justify-content-between  align-items-center"
-                          style=" border-bottom: 1px solid #c1c0c8; padding: 10px;">
-                          <h6 class="title-table fw-bold fs-5 mb-0">الاجمالى</h6>
-                          <div class="fw-bold fs-5">100%</div>
-    
-                        </div>
-    
-    
-    
-                      </div>
-                      <button type="submit" class="btn btn-primary  waves-effect waves-light" title="حفظ" id="saveButton"><i
-                          class="fa-solid fa-check"></i></button>
-                      <a href="all-receipt-payment.html" class="btn btn-label-secondary waves-effect mx-3 mt-md-0"
-                        title="مشاهدة الكل">
-                        <i class="ti-xs me-1 ti ti-eye-check me-1"></i>
-                      </a>
-    
+                     <!---->
+                <div class="pt-2 pb-2 px-2 buttom-fixed" style="width: 15%;">
+                  <div class=" w-100 p-2 ">
+
+                    <div class="d-flex justify-content-between  align-items-center"
+                      style=" border-bottom: 1px solid #c1c0c8; padding: 10px;">
+                      <h6 class="title-table fw-bold fs-5 mb-0">الاجمالى</h6>
+                      <div class="fw-bold fs-5">100%</div>
+
                     </div>
+
+
+
+                  </div>
+                  <button type="submit" class="btn btn-primary  waves-effect waves-light" title="حفظ"><i
+                      class="fa-solid fa-check"></i></button>
+                  <a href="all-receipt-voucher.html" class="btn btn-label-secondary waves-effect mx-3 mt-md-0"
+                    title="مشاهدة الكل">
+                    <i class="ti-xs me-1 ti ti-eye-check me-1"></i>
+                  </a>
+
+                </div>
+                <!---->
                   </form>
                 </div>
                 <!-- Modal  اضافة عملة-->
@@ -1245,7 +1216,6 @@
                     </div>
                   </div>
                 </div>
-
                 <!-- Modal  اضافة فرع-->
                 <div class="modal fade" id="exampleBranch" tabindex="-1" aria-labelledby="exampleModalLabel"
                   aria-hidden="true">
@@ -1276,7 +1246,6 @@
 
                             </select>
                           </div>
-                         
                         </form>
                       </div>
                       <div class="modal-footer">
@@ -1285,9 +1254,7 @@
                     </div>
                   </div>
                 </div>
-                <!---->
                
-                <!---->
               </div>
             </div>
 
@@ -1303,8 +1270,6 @@
             Ctrl+p للطباعه!---
             Crrl+x للحذف
           </div>
-          <!--keyboard shortcut-->
-
           <!-- Footer -->
           <footer class="content-footer footer bg-footer-theme">
             <div class="container-xxl">
@@ -1412,7 +1377,7 @@
   <script src="./assets/js/forms-selects.js"></script>
   <script src="./assets/kendo.all.min.js"></script>
   <script src="./assets/vendor/js/upload.js"></script>
-
+  
   <script>
     $(document).ready(function () {
       function initializeDropDownTree(selector) {
@@ -1471,7 +1436,7 @@
         $newRow
           .find(".d-flex")
           .append(
-            '<a class="bg-danger text-bg-danger p-1 d-flex align-items-center justify-content-center me-3 rounded delete-row" href="javascript:void(0);" title="حذف"><i class="fa-solid fa-trash fs-5"></i></a>'
+            '<a class="bg-danger text-bg-danger p-1 d-flex align-items-center justify-content-center  rounded delete-row" href="javascript:void(0);" title="حذف"><i class="fa-solid fa-trash fs-5"></i></a>'
           );
 
         // Clear values

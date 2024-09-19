@@ -180,8 +180,12 @@ width: 0px;
     grid-gap: 15px 10px;
     
  }
- .content-content  ,.component-signature ,.component-signature-rec{
-    padding-top: 25px;
+.component-signature ,.component-signature-rec{
+    padding-top: 15px;
+ }
+ .content-content {
+  padding-top: 8px;
+
  }
  .component-signature .sign,.component-signature-rec .sign{
     color: #000;
@@ -242,4 +246,15 @@ background-color: #14aae2!important;
   ul{
     padding-inline-start: 0px;
 
+  }
+  .row-arrest div:nth-child(3){
+    grid-column: span 2;
+    display: grid;
+    grid-template-columns: 0.25fr 1fr;
+  }
+  .compont-bill{
+    grid-gap: 63px 0px;
+  }
+  .sign span{
+    display: block;
   }
