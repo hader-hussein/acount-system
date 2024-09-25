@@ -44,10 +44,19 @@
     <link rel="stylesheet" href="./assets/vendor/libs/apex-charts/apex-charts.css" />
     <link rel="stylesheet" href="./assets/vendor/libs/select2/select2.css" />
     <link rel="stylesheet" href="./assets/vendor/libs/bootstrap-select/bootstrap-select.css" />
-
+    <link rel="stylesheet" type="text/css" href="./assets/vendor/libs/datatables-bs5/datatables.bootstrap5.css"> 
     <link href="./assets/default-ocean-blue.css" rel="stylesheet">
     <link rel="stylesheet" href="./assets/vendor/css/rtl/theme-default.css" class="template-customizer-theme-css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
+     <!---->
+
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+     <script>window.jQuery || document.write(decodeURIComponent('%3Cscript src="js/jquery.min.js"%3E%3C/script%3E'))</script>
+         <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/23.1.6/css/dx.material.blue.light.css" />
+         <script src="https://cdn3.devexpress.com/jslib/23.1.6/js/dx.all.js"></script><script>window.jQuery || document.write(decodeURIComponent('%3Cscript src="js/jquery.min.js"%3E%3C/script%3E'))</script>
+         <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/23.1.6/css/dx.material.blue.light.css" />
+     <!---->
+   
     <!-- Helpers -->
     <script src="./assets/vendor/js/helpers.js"></script>
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
@@ -73,13 +82,10 @@
                 </span>
               </a>
             
-              <!-- <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-xl-none">
+              <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-xl-none">
                 <i class="ti ti-x ti-sm align-middle"></i>
-              </a> -->
-              <a href="javascript:void(0);" class="layout-menu-toggle navbar-toggler menu-link text-large ms-auto">
-                <i class="fa-solid fa-bars  d-none d-xl-block ti-sm align-middle"></i>
-                <i class="ti ti-x d-block d-xl-none ti-sm align-middle"></i>
               </a>
+             
             </div>
 
             <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
@@ -598,64 +604,108 @@
                     
                     </li>
 
-                    <!-- stations -->
-                    <li class="menu-item active">
-                      <a href="javascript:void(0)" class="menu-link menu-toggle">
-                        <i class="menu-icon tf-icons ti ti-layout-sidebar"></i>
-                        <div data-i18n="التعريفات">التعريفات</div>
-                      </a>
+                     <!-- Settings -->
+                  <li class="menu-item">
+                    <a href="javascript:void(0)" class="menu-link menu-toggle">
+                      <i class="menu-icon tf-icons ti ti-settings"></i>
+                      <div data-i18n="Settings">الاعدادات</div>
+                    </a>
 
-                      <ul class="menu-sub">
-                        <li class="menu-item">
-                          <a href="" class="menu-link">
-                            <i class="menu-icon tf-icons ti ti-menu-2"></i>
-                            <div data-i18n="الفروع"> الفروع</div>
-                          </a>
-                        </li>
-                        <li class="menu-item">
-                          <a href="" class="menu-link" target="_blank">
-                            <i class="menu-icon tf-icons ti ti-layout-distribute-vertical"></i>
-                            <div data-i18n="المستخدمين ">  المستخدمين</div>
-                          </a>
-                        </li>
-                        <li class="menu-item">
-                          <a href="" class="menu-link">
-                            <i class="menu-icon tf-icons ti ti-maximize"></i>
-                            <div data-i18n="المجموعات ">المجموعات </div>
-                          </a>
-                        </li>
-                        <li class="menu-item">
-                          <a href="" class="menu-link">
-                            <i class="menu-icon tf-icons ti ti-arrows-maximize"></i>
-                            <div data-i18n="صلاحيات الدليل المحاسبي">صلاحيات الدليل المحاسبي </div>
-                          </a>
-                        </li>
-                        <li class="menu-item">
-                          <a href="" class="menu-link">
-                            <i class="menu-icon tf-icons ti ti-square"></i>
-                            <div data-i18n="السنوات المالية">السنوات المالية </div>
-                          </a>
-                        </li>
-                        <li class="menu-item">
-                          <a href="" class="menu-link">
-                            <i class="menu-icon tf-icons ti ti-square"></i>
-                            <div data-i18n="العملاء">العملاء  </div>
-                          </a>
-                        </li>
-                        <li class="menu-item">
-                          <a href="" class="menu-link">
-                            <i class="menu-icon tf-icons ti ti-arrows-maximize"></i>
-                            <div data-i18n="الأصناف">الاصناف </div>
-                          </a>
-                        </li>
-                        <li class="menu-item active">
-                          <a href="Settings.html" class="menu-link">
-                            <i class="menu-icon tf-icons ti ti-arrows-maximize"></i>
-                            <div data-i18n="الإعدادت">الإعدادت </div>
-                          </a>
-                        </li>
-                      </ul>
-                    </li>
+                    <ul class="menu-sub">
+                      <li class="menu-item">
+                        <a href="Company-settings.html" class="menu-link">
+                          <i class="menu-icon tf-icons ti ti-settings"></i>
+                          <div data-i18n="companySetup">اعدادت الشركة</div>
+                        </a>
+                      </li>
+                      <li class="menu-item">
+                        <a
+                          href="user-settings.html"
+                          class="menu-link"
+                          target="_blank"
+                        >
+                          <i class="menu-icon tf-icons ti ti-settings"></i>
+                          <div data-i18n="user-settings">
+                            اعدادت حسابات المستخدمين
+                          </div>
+                        </a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="Powers-settings.html" class="menu-link">
+                          <i class="menu-icon tf-icons ti ti-settings"></i>
+                          <div data-i18n="Powers-settings ">
+                            مجموعة الصلاحيات
+                          </div>
+                        </a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="Accounting-guide.html" class="menu-link">
+                          <i class="menu-icon tf-icons ti ti-settings"></i>
+                          <div data-i18n=" Powers of the Accounting Manual">
+                            صلاحيات الدليل المحاسبي
+                          </div>
+                        </a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="Financialyears.html" class="menu-link">
+                          <i class="menu-icon tf-icons ti ti-settings"></i>
+                          <div data-i18n=" Financial years">
+                            السنوات المالية
+                          </div>
+                        </a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="General-Settings.html" class="menu-link">
+                          <i class="menu-icon tf-icons ti ti-settings"></i>
+                          <div data-i18n="General settings">
+                            الاعدادت العامة
+                          </div>
+                        </a>
+                      </li>
+                      <li class="menu-item">
+                        <a
+                          href="javascript:void(0)"
+                          class="menu-link menu-toggle"
+                        >
+                          <i class="menu-icon tf-icons ti ti-settings"></i>
+                          <div data-i18n="Regions/branches/cities">
+                            المناطق/الفروع/المدن
+                          </div>
+                        </a>
+                        <ul class="menu-sub">
+                          <li class="menu-item">
+                            <a href="branches.html" class="menu-link">
+                              <div data-i18n="branches">الفرع</div>
+                            </a>
+                          </li>
+                          <li class="menu-item">
+                            <a href="cities.html" class="menu-link">
+                              <div data-i18n="cities">المدن</div>
+                            </a>
+                          </li>
+                          <li class="menu-item">
+                            <a href="Regions.html" class="menu-link">
+                              <div data-i18n="Regions">المناطق</div>
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="menu-item">
+                        <a href="#" class="menu-link">
+                          <i class="menu-icon tf-icons ti ti-settings"></i>
+                          <div data-i18n="Closing of the year">اقفال السنة</div>
+                        </a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="Transferring-movements.html" class="menu-link">
+                          <i class="menu-icon tf-icons ti ti-settings"></i>
+                          <div data-i18n="Transferring account transactions">
+                            نقل حركات الحسابات
+                          </div>
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
                     <li class="menu-item">
                       <a class="menu-link menu-toggle" href="javascript:void(0)">
                         <i class="menu-icon tf-icons ti ti-file-description"></i>
@@ -675,13 +725,8 @@
                             <div data-i18n="اضافه حساب">  اضافه حساب</div>
                           </a>
                         </li>
-                        <li class="menu-item">
-                          <a href="" class="menu-link">
-                            <i class="menu-icon tf-icons ti ti-forms"></i>
-                            <div data-i18n="نقل حركات الحسابات">  نقل حركات الحسابات</div>
-                          </a>
-                        </li> 
-                        <li class="menu-item">
+                      
+                         <li class="menu-item">
                           <a href="" class="menu-link">
                             <i class="menu-icon tf-icons ti ti-color-swatch"></i>
                             <div data-i18n="شجرة الحسابات">  شجرة الحسابات</div>
@@ -693,10 +738,9 @@
                             <div data-i18n="إعدادات المستويات">   إعدادات المستويات</div>
                           </a>
                         </li>
-                       
-                      
                       </ul>
-                    </li>
+                    </li> 
+
                     <!-- Settings -->
                     <li class="menu-item">
                       <a href="javascript:void(0)" class="menu-link menu-toggle">
@@ -753,7 +797,7 @@
                       </ul>
                     </li>
 
-                    <!-- Ratings -->
+                   <!-- Ratings -->
                   <li class="menu-item">
                     <a href="javascript:void(0)" class="menu-link menu-toggle">
                       <i class="menu-icon tf-icons ti ti-box-multiple"></i>
@@ -861,73 +905,73 @@
                       </li>
                     </ul>
                   </li>
-                   <!-- تقارير الفلتر -->
-                   <li class="menu-item">
-                    <a href="javascript:void(0)" class="menu-link menu-toggle">
-                      <i class="menu-icon tf-icons ti ti-box-multiple"></i>
-                      <div data-i18n="تقارير والاستعلام ">الاستعلام والتقارير </div>
-                    </a>
-                    <ul class="menu-sub">
-                      
-                      <li class="menu-item">
-                        <a href="Inquire-journal.html" class="menu-link">
-                          <i class="menu-icon tf-icons ti ti-files"></i>
-                          <div data-i18n=" الإستعلام عن دفتر اليومية"> الإستعلام عن دفتر اليومية</div>
-                        </a>
-                      
-                      </li>
-                      <li class="menu-item">
-                        <a href="Trial-balance.html" class="menu-link">
-                          <i class="menu-icon tf-icons ti ti-brand-tabler"></i>
-                          <div data-i18n="    ميزان المراجعة">    ميزان المراجعة</div>
-                        </a>
-                      
-                      </li>
-                      <li class="menu-item">
-                        <a href="Inquiry-general-ledger.html" class="menu-link">
-                          <i class="menu-icon tf-icons ti ti-box-multiple"></i>
-                          <div data-i18n="  الاستعلام عن الاستاذ العام">     الاستعلام عن الاستاذ العام   </div>
-                        </a>
-                      
-                      </li>
-                      <li class="menu-item">
-                        <a href="balance-sheet.html" class="menu-link">
-                          <i class="menu-icon tf-icons ti ti-id"></i>
-                          <div data-i18n="   الميزانية العمومية">   الميزانية العمومية</div>
-                        </a>
-                      
-                      </li>
-                      <li class="menu-item">
-                        <a href="General-ledger-reports.html" class="menu-link">
-                          <i class="menu-icon tf-icons ti ti-box-multiple"></i>
-                          <div data-i18n="تقارير الاستاذ العام"> تقارير الاستاذ العام  </div>
-                        </a>
-                      
-                      </li>
-                      <li class="menu-item">
-                        <a href="Inquiry-bank-accounts.html" class="menu-link">
-                          <i class="menu-icon tf-icons ti ti-box-multiple"></i>
-                          <div data-i18n=" الاستعلام عن الحسابات البنكية">  الاستعلام عن الحسابات البنكية    </div>
-                        </a>
-                      
-                      </li>
-                      <li class="menu-item">
-                        <a href="Income-statement.html" class="menu-link">
-                          <i class="menu-icon tf-icons ti ti-files"></i>
-                          <div data-i18n="  قائمة الدخل">  قائمة الدخل</div>
-                        </a>
-                      
-                      </li>
-                      <li class="menu-item">
-                        <a href="Statement-balances.html" class="menu-link">
-                          <i class="menu-icon tf-icons ti ti-box-multiple"></i>
-                          <div data-i18n=" كشف الأرصدة "> كشف الأرصدة  </div>
-                        </a>
-                      
-                      </li>
-                      
-                    </ul>
-                  </li>
+                    <!-- تقارير الفلتر -->
+                    <li class="menu-item">
+                      <a href="javascript:void(0)" class="menu-link menu-toggle">
+                        <i class="menu-icon tf-icons ti ti-box-multiple"></i>
+                        <div data-i18n="تقارير والاستعلام ">الاستعلام والتقارير </div>
+                      </a>
+                      <ul class="menu-sub">
+                        
+                        <li class="menu-item">
+                          <a href="Inquire-journal.html" class="menu-link">
+                            <i class="menu-icon tf-icons ti ti-files"></i>
+                            <div data-i18n=" الإستعلام عن دفتر اليومية"> الإستعلام عن دفتر اليومية</div>
+                          </a>
+                        
+                        </li>
+                        <li class="menu-item">
+                          <a href="Trial-balance.html" class="menu-link">
+                            <i class="menu-icon tf-icons ti ti-brand-tabler"></i>
+                            <div data-i18n="    ميزان المراجعة">    ميزان المراجعة</div>
+                          </a>
+                        
+                        </li>
+                        <li class="menu-item">
+                          <a href="Inquiry-general-ledger.html" class="menu-link">
+                            <i class="menu-icon tf-icons ti ti-box-multiple"></i>
+                            <div data-i18n="  الاستعلام عن الاستاذ العام">     الاستعلام عن الاستاذ العام   </div>
+                          </a>
+                        
+                        </li>
+                        <li class="menu-item">
+                          <a href="balance-sheet.html" class="menu-link">
+                            <i class="menu-icon tf-icons ti ti-id"></i>
+                            <div data-i18n="   الميزانية العمومية">   الميزانية العمومية</div>
+                          </a>
+                        
+                        </li>
+                        <li class="menu-item">
+                          <a href="General-ledger-reports.html" class="menu-link">
+                            <i class="menu-icon tf-icons ti ti-box-multiple"></i>
+                            <div data-i18n="تقارير الاستاذ العام"> تقارير الاستاذ العام  </div>
+                          </a>
+                        
+                        </li>
+                        <li class="menu-item">
+                          <a href="Inquiry-bank-accounts.html" class="menu-link">
+                            <i class="menu-icon tf-icons ti ti-box-multiple"></i>
+                            <div data-i18n=" الاستعلام عن الحسابات البنكية">  الاستعلام عن الحسابات البنكية    </div>
+                          </a>
+                        
+                        </li>
+                        <li class="menu-item">
+                          <a href="Income-statement.html" class="menu-link">
+                            <i class="menu-icon tf-icons ti ti-files"></i>
+                            <div data-i18n="  قائمة الدخل">  قائمة الدخل</div>
+                          </a>
+                        
+                        </li>
+                        <li class="menu-item">
+                          <a href="Statement-balances.html" class="menu-link">
+                            <i class="menu-icon tf-icons ti ti-box-multiple"></i>
+                            <div data-i18n=" كشف الأرصدة "> كشف الأرصدة  </div>
+                          </a>
+                        
+                        </li>
+                        
+                      </ul>
+                    </li>
                   </ul>
                 </div>
               </aside>
@@ -935,69 +979,91 @@
           
             <!-- Content -->
            
-            <div class="container-xxl flex-grow-1 container-p-y content-admin">
-              <div class="row mx-0">
-                <div class="col-xl">
-                     <div class="card mb-4">
-                        <div class="card-body p-4 pt-2">
-                                <strong class="text-title-hadeer text-tilte-b"><span class="text-muted fw-medium">     نموذج قائمة الداخل     </span>  </strong>
-                                <div class="card-datatable text-nowrap rounded pt-4">
-                                  <table class="table table-bordered table-hover rounded dt-row-grouping">
-                                    <thead class="table-light">
-                                      <tr class="fw-bold">
-                                        <th class="fw-bold">التسلسل</th>
-                                      
-                                        <th class="fw-bold">       البيان</th>
-                                        <th class="fw-bold">     اسم الحساب</th>
-                                        
-                                    
-                                      </tr>
-                                    </thead>
-                                    <tbody class="table-border-bottom-0">
-                                      <tr>
-                                        <td>
-                                         #1
-                                        </td>
-                                        <td>
-                                          <input type="text" class="form-control" id="basic-default-emile" placeholder=" اجمالى المصروفات">
-                                         </td>
-                                        <td>  اجمالى المصروفات</td>
+            <div class="container-xxl flex-grow-1 container-p-y content-admin pt-5 mt-4">
+              <div class="card comonent-hader-top">
+                <div class="card-body py-2 px-md-4 px-2 card-widget-separator">
+                  <div class="row mx-0 d-flex flex-wrap  justify-content-between  mb-3 align-items-center pt-2">
+                    <div class="col col-md-8 col-12  mb-md-4 mb-2 ">
+                      <strong class="py-md-3 px-md-3 text-title-hadeer text-tilte-b"><span class="text-muted fw-medium">   فاتورة الإيراد إشعار دائن</span>  </strong>
 
-                                      </tr>
-                                      <tr>
-                                        <td>
-                                         #2
-                                        </td>
-                                        <td>
-                                          <input type="text" class="form-control" id="basic-default-emile" placeholder=" اجمالى المصروفات">
-                                         </td>
-                                        <td>   المصروفات الادراية والعمومية</td>
 
-                                      </tr>
-                                    </tbody>
-                                    
-                                  </table>
-                                </div>
-                                <div class="col-12 text-center mt-3">
-                                  <button type="submit" class="btn btn-primary  waves-effect waves-light" title="حفظ" id="saveButton"><i class="fa-solid fa-check mx-2"></i>  
-                                    حفظ البيانات
-                                  </button>
-                                  
-                                </div>
+                    </div>
+                    <div class="col text-end">
+                      <a href="Daily-Revenue-invoice.html" class="btn btn-primary waves-effect waves-light btn-add"> <i class="ti-xs me-1 ti ti-plus me-1"></i>  اضافة</a>
+    
+                    </div>
+                  </div>
+                  
+                </div>
+              
+             </div>
+              <div class="card comonent-hader-top mt-4">
+                    <div class="card-body p-1 pt-2">
+                      <div class="card-datatable tabel-all">
+                        <table class="table table-responsive table-bordered">
+                          <thead>
+                             <tr class="text-center">
+                              <th>#</th>
+                              <th> اسم الحساب</th>
+
+                              <th> الفرع</th>
+                              <th>رقم القيد </th>
+                              <th> رقم الحركة</th>
+
+                              <th>تاريخ الفاتوره </th>
+                              <th>المرجع</th>
+                              <th>تاريخ الاضافة</th>
+                              <th> الكمية</th>
+                              <th>السعر </th>
+                              <th>الضريبة</th>
+                              <th> الصافى</th>
+                              <th> الملاحظات</th>
+
+                              <th >action</th>
+                             </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                             
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td>
+                                <div class="d-flex justify-content-center">
+                                  <a class="btn bg-success text-bg-success p-1 d-flex align-items-center justify-content-center me-3 rounded" href="edit-Revenue-invoice.html" title="تعديل"><i class="ti ti-pencil  fs-4"></i> </a>
+                                  <a class="btn bg-primary text-bg-primary p-1 d-flex align-items-center justify-content-center me-3 rounded" href="./Print/Simplified sales.html" title="عرض"><i class="fa-solid fa-print fs-4"></i> </a>
+
+
+                                  <a class="bg-danger text-bg-danger p-1 d-flex align-items-center justify-content-center me-3 rounded" href="javascript:void(0);" title="حذف"><i class="ti ti-trash  fs-4"></i> </a>
                                 
-                        
-                        </div>
-                     </div>
-                 </div>
-              </div>
-          
-              <button class="btn"id="saveButton" style="display: none;"></button>
+                                </div>
+                              </td>
+                             
 
+                            </tr>
+                          </tbody>
+                       </table>
+                      </div>
+                    </div>
+              </div>
+
+             
+              
              
             </div>
 
             <!--/ Content -->
-            <div class="alert alert-primary text-black" role="alert">
+            <div class="alert alert-primary" role="alert">
              
               Ctrl+s يحفظ!---
               Ctrl+p للطباعه!---
@@ -1072,7 +1138,7 @@
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
 
-    <script src="./assets/vendor/libs/jquery/jquery.js"></script>
+    <!-- <script src="./assets/vendor/libs/jquery/jquery.js"></script> -->
     <script src="./assets/vendor/libs/popper/popper.js"></script>
     <script src="./assets/vendor/js/bootstrap.js"></script>
     <script src="./assets/vendor/libs/node-waves/node-waves.js"></script>
@@ -1109,6 +1175,32 @@
      <script src="./assets/js/forms-selects.js"></script>
      <script src="./assets/kendo.all.min.js"></script>
     <script src="./assets/vendor/js/upload.js"></script>
+    <!--tabel-data-->
+    <script src="./assets/js/devdata.js"></script>
+    <script src="./assets/js/dev-index.js"></script>
+    <!--end-->
+
+<script>
+
+      
+  $('.tabel-table').on('keydown','tr td',function (e) {
+    var keyCode = e.keyCode;
+    if (keyCode !== 9) return;
+
+    var $this = $(this),
+        $lastTr = $('tr:last', $('table')),
+        $lastTd = $('td:last', $lastTr);
+
+    
+    if (($(e.target).closest('td')).is($lastTd)) {
+     
+
+        $lastTr.after($lastTr.clone());
+      
+    }
+    
+});
+   </script>
 
   </body>
 </html>
