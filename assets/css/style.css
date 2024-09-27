@@ -717,3 +717,9 @@ cursor: pointer;
   margin-left: 10px;
   font-size: 16px;
 }
+.btn-secondary{
+  background-color: #fff !important;
+  color:var(--theme-color) !important ;
+  border-color:var(--theme-color) !important ;
+  font-size: 18px;
+}
