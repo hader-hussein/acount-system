@@ -38,9 +38,14 @@ table{
      color: var(--color-secend);
 }
  
- tr td{
-    background-color: #E8E7EC;
- }
+ 
+ table tbody tr{
+  background-color: #E8E7EC;
+
+}
+ table tbody tr:nth-child(even){
+  background-color: #fff;
+}
  .content-table::-webkit-scrollbar {
 width: 0px;
  }
@@ -155,7 +160,7 @@ width: 0px;
  }
  .item-d{
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 0.75fr 1fr;
    
  }
  .item-d label{
@@ -180,13 +185,19 @@ width: 0px;
     grid-gap: 15px 10px;
     
  }
+ .row-bank{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 15px 10px;
+ }
+ .row-bank .item-d:last-child{
+ grid-column: span 2;
+
+ }
 .component-signature ,.component-signature-rec{
     padding-top: 15px;
  }
- .content-content {
-  padding-top: 8px;
-
- }
+ 
  .component-signature .sign,.component-signature-rec .sign{
     color: #000;
     font-size: 12px;
@@ -223,6 +234,9 @@ background-color: #14aae2!important;
   .table th{
     color: #000;
     font-weight: 800;
+  }
+  .tr-trial th{
+    background-color: #000;
   }
   .component-recript{
     border: 2px dashed #eee;

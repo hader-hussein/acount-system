@@ -894,14 +894,14 @@
                           </a>
                         
                         </li>
-                        <li class="menu-item active">
+                        <li class="menu-item">
                           <a href="Trial-balance.html" class="menu-link">
                             <i class="menu-icon tf-icons ti ti-brand-tabler"></i>
                             <div data-i18n="    ميزان المراجعة">    ميزان المراجعة</div>
                           </a>
                         
                         </li>
-                        <li class="menu-item">
+                        <li class="menu-item active">
                           <a href="Inquiry-general-ledger.html" class="menu-link">
                             <i class="menu-icon tf-icons ti ti-box-multiple"></i>
                             <div data-i18n="  الاستعلام عن الاستاذ العام">     الاستعلام عن الاستاذ العام   </div>
@@ -951,7 +951,7 @@
               <div class="card comonent-hader-top">
                 <div class="card-body py-2 px-md-2 px-2 card-widget-separator">
                   <strong class="py-md-3 px-md-3 text-title-hadeer text-tilte-b"><span class="text-muted">
-                    ميزان المراجعة
+                   الاستعلام عن الاستاذ العام
 
                   </span>
                   </strong>
@@ -963,6 +963,25 @@
                            </div>
                            <div class="col-md-10">
                                 <form class="row component-form pt-2 align-items-end" action="" id="createModal">
+                                  <div class="col-12 col-md-6 col-lg-4 mb-3">
+                                    <label class="form-label" for="name-acount">
+                                        اسم الحساب
+                                    </label>
+                                    <input id="dropdowntree" class="dropdowntree-tow"/>
+
+                                  </div>
+                                  <div class="col-12 col-md-6 col-lg-4 mb-3">
+                                    <label class="form-label" for="basic-highest-value">
+                                      الحد الاعلى لقيمة الحساب
+                                    </label>
+                                    <input type="number" class="form-control" id="basic-highest-value">
+                                  </div>
+                                  <div class="col-12 col-md-6 col-lg-4 mb-3">
+                                    <label class="form-label" for="basic-account-value">
+                                      الحد الادنى لقيمة الحساب
+                                    </label>
+                                    <input type="number" class="form-control" id="basic-account-value">
+                                  </div>
                                   <div class="col-12 col-md-6 col-lg-4 mb-3">
                                     <label class="form-label" for="basic-default-date">
                                         من تاريخ
@@ -976,16 +995,18 @@
                                     <input type="date" class="form-control" id="from-default-date">
                                   </div>
                                  
+                                 
+                                 
+                                  
+                                  
                                   <div class="col-12  col-md-6  col-lg-4 mb-3">
-                                    <label for="From-account" class="form-label">   فئة الحسابات</label>
+                                    <label for="From-account-branh" class="form-label">  الفرع </label>
                                     
-                                      <select id="From-account" class="select2 form-select" data-allow-clear="true">
-                                        <option value="AK">   الكل</option>
-                                        <option value="HI">تحويل بنكى</option>
-                                        <option value="CA">قيد يومية</option>
-                                        <option value="NV">مشتريات</option>
-                                        <option value="OR">مبيعات</option>
-                                    
+                                      <select id="From-account-branh" class="select2 form-select" data-allow-clear="true">
+                                        <option value="AK">    كل الفروع</option>
+                                        <option value="HI"> شارع الجمعية الخالدية</option>
+                                        <option value="CA"> شارع الجمعية فرع المروج</option>
+                                        
                                       </select>
                                   </div>
                                   <div class="col-12 col-md-6   col-lg-4 mb-3">
@@ -1009,75 +1030,26 @@
                                       </select>
                                   </div>
                                   <div class="col-12  col-md-6  col-lg-4 mb-3">
-                                    <label for="From-account-branh" class="form-label">  الفرع </label>
+                                    <label for="From-account" class="form-label">   فئة الحسابات</label>
                                     
-                                      <select id="From-account-branh" class="select2 form-select" data-allow-clear="true">
-                                        <option value="AK">    كل الفروع</option>
-                                        <option value="HI"> شارع الجمعية الخالدية</option>
-                                        <option value="CA"> شارع الجمعية فرع المروج</option>
-                                        
+                                      <select id="From-account" class="select2 form-select" data-allow-clear="true">
+                                        <option value="AK">   الكل</option>
+                                        <option value="HI">تحويل بنكى</option>
+                                        <option value="CA">قيد يومية</option>
+                                        <option value="NV">مشتريات</option>
+                                        <option value="OR">مبيعات</option>
+                                    
                                       </select>
+                                  </div> 
+                                  <div class="col-12 col-lg-12 mb-3">
+                                    <label class="form-label" for="basic-default-emile">   البيان<span class="start-form">*</span></label>
+                                    <textarea  class="form-control" id="basic-default-emile" rows="2"> </textarea>
+            
                                   </div>
-                                  <div class="col-12  col-md-6  col-lg-4 mb-3">
-                                    <label for="From-Account-level" class="form-label">  مستوى الحساب </label>
-                                    
-                                      <select id="From-Account-level" class="select2 form-select" data-allow-clear="true">
-                                        <option value="AK">    الكل </option>
-                                        <option value="HI">   المستوى الاخير</option>
-                                        <option value="CA"> شارع الجمعية فرع المروج</option>
-                                        
-                                      </select>
-                                  </div>
-                                  <div class="col-12 col-md-6 col-lg-4 mb-3">
-                                    <div>
-                                      <label class="form-label" for="flexCheckChecked4">
-                                        القيم الصفرية غير مسموح بها
-                                      </label>
-                                      <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
-                                    </div>
-                                   
-                                  </div>
-                                  <div class="col-12 col-md-6 col-lg-4 mb-3">
-                                    
-                                    <div>
-                                      <label class="form-label" for="flexCheckChecked5">
-                                        الارصده بالتفصيل
-                                      </label>
-                                      <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked5">
-                                    </div>
-                                  </div>
-                                  <div class="col-12 col-md-6 col-lg-4 mb-3">
-                                    
-                                    <div>
-                                      <label class="form-label" for="flexCheckChecked6">
-                                          اظهار تفاصيل مركز التكلفة
-                                      </label>
-                                      <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked6">
-                                    </div>
-                                  </div>
-                                    <div class="col-12 col-md-6 col-lg-6 mb-3 ">
-                                      <div class="d-flex">
-                                        <div class="form-check">
-                                          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                                          <label class="form-check-label" for="flexRadioDefault1">
-                                                موجز
-                                          </label>
-                                        </div>
-                                        <div class="form-check">
-                                          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                                          <label class="form-check-label" for="flexRadioDefault2">
-                                               مفصل
-                                          </label>
-                                        </div>
-                                      </div>
-                                     
-                                    </div>
                                   <div>
                                     <button type="submit"  class="btn btn-primary text-white mx-2">  عرض <i class="ti-xs me-1 ti ti-eye-check me-1"></i></button>
-                                    <a type="button"  class="btn btn-secondary" href="">   بى داى اف <i class="fa-solid fa-file-pdf"></i></a>
-                                    <a type="button"  class="btn btn-secondary" href="">     اكسيل شيت <i class="fa-solid fa-file-excel"></i></a>
-                                    <a type="button"  class="btn btn-secondary" href="./Print/Trial-balance.html">      طباعة <i class="fa-solid fa-print"></i></a>
-
+                                    <a type="button"  class="btn btn-secondary" href="all-Inquiry-general-ledger.html">  عرض الكل <i class="ti-xs me-1 ti ti-eye-check me-1"></i></a>
+                                    
 
                                   </div>
           
@@ -1097,16 +1069,20 @@
                        <thead>
                          <tr class="text-center">
                            <th>  #</th>
-                           <th>     اسم الحساب</th>
-                           <th>      ماقبلة/مدين</th>
+                           <th>  نوع الحركة</th>
+                           <th>     الفرع</th>
 
-                           <th>   ماقبلة/ دائن</th>
+                           <th> حركة السند</th>
 
-                           <th>    الفترة الحالية/ مدين</th>
-                           <th>     الفترة الحالية / دائن</th>
-                           <th>      الرصيد/ مدين</th>
-                           <th>      الرصيد / دائن</th>
-                           
+                           <th> مرجع السند</th>
+                           <th>  مركز التكلفة</th>
+                           <th>    تاريخ الحركة</th>
+                           <th>      اسم الحساب</th>
+                           <th>البيان</th>
+                           <th>مدين</th>
+                           <th>دائن</th>
+                           <th>الرصيد</th>
+                           <th>العمليات</th>
 
                          </tr>
                        </thead>
@@ -1124,7 +1100,18 @@
                             <td></td>
                             <td></td>
                             <td></td>
-                            
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>
+                              <div class="d-flex">
+                                <a class="btn bg-primary text-bg-primary p-1 d-flex align-items-center justify-content-center me-3 rounded" href="view-daily.html" title="عرض"><i class="fa-solid fa-book-open"></i> </a>
+                                <a class="btn bg-success text-bg-success p-1 d-flex align-items-center justify-content-center me-3 rounded" title="تعديل" href="edit-Daily-restrictions.html"><i class="ti ti-pencil  fs-4"></i> </a>
+                              </div>
+                              
+                            </td>
+                           
                          </tr>
                         
                        </tbody>

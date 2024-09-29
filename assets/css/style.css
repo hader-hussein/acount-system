@@ -723,3 +723,7 @@ cursor: pointer;
   border-color:var(--theme-color) !important ;
   font-size: 18px;
 }
+.item-balance{
+  color: #000000;
+  font-weight: bold;
+}
