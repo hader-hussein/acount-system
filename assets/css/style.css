@@ -727,3 +727,20 @@ cursor: pointer;
   color: #000000;
   font-weight: bold;
 }
+.img-nav{
+  width: 30px;
+
+}
+.img-nav-hader{
+  width: 25px;
+}
+
+.bg-menu-theme .menu-sub > .menu-item > .menu-link:before {
+content: "" !important;
+}
+[dir=rtl] .menu-horizontal .menu-sub .menu-link {
+  padding-right: 1rem !important;
+}
+[dir=ltr] .menu-horizontal .menu-sub .menu-link {
+  padding-left: 1rem !important;
+}
