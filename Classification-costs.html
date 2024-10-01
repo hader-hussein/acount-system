@@ -939,7 +939,7 @@
           <div class="container-xxl flex-grow-1 container-p-y pt-5 mt-4">
             <div class="card comonent-hader-top">
               <div class="card-body py-2 px-md-2 px-2 pb-3 card-widget-separator">
-                <strong class="py-md-3 px-md-3 m text-title-hadeer text-tilte-b"><span class="text-muted">  خريطة الحسابات</span>
+                <strong class="py-md-3 px-md-3 m text-title-hadeer text-tilte-b"><span class="text-muted">   تصنيف التكاليف السنوية</span>
                 </strong>
               </div>
             </div>
@@ -947,24 +947,18 @@
               <div class="container">
                 <div class="row mx-0 align-items-center">
                   <div class="col-md-6">
-                    <img class="m-auto d-flex w-100" src="./assets/img/img-nav/Chart-accounts-img.jpg" alt="bank">
+                    <img class="m-auto d-flex" src="./assets/img/img-nav/bank-sta.jfif" alt="bank">
                   </div>
                   <div class="col-md-6">
                     <form class="row  mx-0 component-form pt-4 justify-content-md-start justify-content-center align-items-end">
-                      <div class="col-12 col-lg-6 mb-3">
-                        <label for="selectBasic" class="form-label">   
-                          اظهر الارصدة
-                        </label>
-                        
-                          <select id="selectBasic" class="select2 form-select" data-allow-clear="true">
-                            <option value="AK">      لا</option>
-                            <option value="HI"> نعم</option>
-                           
-                        
-                          </select>
-                    
+                      
+                      <div class="col-12 col-lg-12 mb-3">
+                        <label class="form-label" for="basic-default-phone"> اختر السنة المالية </label>
+                        <input type="date" id="basic-default-phone" class="form-control phone-mask" placeholder="     1-1-2024">
                       </div>
-                      <div class="col-12 col-lg-6 mb-3">
+                      
+                     
+                      <div class="col-12 col-lg-12 mb-3">
                         <label for="side" class="form-label">   
                           الجهة
                         </label>
@@ -979,7 +973,6 @@
                           </select>
                     
                       </div>
-                    
                       <div class="col-12 col-lg-12 mb-3">
                         <label class="form-label" for="basic-default-text">          التعلقيات:</label>
                         <textarea class="form-control" id="basic-default-text" rows="2"> </textarea>     
@@ -988,8 +981,8 @@
                       <div class="col-12 text-center mb-3">
                         <button type="submit" class="btn btn-primary  waves-effect waves-light" title="تحديث"id="saveButton">
                           <i class="ti ti-pencil  fs-4"></i> 
-                          اظهار خريطة  الحسابات
-                        </button>
+                                   اظهار تصنيف التكاليف السنوية
+                         </button>
 
                       </div>
                     </form>

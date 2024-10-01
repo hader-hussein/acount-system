@@ -939,38 +939,61 @@
           <div class="container-xxl flex-grow-1 container-p-y pt-5 mt-4">
             <div class="card comonent-hader-top">
               <div class="card-body py-2 px-md-2 px-2 pb-3 card-widget-separator">
-                <strong class="py-md-3 px-md-3 m text-title-hadeer text-tilte-b"><span class="text-muted">  خريطة الحسابات</span>
+                <strong class="py-md-3 px-md-3 m text-title-hadeer text-tilte-b"><span class="text-muted">  حركات حسابات الاستاذ العام  </span>
                 </strong>
               </div>
             </div>
             <div class="card comonent-hader-top p-2 mt-4 px-3">
               <div class="container">
                 <div class="row mx-0 align-items-center">
-                  <div class="col-md-6">
-                    <img class="m-auto d-flex w-100" src="./assets/img/img-nav/Chart-accounts-img.jpg" alt="bank">
+                  <div class="col-md-4">
+                    <img class="m-auto d-flex w-100" src="./assets/img/img-nav/General-ledger-img.jpg" alt="bank">
                   </div>
-                  <div class="col-md-6">
+                  <div class="col-md-8">
                     <form class="row  mx-0 component-form pt-4 justify-content-md-start justify-content-center align-items-end">
-                      <div class="col-12 col-lg-6 mb-3">
-                        <label for="selectBasic" class="form-label">   
-                          اظهر الارصدة
+                      <div class="col-12 col-lg-4 col-md-6 mb-3">
+                        <label for="select-branh" class="form-label">   
+                           اختر الفرع
                         </label>
                         
-                          <select id="selectBasic" class="select2 form-select" data-allow-clear="true">
-                            <option value="AK">      لا</option>
-                            <option value="HI"> نعم</option>
+                          <select id="select-branh" class="select2 form-select" data-allow-clear="true">
+                            <option value="AK">      كل الفروع</option>
+                            <option value="HI"> شركة الجمعية فرع الخالدية</option>
+                            <option value="CA"> شركة الجمعية فرع المروج</option>
                            
                         
                           </select>
                     
                       </div>
-                      <div class="col-12 col-lg-6 mb-3">
+                      <div class="col-12 col-lg-4 col-md-6  mb-3">
+                        <label class="form-label" for="basic-default-phone">          من:</label>
+                        <input type="date" id="basic-default-phone" class="form-control phone-mask" placeholder="     1-1-2024">
+                      </div>
+                      <div class="col-12 col-lg-4 col-md-6  mb-3">
+                        <label class="form-label" for="basic-default-phone">           الى:</label>
+                        <input type="date" id="basic-default-phone" class="form-control phone-mask" placeholder="     1-1-2024">
+                      </div>
+                      <div class="col-12 col-lg-4 col-md-6  mb-3">
+                        <label for="selectBasic" class="form-label">   
+                           القسم
+                        </label>
+                        
+                          <select id="selectBasic" class="select2 form-select" data-allow-clear="true">
+                            <option value="AK">      اختر القسم</option>
+                            <option value="HI"> صيانة</option>
+                            <option value="CA"> مبيعات</option>
+                           
+                        
+                          </select>
+                    
+                      </div>
+                      <div class="col-12 col-lg-4 col-md-6  mb-3">
                         <label for="side" class="form-label">   
-                          الجهة
+                          مركز التكلفة
                         </label>
                         
                           <select id="side" class="select2 form-select" data-allow-clear="true">
-                            <option value="AK">     طباعه </option>
+                            <option value="AK">     اختر مركز التكلفة </option>
                             <option value="HI"> ارسال عبر الاميل</option>
                             <option value="CA">اكسل شيت </option>
                             <option value="CA"> pdf </option>
@@ -979,7 +1002,50 @@
                           </select>
                     
                       </div>
+                      <div class="col-12 col-lg-4 col-md-6  mb-3">
+                        <label for="Currency" class="form-label">   
+                          اختر العملة
+                        </label>
+                        
+                          <select id="Currency" class="select2 form-select" data-allow-clear="true">
+                            <option value="AK">     اختر  العملة </option>
+                            <option value="HI"> ارسال عبر الاميل</option>
+                            <option value="CA">اكسل شيت </option>
+                            <option value="CA"> pdf </option>
+
+                        
+                          </select>
                     
+                      </div>
+                      <div class="col-12 col-lg-4 col-md-6  mb-3">
+                        <label for="Currency" class="form-label">   
+                           من حساب
+                        </label>
+                        <input id="dropdowntree" class="dropdowntree-tow" />
+
+                      </div>
+                      <div class="col-12 col-lg-4 col-md-6 mb-3">
+                        <label for="Currency" class="form-label">   
+                           الى حساب
+                        </label>
+                        <input id="dropdowntree" class="dropdowntree-tow" />
+
+                      </div>
+                      <div class="col-12 col-lg-4 col-md-12  mb-3">
+                        <label for="The-side" class="form-label">   
+                           الجهة
+                        </label>
+                        
+                          <select id="The-side" class="select2 form-select" data-allow-clear="true">
+                            <option value="AK">     اختر  الجهه </option>
+                            <option value="HI"> ارسال عبر الاميل</option>
+                            <option value="CA">اكسل شيت </option>
+                            <option value="CA"> pdf </option>
+
+                        
+                          </select>
+                    
+                      </div>
                       <div class="col-12 col-lg-12 mb-3">
                         <label class="form-label" for="basic-default-text">          التعلقيات:</label>
                         <textarea class="form-control" id="basic-default-text" rows="2"> </textarea>     
@@ -988,8 +1054,8 @@
                       <div class="col-12 text-center mb-3">
                         <button type="submit" class="btn btn-primary  waves-effect waves-light" title="تحديث"id="saveButton">
                           <i class="ti ti-pencil  fs-4"></i> 
-                          اظهار خريطة  الحسابات
-                        </button>
+                                    اظهار حركات  حسابات الاستاذ العام
+                         </button>
 
                       </div>
                     </form>
@@ -1114,7 +1180,57 @@
    <script src="./assets/js/forms-selects.js"></script>
    <script src="./assets/kendo.all.min.js"></script>
   <script src="./assets/vendor/js/upload.js"></script>
+  <script>
+    $(document).ready(function () {
+      function initializeDropDownTree(selector) {
+        $(selector).each(function () {
+          if (!$(this).data("kendoDropDownTree")) {
+            $(this).kendoDropDownTree({
+              placeholder: "Select ...",
+              filter: "startswith",
+              dataSource: [
+                {
+                  text: "Furniture",
+                  expanded: true,
+                  items: [
+                    { text: "Tables & Chairs" },
+                    { text: "Sofas" },
+                    { text: "Occasional Furniture" },
+                  ],
+                },
+                {
+                  text: "Decor",
+                  expanded: true,
+                  items: [
+                    { text: "Bed Linen" },
+                    { text: "Curtains & Blinds" },
+                    { text: "Carpets" },
+                  ],
+                },
+              ],
+              select: function (e) {
+                var dataItem = this.dataItem(e.node); // الحصول على العنصر المحدد
 
+                // منع اختيار العناصر التي تحتوي على عناصر فرعية
+                if (dataItem.hasChildren) {
+                  e.preventDefault(); // منع اختيار العنصر الرئيسي
+                  alert(
+                    "لا يمكنك اختيار العناصر الرئيسية، يرجى اختيار عنصر فرعي."
+                  );
+                }
+              },
+            });
+          }
+        });
+      }
+
+      // Initialize DropDownTree for existing elements
+      initializeDropDownTree(".dropdowntree");
+      initializeDropDownTree(".dropdowntree-tow");
+
+      
+    });
+  </script>
 </body>
 
 </html>
