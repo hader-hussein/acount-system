@@ -76,7 +76,7 @@
               <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-xl-none">
                 <i class="ti ti-x ti-sm align-middle"></i>
               </a>
-            
+             
             </div>
 
             <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
@@ -1158,220 +1158,151 @@
            
             <div class="container-xxl flex-grow-1 container-p-y content-admin pt-5 mt-4">
               <div class="card comonent-hader-top">
-                <div class="card-body py-2 px-md-2 px-2 pb-3 card-widget-separator">
-                  <strong class="py-md-3 px-md-3 m text-title-hadeer text-tilte-b"><span class="text-muted">   الغاء الحركة </span>
+                <div class="card-body py-2 px-md-2 px-2 card-widget-separator">
+                  <strong class="py-md-3 px-md-3 text-title-hadeer text-tilte-b"><span class="text-muted">
+                    فئة الحسابات
+                  </span>
                   </strong>
-                </div>
-              </div>
-                     <div class="card comonent-hader-top p-2 mt-4 px-3">
-                        <div class="card-body p-2 pt-2">
-                                <strong class="text-title-hadeer text-tilte-b"><span class="text-muted fw-medium">      </span>  </strong>
-                                <form class="row  mx-0 component-form pt-4 justify-content-md-start justify-content-center align-items-end" id="createModal">
-                                  <div class="col-12 col-md-3 mb-2">
-                                    <label for="selectBasic" class="form-label">      نوع الحركة: </label>
-                                    
-                                      <select id="selectBasic" class="select2 form-select" data-allow-clear="true">
-                                        <option value="AK">        دفعة بنكية</option>
-                                        <option value="HI"> ايداع بنكى</option>
-                                        <option value="CA"> تحويل بنكى</option>
-                                        <option value="NV"> قيد اليومية</option>
-                                        <option value="OR"> المشتريات</option>
-                                        <option value="OR"> قيود الية</option>
-                                        <option value="OR"> تحويل بضاعه</option>
-                                        <option value="OR">   مبيعات</option>
-                                        <option value="OR">    طلبات شئون الموظفين</option>
-
-                                      </select>
-                                
-                                  </div>
-                                  <div class="col-12 col-md-2 mb-2">
-                                    <label class="form-label" for="basic-default-phone">          من:</label>
-                                    <input type="date" id="basic-default-phone" class="form-control phone-mask" placeholder="     1-1-2024">
-                                  </div>
-                                 <!---->
-                                 <div class="col-12 col-md-2 mb-2">
-                                  <label class="form-label" for="basic-default">           الى:</label>
-                                  <input type="date" id="basic-default" class="form-control phone-mask" placeholder="     1-1-2024">
-                                </div>
-
-                                 <!---->
-                                 <div class="col-12 col-md-2  mb-2">
-                                  <button type="button" class="btn btn-primary waves-effect waves-light">  بحث</button>
-
-                                 </div>
-                                </form>
-                                <div class="card-datatable component-button text-nowrap rounded pt-4">
-                                  <table class="table table-bordered table-hover rounded dt-row-grouping">
-                                    <thead class="table-light text-center">
-                                      <tr class="fw-bold">
-                                        <th class="fw-bold">التسلسل</th>
-                                      
-                                        <th class="fw-bold">     مرجع السند</th>
-                                        <th class="fw-bold">    تاريخ الحركة</th>
-                                        <th class="fw-bold">    تاريخ الغاء</th>
-                                        <th class="fw-bold">GL </th>
-                                        <th class="fw-bold"> select</th>
-                                    
-                                      </tr>
-                                    </thead>
-                                    <tbody class="table-border-bottom-0 text-center">
-                                      <tr>
-                                        <td>
-                                         #1
-                                        </td>
-                                        <td>
-                                          1
-                                         </td>
-                                        <td>   1/1/2022</td>
-                
-                                        <td>
-                                          <input type="date" id="basic-default" class="form-control" placeholder=" 1-1-2024">
-                                        </td>
-                                        <td> 
-                                          <button class="btn bg-success text-bg-success p-1 d-flex align-items-center justify-content-center me-3 rounded" data-bs-toggle="modal" data-bs-target="#editModal" title="مشاهدة الكل"><i class="ti-xs me-1 ti ti-eye-check me-1"></i>مشاهدة الكل </button>
-                                        </td>
-                                        <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
-
-                                      </tr>
-
-                                    </tbody>
-                                    
-                                  </table>
-                                  <div class="text-center mt-4">
-                                    <button type="button" class="btn btn-primary waves-effect waves-light"> معاملة باطلة
-                                    </button>
+                  <div class="row justify-content-center mx-0 py-2 px-md-3 px-2">
+                    <!--item-->
+                    <div class="col-xl-6 col-md-6 col-lg-6 col-md-6 mb-md-0 mb-2">
+                      <div class="card h-100">
+                        <div class="user-seting" data-bs-toggle="modal" data-bs-target="#createModal">
+                          <div class="row h-100">
+                            <div class="col-sm-5 col-12">
+                              <div class="d-flex align-items-center h-100 justify-content-center mt-sm-0">
+                                <img src="./assets/img/illustrations/add.png" class="img-fluid mt-sm-4 mt-md-0" alt="add-new-roles" width="83">
+                              </div>
+                            </div>
+                            <div class="col-sm-7 col-12">
+                              <div class="card-body text-sm-end text-center ps-sm-0">
+                                <button data-bs-toggle="modal" data-bs-target="#createModal" class="btn btn-primary mb-2 text-nowrap add-new-role waves-effect waves-light">
+                                  اضافة 
+                                </button>
   
-                                   </div>
-                                </div>
-                               
-                        
+                                <p class="mb-0 mt-1">
+                                  Add group Account. data , if it does not exist
+                                </p>
+                              </div>
+                            </div>
+                          </div>
                         </div>
-                     </div>
-          <!-- Modal --edit-->
-          <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-xl">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="exampleModalLabel">  مشاهدة الحركة </h1>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                  <div class=" card-datatable text-nowrap rounded pt-4">
-                    <table class="table table-bordered table-hover rounded dt-row-grouping">
-                      <thead class="table-light">
-                        <tr class="fw-bold">
-                          <th class="fw-bold">التسلسل</th>
-                          <th class="fw-bold">تفاصيل المعاملات</th>
-                          <th class="fw-bold">     مرجع السند</th>
-                          <th class="fw-bold">    تاريخ الحركة</th>
-                          <th class="fw-bold">    تاريخ المستند</th>
-                          <th class="fw-bold">تاريخ الحدث </th>
-                          <th class="fw-bold"> الفرع</th>
-                          <th class="fw-bold"> التسلسل الشهرى</th>
-                        </tr>
-                      </thead>
-                      <tbody class="table-border-bottom-0">
-                        <tr>
-                          <td>
-                           #1
-                          </td>
-                          <td>
-                            ادخال قيود اليومية العام 1
-                           </td>
-                          <td>
-                            1
-                           </td>
-                          <td>   8-11-2023</td>
-  
-                          <td>
-                            8-11-2023
-                          </td>
-                          <td> 
-                            8-11-2023                  
-                          
-                          </td>
-                          <td>ابار  للتقنية(الرياض)</td>
-                          <td>11000001</td>
-
-                        </tr>
-
-                      </tbody>
-                      <tfoot class="table-tfoot">
-                          <tr class="text-center">
-                            <td colspan="2" class="one-toot">دخلت بواسطة</td>
-                            <td colspan="2">admin</td>
-                            <td class="one-toot">وثيقة المصدر</td>
-                          </tr>
-                      </tfoot>
-                      
-                    </table>
-                  </div>
-                  <div class="  card-datatable text-nowrap rounded pt-4 mt-5">
-                    <table class="table table-bordered table-hover rounded dt-row-grouping">
-                      <thead class="table-light">
-                        <tr class="fw-bold">
-                          <th class="fw-bold">التسلسل</th>
-                          <th class="fw-bold"> اسم الحساب</th>
-                          <th class="fw-bold">      مدين</th>
-                          <th class="fw-bold">     دائن</th>
-                          <th class="fw-bold">     مركز التكلفة</th>
-                          <th class="fw-bold"> البيان </th>
-                        
-                        </tr>
-                      </thead>
-                      <tbody class="table-border-bottom-0">
-                        <tr>
-                          <td>
-                           #1
-                          </td>
-                          <td>
-                            البنك الاهلى 111000100000001
-                           </td>
-                          <td>
-                            1000000
-                           </td>
-                          <td></td>
-  
-                          <td> </td>
-                          <td> </td>
-                        </tr>
-
-                      </tbody>
-                      <tfoot>
-                        <tr class="text-center">
-                          <td colspan="2"> الاجمالى</td>
-                          <td>1,0000</td>
-                          <td>1,0000</td>
-                          <td></td>
-                          <td> </td>
-                        </tr>
-                        <tr class="text-center">
-                          <td colspan="2" class="fw-bold"> المحاسب</td>
-                          <td colspan="4" class="fw-bold">المدير العام</td>
-                          
-                        </tr>
-                      </tfoot>
-                      
-                    </table>
+                       
+                      </div>
+                    </div>
+                    <!--item-->
                   </div>
                 </div>
-                
               </div>
-            </div>
-          </div>
-          <!--model-->
+              <div class="card comonent-hader-top p-2 mt-4">
+
+                          <!---->
+                            <div class="card-datatable tabel-all">
+                              <table class="table table-responsive table-bordered">
+                                <thead>
+                                  <tr class="text-center">
+                                    <th>  #</th>
+                                    <th>  اسم الفئة</th>
+                                    
+
+                                    <th> action</th>
+                                    
+                                  </tr>
+                                </thead>
+                                <tbody class="text-center">
+                                  <tr>
+                                    <td>
+                                   1
+                                    </td>
+                                    <td> 123456789 </td>
+                                  
+                                    <td>
+                                      <div class="d-flex justify-content-center">
+                                        <button class="btn bg-success text-bg-success p-1 d-flex align-items-center justify-content-center me-3 rounded" data-bs-toggle="modal" data-bs-target="#editModal" title="تعديل"><i class="ti ti-pencil  fs-4"></i> </button>
+                                        <a class="bg-danger text-bg-danger p-1 d-flex align-items-center justify-content-center me-3 rounded" href="javascript:void(0);" title="حذف"><i class="ti ti-trash  fs-4"></i> </a>
+                                      
+                                      </div>
+                                    </td>
+                                  </tr>
+                                 
+                                </tbody>
+                               
+                              </table>
+                            </div> 
+
+              </div>
+             
+            
+               <!-- Modal --create-->
+               <div class="modal fade" id="createModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5 fw-bold" id="exampleModalLabel">اضافةفئة الحسابات   </h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <form class="row component-form pt-2 justify-content-md-start justify-content-center align-items-end">
+                        <div class="col-12 col-md-12 col-lg-12 mb-3">
+                          <label class="form-label" for="number-check">    اسم  الفئة</label>
+                          <input type="text" id="number-check" class="form-control phone-mask" placeholder="  اسم الفئة ">
+                        </div>
+                      
+                        <div>
+                          <button type="button" class="btn btn-primary"> حفظ</button>
+
+                        </div>
+
+                      </form>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+               <!-- Modal --edit-->
+               <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-sm">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5 fw-bold" id="exampleModalLabel">تعديل  فئة الحسابات   </h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <form class="row component-form pt-2 justify-content-md-start justify-content-center align-items-end">
+                        <div class="col-12 col-md-12 col-lg-12 mb-3">
+                          <label class="form-label" for="number-check">    اسم  الفئة</label>
+                          <input type="text" id="number-check" class="form-control phone-mask" placeholder="  اسم الفئة ">
+                        </div>
+               
+                        <div>
+                          <button type="button" class="btn btn-primary"> تعديل</button>
+
+                        </div>
+
+                      </form>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+            <!---->
+             <!---->
               <button class="btn"id="saveButton" style="display: none;"></button>
 
              
-            </div>
 
             <!--/ Content -->
-            <div class="alert alert-primary text-black" role="alert">
+            <div class="alert alert-primary" role="alert">
              
               Ctrl+s يحفظ!---
               Ctrl+p للطباعه!---
              Crrl+x للحذف
             </div>
+          
+
+            <div class="content-backdrop fade"></div>
+          </div>
+          <!--/ Content wrapper -->
             <!-- Footer -->
             <footer class="content-footer footer bg-footer-theme">
               <div class="container-xxl">
@@ -1389,10 +1320,6 @@
               </div>
             </footer>
             <!-- / Footer -->
-
-            <div class="content-backdrop fade"></div>
-          </div>
-          <!--/ Content wrapper -->
         </div>
         <!--/ Layout container -->
       </div>
@@ -1478,27 +1405,57 @@
      <script src="./assets/js/forms-selects.js"></script>
      <script src="./assets/kendo.all.min.js"></script>
     <script src="./assets/vendor/js/upload.js"></script>
+
     <script>
- $('.selectAll').change(function() {
-  $(this).closest('table').find('.list-item :checkbox').not(this).prop('checked', this.checked);
-});
-
-    </script>
-     <script>
-      $(document).ready(function() {
-// إخفاء comonent-hader-top عند تحميل الصفحة
-$('.component-button').hide();
-
-// عند الضغط على زر "حفظ" داخل الـ Modal
-$('#createModal .btn-primary').click(function(event) {
-  event.preventDefault(); // منع إعادة تحميل الصفحة
-
-  // إظهار comonent-hader-top
-  $('.component-button').show();
+      $(document).ready(function () {
+        function initializeDropDownTree(selector) {
+          $(selector).each(function () {
+            if (!$(this).data("kendoDropDownTree")) {
+              $(this).kendoDropDownTree({
+                placeholder: "Select ...",
+                filter: "startswith",
+                dataSource: [
+                  {
+                    text: "Furniture",
+                    expanded: true,
+                    items: [
+                      { text: "Tables & Chairs" },
+                      { text: "Sofas" },
+                      { text: "Occasional Furniture" },
+                    ],
+                  },
+                  {
+                    text: "Decor",
+                    expanded: true,
+                    items: [
+                      { text: "Bed Linen" },
+                      { text: "Curtains & Blinds" },
+                      { text: "Carpets" },
+                    ],
+                  },
+                ],
+                select: function (e) {
+                  var dataItem = this.dataItem(e.node); // الحصول على العنصر المحدد
   
-});
-});
+                  // منع اختيار العناصر التي تحتوي على عناصر فرعية
+                  if (dataItem.hasChildren) {
+                    e.preventDefault(); // منع اختيار العنصر الرئيسي
+                    alert(
+                      "لا يمكنك اختيار العناصر الرئيسية، يرجى اختيار عنصر فرعي."
+                    );
+                  }
+                },
+              });
+            }
+          });
+        }
+  
+        // Initialize DropDownTree for existing elements
+        initializeDropDownTree(".dropdowntree");
+        initializeDropDownTree(".dropdowntree-tow");
+  
+      });
+    </script>
 
-  </script>
   </body>
 </html>
