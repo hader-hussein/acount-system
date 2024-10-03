@@ -1156,267 +1156,54 @@
           
             <!-- Content -->
            
-            <div class="container-xxl flex-grow-1 container-p-y content-admin pt-5  mt-4">
+            <div class="container-xxl flex-grow-1 container-p-y content-admin pt-5 mt-4">
               <div class="card comonent-hader-top">
                 <div class="card-body py-2 px-md-2 px-2 card-widget-separator">
                   <strong class="py-md-3 px-md-3 text-title-hadeer text-tilte-b"><span class="text-muted">
-                    اعدادت حسابات المستخدمين
+                    إقفال حركات الاستاذ العام
+
                   </span>
                   </strong>
                   <div class="row justify-content-center mx-0 py-2 px-md-3 px-2">
-                    <!--item-->
-                    <div class="col-xl-6 col-md-6 col-lg-3 col-md-6 mb-md-0 mb-2">
-                      <div class="card h-100">
-                        <div class="user-seting" data-bs-toggle="modal" data-bs-target="#createModal">
-                          <div class="row h-100">
-                            <div class="col-sm-5 col-12">
-                              <div class="d-flex align-items-center h-100 justify-content-center mt-sm-0">
-                                <img src="./assets/img/illustrations/add.png" class="img-fluid mt-sm-4 mt-md-0" alt="add-new-roles" width="83">
-                              </div>
-                            </div>
-                            <div class="col-sm-7 col-12">
-                              <div class="card-body text-sm-end text-center ps-sm-0">
-                                <button data-bs-toggle="modal" data-bs-target="#createModal" class="btn btn-primary mb-2 text-nowrap add-new-role waves-effect waves-light">
-                                  اضافة مستخدم
-                                </button>
-  
-                                <p class="mb-0 mt-1">
-                                  Add user-setting. data , if it does not exist
-                                </p>
-                              </div>
-                            </div>
+                        <div class="card p-2 p-md-4 mt-2">
+                          <div class="alert-top p-2 p-md-3 rounded alert-primary" role="alert">
+                            باستخدام هذه الميزة، يمكنك منع إدخال معاملات جديدة وتعطيل تحرير المعاملات المدخلة بالفعل حتى تاريخ محدد. تخضع المعاملات التي يمكنها توليد قيود دفتر الأستاذ العام فقط لهذا القيد.
+
+
                           </div>
-                        </div>
-                       
-                      </div>
-                    </div>
-                    <!--item-->
-                  </div>
-                </div>
-              </div>
-              <div class="card comonent-hader-top p-2 mt-4">
-
-                          <!---->
-                            <div class="card-datatable table-responsive tabel-all">
-                              <table class="table  table-bordered">
-                                <thead>
-                                  <tr class="text-center">
-                                    <th> اسم الدخول</th>
-                                    <th> الاسم بالكامل</th>
-                                    <th> رقم الهاتف</th>
-                                    <th> البريد الاكترونى</th>
-                                    <th> مجموعة الصلاحيات</th>
-                                    <th>تغير كلمة المرور </th>
-                                   
-                                    <th> action</th>
+                          <div class="row row-cols-md-2 row-cols-1 mx-0 mt-4">
+                              <div class="col text-center">
+                                <img class="me-auto" style="width: 128px;" src="./assets/img/img-nav/closed.png" alt="close">
+                              </div>
+                              <div class="col">
+                                <form class="component-form">
+                                  <div class="col-12 col-md-6 col-lg-6 mb-3">
+                                    <label for="date-close" class="form-label">     تاريخ نهاية فترة الإغلاق</label>
                                     
-                                  </tr>
-                                </thead>
-                                <tbody>
-                                  <tr>
-                                    <td>
-                                   admin
-                                    </td>
-                                    <td> admin </td>
-                                    <td>258963</td>
-                                    <td>admin@yahoo.com</td>
-                                    <td>مدير النظام</td>
-                                    <td class="d-flex align-items-center justify-content-center">
-                                      <button class="btn bg-success text-bg-success p-1 d-flex align-items-center justify-content-center me-3 rounded" data-bs-toggle="modal" data-bs-target="#editModalpasswroed"title="تعديل"><i class="ti ti-pencil  fs-4"></i> </button>
-
-                                    </td>
-                                    <td>
-                                      <div class="d-flex">
-                                        <button class="btn bg-success text-bg-success p-1 d-flex align-items-center justify-content-center me-3 rounded" data-bs-toggle="modal" data-bs-target="#editModal"title="تعديل"><i class="ti ti-pencil  fs-4"></i> </button>
-                                        <a class="bg-danger text-bg-danger p-1 d-flex align-items-center justify-content-center me-3 rounded" href="javascript:void(0);" title="حذف"><i class="ti ti-trash  fs-4"></i> </a>
-                                      
-                                      </div>
-                                    </td>
-                                  </tr>
-                                 
-                                </tbody>
-                               
-                              </table>
-                            </div> 
-
-              </div>
-              <!-- Modal --password-->
-              <div class="modal fade" id="editModalpasswroed" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h1 class="modal-title fs-5 fw-bold" id="exampleModalLabel">  تغيير كلمة المرور </h1>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                      <form class="row component-form pt-2 justify-content-md-start justify-content-center align-items-end">
-                        <div class="col-12 col-md-6 col-lg-12 mb-3">
-                          <label class="form-label" for="basic-user">    كلمة المرور الجديدة:</label>
-                          <input type="password" id="basic-password" class="form-control phone-mask">
-                        </div>
-                        <div class="col-12 col-md-6 col-lg-12 mb-3">
-                          <label class="form-label" for="basic-password2">  تأكيد كلمة المرور:</label>
-                          <input type="password" id="basic-password2" class="form-control phone-mask">
-                        </div>
-                      
-                        
-                        <div>
-                          <button type="button" class="btn btn-primary">تحديث</button>
-                        
-                        </div>
-                      </form>
-                    </div>
-                   
-                  </div>
-                </div>
-              </div>
-              <!-- Modal --edit-->
-              <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-xl">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h1 class="modal-title fs-5 fw-bold" id="exampleModalLabel">اعداادت حاسبات المستخدمين </h1>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                      <form class="row component-form pt-2 justify-content-md-start justify-content-center align-items-end">
-                        <div class="col-12 col-md-6 col-lg-3 mb-3">
-                          <label class="form-label" for="basic-user">    user login:</label>
-                          <input type="text" id="basic-user" class="form-control phone-mask" placeholder=" user login">
-                        </div>
-                        <div class="col-12 col-md-6 col-lg-3 mb-3">
-                          <label class="form-label" for="basic-name">    الاسم بالكامل :</label>
-                          <input type="text" id="basic-name" class="form-control phone-mask" placeholder=" الاسم">
-                        </div>
-                        <div class="col-12 col-md-6 col-lg-3 mb-3">
-                          <label class="form-label" for="basic-default-phone">    رقم الهاتف:</label>
-                          <input type="text" id="basic-default-phone" class="form-control phone-mask" placeholder="    رقم الهاتف">
-                        </div>
-                        <div class="col-12 col-md-6 col-lg-3 mb-3">
-                          <label class="form-label" for="basic-default-email">     البريد الاكترونى:</label>
-                          <input type="email" id="basic-default-email" class="form-control phone-mask" placeholder="     البريد الاكترونى">
-                        </div>
-                        <div class="col-12 col-md-6 col-lg-3 mb-3">
-                          <label for="selectBasic" class="form-label">    مجموعة الصلاحيات </label>
-                          
-                            <select id="selectBasic" class="select2 form-select" data-allow-clear="true">
-                              <option value="AK">   مدير النظام</option>
-                              <option value="HI">Hawaii</option>
-                              <option value="CA">California</option>
-                              <option value="NV">Nevada</option>
-                              <option value="OR">Oregon</option>
-                          
-                            </select>
-                        </div>
-                        <div class="col-12 col-md-6 col-lg-3 mb-3">
-                          <label for="selectBasic1" class="form-label">    الغة </label>
-                          
-                            <select id="selectBasic1" class="select2 form-select" data-allow-clear="true">
-                              <option value="AK">   العربية</option>
-                              <option value="HI">Hawaii</option>
-                              <option value="CA">California</option>
-                              <option value="NV">Nevada</option>
-                              <option value="OR">Oregon</option>
-                          
-                            </select>
-                       
+                                    <input type="date" id="date-close" class="form-control" >
+          
+                                  </div>
+                                  <div>
+                                    <button type="button" class="btn btn-primary"> اغلاق المعاملات</button>
+          
+                                  </div>
+                                </form>
+                              </div>
+                          </div>
                          
-                      
                         </div>
-                        <div class="col-12 col-md-6 col-lg-4 mb-3">
-                          <label class="form-label" for="flexCheckChecked1">  الدخول الى السنوات السابقة: :</label>
-                          <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1" checked="">
-                        </div>
-                        <div>
-                          <button type="button" class="btn btn-primary">تحديث</button>
-                        
-                        </div>
-                      </form>
-                    </div>
-                   
                   </div>
                 </div>
               </div>
-               <!-- Modal --create-->
-               <div class="modal fade" id="createModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-xl">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h1 class="modal-title fs-5 fw-bold" id="exampleModalLabel">انشاء حساب المستخدم </h1>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                      <form class="row component-form pt-2 justify-content-md-start justify-content-center align-items-end">
-                        <div class="col-12 col-md-6 col-lg-3 mb-3">
-                          <label class="form-label" for="basic-user">    user login:</label>
-                          <input type="text" id="basic-user" class="form-control phone-mask" placeholder="     user login">
-                        </div>
-                        <div class="col-12 col-md-6 col-lg-3 mb-3">
-                          <label class="form-label" for="basic-password">    كلمة المرور :</label>
-                          <input type="password" id="basic-password" class="form-control phone-mask">
-                        </div>
-                        <div class="col-12 col-md-6 col-lg-3 mb-3">
-                          <label class="form-label" for="basic-password2">    تاكيد كلمة المرور :</label>
-                          <input type="password" id="basic-password2" class="form-control phone-mask">
-                        </div>
-                        <div class="col-12 col-md-6 col-lg-3 mb-3">
-                          <label class="form-label" for="basic-name">    الاسم بالكامل :</label>
-                          <input type="text" id="basic-name" class="form-control phone-mask" placeholder="الاسم بالكامل">
-                        </div>
-                        <div class="col-12 col-md-6 col-lg-3 mb-3">
-                          <label class="form-label" for="basic-default-phone">    رقم الهاتف:</label>
-                          <input type="text" id="basic-default-phone" class="form-control phone-mask" placeholder="    رقم الهاتف">
-                        </div>
-                        <div class="col-12 col-md-6 col-lg-3 mb-3">
-                          <label class="form-label" for="basic-default-email">     البريد الاكترونى:</label>
-                          <input type="email" id="basic-default-email" class="form-control phone-mask" placeholder="     البريد الاكترونى">
-                        </div>
-                        <div class="col-12 col-md-6 col-lg-3 mb-3">
-                          <label for="selectBasic" class="form-label">    مجموعة الصلاحيات </label>
-                          
-                            <select id="selectBasic" class="select2 form-select" data-allow-clear="true">
-                              <option value="AK">   مدير النظام</option>
-                              <option value="HI">Hawaii</option>
-                              <option value="CA">California</option>
-                              <option value="NV">Nevada</option>
-                              <option value="OR">Oregon</option>
-                          
-                            </select>
-                        </div>
-                        <div class="col-12 col-md-6 col-lg-3 mb-3">
-                          <label for="selectBasic1" class="form-label">    الغة </label>
-                          
-                            <select id="selectBasic1" class="select2 form-select" data-allow-clear="true">
-                              <option value="AK">   العربية</option>
-                              <option value="HI">Hawaii</option>
-                              <option value="CA">California</option>
-                              <option value="NV">Nevada</option>
-                              <option value="OR">Oregon</option>
-                          
-                            </select>
-                      
-                        
-                      
-                        </div>
-                        <div>
-                          <button type="button" class="btn btn-primary">انشاء مستخدم</button>
-
-                        </div>
-
-                      </form>
-                    </div>
-                    
-                  </div>
-                </div>
-              </div>
-            <!---->
+            
+             
              <!---->
               <button class="btn"id="saveButton" style="display: none;"></button>
 
              
 
             <!--/ Content -->
-            <div class="alert alert-primary text-black" role="alert">
+            <div class="alert alert-primary" role="alert">
              
               Ctrl+s يحفظ!---
               Ctrl+p للطباعه!---
@@ -1530,27 +1317,6 @@
      <script src="./assets/kendo.all.min.js"></script>
     <script src="./assets/vendor/js/upload.js"></script>
 
-<script>
-
-      
-  $('.tabel-table').on('keydown','tr td',function (e) {
-    var keyCode = e.keyCode;
-    if (keyCode !== 9) return;
-
-    var $this = $(this),
-        $lastTr = $('tr:last', $('table')),
-        $lastTd = $('td:last', $lastTr);
-
-    
-    if (($(e.target).closest('td')).is($lastTd)) {
-     
-
-        $lastTr.after($lastTr.clone());
-      
-    }
-    
-});
-   </script>
 
   </body>
 </html>
