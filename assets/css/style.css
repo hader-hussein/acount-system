@@ -459,6 +459,7 @@ box-shadow: 0 -0.125rem 0.25rem rgba(165, 163, 174, 0.3);
 [dir="ltr"] .alert{
   right:0px
 }
+
 .input-groupe{
   display: grid;
   grid-template-columns: 0.25fr 1fr;
@@ -743,4 +744,22 @@ content: "" !important;
 }
 [dir=ltr] .menu-horizontal .menu-sub .menu-link {
   padding-left: 1rem !important;
+}
+@media (min-width: 992px) and  (max-width: 1024px){
+  .content-admin.pt-lg-5 {
+      padding-top: 1.50rem !important;
+  }
+}
+@media (max-width: 550px){
+  .content-admin.pt-lg-5 {
+      padding-top: 2.55rem !important;
+  }
+}
+@media (max-width:768px) {
+  .alert{
+    top: 10%;
+  }
+  .button-totel{
+    width: 100% !important;
+  }
 }
