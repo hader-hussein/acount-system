@@ -1672,102 +1672,102 @@
     </script>
     <script>
       $(document).ready(function () {
-  // Initialize select2 for the existing dropdowns
-  // $('.select2').select2();
-
-  // Add new row when plus button is clicked
-  $('#my-table').on('click', '.add-row', function () {
-    var newRow = `
-      <tr>
-        <td class="w-100 px-1">
-          <select class="select2 form-select" data-allow-clear="true">
-            <option value="AK">ريال سعودى</option>
-            <option value="HI">Hawaii</option>
-            <option value="CA">California</option>
-            <option value="NV">Nevada</option>
-            <option value="OR">Oregon</option>
-          </select>
-        </td>
-        <td class="w-100 px-1">
-          <input class="dropdowntree-tow"/>
-        </td>
-        <td class="w-100 px-1">
-          <select class="select2 form-select" data-allow-clear="true">
-            <option value="AK">ريال سعودى</option>
-            <option value="HI">Hawaii</option>
-            <option value="CA">California</option>
-            <option value="NV">Nevada</option>
-            <option value="OR">Oregon</option>
-          </select>
-        </td>
-       
-        <td><input type="text" class="form-control"></td>
-        <td><input type="text" class="form-control"></td>
-        <td><input type="text" class="form-control"></td>
-        <td><input type="text" class="form-control"></td>
-        <td><input type="text" class="form-control"></td>
-        <td><input type="text" class="form-control"></td>
-        <td><input type="text" class="form-control"></td>
-        <td><input type="text" class="form-control"></td>
-        <td class="d-flex justify-content-center">
-          <a class="bg-danger text-bg-danger p-1 d-flex align-items-center justify-content-center rounded delete-row" href="javascript:void(0);" title="حذف">
-            <i class="fa-solid fa-trash fs-5"></i>
-          </a>
-        </td>
-      </tr>`;
-
-    // Append the new row
-    $('#my-table tbody').append(newRow);
-
-    // Reinitialize select2 for the new dropdown
-    $('.select2').select2();
-
-    // Reinitialize DropDownTree for the newly added input
-    $(".dropdowntree-tow").last().kendoDropDownTree({
-      dataSource: [
-                  {
-                    text: "Furniture",
-                    expanded: true,
-                    items: [
-                      { text: "Tables & Chairs" },
-                      { text: "Sofas" },
-                      { text: "Occasional Furniture" },
-                    ],
-                  },
-                  {
-                    text: "Decor",
-                    expanded: true,
-                    items: [
-                      { text: "Bed Linen" },
-                      { text: "Curtains & Blinds" },
-                      { text: "Carpets" },
-                    ],
-                  },
-                ],select: function (e) {
-                  var dataItem = this.dataItem(e.node); // الحصول على العنصر المحدد
-  
-                  // منع اختيار العناصر التي تحتوي على عناصر فرعية
-                  if (dataItem.hasChildren) {
-                    e.preventDefault(); // منع اختيار العنصر الرئيسي
-                    alert(
-                      "لا يمكنك اختيار العناصر الرئيسية، يرجى اختيار عنصر فرعي."
-                    );
-                  }
-                },
-        dataTextField: "text",
-        dataValueField: "value"
-    });
-});
-
-// Delete row when delete button is clicked
-$('#my-table').on('click', '.delete-row', function () {
-    $(this).closest('tr').remove();
-});
-
-  
-});
-
+        // Initialize select2 for the existing dropdowns
+        $('.select2').select2();
+    
+        // Add new row when plus button is clicked
+        $('#my-table').on('click', '.add-row', function () {
+          var newRow = `
+            <tr>
+              <td class="w-100 px-1">
+                <select class="select2 form-select" data-allow-clear="true">
+                  <option value="AK">ريال سعودى</option>
+                  <option value="HI">Hawaii</option>
+                  <option value="CA">California</option>
+                  <option value="NV">Nevada</option>
+                  <option value="OR">Oregon</option>
+                </select>
+              </td>
+              <td class="w-100 px-1">
+                <input class="dropdowntree-tow"/>
+              </td>
+              <td class="w-100 px-1">
+                <select class="select2 form-select" data-allow-clear="true">
+                  <option value="AK">ريال سعودى</option>
+                  <option value="HI">Hawaii</option>
+                  <option value="CA">California</option>
+                  <option value="NV">Nevada</option>
+                  <option value="OR">Oregon</option>
+                </select>
+              </td>
+             
+              <td><input type="text" class="form-control"></td>
+              <td><input type="text" class="form-control"></td>
+              <td><input type="text" class="form-control"></td>
+              <td><input type="text" class="form-control"></td>
+              <td><input type="text" class="form-control"></td>
+              <td><input type="text" class="form-control"></td>
+              <td><input type="text" class="form-control"></td>
+              <td><input type="text" class="form-control"></td>
+              <td class="d-flex justify-content-center">
+                <a class="bg-danger text-bg-danger p-1 d-flex align-items-center justify-content-center rounded delete-row" href="javascript:void(0);" title="حذف">
+                  <i class="fa-solid fa-trash fs-5"></i>
+                </a>
+              </td>
+            </tr>`;
+    
+          // Append the new row
+          var $newRow = $(newRow); // Create a jQuery object from the new row
+          $('#my-table tbody').append($newRow);
+    
+          // Reinitialize select2 for the new dropdown
+          $newRow.find('.select2').select2();
+    
+          // Reinitialize DropDownTree for the newly added input
+          $newRow.find(".dropdowntree-tow").kendoDropDownTree({
+            placeholder: "Select ...",    // Adding placeholder
+        filter: "startswith",         // Adding filter option
+            dataSource: [
+              {
+                text: "Furniture",
+                expanded: true,
+                items: [
+                  { text: "Tables & Chairs" },
+                  { text: "Sofas" },
+                  { text: "Occasional Furniture" },
+                ],
+              },
+              {
+                text: "Decor",
+                expanded: true,
+                items: [
+                  { text: "Bed Linen" },
+                  { text: "Curtains & Blinds" },
+                  { text: "Carpets" },
+                ],
+              },
+            ],
+            select: function (e) {
+              var dataItem = this.dataItem(e.node); // الحصول على العنصر المحدد
+    
+              // منع اختيار العناصر التي تحتوي على عناصر فرعية
+              if (dataItem.hasChildren) {
+                e.preventDefault(); // منع اختيار العنصر الرئيسي
+                alert("لا يمكنك اختيار العناصر الرئيسية، يرجى اختيار عنصر فرعي.");
+              }
+            },
+            dataTextField: "text",
+            dataValueField: "value"
+          });
+        });
+    
+        // Delete row when delete button is clicked
+        $('#my-table').on('click', '.delete-row', function () {
+          $(this).closest('tr').remove();
+        });
+      });
     </script>
+    
 
   </body>
 </html>
