@@ -88,70 +88,70 @@ function readURL(input) {
   });
 
 /**upload-file */
-    const uploadArea = document.querySelector('.upload-area');
-    const fileList = document.querySelector('.file-list');
+//     const uploadArea = document.querySelector('.upload-area');
+//     const fileList = document.querySelector('.file-list');
 
-    uploadArea.addEventListener('dragover', (e) => {
-      e.preventDefault();
-      uploadArea.style.border = '2px dashed #007bff';
-    });
+//     uploadArea.addEventListener('dragover', (e) => {
+//       e.preventDefault();
+//       uploadArea.style.border = '2px dashed #007bff';
+//     });
 
-    uploadArea.addEventListener('dragleave', () => {
-      uploadArea.style.border = '2px dashed #ccc';
-    });
+//     uploadArea.addEventListener('dragleave', () => {
+//       uploadArea.style.border = '2px dashed #ccc';
+//     });
 
-    uploadArea.addEventListener('drop', (e) => {
-      e.preventDefault();
-      uploadArea.style.border = '2px dashed #ccc';
-      const files = e.dataTransfer.files;
-      handleFiles(files);
-    });
+//     uploadArea.addEventListener('drop', (e) => {
+//       e.preventDefault();
+//       uploadArea.style.border = '2px dashed #ccc';
+//       const files = e.dataTransfer.files;
+//       handleFiles(files);
+//     });
 
-    uploadArea.addEventListener('click', () => {
-      const input = document.createElement('input');
-      input.type = 'file';
-      input.multiple = true;
-      input.click();
-      input.addEventListener('change', () => {
-        const files = input.files;
-        handleFiles(files);
-      });
-    });
+//     uploadArea.addEventListener('click', () => {
+//       const input = document.createElement('input');
+//       input.type = 'file';
+//       input.multiple = true;
+//       input.click();
+//       input.addEventListener('change', () => {
+//         const files = input.files;
+//         handleFiles(files);
+//       });
+//     });
 
-    function handleFiles(files) {
-      for (const file of files) {
-        const listItem = document.createElement('li');
-        listItem.innerHTML = `
-          <span class="file-name">${file.name}</span>
-          <span class="file-size">${formatFileSize(file.size)}</span>
-          <button type="button" class="remove-button" data-file-name="${file.name}">Remove</button>
-        `;
-        fileList.appendChild(listItem);
-      }
+//     function handleFiles(files) {
+//       for (const file of files) {
+//         const listItem = document.createElement('li');
+//         listItem.innerHTML = `
+//           <span class="file-name">${file.name}</span>
+//           <span class="file-size">${formatFileSize(file.size)}</span>
+//           <button type="button" class="remove-button" data-file-name="${file.name}">Remove</button>
+//         `;
+//         fileList.appendChild(listItem);
+//       }
 
-      const removeButtons = document.querySelectorAll('.remove-button');
-      removeButtons.forEach(button => {
-        button.addEventListener('click', () => {
-          const fileName = button.dataset.fileName;
-          removeFile(fileName);
-        });
-      });
-    }
+//       const removeButtons = document.querySelectorAll('.remove-button');
+//       removeButtons.forEach(button => {
+//         button.addEventListener('click', () => {
+//           const fileName = button.dataset.fileName;
+//           removeFile(fileName);
+//         });
+//       });
+//     }
 
-    function formatFileSize(bytes) {
-      if (bytes < 1024) return bytes + ' B';
-      if (bytes < 1048576) return (bytes / 1024).toFixed(1) + ' KB';
-      if (bytes < 1073741824) return (bytes / 1048576).toFixed(1) + ' MB';
-      return (bytes / 1073741824).toFixed(1) + ' GB';
-    }
+//     function formatFileSize(bytes) {
+//       if (bytes < 1024) return bytes + ' B';
+//       if (bytes < 1048576) return (bytes / 1024).toFixed(1) + ' KB';
+//       if (bytes < 1073741824) return (bytes / 1048576).toFixed(1) + ' MB';
+//       return (bytes / 1073741824).toFixed(1) + ' GB';
+//     }
 
-    function removeFile(fileName) {
-  const listItems = fileList.children;
-  for (const item of listItems) {
-    if (item.querySelector('.file-name').textContent === fileName) {
-      item.remove();
-      break;
-    }
-  }
-}
+//     function removeFile(fileName) {
+//   const listItems = fileList.children;
+//   for (const item of listItems) {
+//     if (item.querySelector('.file-name').textContent === fileName) {
+//       item.remove();
+//       break;
+//     }
+//   }
+// }
   

@@ -1118,7 +1118,7 @@
           <!-- Content -->
 
           <div class="container-xxl flex-grow-1 container-p-y content-admin pt-lg-5 mt-md-4">
-                  <form action="createSuccess.html"
+                  <form action=""
             class="row mx-0 component-form pt-2 justify-content-md-start justify-content-center align-items-end">
             <div class="card comonent-hader-top">
               <div class="card-body py-2 px-md-4 px-2 card-widget-separator">
@@ -1325,9 +1325,9 @@
                            <!--فاتوره الايراد-->
                             <!--الايراد-->
                             <div class="col-12 col-lg-3 col-md-4 mb-2" id="input-Customers">
-                              <label for="select2Basic" class="form-label">    العملاء:<span class="start-form">*</span></label>
+                              <label for="select2Customers" class="form-label">    العملاء:<span class="start-form">*</span></label>
 
-                                <select id="select2Basic" class="select2 form-select" data-allow-clear="true">
+                                <select id="select2Customers" class="select2 form-select" data-allow-clear="true">
                                   <option value="AK">   البنك الاهلى</option>
                                   <option value="HI">Hawaii</option>
                                   <option value="CA">California</option>
@@ -1384,165 +1384,127 @@
                       <h2 class="accordion-header">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                           data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                          بنود الحركة
+                          بنود الحركة- قيد اليومية
                         </button>
                       </h2>
                       <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                          <div class="table-responsive text-nowrap rounded card-datatable pt-4 pb-4">
-                            <table class="table table-bordered table-hover rounded tabel-table" id="my-table">
-                              <thead class="table-light">
-                                <tr class="fw-bold text-center">
-                                  <th class="fw-bold">م</th>
-                                  <th class="fw-bold">اسم الحساب</th>
-                                  <th class="fw-bold">مدين</th>
-                                  <th class="fw-bold">دائن</th>
-                                  <th class="fw-bold">مركز التكلفة</th>
-                                  <th class="fw-bold">البيان</th>
-                                  <th class="fw-bold px-1">Actions</th>
-                                </tr>
-                              </thead>
-                              <tbody class="table-border-bottom-0">
-                                <tr>
-                                  <td></td>
-                                  <td class="w-20">
-                                    <input id="dropdowntree" class="dropdowntree-tow" />
-                                  </td>
+                            <div class="row mx-0 g-2 align-items-end">
+                               <!--قيد اليومية-->
 
-                                  <td>
-                                    <input type="text" maxlength="9" class="form-control" />
-                                  </td>
-                                  <td>
-                                    <input type="text" maxlength="9" class="form-control" />
-                                  </td>
-                                  <td class="w-20">
-                                    <input id="dropdowntree-tow" class="dropdowntree-tow" />
-                                  </td>
-                                  <td class="w-20">
-                                    <textarea name="text" rows="1" class="form-control" cols="10" wrap="soft">
-                                      </textarea>
-                                  </td>
-                                  <td class="d-flex justify-content-center">
-                                    <a class="bg-primary text-bg-primary p-1 d-flex align-items-center justify-content-center  rounded add-row"
-                                      href="javascript:void(0);" title="اضافة">
-                                      <i class="fa-solid fa-plus fs-5"></i>
-                                    </a>
-                                  </td>
-                                </tr>
-                              </tbody>
-                            </table>
-                            <div class="w-100 pt-4 pb-4 px-4">
-                              <div class="d-flex justify-content-between w-50 align-items-center" style="
-                                    border-bottom: 1px solid #c1c0c8;
-                                    padding: 10px;
-                                  ">
-                                <h6 class="title-table fw-bold fs-5 mb-0">
-                                  الاجمالى
-                                </h6>
-                                <div class="d-flex justify-content-between title-m">
-                                  <div class="fw-bold fs-5">100%</div>
-                                  <div class="fw-bold fs-5">100%</div>
-                                </div>
+                              <div class="col-12 col-lg-3 col-md-4 mb-2" id="date-name-acount" >
+                                <label class="form-label" for="name-acount"> اسم الحساب:<span class="start-form">*</span></label>
+                                <input id="dropdowntree" class="dropdowntree-tow" style="padding: 0.31rem 0.875rem;" />         
+                              
                               </div>
-                              <div class="d-flex justify-content-between w-50 align-items-center" style="
-                                    border-bottom: 1px solid #c1c0c8;
-                                    padding: 10px;
-                                  ">
-                                <h6 class="title-table fw-bold fs-5 mb-0">
-                                  الفرق
-                                </h6>
+                              <div class="col-12 col-lg-1 col-md-4 mb-2" id="date-debtor" >
+                                <label class="form-label" for="name-debtor"> مدين<span class="start-form">*</span></label>
+                                <input type="text" maxlength="9" class="form-control" />        
+                              
+                              </div>
 
-                                <div class="d-flex justify-content-between title-m">
-                                  <div class="fw-bold fs-5">100%</div>
-                                  <div class="fw-bold fs-5">100%</div>
-                                </div>
+                              <div class="col-12 col-lg-1 col-md-4 mb-2" id="date-creditor" >
+                                <label class="form-label" for="name-acount"> دائن<span class="start-form">*</span></label>
+                                <input type="text" maxlength="9" class="form-control" />       
+                              
                               </div>
-                            </div>
-                            <div>
-                              <div class="dropdown dropdown-tree" id="firstDropDownTree"></div>
-                            </div>
-                          </div>
+                              <div class="col-12 col-lg-1 col-md-4 mb-2" id="date-value" >
+                                <label class="form-label" for="name-debtor"> قيمة<span class="start-form">*</span></label>
+                                <input type="number" maxlength="9" class="form-control" />        
+                              
+                              </div>
+                              <div class="col-12 col-lg-3 col-md-4 mb-2" id="select-nameacount" >
+                                <label class="form-label" for="select-name-acount"> اسم الصنف:<span class="start-form">*</span></label>
+                                <select id="select-name-acount" class="select2 form-select" data-allow-clear="true">
+                                  <option value="AK">  ريال سعودى</option>
+                                  <option value="HI">Hawaii</option>
+                                  <option value="CA">California</option>
+                                  <option value="NV">Nevada</option>
+                                  <option value="OR">Oregon</option>
+                              
+                                </select>       
+                              
+                              </div>
+                              <div class="col-12 col-lg-3 col-md-4 mb-2" id="date-name-Cost" >
+                                <label class="form-label" for="name-acount"> مركز التكلفة<span class="start-form">*</span></label>
+                                <input id="dropdowntree" class="dropdowntree-tow" style="padding: 0.31rem 0.875rem;" />         
+    
+                              
+                              </div>
+                              <div class="col-12 col-lg-2 col-md-4 mb-2" id="Tax-number">
+                                <label class="form-label" for="Tax-number">  الرقم الضريبى<span class="start-form">*</span></label>
+                                <input type="text" class="form-control" />        
+                              
+                              </div>
+                              <div class="col-12 col-lg-1 col-md-4 mb-2" id="Supplier-name">
+                                <label class="form-label" for="Supplier-name">   اسم المورد<span class="start-form">*</span></label>
+                                <input type="text" class="form-control" />        
+                              
+                              </div>
+                              <div class="col-12 col-lg-3 col-md-4 mb-2" id="date-name-Statement" >
+                                <label class="form-label" for="name-Statement">  البيان<span class="start-form">*</span></label>
+                                <textarea name="text" rows="1" class="form-control">  </textarea>        
+    
+                              
+                              </div>
+                              <div class="col-12 col-lg-1 col-md-4 mb-2" id="date-Unity" >
+                                <label class="form-label" for="name-Unity"> الوحدة<span class="start-form">*</span></label>
+                                <input type="text" class="form-control" />        
+                              
+                              </div>
+                              <div class="col-12 col-lg-2 col-md-4 mb-2" id="Bond-review" >
+                                <label class="form-label" for="Bond-review"> مرجعه السند<span class="start-form">*</span></label>
+                                <input type="text" class="form-control" />        
+                              
+                              </div>
+                              <div class="col-12 col-lg-1 col-md-4 mb-2" id="Quantity" >
+                                <label class="form-label" for="Quantity">  الكمية<span class="start-form">*</span></label>
+                                <input type="text" class="form-control" />        
+                              
+                              </div>
+                              <div class="col-12 col-lg-1 col-md-4 mb-2" id="price" >
+                                <label class="form-label" for="price">  السعر<span class="start-form">*</span></label>
+                                <input type="text" class="form-control" />        
+                              
+                              </div>
+                              <div class="col-12 col-lg-1 col-md-4 mb-2" id="opponent" >
+                                <label class="form-label" for="opponent">  الخصم<span class="start-form">*</span></label>
+                                <input type="text" class="form-control" />        
+                              
+                              </div>
+                              <div class="col-12 col-lg-1 col-md-4 mb-2" id="Total" >
+                                <label class="form-label" for="Total">  الاجمالى<span class="start-form">*</span></label>
+                                <input type="text" class="form-control" />        
+                              
+                              </div>
+                              <div class="col-12 col-lg-1 col-md-4 mb-2" id="Tax-rate">
+                                <label class="form-label" for="Tax-rate">  نسبة الضريبة<span class="start-form">*</span></label>
+                                <input type="text" class="form-control" />        
+                              
+                              </div>
+                              <div class="col-12 col-lg-1 col-md-4 mb-2" id="Tax">
+                                <label class="form-label" for="Tax">  الضريبة<span class="start-form">*</span></label>
+                                <input type="text" class="form-control" />        
+                              
+                              </div>
+                              <div class="col-12 col-lg-1 col-md-4 mb-2" id="pure">
+                                <label class="form-label" for="pure">  الصافى<span class="start-form">*</span></label>
+                                <input type="text" class="form-control" />        
+                              
+                              </div>
+                            
+                              <div class="col-12 col-lg-1 col-md-4 mb-2">
+                                <a class="bg-primary text-bg-primary p-1 d-flex align-items-center justify-content-center  rounded add-row" href="javascript:void(0);" title="اضافة">
+                                  <i class="fa-solid fa-plus fs-5"></i>
+                                </a>
+                              </div>
+                             
+                            </div> 
+                       
                         </div>
                       </div>
                     </div>
-                    <!--accordion-item-->
-                    <div class="accordion-item" id="cash-deposit-section">
-                      <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                          data-bs-target="#collapse-voucherTwo" aria-expanded="false" aria-controls="collapse-voucherTwo">
-                          بنود النقدية المودعة
-                        </button>
-                      </h2>
-                      <div id="collapse-voucherTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                          <div class="table-responsive text-nowrap rounded card-datatable pt-4 pb-4">
-
-                            <table class="table table-bordered table-hover rounded tabel-table" id="my-table-voucher">
-                              <thead class="table-light">
-                                <tr class="fw-bold text-center">
-
-                                  <th class="fw-bold">كود الحساب</th>
-                                  <th class="fw-bold"> وصف الحسلب</th>
-
-                                  <th class="fw-bold"> قيمة</th>
-                                  <th class="fw-bold">مركز التكلفة</th>
-                                  <th class="fw-bold"> البيان</th>
-                                  <th class="fw-bold px-1"> Actions</th>
-                                </tr>
-                              </thead>
-                              <tbody class="table-border-bottom-0 text-center">
-                                <tr>
-                                  <td></td>
-
-                                  <td class="w-30">
-                                    <input id="dropdowntree" class="dropdowntree-tow" />
-
-
-                                  </td>
-
-                                  <td> <input type="text" maxlength="11" class="form-control"> </td>
-                                  <td class="w-20">
-                                    <input id="dropdowntree-tow" class="dropdowntree-tow" />
-                                  </td>
-                                  <td class="w-25"><textarea name="text" rows="1" class="form-control" cols="10"
-                                      wrap="soft"> </textarea>
-                                  </td>
-                                  <td class="d-flex justify-content-center">
-                                    <a class="bg-primary text-bg-primary p-1 d-flex align-items-center justify-content-center  rounded add-row-voucher"
-                                      href="javascript:void(0);" title="اضافة">
-                                      <i class="fa-solid fa-plus fs-4"></i>
-                                    </a>
-                                  </td>
-                                </tr>
-                              </tbody>
-
-                            </table>
-                            <div class=" w-100 pt-4 pb-4 px-4 ">
-
-                              <div class="d-flex justify-content-between w-70 align-items-center"
-                                style=" border-bottom: 1px solid #c1c0c8; padding: 10px;">
-                                <h6 class="title-table fw-bold fs-5 mb-0">الاجمالى</h6>
-                                <div class="d-flex justify-content-between title-m">
-                                  <div class="fw-bold fs-5">100%</div>
-
-                                </div>
-
-
-                              </div>
-
-
-                            </div>
-                            <div>
-
-                              <div class="dropdown dropdown-tree" id="firstDropDownTree"></div>
-
-
-                            </div>
-
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                   
                      <!--تحويلات بين الحسابات البنكية-->
                      <div class="accordion-item" id="bank-transaction-section">
                       <h2 class="accordion-header">
@@ -1611,277 +1573,8 @@
                         </div>
                       </div>
                     </div>
-                    <!--الايراد-->
-                    <div class="accordion-item" id="Revenue-item">
-                      <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                          بنود  الحركة
-                        </button>
-                      </h2>
-                      <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                          <div class="table-responsive text-nowrap rounded card-datatable pt-4 pb-4">
-
-                            <table class="table table-bordered table-hover rounded tabel-table" id="my-table">
-                              <thead class="table-light">
-                                <tr class="fw-bold text-center">
-                              
-                                  <th class="fw-bold"> الصنف</th>
-                                  <th class="fw-bold">  اسم الحساب</th>
-
-                                  <th class="fw-bold">مركز التكلفة</th>
-                                  <th class="fw-bold"> الوحدة</th>
-                                  <th class="fw-bold"> مرجع السند</th>
-                                  <th class="fw-bold">  الكمية</th>
-                                  <th class="fw-bold">  السعر </th>
-                                  <th class="fw-bold">   الخصم</th>
-
-                                  <th class="fw-bold">  الاجمالى</th>
-
-                                  <th class="fw-bold">  الضريبة</th>
-                                  <th class="fw-bold">  الصافى</th>
-
-                                  <th class="fw-bold px-1"> Actions</th>
-                                </tr>
-                              </thead>
-                              <tbody class="table-border-bottom-0">
-                                <tr>
-
-                                  <td class="w-100 px-1"> 
-                                    <select id="select-name-acount" class="select2 form-select" data-allow-clear="true">
-                                      <option value="AK">  ريال سعودى</option>
-                                      <option value="HI">Hawaii</option>
-                                      <option value="CA">California</option>
-                                      <option value="NV">Nevada</option>
-                                      <option value="OR">Oregon</option>
-                                  
-                                    </select>
-                                  </td>
-                                  
-
-                                  <td class="w-100 px-1">
-                                    <input id="dropdowntree" class="dropdowntree-tow"/>
-
-
-                                  </td>
-                                  <td class="w-100 px-1">
-                                    <select id="select-const" class="select2 form-select" data-allow-clear="true">
-                                      <option value="AK">  ريال سعودى</option>
-                                      <option value="HI">Hawaii</option>
-                                      <option value="CA">California</option>
-                                      <option value="NV">Nevada</option>
-                                      <option value="OR">Oregon</option>
-                                  
-                                    </select>
-                                  </td>
-                                  <td>
-                                    <input type="text"  class="form-control">   
-
-                                  </td>
-                                  <td>
-                                    <input type="text"  class="form-control">   
-
-                                  </td>
-                                 
-
-                                  <td >                    
-                                    
-                                    <input type="text"  class="form-control">   
-                                  </td>
-                                  <td >                    
-                                    
-                                    <input type="text"  class="form-control">   
-                                  </td>
-                                  <td class="w-20"> 
-                                    <input type="text"  class="form-control">   
-
-                                  </td>
-                                  <td class="w-20"> 
-                                    <input type="text"  class="form-control">   
-
-                                  </td>
-                                  <td class="w-20"> 
-                                    <input type="text"  class="form-control">   
-
-                                  </td>
-                                  <td class="w-25">
-                                    <input type="text"  class="form-control">   
-                                  </td>
-                                  <td class="d-flex justify-content-center">
-                                    <a class="bg-primary text-bg-primary p-1 d-flex align-items-center justify-content-center  rounded add-row" href="javascript:void(0);" title="اضافة">
-                                      <i class="fa-solid fa-plus fs-5"></i>
-                                    </a>
-                                  </td>
-                                </tr>
-                              </tbody>
-                          
-                            </table>
-                            <div class=" w-100 pt-4 pb-4 px-4 ">
-                              
-                                <div class="d-flex justify-content-between w-70 align-items-center" style=" border-bottom: 1px solid #c1c0c8; padding: 10px;">
-                                    <h6 class="title-table fw-bold fs-5 mb-0">الاجمالى</h6>
-                                    <div class="d-flex justify-content-between title-m">
-                                      <div class="fw-bold fs-5">100%</div>
-                                    
-                                    </div>
-                                    
-                                    
-                                </div>
-                    
-
-                            </div>
-                            <div>
-                           
-                              <div class="dropdown dropdown-tree" id="firstDropDownTree"></div>
-
-
-                            </div>
-
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <!--المصروف-->
-                    <!--item-->
-                    <div class="accordion-item" id="Expense-items">
-                      <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                          المصروف بنود  الحركة
-                        </button>
-                      </h2>
-                      <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                          <div class="table-responsive text-nowrap rounded card-datatable pt-4 pb-4">
-
-                            <table class="table table-bordered table-hover rounded tabel-table" id="my-table">
-                              <thead class="table-light">
-                                <tr class="fw-bold text-center">
-                              
-                                  <th class="fw-bold"> الصنف</th>
-                                  <th class="fw-bold">  اسم الحساب</th>
-
-                                  <th class="fw-bold">مركز التكلفة</th>
-                                  <th class="fw-bold"> الوصف</th>
-                                  <th class="fw-bold">  الرقم الضريبى</th>
-                                  <th class="fw-bold">  اسم المورد</th>
-
-                                  <th class="fw-bold"> مرجع السند</th>
-                                  <th class="fw-bold">  الكمية</th>
-                                  <th class="fw-bold">  السعر </th>
-                                  <th class="fw-bold">  الاجمالى</th>
-
-                                  <th class="fw-bold">  نسبة الضريبة</th>
-                                  <th class="fw-bold">  الضريبة</th>
-                                  <th class="fw-bold">  الصافى</th>
-
-                                  <th class="fw-bold px-1"> Actions</th>
-                                </tr>
-                              </thead>
-                              <tbody class="table-border-bottom-0">
-                                <tr>
-
-                                  <td class="w-100 px-1"> 
-                                    <select id="select-name-acount" class="select2 form-select" data-allow-clear="true">
-                                      <option value="AK">  ريال سعودى</option>
-                                      <option value="HI">Hawaii</option>
-                                      <option value="CA">California</option>
-                                      <option value="NV">Nevada</option>
-                                      <option value="OR">Oregon</option>
-                                  
-                                    </select>
-                                  </td>
-                                  
-
-                                  <td class="w-100 px-1">
-                                    <input id="dropdowntree" class="dropdowntree-tow"/>
-
-
-                                  </td>
-                                  <td class="w-100 px-1">
-                                    <select id="select-const" class="select2 form-select" data-allow-clear="true">
-                                      <option value="AK">  ريال سعودى</option>
-                                      <option value="HI">Hawaii</option>
-                                      <option value="CA">California</option>
-                                      <option value="NV">Nevada</option>
-                                      <option value="OR">Oregon</option>
-                                  
-                                    </select>
-                                  </td>
-                                  <td>
-                                    <input type="text"  class="form-control">   
-
-                                  </td>
-                                  <td>
-                                    <input type="text"  class="form-control">   
-
-                                  </td>
-                                  <td>
-                                    <input type="text"  class="form-control">   
-
-                                  </td>
-                                  <td>
-                                    <input type="text"  class="form-control">   
-
-                                  </td>
-
-                                  <td >                    
-                                    
-                                    <input type="text"  class="form-control">   
-                                  </td>
-                                  <td >                    
-                                    
-                                    <input type="text"  class="form-control">   
-                                  </td>
-                                  <td >                    
-                                    
-                                    <input type="text"  class="form-control">   
-                                  </td>
-                                  <td >                    
-                                    
-                                    <input type="text"  class="form-control">   
-                                  </td>
-                                  <td class="w-20"> 
-                                    <input type="text"  class="form-control">   
-
-                                  </td>
-                                  <td class="w-25">
-                                    <input type="text"  class="form-control">   
-                                  </td>
-                                  <td class="d-flex justify-content-center">
-                                    <a class="bg-primary text-bg-primary p-1 d-flex align-items-center justify-content-center  rounded add-row" href="javascript:void(0);" title="اضافة">
-                                      <i class="fa-solid fa-plus fs-5"></i>
-                                    </a>
-                                  </td>
-                                </tr>
-                              </tbody>
-                          
-                            </table>
-                            <div class=" w-100 pt-4 pb-4 px-4 ">
-                              
-                                <div class="d-flex justify-content-between w-70 align-items-center" style=" border-bottom: 1px solid #c1c0c8; padding: 10px;">
-                                    <h6 class="title-table fw-bold fs-5 mb-0">الاجمالى</h6>
-                                    <div class="d-flex justify-content-between title-m">
-                                      <div class="fw-bold fs-5">100%</div>
-                                    
-                                    </div>
-                                    
-                                    
-                                </div>
-                    
-
-                            </div>
-                            <div>
-                           
-                              <div class="dropdown dropdown-tree" id="firstDropDownTree"></div>
-
-
-                            </div>
-
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <!---->
+                  
+                  
                     <!--الايراد-->
                     <div class="pt-2">
                       <button type="submit" class="btn btn-primary waves-effect waves-light" title="حفظ"
@@ -2126,163 +1819,90 @@
                 },
               ],
               select: function (e) {
-                var dataItem = this.dataItem(e.node); // الحصول على العنصر المحدد
-
-                // منع اختيار العناصر التي تحتوي على عناصر فرعية
+                var dataItem = this.dataItem(e.node);
                 if (dataItem.hasChildren) {
-                  e.preventDefault(); // منع اختيار العنصر الرئيسي
-                  alert(
-                    "لا يمكنك اختيار العناصر الرئيسية، يرجى اختيار عنصر فرعي."
-                  );
+                  e.preventDefault();
+                  alert("لا يمكنك اختيار العناصر الرئيسية، يرجى اختيار عنصر فرعي.");
                 }
               },
             });
           }
         });
       }
-
-      // Initialize DropDownTree for existing elements
+  
+      // تهيئة DropDownTree للعناصر الحالية
       initializeDropDownTree(".dropdowntree");
       initializeDropDownTree(".dropdowntree-tow");
-
-      $(".add-row").on("click", function () {
-        var $row = $(this).closest("tr");
-        var $newRow = $row.clone();
-
-        // Remove the plus button from the new row
-        $newRow.find(".add-row").remove();
-        // إضافة زر حذف للصف الجديد
-        $newRow
-          .find(".d-flex")
-          .append(
-            '<a class="bg-danger text-bg-danger p-1 d-flex align-items-center justify-content-center me-3 rounded delete-row" href="javascript:void(0);" title="حذف"><i class="fa-solid fa-trash fs-5"></i></a>'
-          );
-
-        // Clear values
-        $newRow.find("input").val("");
-        $newRow.find("textarea").val("");
-
-        // Append the new row to the table body
-        $("#my-table tbody").append($newRow);
-
-        // Initialize DropDownTree for new row
-        initializeDropDownTree($newRow.find(".dropdowntree"));
-        initializeDropDownTree($newRow.find(".dropdowntree-tow"));
-        // حذف الصف عند الضغط على زر الحذف
-        $(document).on("click", ".delete-row", function () {
-          $(this).closest("tr").remove();
-        });
+  
+  
+      $(document).on("click", ".delete-row", function () {
+        $(this).closest("tr").remove();
       });
     });
-    //
-    $(".add-row-voucher").on("click", function () {
-        var $rowv = $(this).closest("tr");
-        var $newRowv = $rowv.clone();
-
-        // Remove the plus button from the new row
-        $newRowv.find(".add-row-voucher").remove();
-        // إضافة زر حذف للصف الجديد
-        $newRowv
-          .find(".d-flex")
-          .append(
-            '<a class="bg-danger text-bg-danger p-1 d-flex align-items-center justify-content-center  rounded delete-row-voucher" href="javascript:void(0);" title="حذف"><i class="fa-solid fa-trash fs-5"></i></a>'
-          );
-
-        // Clear values
-        $newRowv.find("input").val("");
-        $newRowv.find("textarea").val("");
-
-        // Append the new row to the table body
-        $("#my-table-voucher tbody").append($newRowv);
-
-        // Initialize DropDownTree for new row
-        initializeDropDownTree($newRowv.find(".dropdowntree"));
-        initializeDropDownTree($newRowv.find(".dropdowntree-tow"));
-        // حذف الصف عند الضغط على زر الحذف
-        $(document).on("click", ".delete-row-voucher", function () {
-          $(this).closest("tr").remove();
-        });
-      });
   </script>
-<script>
-  $(document).ready(function() {
-    // Function to show or hide sections based on an array of IDs and the action
-    function toggleSections(ids, action) {
-      ids.forEach(id => $(id).toggle(action));
-    }
+ 
+  <script>
+    $(document).ready(function() {
+  function toggleSections(ids, action) {
+    ids.forEach(id => $(id).toggle(action));
+  }
 
-    // Event listener for Bond type change
-    $('#Bond-type-add').change(function() {
-      const bondType = $(this).val();
+  const bondTypeMapping = {
+    "قيد اليومية": ['#date-filed', '#date-reference', '#input-cureunt', '#input-prench', '#file-filed', '#collaps-Movement','#date-name-acount',
+      '#date-debtor','#date-creditor','#date-name-Cost','#date-name-Statement'],
+    "سند القبض": ['#date-filed', '#date-reference', '#input-cureunt', '#input-prench', '#credit-account-section-Debtor', '#name-field', '#collaps-Movement','#date-name-acount',
+      '#date-name-Cost','#date-value','#date-name-Statement'
+    ],
+    "سند الصرف": ['#date-filed', '#date-reference', '#input-cureunt', '#input-prench', '#credit-account-section', '#name-field', '#collaps-Movement','#date-name-acount',
+      '#date-name-Cost','#date-value','#date-name-Statement'],
+    "الايداعات": ['#date-filed', '#date-reference', '#input-cureunt', '#input-prench', '#filed-of', '#filed-to', '#Bank-balance', '#name-field', '#collaps-Movement',
+      '#date-name-acount',
+      '#date-name-Cost','#date-value','#date-name-Statement'
+    ],
+    "المدفوعات": ['#date-filed', '#filed-of', '#filed-to', '#Bank-balance', '#filed-Toorder', '#date-reference', '#input-cureunt', '#input-prench', '#collaps-Movement',
+      '#date-name-acount',
+      '#date-name-Cost','#date-value','#date-name-Statement'
+    ],
+    "التحويلات بين الحسابات البنكية": ['#date-filed', '#filed-of', '#filed-to', '#Bank-balance', '#Transfers-between', '#bank-transaction-section', '#date-reference', '#input-prench'],
+    "الايراد": ['#date-filed', '#input-cureunt', '#date-reference', '#input-prench', '#input-Customers', '#input-Client', '#input-value', '#collaps-Movement',
+      '#date-name-acount','#date-name-Cost','#select-nameacount','#date-name-Cost',
 
-      // Hide all sections initially
-      toggleSections([
-        '#collaps-Movement', '#file-filed', '#date-filed', '#date-reference', 
-        '#input-cureunt', '#input-prench', '#filed-of', '#filed-to', 
-        '#Bank-balance', '#name-field', '#filed-Toorder', '#To-account', 
-        '#From-account', '#Transfers-between', '#bank-transaction-section', 
-        '#cash-deposit-section', '#credit-account-section', '#credit-account-section-Debtor',
-        '#input-Customers','#input-Client','#input-value','#Revenue-item','#Supplier-account','#name-Supplier',
-        '#Expense-items'
-      ], false);
+      '#date-Unity','#Bond-review','#Quantity','#price','#opponent','#Total','#Tax',
+      '#pure',
+    ],
+    "فاتورةالمصروف": ['#date-filed', '#date-reference', '#input-prench', '#input-cureunt',
+    '#Tax-number','#Supplier-name','#date-name-acount','#select-nameacount','#date-name-Statement','#date-name-Cost',
+     '#input-value', '#Supplier-account', '#name-Supplier', '#collaps-Movement','#Bond-review','#Quantity','#price','#Total','#Tax-rate','#Tax',
+      '#pure',
+    ]
+  };
 
-      // Show sections based on Bond type
-      if (bondType === "قيد اليومية") {
-        toggleSections([
-          '#date-filed', '#date-reference', '#input-cureunt', 
-          '#input-prench', '#file-filed','#collaps-Movement'
-        ], true);
-      } else if (bondType === "سند القبض") {
-        toggleSections([
-          '#date-filed','#date-reference', '#input-cureunt',
-          '#input-prench',
-          '#credit-account-section-Debtor', 
-          '#name-field', '#cash-deposit-section'
-        ], true);
-      } else if (bondType === "سند الصرف") {
-        toggleSections([
-          '#date-filed', '#date-reference', '#input-cureunt',
-          '#input-prench','#credit-account-section', 
-          '#name-field', '#cash-deposit-section'
-        ], true);
-      } else if (bondType === "الايداعات") {
-        toggleSections([
-          '#date-filed','#date-reference', '#input-cureunt',
-          '#input-prench', '#filed-of', '#filed-to', 
-          '#Bank-balance', '#cash-deposit-section', '#name-field'
-        ], true);
-      } else if (bondType === "المدفوعات") {
-        toggleSections([
-          '#date-filed', '#filed-of', '#filed-to', 
-          '#Bank-balance', '#cash-deposit-section', '#filed-Toorder',
-          '#date-reference', '#input-cureunt',
-          '#input-prench'
-        ], true);
-      } else if (bondType === "التحويلات بين الحسابات البنكية") {
-        toggleSections([
-          '#date-filed', '#filed-of', '#filed-to', 
-          '#Bank-balance', '#Transfers-between', 
-          '#bank-transaction-section',
-          '#date-reference','#input-prench'
-        ], true);
-      } else if (bondType === "الايراد") {
-        toggleSections([
-          '#date-filed',
-          '#Revenue-item','#input-cureunt',
-          '#date-reference','#input-prench',
-          '#input-Customers','#input-Client','#input-value'
-        ], true);
-      }
-      else if (bondType === "فاتورةالمصروف"){
-        toggleSections([
-          '#date-filed','#date-reference','#input-prench','#input-cureunt',
-          '#input-value','#Supplier-account','#name-Supplier','#Expense-items'
-        ],true);
-      }
-    }).trigger('change'); // Trigger change event on page load to set initial visibility
-  });
-</script>
+  $('#Bond-type-add').change(function() {
+    const bondType = $(this).val();
+    const sectionsToShow = bondTypeMapping[bondType] || [];
 
+    toggleSections([
+      '#collaps-Movement', '#file-filed', '#date-filed', '#date-reference', 
+      '#input-cureunt', '#input-prench', '#filed-of', '#filed-to', 
+      '#Bank-balance', '#name-field', '#filed-Toorder', '#To-account', 
+      '#From-account', '#Transfers-between', '#bank-transaction-section', 
+      '#credit-account-section', '#credit-account-section-Debtor', '#input-Customers',
+      '#input-Client', '#input-value', '#Supplier-account', '#name-Supplier','#date-name-acount',
+      '#date-debtor','#date-creditor','#date-value','#select-nameacount','#date-name-Cost','#date-name-Statement',
+
+      '#date-Unity','#Bond-review','#Quantity','#price','#opponent','#Total','#Tax-rate','#Tax',
+      '#pure','#Tax-number','#Supplier-name'
+
+
+    ], false);
+
+    toggleSections(sectionsToShow, true);
+  }).trigger('change');
+  
+});
+
+
+  </script>
 
 </body>
 
