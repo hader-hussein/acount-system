@@ -767,3 +767,6 @@ content: "" !important;
   width: 100px;
   height: 100px;
 }
+.overflow-x-auto{
+  overflow: auto;
+}

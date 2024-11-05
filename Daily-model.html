@@ -1163,7 +1163,7 @@
                                           <div class="accordion-body">
                                             <div
                                               class="row g-2 component-form pt-4 justify-content-md-start justify-content-center align-items-end">
-                                             
+                                              <!--المشتركة العناصر-->
                                               <div class="col-12 mb-2">
                                                 <label for="Bond-type-add" class="form-label">النوع <span class="start-form">*</span></label>
                                                 <select id="Bond-type-add" class="Bond-type-add select2 form-select" data-allow-clear="true">
@@ -1179,81 +1179,6 @@
                               
                                                 </select>
                                               </div>
-                                               <!--المشتركة العناصر-->
-                                               <div class="col-12 col-lg-3 col-md-4 mb-2" >
-                                                <label for="select-from" class="form-label">
-                                                  اسم النموذج<span class="start-form">*</span></label>
-
-                                               
-                                                  <select id="select-from" class="select2 form-select" data-allow-clear="true">
-                                                    <option value="AK"> اختر النموذج</option>
-                                                    <option value="HI">Hawaii</option>
-                                                    <option value="CA">California</option>
-                                                    <option value="NV">Nevada</option>
-                                                    <option value="OR">Oregon</option>
-                                                  </select>
-                                               
-                                              </div>
-                                              <div class="col-12 col-lg-2 col-md-4 mb-2" >
-                                                <label for="select-Constraint" class="form-label">
-                                                   نسخ من<span class="start-form">*</span></label>
-
-                                               
-                                                  <select id="select-Constraint" class="select2 form-select" data-allow-clear="true">
-                                                    <option value="AK"> اختر رقم القيد</option>
-                                                    <option value="HI">Hawaii</option>
-                                                    <option value="CA">California</option>
-                                                    <option value="NV">Nevada</option>
-                                                    <option value="OR">Oregon</option>
-                                                  </select>
-                                               
-                                              </div>
-                                               <div class="col-12 col-lg-3 col-md-4 mb-2" >
-                                                <label class="form-label" for="name-user"> اسم الشخص:<span class="start-form">*</span></label>
-                                                <input type="text" class="form-control" id="name-user" placeholder=" اسم الشخص ">
-                                              </div>
-                                               <div class="col-12 col-lg-1 col-md-4 mb-2" >
-                                                <label class="form-label" for="basic-Amount"> المبلغ:<span class="start-form">*</span></label>
-                                                <input type="text" class="form-control" id="basic-Amount" placeholder=" المبلغ ">
-                                              </div>
-                                              <div class="col-12 col-lg-2 col-md-4 mb-2" >
-                                                <label for="select-Project" class="form-label">
-                                                  المشروع<span class="start-form">*</span></label>
-
-                                               
-                                                  <select id="select-Project" class="select2 form-select" data-allow-clear="true">
-                                                    <option value="AK"> اختر المشروع</option>
-                                                    <option value="HI">Hawaii</option>
-                                                    <option value="CA">California</option>
-                                                    <option value="NV">Nevada</option>
-                                                    <option value="OR">Oregon</option>
-                                                  </select>
-                                               
-                                              </div>
-                                              <div class="col-12 col-lg-1 col-md-4 mb-2" >
-                                                <div class="form-check">
-                                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                                  <label class="form-check-label" for="flexCheckDefault">
-                                                  الضريبة
-                                                  </label>
-                                                </div>
-                                              </div>
-                                              <div class="col-12 col-lg-3 col-md-4 mb-2">
-                                                <label for="select-claim" class="form-label">
-                                                  مطالبة اختيار<span class="start-form">*</span></label>
-
-                                               
-                                                  <select id="select-claim" class="select2 form-select" data-allow-clear="true">
-                                                    <option value="AK">  مطالبة اختيار</option>
-                                                    <option value="HI">Hawaii</option>
-                                                    <option value="CA">California</option>
-                                                    <option value="NV">Nevada</option>
-                                                    <option value="OR">Oregon</option>
-                                                  </select>
-                                               
-                                              </div>
-                                              <!---->
-                                              <hr>
                                               <!--قيد اليومية-->
                                               <div class="col-12 col-lg-3 col-md-4 mb-2" id="date-filed">
                                                 <label class="form-label" for="basic-default-fullname">تاريخ دفتر اليومية<span
@@ -2370,30 +2295,7 @@ newRowRevenue.find('select').each(function() {
 
 
   </script>
-  <script>
-    $(document).on('keydown', function(e) {
-    if (e.key === 'Enter' && e.ctrlKey) {
-        e.preventDefault();
-        $('.add-row').click(); // إضافة صف جديد باستخدام Ctrl + Enter
-    } else if (e.key === 'Delete' && e.ctrlKey) {
-        e.preventDefault();
-        $('.delete-row:focus').click(); // حذف الصف الحالي باستخدام Ctrl + Delete
-    }
-});
-
-$(document).on('keydown', 'input, textarea', function(e) {
-    if (e.key === 'Tab' && !e.shiftKey) {
-        e.preventDefault();
-        let nextInput = $(this).closest('.row').next().find('input, textarea').first();
-        if (nextInput.length) {
-            nextInput.focus();
-        } else {
-            $('.add-row').click(); // إضافة صف جديد إذا لم يكن هناك حقل تالي
-        }
-    }
-});
-
-  </script>
+  
 </body>
 
 </html>
