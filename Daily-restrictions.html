@@ -1252,8 +1252,7 @@
                                                   </select>
                                                
                                               </div>
-                                              <!---->
-                                              <hr>
+                                             
                                               <!--قيد اليومية-->
                                               <div class="col-12 col-lg-3 col-md-4 mb-2" id="date-filed">
                                                 <label class="form-label" for="basic-default-fullname">تاريخ دفتر اليومية<span
@@ -2040,10 +2039,25 @@
   <script src="./assets/js/cards-advance.js"></script>
 
   <script src="./assets/vendor/js/chart.js"></script>
-  <script src="./assets/js/dashboards-crm.js"></script>
+  <!-- <script src="./assets/js/dashboards-crm.js"></script> -->
   <script src="./assets/js/forms-selects.js"></script>
   <script src="./assets/kendo.all.min.js"></script>
   <script src="./assets/vendor/js/upload.js"></script>
+  <script>
+ 
+ (document).ready(function() {
+    // إعداد Select2 للتفاعل مع الكيبورد
+    $('.select2').select2({
+        placeholder: "اختر من القائمة"
+    }).on('select2:select', function () {
+        $(this).focus();
+        moveToNextFocusable($(this));
+    });
+
+});
+</script>
+
+    
   <script>
     $(document).ready(function () {
   function initializeDropDownTree(selector) {
@@ -2078,249 +2092,150 @@
               e.preventDefault();
               alert("لا يمكنك اختيار العناصر الرئيسية، يرجى اختيار عنصر فرعي.");
             }
+          
           },
         });
+// تفعيل DropDownTree باستخدام الكيبورد
+$('#DropDownTree').on('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {  // استخدم Enter أو Space لفتح القائمة
+            dropDownTree.toggle();  // فتح أو إغلاق القائمة
+            e.preventDefault();
+        }
+    });
+        
       }
     });
   }
- // Initialize select2 for the existing dropdowns
-  $('.select2').select2();
-  // تهيئة DropDownTree للعناصر الحالية
+
+ // Initialize Select2 for the dropdowns
+ $('.select2').select2().on("select2:select", function (e) {
+        // Move to the next input on selection
+        $(this).closest(".row").find("input, select, textarea").eq($(this).index() + 1).focus();
+    });
+
   initializeDropDownTree(".dropdowntree");
   initializeDropDownTree(".dropdowntree-tow");
+  $(document).on('keydown', function(e) {
+    // إضافة صف عند الضغط على Shift + "+"
+    if (e.key === "+" && e.shiftKey) {
+        e.preventDefault();  // منع الإجراء الافتراضي
+        
+        // تحديد الحاوية الحالية بناءً على التركيز في الصفحة
+        if ($('#Journal-entry-container').find(':focus').length) {
+            addNewRow('#Journal-entry-container', '#Journal-entry');
+        } else if ($('#alqabdatu-wasanad-alsarf').find(':focus').length) {
+            addNewRow('#alqabdatu-wasanad-alsarf', '#Journal-entry-alsarf');
+        }
+        else if ($('#alqabdatu-Exchange').find(':focus').length) {
+            addNewRow('#alqabdatu-Exchange', '#Journal-entry-Exchange');
+        }
+        else if ($('#alqabdatu-Deposits').find(':focus').length) {
+            addNewRow('#alqabdatu-Deposits', '#Journal-entry-Deposits');
+        }
+        else if ($('#alqabdatu-Payments').find(':focus').length) {
+            addNewRow('#alqabdatu-Payments', '#Journal-entry-Payments');
+        }
+        else if ($('#alqabdatu-Revenue').find(':focus').length) {
+            addNewRow('#alqabdatu-Revenue', '#Journal-entry-Revenue');
+        }
+        else if ($('#alqabdatu-expense').find(':focus').length) {
+            addNewRow('#alqabdatu-Revenue', '#Journal-entry-expense');
+        }
+    }
 
-  //  قيد اليومية-إضافة سطر جديد
-  $(document).on('click', '.add-row', function() {
-    let newRow = $('#Journal-entry').first().clone();
     
+});
+ // تفعيل حذف السطر المحدد عند الضغط على Shift + "-"
+ $(document).on('keydown', function(e) {
+    if (e.key === "-" && e.shiftKey) {
+        e.preventDefault();
+        deleteFocusedRow();
+    }
+  });
+// تفعيل إضافة صف جديد عند الضغط على زر الإضافة في #Journal-entry-container
+$(document).on('click', '.add-row', function() {
+    addNewRow('#Journal-entry-container', '#Journal-entry');
+});
+
+// تفعيل إضافة صف جديد عند الضغط على زر الإضافة في #alqabdatu-wasanad-alsarf
+$(document).on('click', '.add-alsarf', function() {
+    addNewRow('#alqabdatu-wasanad-alsarf', '#Journal-entry-alsarf');
+});
+// تفعيل إضافة صف جديد عند الضغط على زر الإضافة في #alqabdatu-Exchange
+$(document).on('click', '.add-Exchange', function() {
+    addNewRow('#alqabdatu-Exchange', '#Journal-entry-Exchange');
+});
+// تفعيل إضافة صف جديد عند الضغط على زر الإضافة في #alqabdatu-Deposits
+$(document).on('click', '.add-Deposits', function() {
+    addNewRow('#alqabdatu-Deposits', '#Journal-entry-Deposits');
+});
+// تفعيل إضافة صف جديد عند الضغط على زر الإضافة في #alqabdatu-Payments
+$(document).on('click', '.add-Payments', function() {
+    addNewRow('#alqabdatu-Payments', '#Journal-entry-Payments');
+});
+// تفعيل إضافة صف جديد عند الضغط على زر الإضافة في #alqabdatu-add-Revenue
+$(document).on('click', '.add-Revenue', function() {
+    addNewRow('#alqabdatu-Revenue', '#Journal-entry-Revenue');
+});
+// تفعيل إضافة صف جديد عند الضغط على زر الإضافة في #alqabdatu-add-expense
+$(document).on('click', '.add-expense', function() {
+    addNewRow('#alqabdatu-expense', '#Journal-entry-expense');
+});
+// دالة لإضافة صف جديد في الحاوية المحددة
+function addNewRow(containerId, rowSelector) {
+    let newRow = $(rowSelector).first().clone(); // استنساخ السطر من النموذج
+
     // تغيير زر الإضافة إلى زر الحذف في السطر الجديد
-    newRow.find('.add-row').removeClass('add-row bg-primary text-bg-primary')
-         .addClass('delete-row bg-danger text-bg-danger')
-         .attr('title', 'حذف')
-         .html('<i class="fa-solid fa-trash fs-5"></i>');
+    newRow.find('.add-row, .add-alsarf,.add-Exchange,.add-Deposits,.add-Payments,.add-Revenue,.add-expense').removeClass('add-row add-alsarf add-Payments add-Exchange add-Deposits add-Revenue add-expense bg-primary text-bg-primary')
+        .addClass('delete-row delete-rows delete-Exchange delete-Deposits delete-Payments delete-Revenue delete-expense bg-danger text-bg-danger')
+        .attr('title', 'حذف')
+        .html('<i class="fa-solid fa-trash fs-5"></i>');
 
     // إعادة تعيين القيم في الحقول
     newRow.find('input, textarea').val('');
 
     // إزالة أي تهيئة سابقة لـ DropDownTree من النسخة المستنسخة
     newRow.find('.dropdowntree, .dropdowntree-tow').each(function() {
-        $(this).removeData("kendoDropDownTree").empty(); // إزالة البيانات والتهيئة السابقة
-    });
+        $(this).data("kendoDropDownTree")?.destroy(); 
+                 $(this).empty(); 
+      });
 
-    // إضافة السطر الجديد بعد السطر الأخير
-    $('#Journal-entry-container').append(newRow);
+    // إضافة السطر الجديد إلى الحاوية المحددة
+    $(containerId).append(newRow);
 
     // تهيئة DropDownTree للعناصر الجديدة
     initializeDropDownTree(newRow.find('.dropdowntree'));
     initializeDropDownTree(newRow.find('.dropdowntree-tow'));
-});
-// إضافة سند القبض سطر جديد
-$(document).on('click', '.add-alsarf', function() {
-    let newRowf = $('#Journal-entry-alsarf').first().clone();
-    
-    // تغيير زر الإضافة إلى زر الحذف في السطر الجديد
-    newRowf.find('.add-alsarf').removeClass('add-alsarf bg-primary text-bg-primary')
-         .addClass('delete-rows bg-danger text-bg-danger')
-         .attr('title', 'حذف')
-         .html('<i class="fa-solid fa-trash fs-5"></i>');
 
-    // إعادة تعيين القيم في الحقول
-    newRowf.find('input, textarea').val('');
-
-    // إزالة أي تهيئة سابقة لـ DropDownTree من النسخة المستنسخة
-    newRowf.find('.dropdowntree, .dropdowntree-tow').each(function() {
-        $(this).removeData("kendoDropDownTree").empty(); // إزالة البيانات والتهيئة السابقة
-    });
-
-    // إضافة السطر الجديد بعد السطر الأخير
-    $('#alqabdatu-wasanad-alsarf').append(newRowf);
-
-    // تهيئة DropDownTree للعناصر الجديدة
-    initializeDropDownTree(newRowf.find('.dropdowntree'));
-    initializeDropDownTree(newRowf.find('.dropdowntree-tow'));
-});
-// إضافة سند الصرف سطر جديد
-$(document).on('click', '.add-Exchange', function() {
-    let newRowe = $('#Journal-entry-Exchange').first().clone();
-    
-    // تغيير زر الإضافة إلى زر الحذف في السطر الجديد
-    newRowe.find('.add-Exchange').removeClass('add-Exchange bg-primary text-bg-primary')
-         .addClass('delete-Exchange bg-danger text-bg-danger')
-         .attr('title', 'حذف')
-         .html('<i class="fa-solid fa-trash fs-5"></i>');
-
-    // إعادة تعيين القيم في الحقول
-    newRowe.find('input, textarea').val('');
-
-    // إزالة أي تهيئة سابقة لـ DropDownTree من النسخة المستنسخة
-    newRowe.find('.dropdowntree, .dropdowntree-tow').each(function() {
-        $(this).removeData("kendoDropDownTree").empty(); // إزالة البيانات والتهيئة السابقة
-    });
-
-    // إضافة السطر الجديد بعد السطر الأخير
-    $('#alqabdatu-Exchange').append(newRowe);
-
-    // تهيئة DropDownTree للعناصر الجديدة
-    initializeDropDownTree(newRowe.find('.dropdowntree'));
-    initializeDropDownTree(newRowe.find('.dropdowntree-tow'));
-});
-// إضافة  الايداعات سطر جديد
-$(document).on('click', '.add-Deposits', function() {
-    let newRowDeposits = $('#Journal-entry-Deposits').first().clone();
-    
-    // تغيير زر الإضافة إلى زر الحذف في السطر الجديد
-    newRowDeposits.find('.add-Deposits').removeClass('add-Deposits bg-primary text-bg-primary')
-         .addClass('delete-Deposits bg-danger text-bg-danger')
-         .attr('title', 'حذف')
-         .html('<i class="fa-solid fa-trash fs-5"></i>');
-
-    // إعادة تعيين القيم في الحقول
-    newRowDeposits.find('input, textarea').val('');
-
-    // إزالة أي تهيئة سابقة لـ DropDownTree من النسخة المستنسخة
-    newRowDeposits.find('.dropdowntree, .dropdowntree-tow').each(function() {
-        $(this).removeData("kendoDropDownTree").empty(); // إزالة البيانات والتهيئة السابقة
-    });
-
-    // إضافة السطر الجديد بعد السطر الأخير
-    $('#alqabdatu-Deposits').append(newRowDeposits);
-
-    // تهيئة DropDownTree للعناصر الجديدة
-    initializeDropDownTree(newRowDeposits.find('.dropdowntree'));
-    initializeDropDownTree(newRowDeposits.find('.dropdowntree-tow'));
-});
-// إضافة  المدفوعات سطر جديد
-$(document).on('click', '.add-Payments', function() {
-    let newRowPayments = $('#Journal-entry-Payments').first().clone();
-    
-    // تغيير زر الإضافة إلى زر الحذف في السطر الجديد
-    newRowPayments.find('.add-Payments').removeClass('add-Payments bg-primary text-bg-primary')
-         .addClass('delete-Payments bg-danger text-bg-danger')
-         .attr('title', 'حذف')
-         .html('<i class="fa-solid fa-trash fs-5"></i>');
-
-    // إعادة تعيين القيم في الحقول
-    newRowPayments.find('input, textarea').val('');
-
-    // إزالة أي تهيئة سابقة لـ DropDownTree من النسخة المستنسخة
-    newRowPayments.find('.dropdowntree, .dropdowntree-tow').each(function() {
-        $(this).removeData("kendoDropDownTree").empty(); // إزالة البيانات والتهيئة السابقة
-    });
-
-    // إضافة السطر الجديد بعد السطر الأخير
-    $('#alqabdatu-Payments').append(newRowPayments);
-
-    // تهيئة DropDownTree للعناصر الجديدة
-    initializeDropDownTree(newRowPayments.find('.dropdowntree'));
-    initializeDropDownTree(newRowPayments.find('.dropdowntree-tow'));
-});
-// إضافة  الايراد سطر جديد
-$(document).on('click', '.add-Revenue', function() {
-    // استنساخ أول صف
-    let newRowRevenue = $('#Journal-entry-Revenue').first().clone();
-
-    // تغيير زر الإضافة إلى زر الحذف في السطر الجديد
-    newRowRevenue.find('.add-Revenue')
-        .removeClass('add-Revenue bg-primary text-bg-primary')
-        .addClass('delete-Revenue bg-danger text-bg-danger')
-        .attr('title', 'حذف')
-        .html('<i class="fa-solid fa-trash fs-5"></i>');
-
-    // إعادة تعيين القيم في الحقول
-    newRowRevenue.find('input, textarea').val('');
-
-    // تدمير أي تهيئة سابقة لـ Select2 في الصف المستنسخ
-    newRowRevenue.find('select').each(function() {
-        // تحقق مما إذا كان العنصر لديه تهيئة سابقة
-        if ($(this).data('select2')) {
-            $(this).select2('destroy'); // تدمير التهيئة السابقة
+    // وضع التركيز على أول عنصر قابل للتركيز داخل السطر الجديد
+    setFocusToFirstFocusable(newRow);
+}
+// دالة لحذف السطر المحدد بناءً على القسم النشط
+function deleteFocusedRow() {
+    let focusedRow = $(':focus').closest('.row');
+    if (focusedRow.length && !focusedRow.is(':first-child')) {
+        let nextRow = focusedRow.next();
+        let prevRow = focusedRow.prev();
+        focusedRow.remove();
+        if (nextRow.length) {
+            nextRow.find('input, textarea').first().focus();
+        } else if (prevRow.length) {
+            prevRow.find('input, textarea').first().focus();
         }
-    });
-
-    // إزالة أي تهيئة سابقة لـ DropDownTree من النسخة المستنسخة
-    newRowRevenue.find('.dropdowntree, .dropdowntree-tow').each(function() {
-        $(this).removeData("kendoDropDownTree").empty(); // إزالة البيانات والتهيئة السابقة
-    });
-
-    // إضافة السطر الجديد بعد السطر الأخير
-    $('#alqabdatu-Revenue').append(newRowRevenue);
-
-    // تهيئة DropDownTree للعناصر الجديدة
-    initializeDropDownTree(newRowRevenue.find('.dropdowntree'));
-    initializeDropDownTree(newRowRevenue.find('.dropdowntree-tow'));
-
-    // تهيئة Select2 للعناصر الجديدة
-   // فتح Select2 تلقائياً
-   selectElement.select2('open');
-});
-
-// إضافة  فاتوره المصروف سطر جديد
-$(document).on('click', '.add-expense', function() {
-    let newRowRevenue = $('#Journal-entry-expense').first().clone();
-    
-    // تغيير زر الإضافة إلى زر الحذف في السطر الجديد
-    newRowRevenue.find('.add-expense').removeClass('add-expense bg-primary text-bg-primary')
-         .addClass('delete-expense bg-danger text-bg-danger')
-         .attr('title', 'حذف')
-         .html('<i class="fa-solid fa-trash fs-5"></i>');
-
-    // إعادة تعيين القيم في الحقول
-    newRowRevenue.find('input, textarea').val('');
-// تدمير أي تهيئة سابقة لـ Select2 في الصف المستنسخ
-newRowRevenue.find('select').each(function() {
-        if ($(this).data('select2')) {
-            $(this).select2('destroy'); // تدمير التهيئة السابقة
-        }
-    });
-    // إزالة أي تهيئة سابقة لـ DropDownTree من النسخة المستنسخة
-    newRowRevenue.find('.dropdowntree, .dropdowntree-tow').each(function() {
-        $(this).removeData("kendoDropDownTree").empty(); // إزالة البيانات والتهيئة السابقة
-    });
-
-    // إضافة السطر الجديد بعد السطر الأخير
-    $('#alqabdatu-expense').append(newRowRevenue);
-
-    // تهيئة DropDownTree للعناصر الجديدة
-    initializeDropDownTree(newRowRevenue.find('.dropdowntree'));
-    initializeDropDownTree(newRowRevenue.find('.dropdowntree-tow'));
-     // تهيئة Select2 للعناصر الجديدة
-     let selectElement = newRowRevenue.find('select'); // افتراضاً أنك تستخدم عنصر select
-    selectElement.select2({
-        placeholder: "Select an option",
-        allowClear: true
-    });
-
+    }
+  }
+  // دالة لوضع التركيز على أول عنصر قابل للتركيز داخل السطر الجديد
+  function setFocusToFirstFocusable(row) {
+    let firstFocusable = row.find('input, textarea, .dropdowntree').first();
+    if (firstFocusable.length) {
+        firstFocusable.focus();
+    }
+  }
+// تخصيص حدث حذف السطر بناءً على الزر
+$(document).on('click', '.delete-rows, .delete-Exchange, .delete-Deposits, .delete-Payments, .delete-Revenue, .delete-expense', function() {
+    $(this).closest('.row').remove();
+  });
   
-});
-
-  // حذف سطر
-  $(document).on('click', '.delete-row', function() {
-    $(this).closest('.row').remove();
-  });
-  // حذف سطر
-  $(document).on('click', '.delete-rows', function() {
-    $(this).closest('.row').remove();
-  });
-  // حذف سطر
-  $(document).on('click', '.delete-Exchange', function() {
-    $(this).closest('.row').remove();
-  });
-    // حذف سطر
-    $(document).on('click', '.delete-Deposits', function() {
-    $(this).closest('.row').remove();
-  });
-    // حذف سطر
-    $(document).on('click', '.delete-Revenue', function() {
-    $(this).closest('.row').remove();
-  });
-  // حذف سطر
-  $(document).on('click', '.delete-Payments', function() {
-    $(this).closest('.row').remove();
-  });
-   // حذف سطر
-   $(document).on('click', '.delete-expense', function() {
-    $(this).closest('.row').remove();
-  });
 });
 
       
@@ -2369,31 +2284,9 @@ newRowRevenue.find('select').each(function() {
 });
 
 
-  </script>
-  <script>
-    $(document).on('keydown', function(e) {
-    if (e.key === 'Enter' && e.ctrlKey) {
-        e.preventDefault();
-        $('.add-row').click(); // إضافة صف جديد باستخدام Ctrl + Enter
-    } else if (e.key === 'Delete' && e.ctrlKey) {
-        e.preventDefault();
-        $('.delete-row:focus').click(); // حذف الصف الحالي باستخدام Ctrl + Delete
-    }
-});
-
-$(document).on('keydown', 'input, textarea', function(e) {
-    if (e.key === 'Tab' && !e.shiftKey) {
-        e.preventDefault();
-        let nextInput = $(this).closest('.row').next().find('input, textarea').first();
-        if (nextInput.length) {
-            nextInput.focus();
-        } else {
-            $('.add-row').click(); // إضافة صف جديد إذا لم يكن هناك حقل تالي
-        }
-    }
-});
 
   </script>
+ 
 </body>
 
 </html>

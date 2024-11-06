@@ -39,22 +39,22 @@ $('.accordion-button').on('keydown',function (e) {
 
  // Function to handle the keyboard shortcut
  
- function handleKeyboardShortcut(event) {
-    if (event.ctrlKey && event.keyCode === 83 || event.key == "Enter") {
-        event.preventDefault(); // Prevent the browser's save dialog
-        document.getElementById("saveButton").click(); // Trigger the "Save" button click
-    }
-}
+//  function handleKeyboardShortcut(event) {
+//     if (event.ctrlKey && event.keyCode === 83 || event.key == "Enter") {
+//         event.preventDefault(); // Prevent the browser's save dialog
+//         document.getElementById("saveButton").click(); // Trigger the "Save" button click
+//     }
+// }
 
 // Function to display the printout message
-function displayPrintoutMessage() {
-    alert("save data");
-    save();
-}
+// function displayPrintoutMessage() {
+//     alert("save data");
+//     save();
+// }
 
 // Attach the event listeners
-document.addEventListener("keydown", handleKeyboardShortcut);
-document.getElementById("saveButton").addEventListener("click", displayPrintoutMessage);
+// document.addEventListener("keydown", handleKeyboardShortcut);
+// document.getElementById("saveButton").addEventListener("click", displayPrintoutMessage);
 
 function readURL(input) {
     if (input.files && input.files[0]) {
