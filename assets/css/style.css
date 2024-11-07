@@ -368,7 +368,7 @@ color: #dbdade !important;
 }
 
 .form-label {
-  font-size: 1rem  !important;
+  font-size: 0.95rem    !important;
   
 }
 .btn-upload-input {
@@ -769,4 +769,16 @@ content: "" !important;
 }
 .overflow-x-auto{
   overflow: auto;
+}
+#repeat-options{
+
+    position: absolute;
+    padding: 18px 10px;
+  
+    background: #fff;
+    box-shadow: 0 0.25rem 1rem rgba(165, 163, 174, 0.45);
+    background-clip: padding-box;
+    border-color: #dbdade;
+    z-index: 1000;
+    border-radius: 8px;
 }
