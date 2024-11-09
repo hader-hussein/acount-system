@@ -1159,40 +1159,22 @@
             <div class="container-xxl flex-grow-1 container-p-y content-admin pt-lg-5 mt-md-4">
               <div class="card comonent-hader-top">
                 <div class="card-body py-2 px-md-2 px-2 card-widget-separator">
-                  <strong class="py-md-3 px-md-3 text-title-hadeer text-tilte-b"><span class="text-muted">
-                   الموازنات
-
-                  </span>
-                  </strong>
-                  <div class="row justify-content-center mx-0 py-2 px-md-3 px-2">
-                    <!--item-->
-                    <div class="col-xl-6 col-md-8 col-lg-6  mb-md-0 mb-2">
-                      <div class="card h-100">
-                        <div class="user-seting" data-bs-toggle="modal" data-bs-target="#createModal">
-                          <div class="row h-100">
-                            <div class="col-sm-5 col-12">
-                              <div class="d-flex align-items-center h-100 justify-content-center mt-sm-0">
-                                <img src="./assets/img/illustrations/add.png" class="img-fluid mt-sm-4 mt-md-0" alt="add-new-roles" width="83">
-                              </div>
-                            </div>
-                            <div class="col-sm-7 col-12">
-                              <div class="card-body text-sm-end text-center ps-sm-0">
-                                <button data-bs-toggle="modal" data-bs-target="#createModal" class="btn btn-primary mb-2 text-nowrap add-new-role waves-effect waves-light">
-                                  اضافة  
-                                </button>
-  
-                                <p class="mb-0 mt-1">
-                                  Add budgets. data , if it does not exist
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                       
+                  <div class=" d-flex flex-wrap justify-content-between mb-1 align-items-center pt-2">
+                      <div class="col">
+                        <strong class="py-md-3 px-md-3 text-title-hadeer text-tilte-b"><span class="text-muted">
+                          الموازنات
+       
+                         </span>
+                         </strong>
                       </div>
-                    </div>
-                    <!--item-->
+                      <div class="col text-end">
+                        <button data-bs-toggle="modal" data-bs-target="#createModal" class="btn btn-primary mb-2 text-nowrap add-new-role waves-effect waves-light">
+                           <i class="fa-solid fa-plus fs-5 px-2"></i> اضافة
+                        </button>
+                      </div>
                   </div>
+                 
+                  
                 </div>
               </div>
               <div class="card comonent-hader-top component-button p-2 mt-4">
@@ -1203,6 +1185,7 @@
                                 <thead>
                                   <tr class="text-center">
                                     <th>  #</th>
+                                    <th>    دليل المحاسبى</th>
                                     <th>    الفترة</th>
                                     <th>     القيمة</th>
                                     <th>   Dim. incl.	</th>
@@ -1210,10 +1193,29 @@
                                     
                                   </tr>
                                 </thead>
-                                <tbody class="text-center">
+                                <tbody >
                                   <tr>
                                     <td>
                                    1
+                                    </td>
+                                    <td> 
+                                      <select  class="select2 form-select" id="my-select" data-allow-clear="true">
+                                        <option value="AK">     اختار الشهر </option>
+                                        <option value="HI">  يناير </option>
+                                        <option value="CA"> فبراير </option>
+                                        <option value="CA"> مارس </option>
+                                        <option value="CA"> ابرايل </option>
+                                        <option value="CA"> مايو </option>
+                                        <option value="CA"> يونيو </option>
+                                        <option value="CA"> بوليو </option>
+                                        <option value="CA"> اغسطس </option>
+                                        <option value="CA"> سيتمبر </option>
+                                        <option value="CA"> اكتوبر </option>
+                                        <option value="CA"> نوفمبر </option>
+                                        <option value="CA"> ديسمبر </option>
+
+                                    
+                                      </select>
                                     </td>
                                     <td> 1-1-2024 </td>
                                     <td>
@@ -1402,6 +1404,14 @@
     <script src="./assets/vendor/js/upload.js"></script>
 
     <script>
+$(document).ready(function() {
+    // تفعيل Select2 على العنصر
+    $('#my-select').select2({
+        placeholder: "اختر خيارًا",
+        allowClear: true  // يتيح للمستخدم مسح التحديد إذا كان ذلك ممكنًا
+    });
+});
+
       $(document).ready(function () {
         function initializeDropDownTree(selector) {
           $(selector).each(function () {
