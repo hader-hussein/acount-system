@@ -2462,13 +2462,13 @@ $('#DropDownTree').on('keydown', function(e) {
   }
 
   // Initialize Select2 for the dropdowns
-  $('.select2').select2().on("select2:select", function (e) {
-        // الانتقال إلى الـ input التالي في نفس السطر
-        let nextFocusable = $(this).closest(".row").find("input, select, textarea,checkbox").eq($(this).index() + 1);
-        if (nextFocusable.length) {
-            nextFocusable.focus();
-        }
-    });
+  // $('.select2').select2().on("select2:select", function (e) {
+  //       // الانتقال إلى الـ input التالي في نفس السطر
+  //       let nextFocusable = $(this).closest(".row").find("input, select, textarea,checkbox").eq($(this).index() + 1);
+  //       if (nextFocusable.length) {
+  //           nextFocusable.focus();
+  //       }
+  //   });
   initializeDropDownTree(".dropdowntree");
   initializeDropDownTree(".dropdowntree-tow");
   $(document).on('keydown', function(e) {
@@ -2636,6 +2636,7 @@ $(document).on('click', '.delete-rows, .delete-Exchange, .delete-Deposits, .dele
   };
   const allowedTypes = ["فاتورةالمصروف", "الايراد", "الايداعات","قيد اليومية","سند القبض","سند الصرف","المدفوعات"];  // الأنواع التي تحتاج لعرض حقل الضريبة
 
+
   // دالة للتحكم بظهور حقل الضريبة
   function toggleTaxFields() {
             const bondType = $('#Bond-type-add').val();
@@ -2654,14 +2655,17 @@ $(document).on('click', '.delete-rows, .delete-Exchange, .delete-Deposits, .dele
         // تحقق إذا كان المفتاح هو Enter
         if (e.key === 'Enter') {
             e.preventDefault(); // منع السلوك الافتراضي (مثل إرسال النموذج)
-            
-            // تحقق إذا كان focus على الـ checkbox
-            if ($('#flexCheckDefault').is(':focus')) {
-                // تفعيل الـ checkbox عند الضغط على Enter
-                $('#flexCheckDefault').prop('checked', !$('#flexCheckDefault').prop('checked'));
-                toggleTaxFields();  // استدعاء دالة toggleTaxFields لتحديث ظهور حقل الضريبة
+            const focusedElement = document.activeElement;
+
+            if (focusedElement.id === 'flexCheckDefault') {
+                focusedElement.checked = !focusedElement.checked;
+                toggleTaxFields();
+            } else if (focusedElement.id === 'repeat-checkbox') {
+                focusedElement.checked = !focusedElement.checked;
+                toggleOptions();
             }
         }
+        
     });
  
   $('#Bond-type-add').change(function() {
@@ -2692,38 +2696,46 @@ $(document).on('click', '.delete-rows, .delete-Exchange, .delete-Deposits, .dele
     toggleTaxFields();
 });
 
-
-
-  </script>
-  <script>
-    function toggleOptions() {
-        const options = document.getElementById('repeat-options');
-        const isChecked = document.getElementById('repeat-checkbox').checked;
-        options.style.display = isChecked ? 'block' : 'none';
+// دالة لتحديث حالة ظهور repeat-options
+function toggleOptions() {
+        const options = $('#repeat-options');
+        const isChecked = $('#repeat-checkbox').is(':checked');
+        options.toggle(isChecked);
+        
+        // إذا كان repeat-checkbox مفعل، ركز على أول خيار في repeat-options
+        if (isChecked) {
+            options.find('input[name="repeat"]').first().focus();
+        }
     }
-   // تفعيل الفتح أو الإغلاق عند الضغط على Enter فقط للـ checkbox الرئيسي
-   document.addEventListener('keydown', function(e) {
+
+    // استدعاء toggleOptions عند تغيير حالة repeat-checkbox
+    $('#repeat-checkbox').on('change', function() {
+        toggleOptions();
+    });
+
+    // إضافة دعم استخدام Enter لتحديد خيارات repeat-options
+    $('#repeat-options input[name="repeat"]').on('keydown', function(e) {
         if (e.key === 'Enter') {
-            const repeatCheckbox = document.getElementById('repeat-checkbox');
-            // التبديل بين حالة الـ checkbox الرئيسي فقط
-            repeatCheckbox.checked = !repeatCheckbox.checked;  
-            toggleOptions(); // تحديث العرض بناءً على الحالة الجديدة
+            e.preventDefault();
+            $(this).prop('checked', !$(this).is(':checked'));
+            
+            // التحقق إذا كان هذا الخيار هو الأخير في القائمة
+            const checkboxes = $('#repeat-options input[name="repeat"]');
+            const isLastCheckbox = $(this).is(checkboxes.last());
+
+            // إذا كان الخيار الأخير، إغلاق repeat-options
+            if (isLastCheckbox) {
+                $('#repeat-checkbox').prop('checked', false);  // إلغاء تحديد repeat-checkbox
+                toggleOptions();  // إغلاق repeat-options
+                // الانتقال إلى العنصر التالي في النموذج
+                $('#repeat-checkbox').closest('.form-group').nextAll(':input, .form-check-input').first().focus();
+            }
         }
     });
 
-    // التنقل بين الـ checkboxes باستخدام الكيبورد (تحديد العنصر التالي عند الضغط على Tab)
-    document.querySelectorAll('input[type="checkbox"]').forEach(function(checkbox) {
-        checkbox.addEventListener('keydown', function(e) {
-            // تحقق من ضغط مفتاح "Tab" للانتقال إلى العنصر التالي
-            if (e.key === 'Tab') {
-                const checkboxes = Array.from(document.querySelectorAll('input[name="repeat"]'));
-                const currentIndex = checkboxes.indexOf(e.target);
-                const nextIndex = (currentIndex + 1) % checkboxes.length;
-                checkboxes[nextIndex].focus();
-            }
-        });
-    });
-</script>
+    
+  </script>
+
 </body>
 
 </html>
