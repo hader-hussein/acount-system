@@ -1261,23 +1261,23 @@
                                           
                                               <div id="repeat-options" style="display: none;">
                                                 <div class="mb-2">
-                                                  <label><input type="checkbox" name="repeat" value="يومي"> يومي</label>
+                                                  <label><input type="radio" name="repeat" value="يومي"> يومي</label>
 
                                                 </div>
                                                 <div class="mb-2">
-                                                  <label><input type="checkbox" name="repeat" value="اسبوعي"> أسبوعي</label>
+                                                  <label><input type="radio" name="repeat" value="اسبوعي"> أسبوعي</label>
 
                                                 </div>
                                                 <div class="mb-2">
-                                                  <label><input type="checkbox" name="repeat" value="شهري"> شهري</label>
+                                                  <label><input type="radio" name="repeat" value="شهري"> شهري</label>
 
                                                 </div>
                                                 <div class="mb-2">
-                                                  <label><input type="checkbox" name="repeat" value="ربع سنوي"> ربع سنوي</label>
+                                                  <label><input type="radio" name="repeat" value="ربع سنوي"> ربع سنوي</label>
 
                                                 </div>
                                                 <div class="mb-2">
-                                                  <label><input type="checkbox" name="repeat" value="نصف سنوي"> نصف سنوي</label>
+                                                  <label><input type="radio" name="repeat" value="نصف سنوي"> نصف سنوي</label>
 
                                                 </div>
                                               </div>
@@ -2697,42 +2697,36 @@ $(document).on('click', '.delete-rows, .delete-Exchange, .delete-Deposits, .dele
 });
 
 // دالة لتحديث حالة ظهور repeat-options
+// دالة لتحديث حالة ظهور repeat-options
 function toggleOptions() {
-        const options = $('#repeat-options');
-        const isChecked = $('#repeat-checkbox').is(':checked');
-        options.toggle(isChecked);
-        
-        // إذا كان repeat-checkbox مفعل، ركز على أول خيار في repeat-options
-        if (isChecked) {
-            options.find('input[name="repeat"]').first().focus();
-        }
+    const options = $('#repeat-options');
+    const isChecked = $('#repeat-checkbox').is(':checked');
+    options.toggle(isChecked);
+    
+    // إذا كان repeat-checkbox مفعل، ركز على أول خيار في repeat-options
+    if (isChecked) {
+        options.find('input[name="repeat"]').first().focus();
     }
+}
 
-    // استدعاء toggleOptions عند تغيير حالة repeat-checkbox
-    $('#repeat-checkbox').on('change', function() {
-        toggleOptions();
-    });
+// استدعاء toggleOptions عند تغيير حالة repeat-checkbox
+$('#repeat-checkbox').on('change', function() {
+    toggleOptions();
+});
 
-    // إضافة دعم استخدام Enter لتحديد خيارات repeat-options
-    $('#repeat-options input[name="repeat"]').on('keydown', function(e) {
-        if (e.key === 'Enter') {
-            e.preventDefault();
-            $(this).prop('checked', !$(this).is(':checked'));
-            
-            // التحقق إذا كان هذا الخيار هو الأخير في القائمة
-            const checkboxes = $('#repeat-options input[name="repeat"]');
-            const isLastCheckbox = $(this).is(checkboxes.last());
-
-            // إذا كان الخيار الأخير، إغلاق repeat-options
-            if (isLastCheckbox) {
-                $('#repeat-checkbox').prop('checked', false);  // إلغاء تحديد repeat-checkbox
-                toggleOptions();  // إغلاق repeat-options
-                // الانتقال إلى العنصر التالي في النموذج
-                $('#repeat-checkbox').closest('.form-group').nextAll(':input, .form-check-input').first().focus();
-            }
-        }
-    });
-
+// عند الضغط على Enter في repeat-options
+$('#repeat-options input[name="repeat"]').on('keydown', function(e) {
+    if (e.key === 'Enter') {
+        e.preventDefault();
+        $(this).prop('checked', true); // تأكيد التحديد عند الضغط على Enter
+        
+        // إخفاء repeat-options بدون إلغاء تحديد repeat-checkbox
+        $('#repeat-options').hide();  // إغلاق repeat-options مباشرة
+        
+        // الانتقال إلى العنصر التالي في النموذج
+        $('#repeat-checkbox').closest('.form-group').nextAll(':input, .form-check-input').first().focus();
+    }
+});
     
   </script>
 
