@@ -1172,7 +1172,7 @@
                              
                       <div class="col card-body text-sm-end text-center ps-sm-0">
                                   <button data-bs-toggle="modal" data-bs-target="#createModal" class="btn btn-primary mb-2 text-nowrap add-new-role waves-effect waves-light">
-                                    اضافة شيك
+                                    اضافة شيك<i class="fa-solid fa-plus fs-5 px-2"></i>
                                   </button>
     
                      </div> 
@@ -1219,8 +1219,10 @@
                                     <td>
                                       <div class="d-flex justify-content-center">
                                         <button   data-bs-toggle="modal" data-bs-target="#create-Collection"class="bg-primary btn text-bg-primary p-1 d-flex align-items-center justify-content-center me-2 rounded"  title="تحصيل"><i class="fa-solid fa-money-check-dollar fs-4"></i></button>
-                                      
+                                        <button   data-bs-toggle="modal" data-bs-target="#return-Collection"class="bg-danger btn text-bg-danger p-1 d-flex align-items-center justify-content-center me-2 rounded"  title="ارجاع"><i class="fa-solid fa-rotate-left fs-4"></i>ارجاع</button>
+
                                       </div>
+
                                     </td>
                                     <td>
                                       <div class="d-flex justify-content-center">
@@ -1314,17 +1316,13 @@
                         <form class="row component-form pt-2 justify-content-md-start justify-content-center align-items-end">
                        
                         
-                          <div class="col-12 col-md-6 col-lg-6 mb-3">
+                          <div class="col-12  mb-3">
                             <label class="form-label" for="basic-date1">  تاريخ</label>
                             <input type="date" id="basic-date1" class="form-control">
                           </div>
-                          <div class="col-12 col-md-6 col-lg-6 mb-3">
-                            <label class="form-label" for="basic-reason"> السبب</label>
-                            <textarea type="text" id="basic-reason" class="form-control" rows="1" disabled></textarea>
-                          </div>
+                       
                           <div>
                             <button type="submit" class="btn btn-primary"> حفظ</button>
-                            <button type="button" class="btn btn-secondary" id="return-button"> ارجاع</button>
 
                           </div>
   
@@ -1335,6 +1333,37 @@
                   </div>
                 </div>
             <!---->
+                <!-- Modal --ارجاع-->
+                <div class="modal fade" id="return-Collection" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-md">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5 fw-bold" id="exampleModalLabel">ارجاع الشيك   </h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <form class="row component-form pt-2 justify-content-md-start justify-content-center align-items-end">
+                       
+                        
+                          <div class="col-12  mb-3">
+                            <label class="form-label" for="basic-date1">  تاريخ</label>
+                            <input type="date" id="basic-date1" class="form-control">
+                          </div>
+                          <div class="col-12  mb-3">
+                            <label class="form-label" for="basic-date1">  السبب</label>
+                            <textarea type="text" id="basic-date1" class="form-control" rows="1"></textarea>
+                          </div>
+                          <div>
+                            <button type="submit" class="btn btn-primary"> حفظ</button>
+
+                          </div>
+  
+                        </form>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
              <!---->
               <button class="btn"id="saveButton" style="display: none;"></button>
 

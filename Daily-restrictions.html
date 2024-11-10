@@ -1134,6 +1134,36 @@
                                     </div>
                                   
                                   </div>
+                                  <div class="row mx-0">
+                                    <div class="col-12 col-lg-3 col-md-4 mb-2" >
+                                      <label for="select-from" class="form-label">
+                                        اسم النموذج<span class="start-form">*</span></label>
+
+                                     
+                                        <select id="select-from" class="select2 form-select" data-allow-clear="true">
+                                          <option value="AK"> اختر النموذج</option>
+                                          <option value="HI">Hawaii</option>
+                                          <option value="CA">California</option>
+                                          <option value="NV">Nevada</option>
+                                          <option value="OR">Oregon</option>
+                                        </select>
+                                     
+                                    </div>
+                                    <div class="col-12 col-lg-3 col-md-4 mb-2" >
+                                      <label for="select-Constraint" class="form-label">
+                                         نسخ من<span class="start-form">*</span></label>
+
+                                     
+                                        <select id="select-Constraint" class="select2 form-select" data-allow-clear="true">
+                                          <option value="AK"> اختر رقم القيد</option>
+                                          <option value="HI">Hawaii</option>
+                                          <option value="CA">California</option>
+                                          <option value="NV">Nevada</option>
+                                          <option value="OR">Oregon</option>
+                                        </select>
+                                     
+                                    </div>
+                                  </div>
                                 </div>
                               </div>
                               <!--قيد اليومية-->
@@ -1161,6 +1191,7 @@
                                         </h2>
                                         <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
                                           <div class="accordion-body">
+                                           
                                             <div
                                               class="row g-2 component-form pt-4 justify-content-md-start justify-content-center align-items-end">
                                              
@@ -1180,72 +1211,62 @@
                                                 </select>
                                               </div>
                                                <!--المشتركة العناصر-->
-                                               <div class="col-12 col-lg-3 col-md-4 mb-2" >
-                                                <label for="select-from" class="form-label">
-                                                  اسم النموذج<span class="start-form">*</span></label>
+                                               <div class="col-12 col-lg-3 col-md-4 mb-2" id="input-prench">
+                                                <label for="selectBasic" class="form-label">
+                                                  الفرع <span class="start-form">*</span></label>
 
-                                               
-                                                  <select id="select-from" class="select2 form-select" data-allow-clear="true">
-                                                    <option value="AK"> اختر النموذج</option>
+                                                <div class="input-groupe">
+                                                  <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                                    data-bs-target="#exampleBranch">
+                                                    <i class="fa-solid fa-plus"></i>
+                                                  </button>
+                                                  <select id="selectBasic" class="select2 form-select" data-allow-clear="true">
+                                                    <option value="AK">سعودى</option>
                                                     <option value="HI">Hawaii</option>
                                                     <option value="CA">California</option>
                                                     <option value="NV">Nevada</option>
                                                     <option value="OR">Oregon</option>
                                                   </select>
-                                               
+                                                </div>
                                               </div>
-                                              <div class="col-12 col-lg-2 col-md-4 mb-2" >
-                                                <label for="select-Constraint" class="form-label">
-                                                   نسخ من<span class="start-form">*</span></label>
+                                              <div class="col-12 col-lg-3 col-md-4 mb-2" id="input-cureunt">
+                                                <label for="select-Currency" class="form-label">
+                                                  العملة<span class="start-form">*</span></label>
 
-                                               
-                                                  <select id="select-Constraint" class="select2 form-select" data-allow-clear="true">
-                                                    <option value="AK"> اختر رقم القيد</option>
+                                                <div class="input-groupe">
+                                                  <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                                    data-bs-target="#exampleModal">
+                                                    <i class="fa-solid fa-plus"></i>
+                                                  </button>
+                                                  <select id="select-Currency" class="select2 form-select" data-allow-clear="true">
+                                                    <option value="AK">ريال سعودى</option>
                                                     <option value="HI">Hawaii</option>
                                                     <option value="CA">California</option>
                                                     <option value="NV">Nevada</option>
                                                     <option value="OR">Oregon</option>
                                                   </select>
+                                                </div>
+                                              </div>
+                                               <div class="col-12 col-lg-3 col-md-4 mb-2" id="date-reference">
+                                                <label class="form-label" for="basic-default-locetion">مرجع السند:<span
+                                                    class="start-form">*</span></label>
+                                                <input type="text" class="form-control" id="basic-default-locetion"
+                                                  placeholder="مرجع السند " />
+                                              </div>
+                                              <div class="col-12 col-lg-2 col-md-4 mb-2" id="date-filed">
+                                                <label class="form-label" for="basic-default-fullname">تاريخ دفتر اليومية<span
+                                                    class="start-form">*</span></label>
+                                                <input type="date" class="form-control" id="basic-default-fullname"
+                                                  placeholder=" تاريخ دفتر اليومية" />
+                                              </div>
+                                           
                                                
-                                              </div>
-                                               <div class="col-12 col-lg-3 col-md-4 mb-2" >
-                                                <label class="form-label" for="name-user"> اسم الشخص:<span class="start-form">*</span></label>
-                                                <input type="text" class="form-control" id="name-user" placeholder=" اسم الشخص ">
-                                              </div>
-                                               <div class="col-12 col-lg-1 col-md-4 mb-2" >
+                                               <div class="col-12 col-lg-2 col-md-4 mb-2" >
                                                 <label class="form-label" for="basic-Amount"> المبلغ:<span class="start-form">*</span></label>
                                                 <input type="text" class="form-control" id="basic-Amount" placeholder=" المبلغ ">
                                               </div>
-                                              <div class="col-12 col-lg-2 col-md-4 mb-2" >
-                                                <label for="select-Project" class="form-label">
-                                                  المشروع<span class="start-form">*</span></label>
-
-                                               
-                                                  <select id="select-Project" class="select2 form-select" data-allow-clear="true">
-                                                    <option value="AK"> اختر المشروع</option>
-                                                    <option value="HI">Hawaii</option>
-                                                    <option value="CA">California</option>
-                                                    <option value="NV">Nevada</option>
-                                                    <option value="OR">Oregon</option>
-                                                  </select>
-                                               
-                                              </div>
-                                             
-                                              <div class="col-12 col-lg-3 col-md-4 mb-2">
-                                                <label for="select-claim" class="form-label">
-                                                  مطالبة اختيار<span class="start-form">*</span></label>
-
-                                               
-                                                  <select id="select-claim" class="select2 form-select" data-allow-clear="true">
-                                                    <option value="AK">  مطالبة اختيار</option>
-                                                    <option value="HI">Hawaii</option>
-                                                    <option value="CA">California</option>
-                                                    <option value="NV">Nevada</option>
-                                                    <option value="OR">Oregon</option>
-                                                  </select>
-                                               
-                                              </div>
-                                              <div class="col-12 col-lg-2 col-md-4 mb-2" >
+                                              
+                                              <div class="col-12 col-lg-1 col-md-4 mb-2" >
                                                 <div class="form-check">
                                                   <input class="form-check-input taxCheckbox" type="checkbox" value="" id="flexCheckDefault">
                                                   <label class="form-check-label" for="flexCheckDefault">
@@ -1253,9 +1274,9 @@
                                                   </label>
                                                 </div>
                                               </div>
-                                              <div class="col-12 col-lg-2 col-md-4 mb-2">
+                                              <div class="col-12 col-lg-1 col-md-4 mb-2">
                                                 <label>
-                                                  <input type="checkbox" id="repeat-checkbox" onclick="toggleOptions()"> 
+                                                  <input type="checkbox" id="repeat-checkbox" class="form-check-input" onclick="toggleOptions()"> 
                                                   تكرار القيد
                                               </label>
                                           
@@ -1283,59 +1304,61 @@
                                               </div>
                                               </div>
                                               <!--قيد اليومية-->
-                                              <div class="col-12 col-lg-3 col-md-4 mb-2" id="date-filed">
-                                                <label class="form-label" for="basic-default-fullname">تاريخ دفتر اليومية<span
-                                                    class="start-form">*</span></label>
-                                                <input type="date" class="form-control" id="basic-default-fullname"
-                                                  placeholder=" تاريخ دفتر اليومية" />
-                                              </div>
-                                              <div class="col-12 col-lg-3 col-md-4 mb-2" id="date-reference">
-                                                <label class="form-label" for="basic-default-locetion">مرجع السند:<span
-                                                    class="start-form">*</span></label>
-                                                <input type="text" class="form-control" id="basic-default-locetion"
-                                                  placeholder="مرجع السند " />
-                                              </div>
-                                              <div class="col-12 col-lg-3 col-md-4 mb-2" id="input-cureunt">
-                                                <label for="select-Currency" class="form-label">
-                                                  العملة<span class="start-form">*</span></label>
+                                              <div class="col-12 col-lg-3 col-md-4 mb-2" >
+                                                <label for="select-Project" class="form-label">
+                                                  اسم المشروع<span class="start-form">*</span></label>
 
-                                                <div class="input-groupe">
-                                                  <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                                    data-bs-target="#exampleModal">
-                                                    <i class="fa-solid fa-plus"></i>
-                                                  </button>
-                                                  <select id="select-Currency" class="select2 form-select" data-allow-clear="true">
-                                                    <option value="AK">ريال سعودى</option>
+                                               
+                                                  <select id="select-Project" class="select2 form-select" data-allow-clear="true">
+                                                    <option value="AK"> اختر المشروع</option>
                                                     <option value="HI">Hawaii</option>
                                                     <option value="CA">California</option>
                                                     <option value="NV">Nevada</option>
                                                     <option value="OR">Oregon</option>
                                                   </select>
-                                                </div>
+                                               
                                               </div>
-                                              <div class="col-12 col-lg-3 col-md-4 mb-2" id="input-prench">
-                                                <label for="selectBasic" class="form-label">
-                                                  الفرع <span class="start-form">*</span></label>
+                                             
+                                              <div class="col-12 col-lg-3 col-md-4 mb-2">
+                                                <label for="select-claim" class="form-label">
+                                                  مطالبة <span class="start-form">*</span></label>
 
-                                                <div class="input-groupe">
-                                                  <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                                    data-bs-target="#exampleBranch">
-                                                    <i class="fa-solid fa-plus"></i>
-                                                  </button>
-                                                  <select id="selectBasic" class="select2 form-select" data-allow-clear="true">
-                                                    <option value="AK">سعودى</option>
+                                               
+                                                  <select id="select-claim" class="select2 form-select" data-allow-clear="true">
+                                                    <option value="AK">  مطالبة </option>
                                                     <option value="HI">Hawaii</option>
                                                     <option value="CA">California</option>
                                                     <option value="NV">Nevada</option>
                                                     <option value="OR">Oregon</option>
                                                   </select>
-                                                </div>
+                                               
                                               </div>
-                                              <div class="col-12 col-lg-3 col-md-4 mb-2" id="file-filed">
-                                                <label class="form-label" for="basic-default-file">
-                                                  اختر الملف<span class="start-form">*</span></label>
-                                                  <input type="file" class="form-control" id="basic-default-file" />
+                                           
+                                              <div class="col-12 col-lg-3 col-md-4 mb-2" >
+                                                <label class="form-label" for="name-user"> اسم الشخص:<span class="start-form">*</span></label>
+                                                <input type="text" class="form-control" id="name-user" placeholder=" اسم الشخص ">
                                               </div>
+                                                <div class="col-12 col-lg-3 col-md-4 mb-2" id="file-field">
+                                                  <div class="d-flex align-items-center justify-content-between">
+                                                    <label class="form-label" for="basic-default-file">
+                                                      اختر الملف<span class="start-form">*</span>
+                                                  </label>
+                                                  
+                                                  <!-- صورة الملف كزر تحميل -->
+                                                  <div id="file-upload-container" style="cursor: pointer;">
+                                                      <img id="file-image" src="./assets/img/file-icon.png" alt="اختر ملف" class="img-fluid" style="width: 64px; height: auto;" />
+                                                      <input type="file" class="d-none" id="basic-default-file" accept="image/*,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" />
+                                                  </div>
+                                                  
+                                                  <!-- منطقة عرض اسم الملف -->
+                                                  <div id="file-preview" class="mt-2"></div>
+                                                  </div>
+                                                 
+                                              </div>
+                                              
+                                            
+                                            
+                                              
                                               <!--سند القبض--سند الصرف-->
                                           
                                                 <div class="col-12 col-lg-3 col-md-6 mb-2"  id="credit-account-section-Debtor">
@@ -1359,17 +1382,12 @@
                                                     </select>
                     
                                                 </div>
-                                                <div class="col-12 col-lg-3 col-md-4 mb-2" id="name-field">
-                                                  <label class="form-label" for="basic-default-locetion"> الاسم:<span
-                                                      class="start-form">*</span></label>
-                                                  <input type="text" class="form-control" id="basic-default-locetion" placeholder=" الاسم ">
-                    
-                                                </div>
+                                         
                                             
                                             
                                             <!--الايداعات-->
                                               
-                                              <div class="col-12 col-lg-3 col-md-4 mb-2" id="filed-of">
+                                              <div class="col-12 col-lg-2 col-md-4 mb-2" id="filed-of">
                                                 <label for="select-to" class="form-label">    من:<span class="start-form">*</span></label>
 
                                                   <select id="select-tow" class="select2 form-select" data-allow-clear="true">
@@ -1382,10 +1400,10 @@
                                                   </select>
 
                                               </div>
-                                              <div class="col-12 col-lg-3 col-md-4 mb-2" id="filed-to">
-                                                <label for="select2Basic" class="form-label">    الى:<span class="start-form">*</span></label>
+                                              <div class="col-12 col-lg-2 col-md-4 mb-2" id="filed-to">
+                                                <label for="select-to-filed" class="form-label">    الى:<span class="start-form">*</span></label>
 
-                                                  <select id="select2Basic" class="select2 form-select" data-allow-clear="true">
+                                                  <select id="select-to-filed" class="select2 form-select" data-allow-clear="true">
                                                     <option value="AK">   البنك الاهلى</option>
                                                     <option value="HI">Hawaii</option>
                                                     <option value="CA">California</option>
@@ -1395,17 +1413,12 @@
                                                   </select>
 
                                               </div>
-                                              <div class="col-12 col-lg-3 col-md-4 mb-2" id="Bank-balance">
+                                              <div class="col-12 col-lg-2 col-md-4 mb-2" id="Bank-balance">
                                                 <label class="form-label" for="basic-Bank-balance">   رصيد البنك:<span class="start-form">*</span></label>
                                                 <input type="text" id="basic-Bank-balance" class="form-control phone-mask" placeholder="   رصيد البنك">
                                               </div>
                                               <!-- المدفوعات-->
-                                              <div class="col-12 col-lg-3 col-md-4 mb-2" id="filed-Toorder">
-                                                <label class="form-label" for="basic-default-locetion"> لامر:<span
-                                                    class="start-form">*</span></label>
-                                                <input type="text" class="form-control" id="basic-default-locetion" placeholder=" لامر ">
-
-                                              </div>
+              
                                               <!--تحويلات بين الحسابات البنكية-->
                                               <div id="Transfers-between" class="col-lg-6">
                                                   <div class="row mx-0 g-2">
@@ -1429,7 +1442,7 @@
 
                                             <!--فاتوره الايراد-->
                                               <!--الايراد-->
-                                              <div class="col-12 col-lg-3 col-md-4 mb-2" id="input-Customers">
+                                              <div class="col-12 col-lg-2 col-md-4 mb-2" id="input-Customers">
                                                 <label for="select2Customers" class="form-label">    العملاء:<span class="start-form">*</span></label>
 
                                                   <select id="select2Customers" class="select2 form-select" data-allow-clear="true">
@@ -1442,24 +1455,24 @@
                                                   </select>
 
                                               </div>
-                                              <div class="col-12 col-lg-3 col-md-4 mb-2" id="input-Client">
+                                              <div class="col-12 col-lg-2 col-md-4 mb-2" id="input-Client">
                                                 <label class="form-label" for="basic-default-account"> حساب العميل:<span class="start-form">*</span></label>
-                                                <input id="dropdowntree" class="dropdowntree-tow"/>
+                                                <input id="dropdowntree" class="dropdowntree-tow" style="padding: 0.31rem 0.875rem;"/>
 
                                               </div>
-                                              <div class="col-12 col-lg-3 col-md-4 mb-2" id="input-value">
+                                              <div class="col-12 col-lg-2 col-md-4 mb-2" id="input-value">
                                                 <label class="form-label" for="basic-content">  حساب القيمة المضافة :<span class="start-form">*</span></label>
-                                                <input id="dropdowntree" class="dropdowntree-tow"/>
+                                                <input id="dropdowntree" class="dropdowntree-tow" style="padding: 0.31rem 0.875rem;"/ >
 
                                               </div>
                                               <!--الايراد-->
                                               <!--المصروف-->
-                                              <div class="col-12 col-lg-3 col-md-4 mb-2" id="Supplier-account">
+                                              <div class="col-12 col-lg-2 col-md-4 mb-2" id="Supplier-account">
                                                 <label class="form-label" for="basic-default-account"> حساب المورد:<span class="start-form">*</span></label>
-                                                <input id="dropdowntree" class="dropdowntree-tow"/>
+                                                <input id="dropdowntree" class="dropdowntree-tow" style="padding: 0.31rem 0.875rem;"/>
 
                                               </div>
-                                              <div class="col-12 col-lg-3 col-md-4 mb-2" id="name-Supplier">
+                                              <div class="col-12 col-lg-2 col-md-4 mb-2" id="name-Supplier">
                                                 <label for="select2Basic" class="form-label">اسم المورد:<span class="start-form">*</span></label>
 
                                                   <select id="select2Basic" class="select2 form-select" data-allow-clear="true">
@@ -1493,7 +1506,7 @@
                                           </button>
                                         </h2>
                                         <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                                          <div class="accordion-body">
+                                          <div class="accordion-body pt-2">
                                               <!--قيد اليومية-->
                                               <div id="Journal-entry-container">
                                                 <div class="row mx-0 g-2 align-items-end" id="Journal-entry">
@@ -1535,8 +1548,8 @@
                                                   
                                                   </div>
                                                   <div class="col-12 col-lg-2 col-md-4 mb-2" >
-                                                    <label class="form-label" for="select-delegate">  المندوب<span class="start-form">*</span></label>
-                                                    <select id="select-delegate" class="select2 form-select" data-allow-clear="true">
+                                                    <label class="form-label" for="select-delegate-1">  المندوب<span class="start-form">*</span></label>
+                                                    <select id="select-delegate-1" class="select2 form-select" data-allow-clear="true">
                                                       <option value="AK">    محمود</option>
                                                       <option value="HI">شركة العقارات</option>
                                                       <option value="CA">California</option>
@@ -1570,7 +1583,7 @@
                                                       <input type="text" class="form-control">        
                                                     
                                                     </div>
-                                                    <div class="col-12 col-lg-3 col-md-4 mb-2 px-1">
+                                                    <div class="col-12 col-lg-4 col-md-4 mb-2 px-1">
                                                       <label class="form-label" for="name-Statement">  البيان الضريبى<span class="start-form">*</span></label>
                                                       <textarea name="text" rows="1" class="form-control">  </textarea>        
                           
@@ -1655,7 +1668,7 @@
                                                         <input type="text" class="form-control">        
                                                       
                                                       </div>
-                                                      <div class="col-12 col-lg-3 col-md-4 mb-2 px-1">
+                                                      <div class="col-12 col-lg-4 col-md-4 mb-2 px-1">
                                                         <label class="form-label" for="name-Statement">  البيان الضريبى<span class="start-form">*</span></label>
                                                         <textarea name="text" rows="1" class="form-control">  </textarea>        
                             
@@ -1739,7 +1752,7 @@
                                                         <input type="text" class="form-control">        
                                                       
                                                       </div>
-                                                      <div class="col-12 col-lg-3 col-md-4 mb-2 px-1">
+                                                      <div class="col-12 col-lg-4 col-md-4 mb-2 px-1">
                                                         <label class="form-label" for="name-Statement">  البيان الضريبى<span class="start-form">*</span></label>
                                                         <textarea name="text" rows="1" class="form-control">  </textarea>        
                             
@@ -1823,7 +1836,7 @@
                                                         <input type="text" class="form-control">        
                                                       
                                                       </div>
-                                                      <div class="col-12 col-lg-3 col-md-4 mb-2 px-1">
+                                                      <div class="col-12 col-lg-4 col-md-4 mb-2 px-1">
                                                         <label class="form-label" for="name-Statement">  البيان الضريبى<span class="start-form">*</span></label>
                                                         <textarea name="text" rows="1" class="form-control">  </textarea>        
                             
@@ -1908,7 +1921,7 @@
                                                         <input type="text" class="form-control">        
                                                       
                                                       </div>
-                                                      <div class="col-12 col-lg-3 col-md-4 mb-2 px-1">
+                                                      <div class="col-12 col-lg-4 col-md-4 mb-2 px-1">
                                                         <label class="form-label" for="name-Statement">  البيان الضريبى<span class="start-form">*</span></label>
                                                         <textarea name="text" rows="1" class="form-control">  </textarea>        
                             
@@ -1924,7 +1937,7 @@
                                                 </div>
                                                 <!---->
                                                 <!--الايراد-->
-                                                <div id="alqabdatu-Revenue" class="overflow-x-auto">
+                                                <div id="alqabdatu-Revenue">
                                                   <div class="row mx-0 g-2 align-items-end" id="Journal-entry-Revenue">
                                                     <div class="col-12 col-lg-3 col-md-4 mb-2" >
                                                       <label class="form-label" for="name-acount"> اسم الحساب:<span class="start-form">*</span></label>
@@ -2002,14 +2015,14 @@
                                                       <input type="text" class="form-control" />        
                                                     
                                                     </div>
-                                                    <div class="row mx-0 px-0 col-md-6 Tax-check"  style="display: none;">
+                                                    <div class="row mx-0 px-0  Tax-check col-md-6"  style="display: none;">
                                                      
-                                                      <div class="col-12 col-lg-3 col-md-4 mb-2 px-1">
+                                                      <div class="col-12 col-lg-2 col-md-4 mb-2 px-1">
                                                         <label class="form-label" for="Tax-rate">  نسبة الضريبة<span class="start-form">*</span></label>
                                                         <input type="text" class="form-control">        
                                                       
                                                       </div>
-                                                      <div class="col-12 col-lg-3 col-md-4 mb-2 px-1">
+                                                      <div class="col-12 col-lg-2 col-md-4 mb-2 px-1">
                                                         <label class="form-label" for="Tax-number">  الرقم الضريبى<span class="start-form">*</span></label>
                                                         <input type="text" class="form-control">        
                                                       
@@ -2019,7 +2032,7 @@
                                                         <input type="text" class="form-control">        
                                                       
                                                       </div>
-                                                      <div class="col-12 col-lg-3 col-md-4 mb-2 px-1">
+                                                      <div class="col-12 col-lg-5 col-md-4 mb-2 px-1">
                                                         <label class="form-label" for="name-Statement">  البيان الضريبى<span class="start-form">*</span></label>
                                                         <textarea name="text" rows="1" class="form-control">  </textarea>        
                             
@@ -2048,9 +2061,9 @@
                                                 </div>
                                                 <!---->
                                                <!--فااتوره المصروف-->
-                                               <div id="alqabdatu-expense" class="overflow-x-auto">
+                                               <div id="alqabdatu-expense">
                                                 <div  id="Journal-entry-expense">
-                                                  <div class="row mx-0 g-2 align-items-end">
+                                                  <div class="row mx-0 g-2 align-items-end mt-2">
                                                     <div class="col-12 col-lg-2 col-md-4 mb-2 px-1" >
                                                       <label class="form-label" for="name-acount"> اسم الحساب:<span class="start-form">*</span></label>
                                                       <input id="dropdowntree" class="dropdowntree-tow" style="padding: 0.31rem 0.875rem;" />         
@@ -2107,12 +2120,7 @@
                           
                                                     
                                                     </div>
-                                                    <div class="col-12 col-lg-2 col-md-4 mb-2 px-1" >
-                                                      <label class="form-label" for="name-Statement">  البيان<span class="start-form">*</span></label>
-                                                      <textarea name="text" rows="1" class="form-control">  </textarea>        
-                          
-                                                    
-                                                    </div>
+                                          
                                                     <div class="col-12 col-lg-2 col-md-4 mb-2 px-1" >
                                                       <label class="form-label" for="Bond-review"> مرجعه السند<span class="start-form">*</span></label>
                                                       <input type="text" class="form-control" />        
@@ -2128,20 +2136,14 @@
                                                       <input type="text" class="form-control" />        
                                                     
                                                     </div>
-                                                    
-                                                    <div class="col-12 col-lg-1 col-md-4 mb-2 px-1" >
-                                                      <label class="form-label" for="Total">  الاجمالى<span class="start-form">*</span></label>
-                                                      <input type="text" class="form-control" />        
-                                                    
-                                                    </div>
-                                                    <div class="row mx-0 px-0 col-md-5 Tax-check"  style="display: none;">
+                                                    <div class="row mx-0 px-0 col-md-6 Tax-check"  style="display: none;">
                                                      
-                                                      <div class="col-12 col-lg-3 col-md-4 mb-2 px-1">
+                                                      <div class="col-12 col-lg-2 col-md-4 mb-2 px-1">
                                                         <label class="form-label" for="Tax-rate">  نسبة الضريبة<span class="start-form">*</span></label>
                                                         <input type="text" class="form-control">        
                                                       
                                                       </div>
-                                                      <div class="col-12 col-lg-3 col-md-4 mb-2 px-1">
+                                                      <div class="col-12 col-lg-2 col-md-4 mb-2 px-1">
                                                         <label class="form-label" for="Tax-number">  الرقم الضريبى<span class="start-form">*</span></label>
                                                         <input type="text" class="form-control">        
                                                       
@@ -2151,13 +2153,19 @@
                                                         <input type="text" class="form-control">        
                                                       
                                                       </div>
-                                                      <div class="col-12 col-lg-3 col-md-4 mb-2 px-1">
+                                                      <div class="col-12 col-lg-5 col-md-4 mb-2 px-1">
                                                         <label class="form-label" for="name-Statement">  البيان الضريبى<span class="start-form">*</span></label>
                                                         <textarea name="text" rows="1" class="form-control">  </textarea>        
                             
                                                       
                                                       </div>
                                                     </div>
+                                                    <div class="col-12 col-lg-1 col-md-4 mb-2 px-1" >
+                                                      <label class="form-label" for="Total">  الاجمالى<span class="start-form">*</span></label>
+                                                      <input type="text" class="form-control" />        
+                                                    
+                                                    </div>
+                                                    
                                                    
                                                     <div class="col-12 col-lg-1 col-md-4 mb-2 px-1">
                                                       <label class="form-label" for="Tax">  الضريبة<span class="start-form">*</span></label>
@@ -2169,7 +2177,12 @@
                                                       <input type="text" class="form-control" />        
                                                     
                                                     </div>
-                                                  
+                                                    <div class="col-12 col-lg-3 col-md-4 mb-2 px-1" >
+                                                      <label class="form-label" for="name-Statement">  البيان<span class="start-form">*</span></label>
+                                                      <textarea name="text" rows="1" class="form-control">  </textarea>        
+                          
+                                                    
+                                                    </div>
                                                     
                                                     <div class="col-12 col-lg-1 col-md-4 mb-2">
                                                       <a class="bg-primary text-bg-primary p-1 d-flex align-items-center justify-content-center  rounded add-expense" href="javascript:void(0);" title="اضافة">
@@ -2279,7 +2292,7 @@
                                       <label class="form-label" for="basic-default-locetion">
                                         اسم الفرع :<span class="start-form">*</span></label>
                                       <input type="text" class="form-control" id="basic-default-locetion"
-                                        placeholder=" اسم العملة " />
+                                       />
                                     </div>
                                     <div class="col-12 col-lg-12 mb-2">
                                       <label class="form-label" for="basic-default-locetion">
@@ -2579,6 +2592,8 @@ function addNewRow(containerId, rowSelector) {
 
     // وضع التركيز على أول عنصر قابل للتركيز داخل السطر الجديد
     setFocusToFirstFocusable(newRow);
+     // إضافة border للصف الجديد
+   
 }
 // دالة لحذف السطر المحدد بناءً على القسم النشط
 function deleteFocusedRow() {
@@ -2621,12 +2636,12 @@ $(document).on('click', '.delete-rows, .delete-Exchange, .delete-Deposits, .dele
   }
 
   const bondTypeMapping = {
-    "قيد اليومية": ['#date-filed', '#date-reference', '#input-cureunt', '#input-prench', '#file-filed', '#collaps-Movement','#Journal-entry-container'],
-    "سند القبض": ['#date-filed', '#date-reference', '#input-cureunt', '#input-prench', '#credit-account-section-Debtor', '#name-field', '#collaps-Movement','#alqabdatu-wasanad-alsarf'],
-    "سند الصرف": ['#date-filed', '#date-reference', '#input-cureunt', '#input-prench', '#credit-account-section', '#name-field', '#collaps-Movement','#alqabdatu-Exchange'],
-    "الايداعات": ['#date-filed', '#date-reference', '#input-cureunt', '#input-prench', '#filed-of', '#filed-to', '#Bank-balance', '#name-field', '#collaps-Movement',
+    "قيد اليومية": ['#date-filed', '#date-reference', '#input-cureunt', '#input-prench', '#collaps-Movement','#Journal-entry-container','#file-field'],
+    "سند القبض": ['#date-filed', '#date-reference', '#input-cureunt', '#input-prench', '#credit-account-section-Debtor', '#collaps-Movement','#alqabdatu-wasanad-alsarf'],
+    "سند الصرف": ['#date-filed', '#date-reference', '#input-cureunt', '#input-prench', '#credit-account-section', '#collaps-Movement','#alqabdatu-Exchange'],
+    "الايداعات": ['#date-filed', '#date-reference', '#input-cureunt', '#input-prench', '#filed-of', '#filed-to', '#Bank-balance', '#collaps-Movement',
     '#Journal-entry-alsarf','#alqabdatu-Deposits'],
-    "المدفوعات": ['#date-filed', '#filed-of', '#filed-to', '#Bank-balance', '#filed-Toorder', '#date-reference', '#input-cureunt', '#input-prench', '#collaps-Movement','#alqabdatu-Payments'],
+    "المدفوعات": ['#date-filed', '#filed-of', '#filed-to', '#Bank-balance', '#date-reference', '#input-cureunt', '#input-prench', '#collaps-Movement','#alqabdatu-Payments'],
     "التحويلات بين الحسابات البنكية": ['#date-filed', '#filed-of', '#filed-to', '#Bank-balance', '#Transfers-between', '#date-reference', '#input-prench'],
     "الايراد": ['#date-filed', '#input-cureunt', '#date-reference', '#input-prench', '#input-Customers', '#input-Client', '#input-value', '#collaps-Movement','#alqabdatu-Revenue'
     ],
@@ -2675,7 +2690,7 @@ $(document).on('click', '.delete-rows, .delete-Exchange, .delete-Deposits, .dele
     toggleSections([
       '#collaps-Movement', '#file-filed', '#date-filed', '#date-reference','#alqabdatu-Deposits', 
       '#input-cureunt', '#input-prench', '#filed-of', '#filed-to','#alqabdatu-expense',
-      '#Bank-balance', '#name-field', '#filed-Toorder', '#To-account','#alqabdatu-Revenue',
+      '#Bank-balance', '#To-account','#alqabdatu-Revenue','#file-field',
       '#From-account', '#Transfers-between', '#alqabdatu-wasanad-alsarf','#alqabdatu-Exchange',
       '#credit-account-section', '#credit-account-section-Debtor', '#input-Customers',
       '#input-Client', '#input-value', '#Supplier-account', '#name-Supplier','#Journal-entry-container','#alqabdatu-Payments'
@@ -2685,6 +2700,7 @@ $(document).on('click', '.delete-rows, .delete-Exchange, .delete-Deposits, .dele
 
     toggleSections(sectionsToShow, true);
     toggleTaxFields();  // تحديث حقل الضريبة بناءً على التغيير
+   
   }).trigger('change');
 
    // تفعيل toggleTaxFields عند تغيير الحالة في الـ checkbox أو حقل الاختيار
@@ -2694,7 +2710,11 @@ $(document).on('click', '.delete-rows, .delete-Exchange, .delete-Deposits, .dele
 
     // استدعاء toggleTaxFields لتحديث الحالة عند تحميل الصفحة
     toggleTaxFields();
+    // دالة لتحديث border على الحقول المتأثرة حسب نوع السند
+   
+    
 });
+
 
 // دالة لتحديث حالة ظهور repeat-options
 // دالة لتحديث حالة ظهور repeat-options
@@ -2715,6 +2735,7 @@ $('#repeat-checkbox').on('change', function() {
 });
 
 // عند الضغط على Enter في repeat-options
+// عند الضغط على Enter في repeat-options
 $('#repeat-options input[name="repeat"]').on('keydown', function(e) {
     if (e.key === 'Enter') {
         e.preventDefault();
@@ -2724,10 +2745,62 @@ $('#repeat-options input[name="repeat"]').on('keydown', function(e) {
         $('#repeat-options').hide();  // إغلاق repeat-options مباشرة
         
         // الانتقال إلى العنصر التالي في النموذج
-        $('#repeat-checkbox').closest('.form-group').nextAll(':input, .form-check-input').first().focus();
+        $('#repeat-checkbox').closest('.form-group').nextAll(':input, .form-check-input').first().focus(); 
     }
 });
+
+// إغلاق repeat-options عند النقر في أي مكان خارجها
+$(document).on('click', function(e) {
+    const repeatOptions = $('#repeat-options');
+    const repeatCheckbox = $('#repeat-checkbox');
+
+    // التحقق إذا كانت النقرة خارج repeat-options وrepeat-checkbox
+    if (!repeatOptions.is(e.target) && repeatOptions.has(e.target).length === 0 &&
+        !repeatCheckbox.is(e.target) && repeatCheckbox.has(e.target).length === 0) {
+        repeatOptions.hide(); // إخفاء repeat-options
+    }
+});
+
+// عند الضغط على صورة الملف لفتح مربع اختيار الملف
+$('#file-image').on('click', function() {
+    $('#basic-default-file').click();
+});
+
+// تحديث صورة الملف أو الأيقونة عند اختيار ملف جديد
+$('#basic-default-file').on('change', function(e) {
+    const file = e.target.files[0];
+    const fileImage = $('#file-image');
+    const filePreview = $('#file-preview');
     
+    filePreview.empty(); // إزالة أي معاينة سابقة
+
+    if (file) {
+        const fileType = file.type;
+
+        // إذا كان الملف صورة، عرض معاينتها
+        if (fileType.startsWith('image/')) {
+            const reader = new FileReader();
+            reader.onload = function(event) {
+                fileImage.attr('src', event.target.result); // عرض الصورة المصغرة
+            };
+            reader.readAsDataURL(file);
+        } else {
+            // عرض أيقونة ملائمة إذا لم يكن الملف صورة
+            if (fileType === 'application/pdf') {
+                fileImage.attr('src', './assets/img/pdf-icon.png'); // أيقونة PDF
+            } else if (fileType.includes('word')) {
+                fileImage.attr('src', './assets/img/word-icon.png'); // أيقونة Word
+            } else {
+                fileImage.attr('src', './assets/img/file-icon.png'); // أيقونة ملف عامة
+            }
+        }
+
+        // عرض اسم الملف
+        filePreview.html('<span>' + file.name + '</span>');
+    }
+});
+
+
   </script>
 
 </body>

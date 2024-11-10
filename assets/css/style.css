@@ -368,7 +368,7 @@ color: #dbdade !important;
 }
 
 .form-label {
-  font-size: 0.95rem    !important;
+  font-size: 0.85rem   !important;
   
 }
 .btn-upload-input {
@@ -781,4 +781,22 @@ content: "" !important;
     border-color: #dbdade;
     z-index: 1000;
     border-radius: 8px;
+}
+#credit-account-section-Debtor .k-picker-solid,
+#credit-account-section  .select2-container--default .select2-selection,
+#filed-of .select2-container--default .select2-selection,
+#filed-to .select2-container--default .select2-selection,#Bank-balance input,
+#input-Customers .select2-container--default .select2-selection,#input-Client .k-picker-solid,
+#input-value .k-picker-solid,#Supplier-account .k-picker-solid,
+#name-Supplier .select2-container--default .select2-selection,#Transfers-between input
+{
+  border-color: #EA5455;
+}
+#Journal-entry,#Journal-entry-alsarf,#Journal-entry-Exchange,#Journal-entry-Deposits,
+#Journal-entry-Payments,#Journal-entry-Revenue,#Journal-entry-expense
+{
+  margin-top: 8px;
+  box-shadow: 0px 2px 10px #66666669;
+  border-radius: 6px;
+ 
 }

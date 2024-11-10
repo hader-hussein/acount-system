@@ -1159,22 +1159,40 @@
             <div class="container-xxl flex-grow-1 container-p-y content-admin pt-lg-5 mt-md-4">
               <div class="card comonent-hader-top">
                 <div class="card-body py-2 px-md-2 px-2 card-widget-separator">
-                  <div class=" d-flex flex-wrap justify-content-between mb-1 align-items-center pt-2">
-                      <div class="col">
                         <strong class="py-md-3 px-md-3 text-title-hadeer text-tilte-b"><span class="text-muted">
                           الموازنات
        
                          </span>
                          </strong>
-                      </div>
-                      <div class="col text-end">
-                        <button data-bs-toggle="modal" data-bs-target="#createModal" class="btn btn-primary mb-2 text-nowrap add-new-role waves-effect waves-light">
-                           <i class="fa-solid fa-plus fs-5 px-2"></i> اضافة
-                        </button>
-                      </div>
-                  </div>
-                 
-                  
+                         <div class="shadow p-2 col-md-8 m-auto rounded">
+                          <form class="row component-form pt-2 justify-content-md-start justify-content-center align-items-end">
+                       
+                            <div class="col-12  col-md-6 mb-3">
+                              <label for="From-account" class="form-label">       السنة المالية </label>
+                              
+                                <select id="From-account" class="select2 form-select" data-allow-clear="true">
+                                  <option value="AK">      1-1-2024</option>
+                                  <option value="HI">31-12-2024</option>
+                                  <option value="CA">5-10-2024</option>
+                                  <option value="NV">2-2-2024</option>
+                                  <option value="OR">3-3-2024</option>
+                              
+                                </select>
+                            </div>
+                            <div class="col-12 col-md-6 mb-3">
+                              <label for="to-account" class="form-label">    كود الحساب</label>
+                              
+                              <input id="dropdowntree" class="dropdowntree-tow"style="padding: 0.31rem 0.875rem;" />
+    
+                            </div>
+                            <div>
+                              <button type="button" class="btn btn-primary">  حساب</button>
+    
+                            </div>
+    
+                          </form>
+                         </div>
+
                 </div>
               </div>
               <div class="card comonent-hader-top component-button p-2 mt-4">
@@ -1184,13 +1202,29 @@
                               <table class="table  table-bordered">
                                 <thead>
                                   <tr class="text-center">
-                                    <th>  #</th>
-                                    <th>    دليل المحاسبى</th>
-                                    <th>    الفترة</th>
-                                    <th>     القيمة</th>
-                                    <th>   Dim. incl.	</th>
-                                    <th>    Last Year</th>
+                                    <th rowspan="2">  #</th>
+                                    <th rowspan="2">    دليل المحاسبى</th>
+                                    <th rowspan="2">    الفترة</th>
+                                    <th rowspan="2">     القيمة</th>
+                                    <th rowspan="2">   Dim. incl.	</th>
+                                    <th rowspan="2">    Last Year</th>
+                                    <th rowspan="2">القيد المحاسبى</th>
+                                    <th colspan="12">شهور السنة</th>
                                     
+                                  </tr>
+                                  <tr>
+                                    <th>    يناير</th>
+                                    <th>    فبراير</th>
+                                    <th>    مارس</th>
+                                    <th>    ابريل</th>
+                                    <th>    مايو</th>
+                                    <th>    يناير</th>
+                                    <th>    يوليو</th>
+                                    <th>    اغسطس</th>
+                                    <th>    سيتمبر</th>
+                                    <th>    اكتوبر</th>
+                                    <th>    نوفمبر</th>
+                                    <th>    ديسمبر</th>
                                   </tr>
                                 </thead>
                                 <tbody >
@@ -1198,32 +1232,27 @@
                                     <td>
                                    1
                                     </td>
-                                    <td> 
-                                      <select  class="select2 form-select" id="my-select" data-allow-clear="true">
-                                        <option value="AK">     اختار الشهر </option>
-                                        <option value="HI">  يناير </option>
-                                        <option value="CA"> فبراير </option>
-                                        <option value="CA"> مارس </option>
-                                        <option value="CA"> ابرايل </option>
-                                        <option value="CA"> مايو </option>
-                                        <option value="CA"> يونيو </option>
-                                        <option value="CA"> بوليو </option>
-                                        <option value="CA"> اغسطس </option>
-                                        <option value="CA"> سيتمبر </option>
-                                        <option value="CA"> اكتوبر </option>
-                                        <option value="CA"> نوفمبر </option>
-                                        <option value="CA"> ديسمبر </option>
-
-                                    
-                                      </select>
-                                    </td>
+                                 
                                     <td> 1-1-2024 </td>
-                                    <td>
+                                    <td class="px-1">
                                       <input type="text" class="form-control">
                                     </td>
                                     <td>admin@yahoo.com</td>
                                     <td>مدير النظام</td>
-                                  
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
                                   </tr>
                                  
                                 </tbody>
@@ -1240,47 +1269,7 @@
               </div>
              
             
-               <!-- Modal --create-->
-               <div class="modal fade" id="createModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-md">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h1 class="modal-title fs-5 fw-bold" id="exampleModalLabel">  ادخال الموازنات </h1>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                      <form class="row component-form pt-2 justify-content-md-start justify-content-center align-items-end">
-                       
-                        <div class="col-12  col-lg-12 mb-3">
-                          <label for="From-account" class="form-label">       السنة المالية </label>
-                          
-                            <select id="From-account" class="select2 form-select" data-allow-clear="true">
-                              <option value="AK">      1-1-2024</option>
-                              <option value="HI">31-12-2024</option>
-                              <option value="CA">5-10-2024</option>
-                              <option value="NV">2-2-2024</option>
-                              <option value="OR">3-3-2024</option>
-                          
-                            </select>
-                        </div>
-                        <div class="col-12 col-lg-12 mb-3">
-                          <label for="to-account" class="form-label">    كود الحساب</label>
-                          
-                          <input id="dropdowntree" class="dropdowntree-tow" />
-
-                        </div>
-                        <div>
-                          <button type="button" class="btn btn-primary">  حساب</button>
-
-                        </div>
-
-                      </form>
-                    </div>
-                    
-                  </div>
-                </div>
-              </div>
-            <!---->
+           
              
               
              <!---->
@@ -1468,7 +1457,7 @@ $(document).ready(function() {
   $('.component-button').hide();
 
   // عند الضغط على زر "حفظ" داخل الـ Modal
-  $('#createModal .btn-primary').click(function() {
+  $('.btn-primary').click(function() {
     // إظهار comonent-hader-top
     $('.component-button').show();
     // غلق الـ Modal
