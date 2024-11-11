@@ -1338,21 +1338,21 @@
                                                 <label class="form-label" for="name-user"> اسم الشخص:<span class="start-form">*</span></label>
                                                 <input type="text" class="form-control" id="name-user" placeholder=" اسم الشخص ">
                                               </div>
-                                                <div class="col-12 col-lg-3 col-md-4 mb-2" id="file-field">
-                                                  <div class="d-flex align-items-center justify-content-between">
-                                                    <label class="form-label" for="basic-default-file">
-                                                      اختر الملف<span class="start-form">*</span>
-                                                  </label>
-                                                  
-                                                  <!-- صورة الملف كزر تحميل -->
-                                                  <div id="file-upload-container" style="cursor: pointer;">
-                                                      <img id="file-image" src="./assets/img/file-icon.png" alt="اختر ملف" class="img-fluid" style="width: 64px; height: auto;" />
-                                                      <input type="file" class="d-none" id="basic-default-file" accept="image/*,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" />
+                                              <div class="col-12 col-lg-4 col-md-4 mb-2" id="file-field">
+                                                <div  action="/upload" class="dropzone needsclick p-0" id="dropzone-basic">
+                                                  <div class="dz-message needsclick">
+                                                    Drop files here or click to upload
+                                                   
+                                                   
                                                   </div>
-                                                  
-                                                  <!-- منطقة عرض اسم الملف -->
-                                                  <div id="file-preview" class="mt-2"></div>
+                                                  <div class="fallback">
+                                                    <input name="file" type="file" />
                                                   </div>
+                                                </div>
+                                              </div>
+                                            
+                                            
+                                               
                                                  
                                               </div>
                                               
@@ -1496,7 +1496,7 @@
                                             </div>
                                           </div>
                                         </div>
-                                      </div>
+                                      
                                       <!--accordion-item-->
                                       <div class="accordion-item" id="collaps-Movement">
                                         <h2 class="accordion-header">
@@ -1534,7 +1534,7 @@
                                                   
                                                   </div>
                                                         
-                                                  <div class="col-12 col-lg-2 col-md-4 mb-2" >
+                                                  <div class="col-12 col-lg-1 col-md-4 mb-2" >
                                                     <label class="form-label" for="select-brench">  الفرع<span class="start-form">*</span></label>
                                                     <select id="select-brench" class="select2 form-select" data-allow-clear="true">
                                                       <option value="AK">    محمود</option>
@@ -1619,7 +1619,7 @@
                           
                                                     
                                                     </div>
-                                                    <div class="col-12 col-lg-2 col-md-4 mb-2" >
+                                                    <div class="col-12 col-lg-1 col-md-4 mb-2" >
                                                       <label class="form-label" for="select-brench2">  الفرع<span class="start-form">*</span></label>
                                                       <select id="select-brench2" class="select2 form-select" data-allow-clear="true">
                                                         <option value="AK">    محمود</option>
@@ -1703,7 +1703,7 @@
                           
                                                     
                                                     </div>
-                                                    <div class="col-12 col-lg-2 col-md-4 mb-2" >
+                                                    <div class="col-12 col-lg-1 col-md-4 mb-2" >
                                                       <label class="form-label" for="select-brench3">  الفرع<span class="start-form">*</span></label>
                                                       <select id="select-brench3" class="select2 form-select" data-allow-clear="true">
                                                         <option value="AK">    محمود</option>
@@ -1787,7 +1787,7 @@
                           
                                                     
                                                     </div>
-                                                    <div class="col-12 col-lg-2 col-md-4 mb-2" >
+                                                    <div class="col-12 col-lg-1 col-md-4 mb-2" >
                                                       <label class="form-label" for="select-brench4">  الفرع<span class="start-form">*</span></label>
                                                       <select id="select-brench4" class="select2 form-select" data-allow-clear="true">
                                                         <option value="AK">    محمود</option>
@@ -1872,7 +1872,7 @@
                           
                                                     
                                                     </div>
-                                                    <div class="col-12 col-lg-2 col-md-4 mb-2" >
+                                                    <div class="col-12 col-lg-1 col-md-4 mb-2" >
                                                       <label class="form-label" for="select-brench5">  الفرع<span class="start-form">*</span></label>
                                                       <select id="select-brench5" class="select2 form-select" data-allow-clear="true">
                                                         <option value="AK">    محمود</option>
@@ -2204,7 +2204,8 @@
                                           </div>
                                         </div>
                                       </div>
-                                    
+                                    </div>
+                                   
                                      
                                     </div>
                                       <!--الايراد-->
@@ -2408,6 +2409,7 @@
   <script src="./assets/vendor/libs/bootstrap-select/bootstrap-select.js"></script>
   <!-- Vendors JS -->
   <script src="./assets/vendor/libs/apex-charts/apexcharts.js"></script>
+  <script src="./assets/vendor/libs/dropzone/dropzone.js"></script>
 
   <!-- Main JS -->
   <script src="./assets/js/main.js"></script>
@@ -2423,6 +2425,7 @@
   <!-- <script src="./assets/js/dashboards-crm.js"></script> -->
   <script src="./assets/js/forms-selects.js"></script>
   <script src="./assets/kendo.all.min.js"></script>
+  <script src="./assets/js/forms-file-upload.js"></script>
   <script src="./assets/vendor/js/upload.js"></script>
 
   <script>
@@ -2758,45 +2761,6 @@ $(document).on('click', function(e) {
     if (!repeatOptions.is(e.target) && repeatOptions.has(e.target).length === 0 &&
         !repeatCheckbox.is(e.target) && repeatCheckbox.has(e.target).length === 0) {
         repeatOptions.hide(); // إخفاء repeat-options
-    }
-});
-
-// عند الضغط على صورة الملف لفتح مربع اختيار الملف
-$('#file-image').on('click', function() {
-    $('#basic-default-file').click();
-});
-
-// تحديث صورة الملف أو الأيقونة عند اختيار ملف جديد
-$('#basic-default-file').on('change', function(e) {
-    const file = e.target.files[0];
-    const fileImage = $('#file-image');
-    const filePreview = $('#file-preview');
-    
-    filePreview.empty(); // إزالة أي معاينة سابقة
-
-    if (file) {
-        const fileType = file.type;
-
-        // إذا كان الملف صورة، عرض معاينتها
-        if (fileType.startsWith('image/')) {
-            const reader = new FileReader();
-            reader.onload = function(event) {
-                fileImage.attr('src', event.target.result); // عرض الصورة المصغرة
-            };
-            reader.readAsDataURL(file);
-        } else {
-            // عرض أيقونة ملائمة إذا لم يكن الملف صورة
-            if (fileType === 'application/pdf') {
-                fileImage.attr('src', './assets/img/pdf-icon.png'); // أيقونة PDF
-            } else if (fileType.includes('word')) {
-                fileImage.attr('src', './assets/img/word-icon.png'); // أيقونة Word
-            } else {
-                fileImage.attr('src', './assets/img/file-icon.png'); // أيقونة ملف عامة
-            }
-        }
-
-        // عرض اسم الملف
-        filePreview.html('<span>' + file.name + '</span>');
     }
 });
 
