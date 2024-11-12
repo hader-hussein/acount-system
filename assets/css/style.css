@@ -740,10 +740,10 @@ cursor: pointer;
 content: "" !important;
 }
 [dir=rtl] .menu-horizontal .menu-sub .menu-link {
-  padding-right: 1rem !important;
+  padding-right: 0.5rem !important;
 }
 [dir=ltr] .menu-horizontal .menu-sub .menu-link {
-  padding-left: 1rem !important;
+  padding-left: 0.5rem !important;
 }
 @media (min-width: 992px) and  (max-width: 1024px){
   .content-admin.pt-lg-5 {
