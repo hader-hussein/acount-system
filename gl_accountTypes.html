@@ -55,7 +55,18 @@
     <script src="./assets/vendor/js/template-customizer.js"></script>
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="./assets/js/config.js"></script>
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write(decodeURIComponent('%3Cscript src="js/jquery.min.js"%3E%3C/script%3E'))</script>
+        <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/24.1.7/css/dx.carmine.css" />
+     <style>
+      #tree-list-demo {
+  min-height: 700px;
+}
+
+#employees {
+  max-height: 700px;
+}
+      </style>
   </head>
 
   <body>
@@ -1158,216 +1169,30 @@
            
             <div class="container-xxl flex-grow-1 container-p-y content-admin pt-lg-5 mt-md-4">
               <div class="card comonent-hader-top">
-                <div class="card-body py-2 px-md-2 px-2 card-widget-separator">
-                  <strong class="py-md-3 px-md-3 text-title-hadeer text-tilte-b"><span class="text-muted">
+                <div class="card-body p-3 px-md-2 card-widget-separator">
+                  <strong class=" px-md-3 text-title-hadeer text-tilte-b"><span class="text-muted">
                     مجموعات الاستاذ العام
 
                   </span>
                   </strong>
-                  <div class="row justify-content-center mx-0 py-2 px-md-3 px-2">
-                    <!--item-->
-                    <div class="col-xl-6 col-md-6 col-lg-6  mb-md-0 mb-2">
-                      <div class="card h-100">
-                        <div class="user-seting" data-bs-toggle="modal" data-bs-target="#createModal">
-                          <div class="row h-100">
-                            <div class="col-sm-5 col-12">
-                              <div class="d-flex align-items-center h-100 justify-content-center mt-sm-0">
-                                <img src="./assets/img/illustrations/add.png" class="img-fluid mt-sm-4 mt-md-0" alt="add-new-roles" width="83">
-                              </div>
-                            </div>
-                            <div class="col-sm-7 col-12">
-                              <div class="card-body text-sm-end text-center ps-sm-0">
-                                <button data-bs-toggle="modal" data-bs-target="#createModal" class="btn btn-primary mb-2 text-nowrap add-new-role waves-effect waves-light">
-                                  اضافة 
-                                </button>
-  
-                                <p class="mb-0 mt-1">
-                                  Add General Ledger Collections. data , if it does not exist
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                       
-                      </div>
-                    </div>
-                    <!--item-->
-                      <!--item-print-->
-                      <div class="col-xl-4 col-md-6 col-lg-4  mb-md-0 mb-2">
-                        <div class="card h-100">
-                          <a class="user-seting h-100" href="./Print/gl_accountTypes.html">
-                            <div class="row h-100 align-items-center">
-                              <div class="col-sm-5 col-12">
-                                <div class="d-flex align-items-center h-100 justify-content-center mt-sm-0">
-                                  <img src="./assets/img/img-nav/pngwing.png" class="img-fluid mt-sm-4 mt-md-0" alt="add-new-roles" width="83">
-                                </div>
-                              </div>
-                              <div class="col-sm-7 col-12">
-                                <div class="card-body text-sm-end text-center ps-sm-0">
-                                  <button  class="btn btn-primary mb-2 text-nowrap add-new-role waves-effect waves-light">
-                                    طباعة 
-                                  </button>
-    
-                                 
-                                </div>
-                              </div>
-                            </div>
-                          </a>
-                         
-                        </div>
-                      </div>
-                      <!--item-->
-                  </div>
+                  
                 </div>
               </div>
               <div class="card comonent-hader-top p-2 mt-4">
 
                           <!---->
                             <div class="card-datatable table-responsive text-nowrap tabel-all">
-                              <table class="table  table-bordered">
-                                <thead>
-                                  <tr class="text-center">
-                                    <th>  #</th>
-                                    <th>   المجموعة</th>
-                                    <th>     اسم المجموعة</th>
-                                    <th>   مجموع فرعية من</th>
-                                    <th>       التصنيف الرئيسى</th>
-                                    
-                                    <th> action</th>
-                                    
-                                  </tr>
-                                </thead>
-                                <tbody class="text-center">
-                                  <tr>
-                                    <td>
-                                   1
-                                    </td>
-                                    <td> 100 </td>
-                                    <td>100 الاصناف</td>
-                                    <td>الاصول المتدوالة</td>
-                                    <td> اجمالى الاصول</td>
-
-                                    <td>
-                                      <div class="d-flex justify-content-center">
-                                        <button class="btn bg-success text-bg-success p-1 d-flex align-items-center justify-content-center me-3 rounded" data-bs-toggle="modal" data-bs-target="#editModal" title="تعديل"><i class="ti ti-pencil  fs-4"></i> </button>
-                                        <a class="bg-danger text-bg-danger p-1 d-flex align-items-center justify-content-center me-3 rounded" href="javascript:void(0);" title="حذف"><i class="ti ti-trash  fs-4"></i> </a>
-                                      
-                                      </div>
-                                    </td>
-                                  </tr>
-                                 
-                                </tbody>
-                               
-                              </table>
+                              <div class="dx-viewport demo-container">
+                                <div id="tree-list-demo">
+                                  <div id="employees"></div>
+                                </div>
+                              </div>
                             </div> 
 
               </div>
              
-            
-               <!-- Modal --create-->
-               <div class="modal fade" id="createModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-lg">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h1 class="modal-title fs-5 fw-bold" id="exampleModalLabel">اضافة مجموعة الاستاذ العام   </h1>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                      <form class="row component-form pt-2 justify-content-md-start justify-content-center align-items-end">
-                        
-                        
-                        <div class="col-12 col-md-6 col-lg-3 mb-3">
-                          <label for="number-account" class="form-label">       الرقم التعريفى </label>
-                          
-                          <input type="text" id="number-account" class="form-control phone-mask" placeholder="   الرقم التعريفى">
-
-                        </div>
-                        <div class="col-12 col-md-6 col-lg-9 mb-3">
-                          <label for="name-account" class="form-label">       الاسم  </label>
-                          
-                          <input type="text" id="name-account" class="form-control phone-mask" placeholder="   الرقم التعريفى">
-
-                        </div>
-                        <div class="col-12 col-md-6 col-lg-6 mb-3">
-                          <label class="form-label" for="total-account">   مجموعة فرعية من</label>
-                          <select id="total-account" class="select2 form-select" data-allow-clear="true">
-                            <option value="AK">   100 الاصناف</option>
-                            <option value="HI">  11 الاصول المتدوالة </option>
-                        
-                          </select>
-                        </div>
-
-                        <div class="col-12 col-md-6 col-lg-6 mb-3">
-                          <label class="form-label" for="powers-account">     التصنيف الرئيسى</label>
-                          <select id="powers-account" class="select2 form-select" data-allow-clear="true">
-                            <option value="AK">   اجمالى الاصول</option>
-                            <option value="HI">  اجمالى الخصوم</option>
-                        
-                          </select>
-                        </div>
-                        <div>
-                          <button type="button" class="btn btn-primary"> حفظ</button>
-
-                        </div>
-
-                      </form>
-                    </div>
-                    
-                  </div>
-                </div>
-              </div>
-               <!-- Modal --edit-->
-               <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog ">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h1 class="modal-title fs-5 fw-bold" id="exampleModalLabel">تعديل  مجموعة الاستاذ العام   </h1>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                      <form class="row component-form pt-2 justify-content-md-start justify-content-center align-items-end">
-                        
-                        
-                        <div class="col-12 col-md-6 col-lg-3 mb-3">
-                          <label for="number-account-edit" class="form-label">       الرقم التعريفى </label>
-                          
-                          <input type="text" id="number-account-edit" class="form-control phone-mask" placeholder="   الرقم التعريفى">
-
-                        </div>
-                        <div class="col-12 col-md-6 col-lg-9 mb-3">
-                          <label for="name-account-edit" class="form-label">       الاسم  </label>
-                          
-                          <input type="text" id="name-account-edit" class="form-control phone-mask" placeholder="   الرقم التعريفى">
-
-                        </div>
-                        <div class="col-12 col-md-6 col-lg-6 mb-3">
-                          <label class="form-label" for="total-account-edit">   مجموعة فرعية من</label>
-                          <select id="total-account-edit" class="select2 form-select" data-allow-clear="true">
-                            <option value="AK">   100 الاصناف</option>
-                            <option value="HI">  11 الاصول المتدوالة </option>
-                        
-                          </select>
-                        </div>
-
-                        <div class="col-12 col-md-6 col-lg-6 mb-3">
-                          <label class="form-label" for="powers-account-edit">     التصنيف الرئيسى</label>
-                          <select id="powers-account-edit" class="select2 form-select" data-allow-clear="true">
-                            <option value="AK">   اجمالى الاصول</option>
-                            <option value="HI">  اجمالى الخصوم</option>
-                        
-                          </select>
-                        </div>
-                        <div>
-                          <button type="button" class="btn btn-primary"> تعديل</button>
-
-                        </div>
-
-                      </form>
-                    </div>
-                    
-                  </div>
-                </div>
-              </div>
+          
+           
             <!---->
              <!---->
               <button class="btn"id="saveButton" style="display: none;"></button>
@@ -1490,54 +1315,195 @@
     <script src="./assets/vendor/js/upload.js"></script>
 
     <script>
-      $(document).ready(function () {
-        function initializeDropDownTree(selector) {
-          $(selector).each(function () {
-            if (!$(this).data("kendoDropDownTree")) {
-              $(this).kendoDropDownTree({
-                placeholder: "Select ...",
-                filter: "startswith",
-                dataSource: [
-                  {
-                    text: "Furniture",
-                    expanded: true,
-                    items: [
-                      { text: "Tables & Chairs" },
-                      { text: "Sofas" },
-                      { text: "Occasional Furniture" },
-                    ],
-                  },
-                  {
-                    text: "Decor",
-                    expanded: true,
-                    items: [
-                      { text: "Bed Linen" },
-                      { text: "Curtains & Blinds" },
-                      { text: "Carpets" },
-                    ],
-                  },
-                ],
-                select: function (e) {
-                  var dataItem = this.dataItem(e.node); // الحصول على العنصر المحدد
-  
-                  // منع اختيار العناصر التي تحتوي على عناصر فرعية
-                  if (dataItem.hasChildren) {
-                    e.preventDefault(); // منع اختيار العنصر الرئيسي
-                    alert(
-                      "لا يمكنك اختيار العناصر الرئيسية، يرجى اختيار عنصر فرعي."
-                    );
-                  }
-                },
-              });
-            }
-          });
-        }
-  
-        // Initialize DropDownTree for existing elements
-        initializeDropDownTree(".dropdowntree");
-        initializeDropDownTree(".dropdowntree-tow");
-  
-      });
+    $(() => {
+  $('#employees').dxTreeList({
+    dataSource: employees,
+    keyExpr: 'ID',
+    parentIdExpr: 'Head_ID',
+    showRowLines: true,
+    showBorders: true,
+    columnAutoWidth: true,
+    editing: {
+      mode: 'row',
+      allowUpdating: true,
+      allowAdding: true,
+      allowDeleting: (args) => args.row.data.ID !== 1,
+    },
+    columns: [{
+      dataField: 'Full_Name',
+      validationRules: [{ type: 'required' }],
+    }, {
+      dataField: 'Head_ID',
+      caption: 'Head',
+      lookup: {
+        dataSource: {
+          store: employees,
+          sort: 'Full_Name',
+        },
+        valueExpr: 'ID',
+        displayExpr: 'Full_Name',
+      },
+      validationRules: [{ type: 'required' }],
+    }, {
+      dataField: 'Title',
+      caption: 'Position',
+      validationRules: [{ type: 'required' }],
+    }, {
+      dataField: 'Hire_Date',
+      dataType: 'date',
+      width: 120,
+      validationRules: [{ type: 'required' }],
+    }, {
+      type: 'buttons',
+      buttons: ['edit', 'delete'],
+    },
+    ],
+    onEditorPreparing(e) {
+      if (e.dataField === 'Head_ID' && e.row.data.ID === 1) {
+        e.cancel = true;
+      }
+    },
+    onInitNewRow(e) {
+      e.data.Head_ID = 1;
+    },
+    expandedRowKeys: [1, 2, 3, 4, 5],
+  });
+});
+
+
+const employees = [{
+  ID: 1,
+  Head_ID: 0,
+  Full_Name: 'John Heart',
+  Prefix: 'Mr.',
+  Title: 'CEO',
+  City: 'Los Angeles',
+  State: 'California',
+  Email: 'jheart@dx-email.com',
+  Skype: 'jheart_DX_skype',
+  Mobile_Phone: '(213) 555-9392',
+  Birth_Date: '1964-03-16',
+  Hire_Date: '1995-01-15',
+}, {
+  ID: 2,
+  Head_ID: 1,
+  Full_Name: 'Samantha Bright',
+  Prefix: 'Dr.',
+  Title: 'COO',
+  City: 'Los Angeles',
+  State: 'California',
+  Email: 'samanthab@dx-email.com',
+  Skype: 'samanthab_DX_skype',
+  Mobile_Phone: '(213) 555-2858',
+  Birth_Date: '1966-05-02',
+  Hire_Date: '2004-05-24',
+}, {
+  ID: 3,
+  Head_ID: 1,
+  Full_Name: 'Arthur Miller',
+  Prefix: 'Mr.',
+  Title: 'CTO',
+  City: 'Denver',
+  State: 'Colorado',
+  Email: 'arthurm@dx-email.com',
+  Skype: 'arthurm_DX_skype',
+  Mobile_Phone: '(310) 555-8583',
+  Birth_Date: '1972-07-11',
+  Hire_Date: '2007-12-18',
+}, {
+  ID: 4,
+  Head_ID: 1,
+  Full_Name: 'Robert Reagan',
+  Prefix: 'Mr.',
+  Title: 'CMO',
+  City: 'Bentonville',
+  State: 'Arkansas',
+  Email: 'robertr@dx-email.com',
+  Skype: 'robertr_DX_skype',
+  Mobile_Phone: '(818) 555-2387',
+  Birth_Date: '1974-09-07',
+  Hire_Date: '2002-11-08',
+}, {
+  ID: 5,
+  Head_ID: 1,
+  Full_Name: 'Greta Sims',
+  Prefix: 'Ms.',
+  Title: 'HR Manager',
+  City: 'Atlanta',
+  State: 'Georgia',
+  Email: 'gretas@dx-email.com',
+  Skype: 'gretas_DX_skype',
+  Mobile_Phone: '(818) 555-6546',
+  Birth_Date: '1977-11-22',
+  Hire_Date: '1998-04-23',
+}, {
+  ID: 6,
+  Head_ID: 3,
+  Full_Name: 'Brett Wade',
+  Prefix: 'Mr.',
+  Title: 'IT Manager',
+  City: 'Reno',
+  State: 'Nevada',
+  Email: 'brettw@dx-email.com',
+  Skype: 'brettw_DX_skype',
+  Mobile_Phone: '(626) 555-0358',
+  Birth_Date: '1968-12-01',
+  Hire_Date: '2009-03-06',
+}, {
+  ID: 7,
+  Head_ID: 5,
+  Full_Name: 'Sandra Johnson',
+  Prefix: 'Mrs.',
+  Title: 'Controller',
+  City: 'Beaver',
+  State: 'Utah',
+  Email: 'sandraj@dx-email.com',
+  Skype: 'sandraj_DX_skype',
+  Mobile_Phone: '(562) 555-2082',
+  Birth_Date: '1974-11-15',
+  Hire_Date: '2005-05-11',
+}, {
+  ID: 8,
+  Head_ID: 4,
+  Full_Name: 'Ed Holmes',
+  Prefix: 'Dr.',
+  Title: 'Sales Manager',
+  City: 'Malibu',
+  State: 'California',
+  Email: 'edwardh@dx-email.com',
+  Skype: 'edwardh_DX_skype',
+  Mobile_Phone: '(310) 555-1288',
+  Birth_Date: '1973-07-14',
+  Hire_Date: '2005-06-19',
+}, {
+  ID: 9,
+  Head_ID: 3,
+  Full_Name: 'Barb Banks',
+  Prefix: 'Mrs.',
+  Title: 'Support Manager',
+  City: 'Phoenix',
+  State: 'Arizona',
+  Email: 'barbarab@dx-email.com',
+  Skype: 'barbarab_DX_skype',
+  Mobile_Phone: '(310) 555-3355',
+  Birth_Date: '1979-04-14',
+  Hire_Date: '2002-08-07',
+}, {
+  ID: 10,
+  Head_ID: 2,
+  Full_Name: 'Kevin Carter',
+  Prefix: 'Mr.',
+  Title: 'Shipping Manager',
+  City: 'San Diego',
+  State: 'California',
+  Email: 'kevinc@dx-email.com',
+  Skype: 'kevinc_DX_skype',
+  Mobile_Phone: '(213) 555-2840',
+  Birth_Date: '1978-01-09',
+  Hire_Date: '2009-08-11',
+},
+]
+
     </script>
 
   </body>

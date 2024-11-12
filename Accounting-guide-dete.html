@@ -1220,24 +1220,128 @@
                   </div>
                   <div class="col-12 col-md-6 col-lg-2 mb-2">
                     <label class="form-label" for="name-account-type">  نوع الحساب </label>
-                    <select id="name-account-type" class="select2 form-select" data-allow-clear="true">
-                      <option value="AK">  عميل</option>
-                      <option value="HI"> مورد</option>
-                      <option value="AK">  صنف</option>
-                      <option value="HI"> بنك</option>
-                      <option value="AK">  صندوق</option>
-                      <option value="HI"> مخزن</option>
+                    <select id="name-account-type" class="form-select" data-allow-clear="true">
+                      <option value="" selected>اختار نوع الحساب</option>
+                      <option value="client">عميل</option>
+                      <option value="supplier">مورد</option>
+                      <option value="item">صنف</option>
+                      <option value="bank">بنك</option>
+                      <option value="cash">صندوق</option>
+                      <option value="warehouse">مخزن</option>
                     </select>
                   </div>
               
                   <div class="col-12 col-md-6 col-lg-4 mb-2">
                     <label class="form-label" for="total-account">   مجموع الحساب</label>
+                    <div class="input-groupe">
+                      <a type="button" class="btn btn-primary" href="gl_accountTypes.html">
+                      <i class="fa-solid fa-plus"></i>
+                    </a>
                     <select id="total-account" class="select2 form-select" data-allow-clear="true">
                       <option value="AK">   100 الاصناف</option>
                       <option value="HI">  11 الاصول المتدوالة </option>
                   
                     </select>
+                    </div>
                   </div>
+                  <div  id="bank-account" style="display: none;">
+                    <div class="row mx-0 g-2 rounded shadow">
+                      <div class="col-12 col-md-6 col-lg-3 mb-2">
+                        <label class="form-label" for="number-check">    اسم حساب البنك</label>
+                        <input type="text" id="number-check" class="form-control phone-mask" placeholder="  اسم حساب البنك">
+                      </div>
+                      <div class="col-12 col-md-6 col-lg-2 mb-2">
+                        <label for="name-bank" class="form-label">      نوع الحساب </label>
+                        
+                          <select id="name-bank" class="select2 form-select" data-allow-clear="true">
+                            <option value="AK">  حسابات التوفير</option>
+                            <option value="HI">حسابات جارية</option>
+                            <option value="CA">التسهيلات الائتمانية</option>
+                            <option value="NV">الحسابات النقدية</option>
+                        
+                          </select>
+                      </div>
+                      <div class="col-12 col-md-6 col-lg-2 mb-2">
+                        <label for="current-bank" class="form-label"> عملة حساب البنك</label>
+                        
+                          <select id="current-bank" class="select2 form-select" data-allow-clear="true">
+                            <option value="AK"> ريال سعودى</option>
+                            <option value="HI"> دولار امريكى</option>
+                            <option value="CA"> جنية مصرى</option>
+                        
+                          </select>
+                      </div>
+                      <div class="col-12 col-md-6 col-lg-2 mb-2">
+                        <label for="cod-bank" class="form-label">   كود حساب الأستاذ  للحساب البنكي</label>
+                        
+                        <input id="dropdowntree" class="dropdowntree-tow"style="padding: 0.31rem 0.875rem;" />
+  
+                      </div>
+                      <div class="col-12 col-md-6 col-lg-3 mb-2">
+                        <label for="cod-bank" class="form-label">  حساب المصاريف البنكية</label>
+                        
+                        <input id="dropdowntree" class="dropdowntree-tow" style="padding: 0.31rem 0.875rem;"/>
+  
+                      </div>
+                      <div class="col-12 col-md-6 col-lg-3 mb-2">
+                        <label class="form-label" for="basic-name-bank">  اسم البنك</label>
+                        <input type="text" id="basic-name-bank" class="form-control phone-mask"placeholder="اسم البنك">
+                      </div>
+                      <div class="col-12 col-md-6 col-lg-2 mb-2">
+                        <label class="form-label" for="Bank-account-number">  رقم حساب البنك</label>
+                        <input type="text" id="Bank-account-number" class="form-control phone-mask" placeholder="رقم حساب البنك">
+                      </div>
+                      <div class="col-12 col-md-6 col-lg-4 mb-2">
+                        <label class="form-label" for="basic-address">       عنوان البنك</label>
+                        <input type="text" id="basic-address" class="form-control" placeholder="عنوان البنك">
+                      </div>
+                     
+                    </div>
+                   
+                  </div>
+                  <div  id="Client-supplier" style="display: none;">
+                        <div class="row mx-0 g-2 rounded shadow">
+                          <div class="col-12 col-lg-2 col-md-4 mb-2">
+                            <label class="form-label" for="name-Record">  السجل التجارى:<span class="start-form">*</span></label>
+                            <input type="text" class="form-control" id="name-Record" placeholder=" السجل التجارى:">
+                          </div>
+                          <div class="col-12 col-lg-2 col-md-4 mb-2">
+                            <label class="form-label" for="Tax-number">  الرقم الضريبى<span class="start-form">*</span></label>
+                            <input type="text" class="form-control" placeholder=" الرقم الضريبى">        
+                          
+                          </div>
+                          <div class="col-12 col-lg-3 col-md-4 mb-2">
+                            <label class="form-label" for="basic-address"> العنوان</label>
+
+                            <input type="text" id="basic-address" class="form-control" placeholder=" العنوان">
+
+                          </div>
+                          <div class="col-12 col-lg-1 col-md-4 mb-2">
+                            <label class="form-label" for="basic-City"> المدينة</label>
+
+                            <input type="text" id="basic-City" class="form-control" placeholder=" المدينة">
+
+                          </div>
+                          <div class="col-12 col-lg-2 col-md-4 mb-2">
+                            <label class="form-label" for="Zip-code"> الرقم البريدى</label>
+
+                            <input type="text" id="Zip-code" class="form-control" placeholder=" الرقم البريدى">
+
+                          </div>
+                          <div class="col-12 col-lg-2 col-md-4 mb-2">
+                            <label class="form-label" for="basic-phone">  رقم الجوال</label>
+
+                            <input type="text" id="basic-phone" class="form-control" placeholder="  رقم الجوال">
+
+                          </div>
+                          <div class="col-12 col-lg-3 col-md-4 mb-2">
+                            <label class="form-label" for="basic-email">البريد الاكترونى</label>
+
+                            <input type="email" id="basic-email" class="form-control" placeholder=" البريد الاكترونى">
+
+                          </div>
+                        </div>
+                    </div>
                   <div class="col-12 col-lg-3 col-md-4 mb-2" id="input-cureunt">
                     <label for="select-Currency" class="form-label">
                       العملة<span class="start-form">*</span></label>
@@ -1303,7 +1407,16 @@
                   
                     </select>
                   </div>
-                  <div class="col-12 col-md-6 col-lg-3 mb-2">
+                  <!-- Account Nature Section -->
+                <div class="col-12 col-md-6 col-lg-2 mb-2">
+                  <label class="form-label" for="account-nature">طبيعة الحساب</label>
+                  <select id="account-nature" class="select2 form-select" data-allow-clear="true">
+                    <option value="debit">مدين</option>
+                    <option value="credit">دائن</option>
+                    
+                  </select>
+                </div>
+                  <div class="col-12 col-md-6 col-lg-2 mb-2">
                     <label class="form-label" for="condition-account">   حالة الحساب</label>
                     <select id="condition-account" class="select2 form-select" data-allow-clear="true">
                       <option value="AK">   نشط</option>
@@ -1311,7 +1424,7 @@
                   
                     </select>
                   </div>
-                  <div class="col-12 col-md-6 col-lg-3 mb-2">
+                  <div class="col-12 col-md-6 col-lg-2 mb-2">
                     <label class="form-label" for="powers-account">    بدون صلاحيات</label>
                     <select id="powers-account" class="select2 form-select" data-allow-clear="true">
                       <option value="AK">   نعم</option>
@@ -1319,6 +1432,11 @@
                   
                     </select>
                   </div>
+                  <!-- Follow-up Checkbox -->
+                            <div class="col-12 col-md-6 col-lg-2 mb-2">
+                              <label class="form-label" for="follow-up-checkbox">حساب للمتابعة</label>
+                              <input type="checkbox" id="follow-up-checkbox" class="form-check-input">
+                            </div>
                   <div>
                     <button type="button" class="btn btn-primary"> حفظ</button>
 
@@ -1401,7 +1519,7 @@
                   <form>
                     <div class="col-12 col-lg-12 mb-2">
                       <label class="form-label" for="basic-default-locetion">
-                        اسم مركز التكلفة :<span class="start-form">*</span></label>
+                        اسم  فئة :<span class="start-form">*</span></label>
                       <input type="text" class="form-control" id="basic-default-locetion"
                        />
                     </div>
@@ -1617,6 +1735,29 @@
       });
    
     </script>
+<script>
+ 
+    // Listen for change event on select2 dropdown
+    $('#name-account-type').on('change', function() {
+      const bankAccountSection = document.getElementById('bank-account');
+      if (this.value === 'bank') {
+        bankAccountSection.style.display = 'block';
+      } else {
+        bankAccountSection.style.display = 'none';
+      }
+    });
+   // Show/Hide sections based on account type selection
+   $('#name-account-type').on('change', function() {
+      const clientSupplierSection = document.getElementById('Client-supplier');
+      const selectedValue = this.value;
 
+      // Show the Client-supplier section if "client" or "supplier" is selected
+      if (selectedValue === 'client' || selectedValue === 'supplier') {
+        clientSupplierSection.style.display = 'block';
+      } else {
+        clientSupplierSection.style.display = 'none';
+      }
+    });
+</script>
   </body>
 </html>
