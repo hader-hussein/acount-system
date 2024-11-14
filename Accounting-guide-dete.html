@@ -1046,123 +1046,131 @@
             <div class="container-xxl flex-grow-1 container-p-y content-admin pt-lg-5 mt-md-4">
               <div class="card comonent-hader-top">
                 <div class="card-body py-3 px-md-2 px-2 card-widget-separator">
+                  <div class="row mx-0 row-cols-lg-2 row-cols-1 justify-content-between align-items-center">
+                    <div class="col">
                       <strong class="px-md-2 text-title-hadeer text-tilte-b">
                         <span class="text-muted">
                         دليل المحاسبى
        
                          </span>
                        </strong>
-                       <div class=" mx-0 mt-4">
-                            <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                              التصنيفات 
-                            </button>
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleLevels">
-                              إعدادات المستويات 
-                            </button>
-                          <!-- Modal -->
-                          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-lg">
-                              <div class="modal-content">
-                                <div class="modal-header">
-                                  <h1 class="modal-title fs-5" id="exampleModalLabel">التصنيفات </h1>
-                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                  <div class="card-datatable table-responsive text-nowrap tabel-all">
-                                    <table class="table  table-bordered">
-                                      <thead>
-                                        <tr class="text-center">
-                                        
-                                          <th>  التصنيف</th>
-                                          <th>   تفعيل</th>
-                                          <th> رقم ID</th>
-      
-                                        </tr>
-                                      </thead>
-                                      <tbody class="text-center" id="categories-table">
-                                        <tr>
-                                          <td>
-                                              التصنيف الاول
-                                          </td>
-                                          <td>
-                                            <input type="checkbox">
-                                          </td>
-                                          <td> 123 </td>
-      
-                                        </tr>
-                                      
-                                      </tbody>
+                    </div>
+                    <div class="col text-end">
+                      <div class=" mx-0 mt-4">
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                          التصنيفات 
+                        </button>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleLevels">
+                          إعدادات المستويات 
+                        </button>
+                      <!-- Modal -->
+                      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h1 class="modal-title fs-5" id="exampleModalLabel">التصنيفات </h1>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                              <div class="card-datatable table-responsive text-nowrap tabel-all">
+                                <table class="table  table-bordered">
+                                  <thead>
+                                    <tr class="text-center">
                                     
-                                    </table>
-                                  </div> 
-                                  <div class="text-center pt-2">
-                                    <button onclick="saveChanges()" class="btn btn-primary">حفظ التعديلات</button>
-      
-                                  </div>
-                                </div>
-                              
+                                      <th>  التصنيف</th>
+                                      <th>   تفعيل</th>
+                                      <th> رقم ID</th>
+  
+                                    </tr>
+                                  </thead>
+                                  <tbody class="text-center" id="categories-table">
+                                    <tr>
+                                      <td>
+                                          التصنيف الاول
+                                      </td>
+                                      <td>
+                                        <input type="checkbox">
+                                      </td>
+                                      <td> 123 </td>
+  
+                                    </tr>
+                                  
+                                  </tbody>
+                                
+                                </table>
+                              </div> 
+                              <div class="text-center pt-2">
+                                <button  class="btn btn-primary">حفظ التعديلات</button>
+  
                               </div>
+                            </div>
+                          
+                          </div>
+                        </div>
+                      </div>
+                      <!---->
+                         <!-- Modal -->
+                         <div class="modal fade" id="exampleLevels" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">إعدادات المستويات </h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                              </div>
+                              <div class="modal-body">
+                                <div class="card-datatable table-responsive text-nowrap tabel-all">
+                                  <table class="table  table-bordered">
+                                    <thead>
+                                      <tr class="text-center">
+                                      
+                                        <th>المستوى</th>
+                                        <th>عدد ID</th>
+                                        <th>حالة القفل</th>
+    
+                                      </tr>
+                                    </thead>
+                                    <tbody class="text-center" id="levels-table">
+                                      <tr>
+                                        <td>
+                                            المستوى الاول
+                                        </td>
+                                        <td>
+                                          <input type="number" disabled="" class="form-control">
+                                        </td>
+                                        <td> مفتوح </td>
+    
+                                      </tr>
+                                      <tr>
+                                        <td>
+                                            المستوى الثانى
+                                        </td>
+                                        <td>
+                                          <input type="number"class="form-control">
+                                        </td>
+                                        <td> مغلق </td>
+    
+                                      </tr>
+                                    </tbody>
+                                  
+                                  </table>
+                                </div> 
+                                <div class="mt-2 text-center">
+                                  <button  class="btn btn-primary waves-effect waves-light">حفظ التعديلات</button>
+
+                                </div>
+
+                              </div>
+                            
                             </div>
                           </div>
-                          <!---->
-                             <!-- Modal -->
-                             <div class="modal fade" id="exampleLevels" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                              <div class="modal-dialog modal-lg">
-                                <div class="modal-content">
-                                  <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="exampleModalLabel">إعدادات المستويات </h1>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                  </div>
-                                  <div class="modal-body">
-                                    <div class="card-datatable table-responsive text-nowrap tabel-all">
-                                      <table class="table  table-bordered">
-                                        <thead>
-                                          <tr class="text-center">
-                                          
-                                            <th>المستوى</th>
-                                            <th>عدد ID</th>
-                                            <th>حالة القفل</th>
-        
-                                          </tr>
-                                        </thead>
-                                        <tbody class="text-center" id="levels-table">
-                                          <tr>
-                                            <td>
-                                                المستوى الاول
-                                            </td>
-                                            <td>
-                                              <input type="number" disabled="" class="form-control">
-                                            </td>
-                                            <td> مفتوح </td>
-        
-                                          </tr>
-                                          <tr>
-                                            <td>
-                                                المستوى الثانى
-                                            </td>
-                                            <td>
-                                              <input type="number"class="form-control">
-                                            </td>
-                                            <td> مغلق </td>
-        
-                                          </tr>
-                                        </tbody>
-                                      
-                                      </table>
-                                    </div> 
-                                    <div class="mt-2 text-center">
-                                      <button onclick="saveChanges()" class="btn btn-primary waves-effect waves-light">حفظ التعديلات</button>
-
-                                    </div>
-
-                                  </div>
-                                
-                                </div>
-                              </div>
-                            </div>
-                            <!---->
-                       </div>
+                        </div>
+                        <!---->
+                   </div>
+                    </div>
+                  </div>
+                      
+                      
                        
                 </div>
               </div>
@@ -1178,32 +1186,50 @@
                     <input type="text" class="form-control" id="name-account-en" >
 
                   </div>
-                  <div class="col-12 col-md-6 col-lg-2 mb-2">
+                  <div class="col-12 col-md-6 col-lg-6 mb-2">
                     <label class="form-label" for="name-account-type">  نوع الحساب </label>
-                    <select id="name-account-type" class="form-select" data-allow-clear="true">
-                      <option value="" selected>اختار نوع الحساب</option>
-                      <option value="client">عميل</option>
-                      <option value="supplier">مورد</option>
-                      <option value="item">صنف</option>
-                      <option value="bank">بنك</option>
-                      <option value="cash">صندوق</option>
-                      <option value="warehouse">مخزن</option>
-                    </select>
+                   <div class=" mx-0 d-flex justify-content-between" style="padding: 0.375rem 0.375rem 0.375rem !important;box-shadow: 0px 2px 6px #dbdade inset">
+                    <div class="form-check ">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexclient">
+                      <label class="form-check-label" for="flexclient">
+                        عميل
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexsupplier">
+                      <label class="form-check-label" for="flexsupplier">
+                        مورد
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexitem">
+                      <label class="form-check-label" for="flexitem">
+                        صنف
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexbank">
+                      <label class="form-check-label" for="flexbank">
+                        بنك
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexcash">
+                      <label class="form-check-label" for="flexcash">
+                        صندوق
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexwarehouse">
+                      <label class="form-check-label" for="flexwarehouse">
+                        مخزن
+                      </label>
+                    </div>
+                   </div>
+                   
                   </div>
               
-                  <div class="col-12 col-md-6 col-lg-4 mb-2">
-                    <label class="form-label" for="total-account">   مجموع الحساب</label>
-                    <div class="input-groupe">
-                      <a type="button" class="btn btn-primary" href="gl_accountTypes.html">
-                      <i class="fa-solid fa-plus"></i>
-                    </a>
-                    <select id="total-account" class="select2 form-select" data-allow-clear="true">
-                      <option value="AK">   100 الاصناف</option>
-                      <option value="HI">  11 الاصول المتدوالة </option>
                   
-                    </select>
-                    </div>
-                  </div>
                   <div  id="bank-account" style="display: none;">
                     <div class="row mx-0 g-2 rounded shadow">
                       <div class="col-12 col-md-6 col-lg-3 mb-2">
@@ -1302,6 +1328,19 @@
                           </div>
                         </div>
                     </div>
+                    <div class="col-12 col-md-6 col-lg-3 mb-2">
+                      <label class="form-label" for="total-account">   مجموع الحساب</label>
+                      <div class="input-groupe">
+                        <a type="button" class="btn btn-primary" href="gl_accountTypes.html">
+                        <i class="fa-solid fa-plus"></i>
+                      </a>
+                      <select id="total-account" class="select2 form-select" data-allow-clear="true">
+                        <option value="AK">   100 الاصناف</option>
+                        <option value="HI">  11 الاصول المتدوالة </option>
+                    
+                      </select>
+                      </div>
+                    </div>
                   <div class="col-12 col-lg-3 col-md-4 mb-2" id="input-cureunt">
                     <label for="select-Currency" class="form-label">
                       العملة<span class="start-form">*</span></label>
@@ -1351,7 +1390,7 @@
                       data-bs-target="#Accountscategory">
                       <i class="fa-solid fa-plus"></i>
                     </button>
-                    <select id="Accounts-category" class="select2 form-select select2-hidden-accessible" multiple data-select2-id="selectMultiple">
+                    <select id="Accounts-category" class="select2 form-select" multiple>
                       <option value="AK">   100 الاصناف</option>
                       <option value="HI">  11 الاصول المتدوالة </option>
                   
@@ -1370,32 +1409,47 @@
                   <!-- Account Nature Section -->
                 <div class="col-12 col-md-6 col-lg-2 mb-2">
                   <label class="form-label" for="account-nature">طبيعة الحساب</label>
-                  <select id="account-nature" class="select2 form-select" data-allow-clear="true">
-                    <option value="debit">مدين</option>
-                    <option value="credit">دائن</option>
-                    
-                  </select>
-                </div>
-                  <div class="col-12 col-md-6 col-lg-2 mb-2">
-                    <label class="form-label" for="condition-account">   حالة الحساب</label>
-                    <select id="condition-account" class="select2 form-select" data-allow-clear="true">
-                      <option value="AK">   نشط</option>
-                      <option value="HI"> غير نشط</option>
-                  
-                    </select>
+                  <div class="d-flex justify-content-between flex-nowrap" style="padding: 0.375rem 0.375rem 0.375rem !important;box-shadow: 0px 2px 6px #dbdade inset">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadiocontent">
+                      <label class="form-check-label" for="flexRadiocontent">
+                        مدين
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadiocontent2" checked>
+                      <label class="form-check-label" for="flexRadiocontent2">
+                        دائن
+                      </label>
+                    </div>
                   </div>
-                  <div class="col-12 col-md-6 col-lg-2 mb-2">
+                 
+                
+                </div>
+                <div class="col-12 col-md-6 col-lg-2 mb-2">
+                  <label class="form-label" for="condition-account">حالة الحساب</label>
+                  <div class="form-check form-switch px-0" style="padding: 0.375rem 0.375rem 0.375rem !important;box-shadow: 0px 2px 6px #dbdade inset">
+                    <div class="row mx-0 justify-content-between align-items-center">
+                      <label class="col-6 form-check-label" for="flexSwitchCheckDefault">نشط</label>
+                      <input class="col-4 form-check-input text-center" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                      <label class="col-6 form-check-label" for="flexSwitchCheckDefault">غير نشط</label>
+                    </div>
+                  </div>
+                </div>
+                  <div class="col-12 col-md-6 col-lg-1 mb-2">
                     <label class="form-label" for="powers-account">    بدون صلاحيات</label>
-                    <select id="powers-account" class="select2 form-select" data-allow-clear="true">
-                      <option value="AK">   نعم</option>
-                      <option value="HI">  لا</option>
-                  
-                    </select>
+                    <div class="form-check form-switch" style="padding: 0.375rem 0.375rem 0.375rem !important;box-shadow: 0px 2px 6px #dbdade inset">
+                      <div class="row mx-0 justify-content-between align-items-center">
+                        <label class="col-4 px-0 form-check-label" for="flexSwitch1">نعم</label>
+                        <input class="col-4 form-check-input text-center" type="checkbox" role="switch" id="flexSwitch1" style="margin-left: -0.45em;">
+                        <label class="col-4 px-0 form-check-label" for="flexSwitch1"> لا</label>
+                      </div>
+                    </div>
                   </div>
                   <!-- Follow-up Checkbox -->
-                            <div class="col-12 col-md-6 col-lg-2 mb-2">
+                            <div class="col-12 col-md-6 col-lg-1 mb-2">
                               <label class="form-label" for="follow-up-checkbox">حساب للمتابعة</label>
-                              <input type="checkbox" id="follow-up-checkbox" class="form-check-input">
+                              <input type="checkbox" id="follow-up-checkbox" class="form-check-input" >
                             </div>
                   <div>
                     <button type="button" class="btn btn-primary"> حفظ</button>
@@ -1696,28 +1750,36 @@
    
     </script>
 <script>
- 
-    // Listen for change event on select2 dropdown
-    $('#name-account-type').on('change', function() {
-      const bankAccountSection = document.getElementById('bank-account');
-      if (this.value === 'bank') {
-        bankAccountSection.style.display = 'block';
-      } else {
-        bankAccountSection.style.display = 'none';
-      }
-    });
-   // Show/Hide sections based on account type selection
-   $('#name-account-type').on('change', function() {
-      const clientSupplierSection = document.getElementById('Client-supplier');
-      const selectedValue = this.value;
+  document.addEventListener("DOMContentLoaded", function() {
+    // جلب عناصر HTML بناءً على معرّفاتها
+    const bankAccountSection = document.getElementById("bank-account");
+    const clientSupplierSection = document.getElementById("Client-supplier");
 
-      // Show the Client-supplier section if "client" or "supplier" is selected
-      if (selectedValue === 'client' || selectedValue === 'supplier') {
-        clientSupplierSection.style.display = 'block';
-      } else {
-        clientSupplierSection.style.display = 'none';
-      }
+    // الحصول على خيارات الأزرار الإشعاعية وتعيين الحدث المناسب لكل منها
+    document.querySelectorAll('input[name="flexRadioDefault"]').forEach((radio) => {
+      radio.addEventListener("change", toggleSections);
     });
+
+    function toggleSections() {
+      // إخفاء الأقسام بشكل افتراضي
+      bankAccountSection.style.display = "none";
+      clientSupplierSection.style.display = "none";
+      
+      if (document.getElementById("flexbank").checked) {
+        // إذا تم اختيار بنك، إظهار قسم البنك فقط
+        bankAccountSection.style.display = "block";
+      } else if (document.getElementById("flexclient").checked || document.getElementById("flexsupplier").checked) {
+        // إذا تم اختيار عميل أو مورد، إظهار قسم العميل/المورد فقط
+        clientSupplierSection.style.display = "block";
+      }
+    }
+
+    // استدعاء الدالة لتطبيق الإعدادات عند التحميل الأولي
+    toggleSections();
+  });
 </script>
+
+
+
   </body>
 </html>

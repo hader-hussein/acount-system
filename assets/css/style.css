@@ -813,3 +813,16 @@ content: "" !important;
 .dz-message {
   font-size: 1.25rem;
 }
+#Journal-entry,#Journal-entry-alsarf,#Journal-entry-Exchange,#Journal-entry-Deposits,
+#Journal-entry-Payments
+{
+  position: relative;
+}
+.col-add{
+  position: absolute;
+  top:0px;
+  left:0px
+}
+.accordion-button::after {
+  filter: saturate(500%) contrast(800%) brightness(500%) invert(123%) sepia(97%) hue-rotate(190deg);
+}
