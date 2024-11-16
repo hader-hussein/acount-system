@@ -1225,6 +1225,12 @@
                         مخزن
                       </label>
                     </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexwarelist">
+                      <label class="form-check-label" for="flexwarelist">
+                        اخرى
+                      </label>
+                    </div>
                    </div>
                    
                   </div>
@@ -1430,9 +1436,11 @@
                   <label class="form-label" for="condition-account">حالة الحساب</label>
                   <div class="form-check form-switch px-0" style="padding: 0.375rem 0.375rem 0.375rem !important;box-shadow: 0px 2px 6px #dbdade inset">
                     <div class="row mx-0 justify-content-between align-items-center">
-                      <label class="col-6 form-check-label" for="flexSwitchCheckDefault">نشط</label>
+                      <label class="col-7 form-check-label" for="flexSwitchCheckDefault">غير نشط</label>
                       <input class="col-4 form-check-input text-center" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-                      <label class="col-6 form-check-label" for="flexSwitchCheckDefault">غير نشط</label>
+
+                      <label class="col-5 form-check-label" for="flexSwitchCheckDefault">نشط</label>
+                      
                     </div>
                   </div>
                 </div>
@@ -1440,16 +1448,20 @@
                     <label class="form-label" for="powers-account">    بدون صلاحيات</label>
                     <div class="form-check form-switch" style="padding: 0.375rem 0.375rem 0.375rem !important;box-shadow: 0px 2px 6px #dbdade inset">
                       <div class="row mx-0 justify-content-between align-items-center">
-                        <label class="col-4 px-0 form-check-label" for="flexSwitch1">نعم</label>
-                        <input class="col-4 form-check-input text-center" type="checkbox" role="switch" id="flexSwitch1" style="margin-left: -0.45em;">
                         <label class="col-4 px-0 form-check-label" for="flexSwitch1"> لا</label>
+                        <input class="col-4 form-check-input text-center" type="checkbox" role="switch" id="flexSwitch1" style="margin-left: -0.45em;">
+
+                        <label class="col-4 px-0 form-check-label" for="flexSwitch1">نعم</label>
                       </div>
                     </div>
                   </div>
                   <!-- Follow-up Checkbox -->
                             <div class="col-12 col-md-6 col-lg-1 mb-2">
                               <label class="form-label" for="follow-up-checkbox">حساب للمتابعة</label>
-                              <input type="checkbox" id="follow-up-checkbox" class="form-check-input" >
+                              <div style="padding: 0.375rem 0.375rem 0.375rem !important;box-shadow: 0px 2px 6px #dbdade inset" class="text-center">
+                                <input type="checkbox" id="follow-up-checkbox" class="form-check-input" >
+
+                              </div>
                             </div>
                   <div>
                     <button type="button" class="btn btn-primary"> حفظ</button>

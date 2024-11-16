@@ -2506,6 +2506,55 @@
 
 
       });
+      /////
+      $(document).on('keydown', function (e) {
+  if (e.key === 'Tab' && !e.shiftKey) { // التحقق من Tab بدون Shift
+    const $focusedElement = $(document.activeElement); // العنصر النشط حاليًا
+    const $currentRow = $focusedElement.closest('.row'); // الصف الحالي
+
+    // العثور على عناصر الحقول القابلة للتركيز
+    const $taxElements = $currentRow.find('.tax-element'); // عناصر الضريبة (ظاهرة أو مخفية)
+    const $allFocusable = $currentRow.find('input, textarea, select, .select2, .dropdowntree').filter(':visible'); // جميع العناصر المرئية فقط
+
+    // تحديد العناصر القابلة للتركيز بناءً على حالة الضريبة
+    let $focusableInRow;
+    if ($taxElements.length && !$taxElements.is(':visible')) {
+      // إذا كانت عناصر الضريبة مخفية، استبعدها من قائمة العناصر القابلة للتركيز
+      $focusableInRow = $allFocusable.filter(function () {
+        return !$taxElements.has(this).length; // استبعاد عناصر الضريبة
+      });
+    } else {
+      // إذا كانت عناصر الضريبة مرئية، استخدم جميع العناصر المرئية
+      $focusableInRow = $allFocusable;
+    }
+
+    // التحقق إذا كان العنصر النشط هو الأخير في الحقول القابلة للتركيز
+    const isLastElement = $focusedElement.is($focusableInRow.last());
+
+    if (isLastElement) {
+      e.preventDefault(); // منع السلوك الافتراضي
+
+      // تحديد الحاوية الحالية بناءً على التركيز الحالي
+      if ($('#Journal-entry-container').find(':focus').length) {
+        addNewRow('#Journal-entry-container', '#Journal-entry');
+      } else if ($('#alqabdatu-wasanad-alsarf').find(':focus').length) {
+        addNewRow('#alqabdatu-wasanad-alsarf', '#Journal-entry-alsarf');
+      } else if ($('#alqabdatu-Exchange').find(':focus').length) {
+        addNewRow('#alqabdatu-Exchange', '#Journal-entry-Exchange');
+      } else if ($('#alqabdatu-Deposits').find(':focus').length) {
+        addNewRow('#alqabdatu-Deposits', '#Journal-entry-Deposits');
+      } else if ($('#alqabdatu-Payments').find(':focus').length) {
+        addNewRow('#alqabdatu-Payments', '#Journal-entry-Payments');
+      } else if ($('#alqabdatu-Revenue').find(':focus').length) {
+        addNewRow('#alqabdatu-Revenue', '#Journal-entry-Revenue');
+      } else if ($('#alqabdatu-expense').find(':focus').length) {
+        addNewRow('#alqabdatu-expense', '#Journal-entry-expense');
+      }
+    }
+  }
+});
+
+
       // تفعيل حذف السطر المحدد عند الضغط على Shift + "-"
       $(document).on('keydown', function (e) {
         if (e.key === "-" && e.shiftKey) {
@@ -2618,26 +2667,7 @@
 
     });
 
-    $(document).ready(function () {
-  // حدد الحقول داخل الصف الذي تريد إضافة صف جديد عند الوصول لنهايته
-  $('#Journal-entry-container').on('keydown', 'input, textarea, select', function (e) {
-    if (e.key === 'Tab') {
-      const $currentRow = $(this).closest('.row');
-      const $allInputs = $currentRow.find('input, textarea, select');
-      const isLastInput = $(this).is($allInputs.last());
-
-      // إذا كان العنصر الحالي هو الأخير، أضف صفًا جديدًا
-      if (isLastInput) {
-        e.preventDefault();  // منع السلوك الافتراضي لـ Tab فقط للحقل الأخير
-        addNewRow('#Journal-entry-container', '#Journal-entry');  // استدعاء الدالة لإضافة صف جديد
-
-        // التركيز على أول عنصر في الصف الجديد
-        const $newRow = $('#Journal-entry-container .row').last();
-        $newRow.find('input, textarea, select').first().focus();
-      }
-    }
-  });
-});
+ 
 
  // دالة لإضافة صف جديد
  function addNewRow(containerId, rowSelector) {
@@ -2696,26 +2726,8 @@
   }
 
   // إضافة صف جديد باستخدام Tab
-  $('#Journal-entry-container').on('keydown', 'input, textarea, select, .add-row', function (e) {
-    if (e.key === 'Tab') {
-      const $currentRow = $(this).closest('.row');
-      const $addButton = $currentRow.find('.add-row');  // زر الإضافة في الصف
-      const isAddButton = $(this).is($addButton);
 
-      // إذا كان العنصر الحالي هو زر الإضافة، أضف صفًا جديدًا
-      if (isAddButton) {
-        // استدعاء دالة لإضافة صف جديد
-        addNewRow('#Journal-entry-container', '#Journal-entry');
-
-        // منع السلوك الافتراضي للـ Tab فقط على زر الإضافة لتجنب الخروج من الصف
-        e.preventDefault();
-
-        // التركيز على أول عنصر في الصف الجديد
-        const $newRow = $('#Journal-entry-container .row').last();
-        $newRow.find('input, textarea, select').first().focus();
-      }
-    }
-  });
+ 
   </script>
 
   <script>
