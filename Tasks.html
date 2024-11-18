@@ -38,7 +38,7 @@
   <link rel="stylesheet" href="./assets/vendor/libs/apex-charts/apex-charts.css" />
   <link rel="stylesheet" href="./assets/vendor/libs/select2/select2.css" />
   <link rel="stylesheet" href="./assets/vendor/libs/bootstrap-select/bootstrap-select.css" />
-
+  <link rel="stylesheet" href="./assets/vendor/libs/dropzone/dropzone.css" />
   <link href="./assets/default-ocean-blue.css" rel="stylesheet">
   <link rel="stylesheet" href="./assets/vendor/css/rtl/theme-default.css" class="template-customizer-theme-css" />
   <link rel="stylesheet" href="./assets/css/style.css" />
@@ -971,7 +971,7 @@
               <div class="card-body py-2 px-md-2 px-2 card-widget-separator">
                 <div class="row mx-0 align-items-center row-cols-md-2">
                   <strong class=" text-title-hadeer text-tilte-b"><span class="text-muted">
-                     الطلبات
+                     المهام
                     </span>
                   </strong>
                   <!--item-->
@@ -998,11 +998,19 @@
                     <tr class="text-center">
                       <th>#</th>
                       <th>التاريخ</th>
-                      <th>اسم الشخص</th>
+                      <th>اسم الموكل</th>
+                      <th>اسم الموكل له</th>
                       <th>الوصف</th>
-                      <th>نوع الطلب</th>
+                      <th>المراحل</th>
+                      <th>المشروع</th>
+                      <th>تاريخ البدء</th>
+                      <th>نوع المهمة</th>
+                      <th>الوقت المتوقع للانتهاء</th>
                       <th>الحالة</th>
-                      <th>تحويل إلى</th>
+                      <th>درجة الأولوية</th>
+                      <th>التكلفة المتوقعة</th>
+                      <th>التكلفة الفعلية</th>
+                      <th>المرفقات</th>
                       <th> action</th>
 
                     </tr>
@@ -1013,12 +1021,24 @@
                       #
                       </td>
                       <td>2024-11-18</td>
-                      <td>محمد أحمد</td>
-                      <td>استفسار عن الخدمة</td>
-                      <td>استفسار</td>
-                      <td>قيد المراجعة</td>
-                      <td>مدير خدمة العملاء</td>
-                     
+                      <td>أحمد خالد</td>
+                      <td>محمد علي</td>
+                      <td>تصميم واجهة تطبيق</td>
+                      <td>
+                        <ul>
+                          <li>مرحلة 1: تحليل الاحتياجات - قيد التنفيذ - 5 أيام - 2000$ - ---</li>
+                          <li>مرحلة 2: التصميم - معلقة - 3 أيام - 1500$ - ---</li>
+                        </ul>
+                      </td>
+                      <td>مشروع تطوير تطبيق</td>
+                      <td>2024-11-20</td>
+                      <td>تصميم</td>
+                      <td>10 أيام</td>
+                      <td>قيد التنفيذ</td>
+                      <td>متوسطة</td>
+                      <td>3500$</td>
+                      <td>---</td>
+                      <td><a href="#">عرض المرفقات</a></td>
 
                       <td>
                         <div class="d-flex align-items-center justify-content-center">
@@ -1041,13 +1061,181 @@
               </div>
 
             </div>
-       
+           <!-- Modal --create-->
+                <div class="modal fade" id="createModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-xl">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5 fw-bold" id="exampleModalLabel">انشاء المهام </h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <div class="accordion from-cllapse" id="accordionExample">
+                        <form class=" row mx-0 g-2 component-form ">
+                          <div class="accordion-item">
+                            <h2 class="accordion-header">
+                              <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                 بيانات المهام
+                              </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                              <div class="accordion-body">
+                                    <div class="row mx-0 g-2">
+                                      <div class="col-12 col-md-6 col-lg-2 mb-2">
+                                        <label class="form-label" for="basic-date">
+                                          التاريخ
+                                        </label>
+                                        <input type="date" class="form-control" id="basic-date">
+                                      </div>
+                                      <div class="col-12 col-md-6 col-lg-3 mb-2">
+                                        <label class="form-label" for="assigner">
+                                          اسم الموكل:</label>
+                                        <input type="text" class="form-control" id="assigner" placeholder="اسم الموكل">
+                                      </div>
+                                      <div class="col-12 col-md-6 col-lg-3 mb-2">
+                                        <label class="form-label" for="assignee">
+                                          اسم الموكل له:</label>
+                                        <input type="text" class="form-control" id="assignee" placeholder=" اسم الموكل له">
+                                      </div>
+                                      <div class="col-12 col-md-6 col-lg-2 mb-2">
+                                        <label class="form-label" for="project">
+                                          المشروع:</label>
+                                          <input type="text" id="project" class="form-control" name="project" placeholder="المشروع">
+                                      </div>
+                                      <div class="col-12 col-md-6 col-lg-2 mb-2">
+                                        <label for="start_date" class="form-label">تاريخ البدء:</label>
+                                          <input type="date" id="start_date" class="form-control" name="start_date">
+                                      </div>
+                                      <div class="col-12 col-md-6 col-lg-2 mb-2">
+                                        <label for="task_type" class="form-label">نوع المهمة:</label>
+                                        <input type="text" id="task_type" name="task_type" class="form-control">
+                                      </div>
+                                      <div class="col-12 col-md-6 col-lg-2 mb-2">
+                                        <label class="form-label" for="basic-date">
+                                          الوقت المتوقع لى الانتهاء
+                                        </label>
+                                        <input type="date" class="form-control" id="basic-date">
+                                      </div>
+                                      <div class="col-12 col-md-6 col-lg-2 mb-2">
+                                        <label for="priority1" class="form-label">  الحالة:</label>
+                                        <select id="priority1" name="priority1"  class="form-control select2">
+                                              <option value="قيد التنفيذ">قيد التنفيذ</option>
+                                              <option value="مكتملة">مكتملة</option>
+                                              <option value="معلقة">معلقة</option>
+                                        </select>
+                                      </div>
+                                      <div class="col-12 col-md-6 col-lg-2 mb-2">
+                                        <label for="priority" class="form-label"> درجة الأولوية:</label>
+                                        <select id="priority" name="priority"  class="form-control select2">
+                                              <option value="عادية">عادية</option>
+                                              <option value="متوسطة">متوسطة</option>
+                                              <option value="طارئة">طارئة</option>
+                                        </select>
+                                      </div>
+                                      <div class="col-12 col-md-6 col-lg-2 mb-2">
+                                        <label for="expected_cost" class="form-label"> التكلفة المتوقعة:</label>
+                                        <input type="number" id="expected_cost" name="expected_cost" class="form-control">
+                                      </div>
+                                      <div class="col-12 col-md-6 col-lg-2 mb-2">
+                                        <label for="expected_cost2" class="form-label"> التكلفةالفعلية عند انتهاء :</label>
+                                        <input type="number" id="expected_cost" name="expected_cost2" class="form-control">
+                                      </div>
+                                      <div class="col-12 col-md-6 col-lg-6 mb-2">
+                                        <div action="/upload" class="dropzone needsclick p-0" id="dropzone-basic">
+                                          <div class="dz-message needsclick">
+                                            Drop files here or click to upload
+              
+              
+                                          </div>
+                                          <div class="fallback">
+                                            <input name="file" type="file" />
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="col-12 col-lg-6 mb-2">
+                                        <label class="form-label" for="basic-default-decerption">
+                                          الوصف<span class="start-form">*</span></label>
+                                        <textarea class="form-control" id="basic-default-decerption" rows="2">                                                  </textarea>
+                                      </div>
+                                    </div>
+                                </div>
+    
+                              </div>
+                          </div>
+                          <div class="accordion-item">
+                            <h2 class="accordion-header">
+                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                 مراحل 
+                              </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                              <div class="accordion-body pt-2">
+                                <div class="row mx-0 g-2 align-items-end" id="template-row">
+                                  
+                                  <div class="col-12 col-md-6 col-lg-3 mb-2">
+                                    <label class="form-label" for="name-Description"> 
+                                      الوصف:</label>
+                                    <input type="text" id="name-Description" class="form-control"
+                                      placeholder=" الوصف">
+                                  </div>
+                                  <div class="col-12 col-md-6 col-lg-2 mb-2">
+                                    <label class="form-label" for="phase-status"> 
+                                      الحالة:</label>
+                                      <select id="phase-status" required class="form-control form-select">
+                                        <option value="اختر الحالة"> اختر الحالة</option>
+                                        <option value="قيد التنفيذ">قيد التنفيذ</option>
+                                        <option value="مكتمل">مكتمل</option>
+                                        <option value="مؤجل">مؤجل</option>
+                                        <option value="ملغي">ملغي</option>
+                                      </select>
+                                  </div>
+                                  <div class="col-12 col-md-6 col-lg-2 mb-2">
+                                    <label class="form-label" for="basic-date">
+                                      الوقت المتوقع لى الانتهاء
+                                    </label>
+                                    <input type="date" class="form-control" id="basic-date">
+                                  </div>
+                                  <div class="col-12 col-md-6 col-lg-2 mb-2">
+                                    <label for="expected_cost1" class="form-label"> التكلفة المتوقعة:</label>
+                                    <input type="number" id="expected_cost1" name="expected_cost" class="form-control">
+                                  </div>
+                                  <div class="col-12 col-md-6 col-lg-2 mb-2">
+                                    <label for="expected_cost3" class="form-label"> التكلفةالفعلية عند انتهاء :</label>
+                                    <input type="number" id="expected_cost" name="expected_cost3" class="form-control">
+                                  </div>
+                                  <div class="col-1 mb-2">
+                                    <button class="btn btn-primary add-row" type="button" title="اضافة"><i class="fa-solid fa-plus"></i> </button>
+  
+                                  </div>
+                                </div>
+     
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-12 mb-3 pt-3">
+                            <button type="submit" class="btn btn-primary waves-effect waves-light" title="حفظ" id="saveButton">
+                              <i class="fa-solid fa-check mx-2"></i>حفظ
+                            </button>
+                          </div>
+                        </form>
+                      </div>
+                      
+                    
+                    </div>
+
+                  </div>
+                </div>
+                </div>
+            <!---->
             <!-- Modal --edit-->
             <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div class="modal-dialog modal-md">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h1 class="modal-title fs-5 fw-bold" id="exampleModalLabel">تعديل الطلبات </h1>
+                    <h1 class="modal-title fs-5 fw-bold" id="exampleModalLabel">تعديل المهام </h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <div class="modal-body">
@@ -1103,70 +1291,7 @@
                 </div>
               </div>
             </div>
-            <!-- Modal --create-->
-            <div class="modal fade" id="createModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-              aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h1 class="modal-title fs-5 fw-bold" id="exampleModalLabel">انشاء طلبات </h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                    <form class=" row mx-0 g-2 component-form ">
-                      <div class="col-12 col-md-6 col-lg-4 mb-2">
-                        <label class="form-label" for="basic-date">
-                          التاريخ
-                        </label>
-                        <input type="date" class="form-control" id="basic-date">
-                      </div>
-                      <div class="col-12 col-md-6 col-lg-8 mb-2">
-                        <label class="form-label" for="account-name">
-                          اسم الشخص:</label>
-                        <input type="text" class="form-control" id="account-name" placeholder=" اسم الشخص ">
-                      </div>
-                      <div class="col-12 col-md-6 col-lg-3 mb-2">
-                        <label for="type" class="form-label">نوع الطلب:</label>
-                        <select id="type" name="type"  class="form-control select2">
-                          <option value="شكوى">شكوى</option>
-                          <option value="استفسار">استفسار</option>
-                          <option value="اقتراح">اقتراح</option>
-                        </select>
-                      </div>
-                      <div class="col-12 col-md-6 col-lg-4 mb-2">
-                        <label for="status" class="form-label">الحالة:</label>
-                        <select id="status" name="status" class="form-control select2">
-                          <option value="جديد">جديد</option>
-                          <option value="قيد المراجعة">قيد المراجعة</option>
-                          <option value="مكتمل">مكتمل</option>
-                        </select>
-                      </div>
-                      <div class="col-12 col-md-6 col-lg-5 mb-2">
-                        <label for="assigned_to"class="form-label">تحويل إلى:</label>
-                        <select id="assigned_to" name="assigned_to"  class="form-control select2">
-                          <option value="مدير">مدير</option>
-                          <option value="موظف خدمة عملاء">موظف خدمة عملاء</option>
-                          <option value="موظف صيانة">موظف صيانة</option>
-                        </select>
-                      </div>
-                      <div class="col-12 col-lg-12 mb-2">
-                        <label class="form-label" for="basic-default-decerption">
-                          الوصف<span class="start-form">*</span></label>
-                        <textarea class="form-control" id="basic-default-decerption" rows="2">                                                  </textarea>
-                      </div>
-                      <div class="col-12 mb-3 pt-3">
-                        <button type="submit" class="btn btn-primary waves-effect waves-light" title="حفظ" id="saveButton">
-                          <i class="fa-solid fa-check mx-2"></i>حفظ
-                        </button>
-                      </div>
-                    </form>
-                   
-                  </div>
-
-                </div>
-              </div>
-            </div>
-            <!---->
+           
             <!---->
             <button class="btn" id="saveButton" style="display: none;"></button>
 
@@ -1267,7 +1392,7 @@
     <script src="./assets/vendor/libs/bootstrap-select/bootstrap-select.js"></script>
     <!-- Vendors JS -->
     <script src="./assets/vendor/libs/apex-charts/apexcharts.js"></script>
-
+    <script src="./assets/vendor/libs/dropzone/dropzone.js"></script>
     <!-- Main JS -->
     <script src="./assets/js/main.js"></script>
 
@@ -1281,6 +1406,7 @@
     <script src="./assets/vendor/js/chart.js"></script>
     <script src="./assets/js/dashboards-crm.js"></script>
     <script src="./assets/js/forms-selects.js"></script>
+    <script src="./assets/js/forms-file-upload.js"></script>
     <script src="./assets/kendo.all.min.js"></script>
     <script src="./assets/vendor/js/upload.js"></script>
     <script>

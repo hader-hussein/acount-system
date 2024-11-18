@@ -1016,50 +1016,39 @@
                     استيراد القيود اليوميه
                   </span>
                   </strong>
-                  <div class="row justify-content-center mx-0 py-2 px-md-3 px-2">
-                        <div class=" p-2  mt-2">
-                          
-                          <div class="row  justify-content-between mx-0 mt-4">
-                              <div class="col-md-4 mb-md-0 mb-2">
-                                <a href="">
-                                  <div class="card p-3 h-100">
-
-                                    <label for="date-file" class="form-label">  تنزيل القالب</label>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                      <img src="./assets/img/img-nav/download.png" alt="download">
-                                     <button type="button" class="btn btn-primary" href="" download="">  تنزيل  <i class="fa-solid fa-download px-1"></i></button>
-     
-                                    </div>
-                                  </div>
-                                </a>
-                               
-                               
-                               
-                              </div>
-                              <div class="col-md-4 mb-md-0 mb-2">
-                                <div class="card h-100 p-3">
-                                  <form class="component-form">
-                                    <div class="col-12  col-lg-12 mb-3">
-                                      <label for="date-file" class="form-label"> اختر الملف</label>
-                                      
-                                      <input type="file" id="date-file" class="form-control" >
-            
-                                    </div>
-                                    <div>
-                                      <button type="button" class="btn btn-primary"> استيراد القيود اليوميه</button>
-            
-                                    </div>
-                                  </form>
-                                </div>
-                                
-                              </div>
-                          </div>
-                         
-                        </div>
-                  </div>
+                  
                 </div>
               </div>
-            
+              <div class="card comonent-hader-top p-2 mt-4">
+                 <!-- اختيار نوع القيد -->
+  <label for="constraint-type">نوع القيد:</label>
+  <select id="constraint-type" name="constraint-type">
+    <option value="مالي">مالي</option>
+    <option value="إداري">إداري</option>
+    <option value="لوجستي">لوجستي</option>
+  </select><br><br>
+
+  <!-- رفع ملف Excel -->
+  <label for="excel-file">رفع ملف Excel:</label>
+  <input type="file" id="excel-file" accept=".xls,.xlsx"><br><br>
+
+  <!-- زر رفع -->
+  <button id="upload-btn">معاينة البيانات</button>
+
+  <!-- جدول عرض البيانات -->
+  <h2>معاينة البيانات:</h2>
+  <table border="1" id="preview-table" style="width: 100%; border-collapse: collapse; text-align: center;">
+    <thead>
+      <tr id="table-header"></tr>
+    </thead>
+    <tbody id="table-body"></tbody>
+  </table>
+
+  <br>
+  <!-- زر الحفظ -->
+  <button id="save-btn" disabled>حفظ البيانات</button>
+
+                </div>
              
              <!---->
               <button class="btn"id="saveButton" style="display: none;"></button>
@@ -1180,7 +1169,64 @@
      <script src="./assets/js/forms-selects.js"></script>
      <script src="./assets/kendo.all.min.js"></script>
     <script src="./assets/vendor/js/upload.js"></script>
-
+    <script>
+      // قراءة ملف Excel وعرض البيانات
+      document.getElementById('upload-btn').addEventListener('click', () => {
+        const fileInput = document.getElementById('excel-file');
+        const file = fileInput.files[0];
+        if (!file) {
+          alert('يرجى اختيار ملف Excel.');
+          return;
+        }
+  
+        const reader = new FileReader();
+        reader.onload = (event) => {
+          const data = new Uint8Array(event.target.result);
+          const workbook = XLSX.read(data, { type: 'array' });
+          const sheetName = workbook.SheetNames[0]; // اختيار أول شيت
+          const sheet = workbook.Sheets[sheetName];
+          const jsonData = XLSX.utils.sheet_to_json(sheet, { header: 1 });
+  
+          // عرض البيانات في الجدول
+          const tableHeader = document.getElementById('table-header');
+          const tableBody = document.getElementById('table-body');
+          tableHeader.innerHTML = '';
+          tableBody.innerHTML = '';
+  
+          if (jsonData.length > 0) {
+            // إنشاء الأعمدة
+            jsonData[0].forEach((header) => {
+              const th = document.createElement('th');
+              th.textContent = header || 'عمود غير مسمى';
+              tableHeader.appendChild(th);
+            });
+  
+            // إنشاء الصفوف
+            jsonData.slice(1).forEach((row) => {
+              const tr = document.createElement('tr');
+              row.forEach((cell) => {
+                const td = document.createElement('td');
+                td.textContent = cell || '';
+                tr.appendChild(td);
+              });
+              tableBody.appendChild(tr);
+            });
+  
+            // تفعيل زر الحفظ
+            document.getElementById('save-btn').disabled = false;
+          } else {
+            alert('الملف فارغ أو غير مدعوم.');
+          }
+        };
+        reader.readAsArrayBuffer(file);
+      });
+  
+      // تنفيذ الحفظ
+      document.getElementById('save-btn').addEventListener('click', () => {
+        alert('تم حفظ البيانات بنجاح!');
+        // إضافة منطق الحفظ في قاعدة البيانات هنا.
+      });
+    </script>
 
   </body>
 </html>
