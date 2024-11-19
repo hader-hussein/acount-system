@@ -36,7 +36,7 @@
   <link rel="stylesheet" href="./assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
   <link rel="stylesheet" href="./assets/vendor/libs/typeahead-js/typeahead.css" />
   <link rel="stylesheet" href="./assets/vendor/libs/apex-charts/apex-charts.css" />
-
+  <link rel="stylesheet" href="./assets/vendor/libs/shepherd/shepherd.css" /><!--Tour-->
 
 
   <link rel="stylesheet" href="./assets/vendor/css/rtl/theme-default.css" class="template-customizer-theme-css" />
@@ -590,6 +590,14 @@
                    
                   </li>
                   <li class="menu-item">
+                    <a href="Constraint-models.html" class="menu-link">
+                      <img class="menu-icon img-nav" src="./assets/img/img-nav/constraint.png" alt="img-nav">
+
+                      <div data-i18n="نماذج القيود">نماذج القيود </div>
+                    </a>
+                   
+                  </li>
+                  <li class="menu-item">
                     <a href="javascript:void(0)" class="menu-link menu-toggle">
                       <img class="menu-icon img-nav" src="./assets/img/img-nav/setting.png" alt="img-nav">
   
@@ -684,6 +692,14 @@
 
 
                     <div data-i18n=" المهام"> المهام </div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="Installment-contract.html" class="menu-link">
+                    <img class="menu-icon img-nav" src="./assets/img/img-nav/contract.png" alt="img-nav">
+
+
+                    <div data-i18n=" عقد تقسيط"> عقد تقسيط </div>
                   </a>
                 </li>
                 <li class="menu-item">
@@ -957,7 +973,10 @@
           <div class="container-xxl flex-grow-1 container-p-y content-admin pt-lg-5 mt-md-4">
             <h4 class="py-3 mb-4 text-title-hadeer"><span class="text-muted fw-medium"></span> Dashboard</h4>
           </div>
-
+          <div class="tour-card start-tour">
+              <button class="btn btn-primary" id="shepherd-example">Start tour</button>
+            
+          </div>
           <!--/ Content -->
           <div class="alert alert-primary" role="alert">
 
@@ -1052,7 +1071,8 @@
   <script src="./assets/vendor/js/mega-dropdown.js"></script>
   <!-- Vendors JS -->
   <script src="./assets/vendor/libs/apex-charts/apexcharts.js"></script>
-
+<!-- Vendors JS -->
+<script src="./assets/vendor/libs/shepherd/shepherd.js"></script><!--tour-->
 
 
   <!-- Main JS -->
@@ -1069,6 +1089,7 @@
   <script src="./assets/js/dashboards-crm.js"></script>
   <script src="./assets/dropdowntree.js"></script>
   <script src="./assets/vendor/js/upload.js"></script>
+  <script src="./assets/js/extended-ui-tour.js"></script><!--tour-->
 </body>
 
 </html>

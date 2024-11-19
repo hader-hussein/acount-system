@@ -971,7 +971,7 @@
               <div class="card-body py-2 px-md-2 px-2 card-widget-separator">
                 <div class="row mx-0 align-items-center row-cols-md-2">
                   <strong class=" text-title-hadeer text-tilte-b"><span class="text-muted">
-                     المهام
+                     عقد التقسيط/ فاتورة
                     </span>
                   </strong>
                   <!--item-->
@@ -998,18 +998,12 @@
                     <tr class="text-center">
                       <th>#</th>
                       <th>التاريخ</th>
-                      <th>اسم الموكل</th>
-                      <th>اسم الموكل له</th>
-                      <th>الوصف</th>
-                      <th>المراحل</th>
-                      <th>المشروع</th>
-                      <th>تاريخ البدء</th>
-                      <th>نوع المهمة</th>
-                      <th>الوقت المتوقع للانتهاء</th>
-                      <th>الحالة</th>
-                      <th>درجة الأولوية</th>
-                      <th>التكلفة المتوقعة</th>
-                      <th>التكلفة الفعلية</th>
+                      <th> الحساب</th>
+                      <th>اسم الشخص</th>
+                      <th>المبلغ</th>
+                      <th>الفترة</th>
+                      <th>عدد الاقساط</th>
+                      <th>ملاحظات </th>
                       <th>المرفقات</th>
                       <th> action</th>
 
@@ -1023,26 +1017,16 @@
                       <td>2024-11-18</td>
                       <td>أحمد خالد</td>
                       <td>محمد علي</td>
-                      <td>تصميم واجهة تطبيق</td>
+                      <td>  20000</td>
                       <td>
-                        <ul>
-                          <li>مرحلة 1: تحليل الاحتياجات - قيد التنفيذ - 5 أيام - 2000$ - ---</li>
-                          <li>مرحلة 2: التصميم - معلقة - 3 أيام - 1500$ - ---</li>
-                        </ul>
+                        شهرى
                       </td>
-                      <td>مشروع تطوير تطبيق</td>
-                      <td>2024-11-20</td>
-                      <td>تصميم</td>
-                      <td>10 أيام</td>
-                      <td>قيد التنفيذ</td>
-                      <td>متوسطة</td>
-                      <td>3500$</td>
-                      <td>---</td>
-                      <td>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                         عرض المرفقات <i class="fa-solid fa-file-import px-1"></i>
-                        </button>
-                      </td>
+                      <td>4</td>
+                      <td></td>
+                      
+                      <td>   <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        عرض المرفقات <i class="fa-solid fa-file-import px-1"></i>
+                       </button></td>
 
                       <td>
                         <div class="d-flex align-items-center justify-content-center">
@@ -1071,163 +1055,92 @@
                 <div class="modal-dialog modal-xl">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h1 class="modal-title fs-5 fw-bold" id="exampleModalLabel">انشاء المهام </h1>
+                      <h1 class="modal-title fs-5 fw-bold" id="exampleModalLabel"> عقد التقسيط </h1>
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                      <div class="accordion from-cllapse" id="accordionExample">
-                        <form class=" row mx-0 g-2 component-form ">
-                          <div class="accordion-item">
-                            <h2 class="accordion-header">
-                              <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                 بيانات المهام
-                              </button>
-                            </h2>
-                            <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-                              <div class="accordion-body">
-                                    <div class="row mx-0 g-2">
+                        <form class=" row mx-0 g-2 component-form ">                          
+                                   
                                       <div class="col-12 col-md-6 col-lg-2 mb-2">
                                         <label class="form-label" for="basic-date">
                                           التاريخ
                                         </label>
                                         <input type="date" class="form-control" id="basic-date">
                                       </div>
-                                      <div class="col-12 col-md-6 col-lg-3 mb-2">
+                                      <div class="col-12 col-md-6 col-lg-2 mb-2">
                                         <label class="form-label" for="assigner">
-                                          اسم الموكل:</label>
-                                        <input type="text" class="form-control" id="assigner" placeholder="اسم الموكل">
+                                           الحساب:</label>
+                                        <input type="text" class="form-control" id="assigner" placeholder=" الحساب">
                                       </div>
-                                      <div class="col-12 col-md-6 col-lg-3 mb-2">
+                                      <div class="col-12 col-md-6 col-lg-2 mb-2">
                                         <label class="form-label" for="assignee">
-                                          اسم الموكل له:</label>
-                                        <input type="text" class="form-control" id="assignee" placeholder=" اسم الموكل له">
+                                          اسم الشخص:</label>
+                                        <input type="text" class="form-control" id="assignee" placeholder=" اسم الشخص">
                                       </div>
                                       <div class="col-12 col-md-6 col-lg-2 mb-2">
-                                        <label class="form-label" for="project">
-                                          المشروع:</label>
-                                          <input type="text" id="project" class="form-control" name="project" placeholder="المشروع">
+                                        <label class="form-label" for="Amount">
+                                          المبلغ</label>
+                                        <input type="text" class="form-control" id="Amount" placeholder="المبلغ">
                                       </div>
+                                  
                                       <div class="col-12 col-md-6 col-lg-2 mb-2">
-                                        <label for="start_date" class="form-label">تاريخ البدء:</label>
-                                          <input type="date" id="start_date" class="form-control" name="start_date">
-                                      </div>
-                                      <div class="col-12 col-md-6 col-lg-2 mb-2">
-                                        <label for="task_type" class="form-label">نوع المهمة:</label>
-                                        <input type="text" id="task_type" name="task_type" class="form-control">
-                                      </div>
-                                      <div class="col-12 col-md-6 col-lg-2 mb-2">
-                                        <label class="form-label" for="basic-date">
-                                          الوقت المتوقع لى الانتهاء
-                                        </label>
-                                        <input type="date" class="form-control" id="basic-date">
-                                      </div>
-                                      <div class="col-12 col-md-6 col-lg-2 mb-2">
-                                        <label for="priority1" class="form-label">  الحالة:</label>
+                                        <label for="priority1" class="form-label">  الفترة:</label>
                                         <select id="priority1" name="priority1"  class="form-control select2">
-                                              <option value="قيد التنفيذ">قيد التنفيذ</option>
-                                              <option value="مكتملة">مكتملة</option>
-                                              <option value="معلقة">معلقة</option>
+                                              <option value=" شهرى"> شهرى</option>
+                                              <option value="ربع سنوى">ربع سنوى</option>
+                                              <option value="نص سنوى">نصف سنوى</option>
+                                              <option value="سنوى"> سنوى</option>
+
                                         </select>
                                       </div>
-                                      <div class="col-12 col-md-6 col-lg-2 mb-2">
-                                        <label for="priority" class="form-label"> درجة الأولوية:</label>
-                                        <select id="priority" name="priority"  class="form-control select2">
-                                              <option value="عادية">عادية</option>
-                                              <option value="متوسطة">متوسطة</option>
-                                              <option value="طارئة">طارئة</option>
-                                        </select>
+                                      
+                                     <div class="col-12 col-md-6 col-lg-2 mb-2">
+                                      <div class="input-container">
+                                        <label for="installments-count">عدد الأقساط:</label>
+                                        <input type="number" class="form-control" id="installments-count" min="1" placeholder="أدخل عدد الأقساط">
                                       </div>
-                                      <div class="col-12 col-md-6 col-lg-2 mb-2">
-                                        <label for="expected_cost" class="form-label"> التكلفة المتوقعة:</label>
-                                        <input type="number" id="expected_cost" name="expected_cost" class="form-control">
-                                      </div>
-                                      <div class="col-12 col-md-6 col-lg-2 mb-2">
-                                        <label for="expected_cost2" class="form-label"> التكلفةالفعلية عند انتهاء :</label>
-                                        <input type="number" id="expected_cost" name="expected_cost2" class="form-control">
-                                      </div>
-                                      <div class="col-12 col-md-6 col-lg-6 mb-2">
-                                        <div action="/upload" class="dropzone needsclick p-0" id="dropzone-basic">
-                                          <div class="dz-message needsclick">
-                                            Drop files here or click to upload
-              
-              
-                                          </div>
-                                          <div class="fallback">
-                                            <input name="file" type="file" />
-                                          </div>
+                                     </div>
+                                     <div class="col-12 table-responsive text-nowrap tabel-all">
+                                      <table style="display: none;" class="table  table-bordered" id="installments-table">
+                                        <thead>
+                                          <tr class="text-center">
+                                            <th>رقم القسط</th>
+                                            <th>تاريخ الاستحقاق</th>
+                                            <th>القيمة</th>
+                                          </tr>
+                                        </thead>
+                                        <tbody id="installments-body">
+                                          <!-- سيتم إنشاء الأسطر هنا ديناميكيًا -->
+                                        </tbody>
+                                      </table>
+                                     </div>
+                                     
+                                     <div class="col-12 col-md-12 col-lg-8 mb-2">
+                                      <div action="/upload" class="dropzone needsclick p-0" id="dropzone-basic">
+                                        <div class="dz-message needsclick">
+                                          Drop files here or click to upload
+            
+            
+                                        </div>
+                                        <div class="fallback">
+                                          <input name="file" type="file" />
                                         </div>
                                       </div>
-                                      <div class="col-12 col-lg-6 mb-2">
+                                    </div>
+                                 
+                                      
+                                      <div class="col-12 col-lg-12 mb-2">
                                         <label class="form-label" for="basic-default-decerption">
                                           الوصف<span class="start-form">*</span></label>
                                         <textarea class="form-control" id="basic-default-decerption" rows="2">                                                  </textarea>
                                       </div>
+                                    <div class="col-12 mb-3 pt-3">
+                                      <button type="submit" class="btn btn-primary waves-effect waves-light" title="حفظ" id="saveButton">
+                                        <i class="fa-solid fa-check mx-2"></i>حفظ
+                                      </button>
                                     </div>
-                                </div>
-    
-                              </div>
-                          </div>
-                          <div class="accordion-item">
-                            <h2 class="accordion-header">
-                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                 مراحل 
-                              </button>
-                            </h2>
-                            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                              <div class="accordion-body pt-2">
-                                <div class="row mx-0 g-2 align-items-end" id="template-row">
-                                  
-                                  <div class="col-12 col-md-6 col-lg-3 mb-2">
-                                    <label class="form-label" for="name-Description"> 
-                                      الوصف:</label>
-                                    <input type="text" id="name-Description" class="form-control"
-                                      placeholder=" الوصف">
-                                  </div>
-                                  <div class="col-12 col-md-6 col-lg-2 mb-2">
-                                    <label class="form-label" for="phase-status"> 
-                                      الحالة:</label>
-                                      <select id="phase-status" required class="form-control form-select">
-                                        <option value="اختر الحالة"> اختر الحالة</option>
-                                        <option value="قيد التنفيذ">قيد التنفيذ</option>
-                                        <option value="مكتمل">مكتمل</option>
-                                        <option value="مؤجل">مؤجل</option>
-                                        <option value="ملغي">ملغي</option>
-                                      </select>
-                                  </div>
-                                  <div class="col-12 col-md-6 col-lg-2 mb-2">
-                                    <label class="form-label" for="basic-date">
-                                      الوقت المتوقع لى الانتهاء
-                                    </label>
-                                    <input type="date" class="form-control" id="basic-date">
-                                  </div>
-                                  <div class="col-12 col-md-6 col-lg-2 mb-2">
-                                    <label for="expected_cost1" class="form-label"> التكلفة المتوقعة:</label>
-                                    <input type="number" id="expected_cost1" name="expected_cost" class="form-control">
-                                  </div>
-                                  <div class="col-12 col-md-6 col-lg-2 mb-2">
-                                    <label for="expected_cost3" class="form-label"> التكلفةالفعلية عند انتهاء :</label>
-                                    <input type="number" id="expected_cost" name="expected_cost3" class="form-control">
-                                  </div>
-                                  <div class="col-1 mb-2">
-                                    <button class="btn btn-primary add-row" type="button" title="اضافة"><i class="fa-solid fa-plus"></i> </button>
-  
-                                  </div>
-                                </div>
-     
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-12 mb-3 pt-3">
-                            <button type="submit" class="btn btn-primary waves-effect waves-light" title="حفظ" id="saveButton">
-                              <i class="fa-solid fa-check mx-2"></i>حفظ
-                            </button>
-                          </div>
                         </form>
-                      </div>
-                      
-                    
+
                     </div>
 
                   </div>
@@ -1239,193 +1152,110 @@
               <div class="modal-dialog modal-xl">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h1 class="modal-title fs-5 fw-bold" id="exampleModalLabel">تعديل المهام </h1>
+                    <h1 class="modal-title fs-5 fw-bold" id="exampleModalLabel">تعديل عقد </h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <div class="modal-body">
-                    <div class="accordion from-cllapse" id="accordionExample1">
-                      <form class=" row mx-0 g-2 component-form ">
-                        <div class="accordion-item">
-                          <h2 class="accordion-header">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                              data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                               بيانات المهام
-                            </button>
-                          </h2>
-                          <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample1">
-                            <div class="accordion-body">
-                                  <div class="row mx-0 g-2">
-                                    <div class="col-12 col-md-6 col-lg-2 mb-2">
-                                      <label class="form-label" for="basic-date">
-                                        التاريخ
-                                      </label>
-                                      <input type="date" class="form-control" id="basic-date">
-                                    </div>
-                                    <div class="col-12 col-md-6 col-lg-3 mb-2">
-                                      <label class="form-label" for="assigner">
-                                        اسم الموكل:</label>
-                                      <input type="text" class="form-control" id="assigner" placeholder="اسم الموكل">
-                                    </div>
-                                    <div class="col-12 col-md-6 col-lg-3 mb-2">
-                                      <label class="form-label" for="assignee">
-                                        اسم الموكل له:</label>
-                                      <input type="text" class="form-control" id="assignee" placeholder=" اسم الموكل له">
-                                    </div>
-                                    <div class="col-12 col-md-6 col-lg-2 mb-2">
-                                      <label class="form-label" for="project">
-                                        المشروع:</label>
-                                        <input type="text" id="project" class="form-control" name="project" placeholder="المشروع">
-                                    </div>
-                                    <div class="col-12 col-md-6 col-lg-2 mb-2">
-                                      <label for="start_date" class="form-label">تاريخ البدء:</label>
-                                        <input type="date" id="start_date" class="form-control" name="start_date">
-                                    </div>
-                                    <div class="col-12 col-md-6 col-lg-2 mb-2">
-                                      <label for="task_type" class="form-label">نوع المهمة:</label>
-                                      <input type="text" id="task_type" name="task_type" class="form-control">
-                                    </div>
-                                    <div class="col-12 col-md-6 col-lg-2 mb-2">
-                                      <label class="form-label" for="basic-date">
-                                        الوقت المتوقع لى الانتهاء
-                                      </label>
-                                      <input type="date" class="form-control" id="basic-date">
-                                    </div>
-                                    <div class="col-12 col-md-6 col-lg-2 mb-2">
-                                      <label for="priority1" class="form-label">  الحالة:</label>
-                                      <select id="priority1" name="priority1"  class="form-control select2">
-                                            <option value="قيد التنفيذ">قيد التنفيذ</option>
-                                            <option value="مكتملة">مكتملة</option>
-                                            <option value="معلقة">معلقة</option>
-                                      </select>
-                                    </div>
-                                    <div class="col-12 col-md-6 col-lg-2 mb-2">
-                                      <label for="priority" class="form-label"> درجة الأولوية:</label>
-                                      <select id="priority" name="priority"  class="form-control select2">
-                                            <option value="عادية">عادية</option>
-                                            <option value="متوسطة">متوسطة</option>
-                                            <option value="طارئة">طارئة</option>
-                                      </select>
-                                    </div>
-                                    <div class="col-12 col-md-6 col-lg-2 mb-2">
-                                      <label for="expected_cost" class="form-label"> التكلفة المتوقعة:</label>
-                                      <input type="number" id="expected_cost" name="expected_cost" class="form-control">
-                                    </div>
-                                    <div class="col-12 col-md-6 col-lg-2 mb-2">
-                                      <label for="expected_cost2" class="form-label"> التكلفةالفعلية عند انتهاء :</label>
-                                      <input type="number" id="expected_cost" name="expected_cost2" class="form-control">
-                                    </div>
-                                 
-                                    <div class="col-12 col-lg-12 mb-2">
-                                      <label class="form-label" for="basic-default-decerption">
-                                        الوصف<span class="start-form">*</span></label>
-                                      <textarea class="form-control" id="basic-default-decerption" rows="2">                                                  </textarea>
-                                    </div>
-                                  </div>
-                              </div>
-  
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                          <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                              data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                               مراحل 
-                            </button>
-                          </h2>
-                          <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample1">
-                            <div class="accordion-body pt-2">
-                              <div class="row mx-0 g-2 align-items-end" id="template-row">
-                                
-                                <div class="col-12 col-md-6 col-lg-3 mb-2">
-                                  <label class="form-label" for="name-Description"> 
-                                    الوصف:</label>
-                                  <input type="text" id="name-Description" class="form-control"
-                                    placeholder=" الوصف">
-                                </div>
-                                <div class="col-12 col-md-6 col-lg-2 mb-2">
-                                  <label class="form-label" for="phase-status"> 
-                                    الحالة:</label>
-                                    <select id="phase-status" required class="form-control form-select">
-                                      <option value="اختر الحالة"> اختر الحالة</option>
-                                      <option value="قيد التنفيذ">قيد التنفيذ</option>
-                                      <option value="مكتمل">مكتمل</option>
-                                      <option value="مؤجل">مؤجل</option>
-                                      <option value="ملغي">ملغي</option>
-                                    </select>
-                                </div>
-                                <div class="col-12 col-md-6 col-lg-2 mb-2">
-                                  <label class="form-label" for="basic-date">
-                                    الوقت المتوقع لى الانتهاء
-                                  </label>
-                                  <input type="date" class="form-control" id="basic-date">
-                                </div>
-                                <div class="col-12 col-md-6 col-lg-2 mb-2">
-                                  <label for="expected_cost1" class="form-label"> التكلفة المتوقعة:</label>
-                                  <input type="number" id="expected_cost1" name="expected_cost" class="form-control">
-                                </div>
-                                <div class="col-12 col-md-6 col-lg-2 mb-2">
-                                  <label for="expected_cost3" class="form-label"> التكلفةالفعلية عند انتهاء :</label>
-                                  <input type="number" id="expected_cost" name="expected_cost3" class="form-control">
-                                </div>
-                               
-                              </div>
-   
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-12 mb-3 pt-3">
-                          <button type="submit" class="btn btn-primary waves-effect waves-light" title="حفظ" id="saveButton">
-                            <i class="fa-solid fa-check mx-2"></i>حفظ
-                          </button>
-                        </div>
-                      </form>
-                    </div>
-                  </div>
+                    <form class=" row mx-0 g-2 component-form ">                          
+                                   
+                      <div class="col-12 col-md-6 col-lg-2 mb-2">
+                        <label class="form-label" for="basic-date">
+                          التاريخ
+                        </label>
+                        <input type="date" class="form-control" id="basic-date">
+                      </div>
+                      <div class="col-12 col-md-6 col-lg-2 mb-2">
+                        <label class="form-label" for="assigner">
+                           الحساب:</label>
+                        <input type="text" class="form-control" id="assigner" placeholder=" الحساب">
+                      </div>
+                      <div class="col-12 col-md-6 col-lg-2 mb-2">
+                        <label class="form-label" for="assignee">
+                          اسم الشخص:</label>
+                        <input type="text" class="form-control" id="assignee" placeholder=" اسم الشخص">
+                      </div>
+                      <div class="col-12 col-md-6 col-lg-2 mb-2">
+                        <label class="form-label" for="Amount">
+                          المبلغ</label>
+                        <input type="text" class="form-control" id="Amount" placeholder="المبلغ">
+                      </div>
+                  
+                      <div class="col-12 col-md-6 col-lg-2 mb-2">
+                        <label for="priority1" class="form-label">  الفترة:</label>
+                        <select id="priority1" name="priority1"  class="form-control select2">
+                              <option value=" شهرى"> شهرى</option>
+                              <option value="ربع سنوى">ربع سنوى</option>
+                              <option value="نص سنوى">نصف سنوى</option>
+                              <option value="سنوى"> سنوى</option>
 
-                </div>
-              </div>
-            </div>
-           <!--المرفقات-->
-           <!-- Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">عرض المرفقات </h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                     <!-- زر إضافة مرفق جديد -->
-                     <div class="mb-2">
-                      <label for="file-input">إضافة مرفق جديد:</label>
-                      <div class="input-group">
-                       
-                        <input type="file" id="file-input" class="form-control">
-                        <button class="btn btn-primary btn-sm" id="add-file-btn">إضافة</button>
-
+                        </select>
                       </div>
                       
+                     <div class="col-12 col-md-6 col-lg-2 mb-2">
+                      <div class="input-container">
+                        <label for="installments-count-edit">عدد الأقساط:</label>
+                        <input type="number" class="form-control" id="installments-count-edit" min="1" placeholder="أدخل عدد الأقساط">
+                      </div>
+                     </div>
+
+                      <div class="col-12 col-lg-12 mb-2">
+                        <label class="form-label" for="basic-default-decerption">
+                          الوصف<span class="start-form">*</span></label>
+                        <textarea class="form-control" id="basic-default-decerption" rows="2">                                                  </textarea>
+                      </div>
+                    <div class="col-12 mb-3 pt-3">
+                      <button type="submit" class="btn btn-primary waves-effect waves-light" title="حفظ" id="saveButton">
+                        <i class="fa-solid fa-check mx-2"></i>حفظ
+                      </button>
                     </div>
-                    <div class="table-responsive text-nowrap tabel-all">
-                      <table class="table  table-bordered">
-                        <thead class="text-center">
-                          <tr>
-                            <th>رقم المرفق</th>
-                            <th>اسم الملف</th>
-                            <th>الإجراءات</th>
-                          </tr>
-                        </thead>
-                        <tbody id="attachments-body">
-                          
-                        </tbody>
-                      </table>
-                    </div>
-                   
+        </form>
                   </div>
-                
+
                 </div>
               </div>
             </div>
+            <!--المرفقات-->
+           <!-- Modal -->
+           <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">عرض المرفقات </h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                   <!-- زر إضافة مرفق جديد -->
+                   <div class="mb-2">
+                    <label for="file-input">إضافة مرفق جديد:</label>
+                    <div class="input-group">
+                     
+                      <input type="file" id="file-input" class="form-control">
+                      <button class="btn btn-primary btn-sm" id="add-file-btn">إضافة</button>
+
+                    </div>
+                    
+                  </div>
+                  <div class="table-responsive text-nowrap tabel-all">
+                    <table class="table  table-bordered">
+                      <thead class="text-center">
+                        <tr>
+                          <th>رقم المرفق</th>
+                          <th>اسم الملف</th>
+                          <th>الإجراءات</th>
+                        </tr>
+                      </thead>
+                      <tbody id="attachments-body">
+                        
+                      </tbody>
+                    </table>
+                  </div>
+                 
+                </div>
+              
+              </div>
+            </div>
+          </div>
+          <!---->
             <!---->
             <button class="btn" id="saveButton" style="display: none;"></button>
 
@@ -1570,63 +1400,109 @@
             $(this).closest('.row').remove(); // حذف الصف الحالي
         });
       });
-      
     </script>
-    <!-- Script to handle actions -->
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        let attachmentCounter = 0; // عدد المرفقات الحالي
+      <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          let attachmentCounter = 0; // عدد المرفقات الحالي
+      
+          // إضافة مرفق جديد
+          document.getElementById("add-file-btn").addEventListener("click", () => {
+            const fileInput = document.getElementById("file-input");
+            const file = fileInput.files[0];
+      
+            if (!file) {
+              alert("يرجى اختيار ملف لإضافته.");
+              return;
+            }
+      
+            // تحديث عداد المرفقات
+            attachmentCounter++;
+      
+            // إنشاء صف جديد
+            const tbody = document.getElementById("attachments-body");
+            const newRow = document.createElement("tr");
+      
+            // رقم المرفق
+            const numberCell = document.createElement("td");
+            numberCell.textContent = attachmentCounter;
+            newRow.appendChild(numberCell);
+      
+            // اسم الملف
+            const fileCell = document.createElement("td");
+            fileCell.textContent = file.name;
+            newRow.appendChild(fileCell);
+      
+            // عمود الإجراءات
+            const actionsCell = document.createElement("td");
+            actionsCell.className = "text-center";
+      
+            // زر حذف
+            const deleteButton = document.createElement("button");
+            deleteButton.className = "btn btn-danger btn-sm";
+            deleteButton.textContent = "حذف";
+            deleteButton.addEventListener("click", () => {
+              newRow.remove(); // حذف الصف
+              alert(`تم حذف المرفق: ${file.name}`);
+            });
+            actionsCell.appendChild(deleteButton);
+      
+            newRow.appendChild(actionsCell);
+            tbody.appendChild(newRow);
+      
+            // تفريغ حقل اختيار الملف
+            fileInput.value = '';
+            alert("تمت إضافة المرفق بنجاح.");
+          });
+        });
+      </script>
+       <script>
+        const countInput = document.getElementById("installments-count");
+        const table = document.getElementById("installments-table");
+        const tbody = document.getElementById("installments-body");
     
-        // إضافة مرفق جديد
-        document.getElementById("add-file-btn").addEventListener("click", () => {
-          const fileInput = document.getElementById("file-input");
-          const file = fileInput.files[0];
+        countInput.addEventListener("input", () => {
+          const count = parseInt(countInput.value, 10);
     
-          if (!file) {
-            alert("يرجى اختيار ملف لإضافته.");
+          // التحقق من صحة المدخلات
+          if (isNaN(count) || count <= 0) {
+            table.style.display = "none"; // إخفاء الجدول إذا كانت القيمة غير صحيحة
+            tbody.innerHTML = ""; // تفريغ الأسطر
             return;
           }
     
-          // تحديث عداد المرفقات
-          attachmentCounter++;
+          table.style.display = "table"; // إظهار الجدول
+          tbody.innerHTML = ""; // تفريغ الأسطر قبل إنشاء الأسطر الجديدة
     
-          // إنشاء صف جديد
-          const tbody = document.getElementById("attachments-body");
-          const newRow = document.createElement("tr");
+          for (let i = 1; i <= count; i++) {
+            const row = document.createElement("tr");
     
-          // رقم المرفق
-          const numberCell = document.createElement("td");
-          numberCell.textContent = attachmentCounter;
-          newRow.appendChild(numberCell);
+            // رقم القسط
+            const installmentNumberCell = document.createElement("td");
+            installmentNumberCell.textContent = i;
+            row.appendChild(installmentNumberCell);
     
-          // اسم الملف
-          const fileCell = document.createElement("td");
-          fileCell.textContent = file.name;
-          newRow.appendChild(fileCell);
+            // تاريخ الاستحقاق
+            const dueDateCell = document.createElement("td");
+            const dueDateInput = document.createElement("input");
+            dueDateInput.type = "date";
+            dueDateInput.className = "form-control";
+            dueDateCell.appendChild(dueDateInput);
+            row.appendChild(dueDateCell);
     
-          // عمود الإجراءات
-          const actionsCell = document.createElement("td");
-          actionsCell.className = "text-center";
+            // القيمة
+            const amountCell = document.createElement("td");
+            const amountInput = document.createElement("input");
+            amountInput.type = "number";
+            amountInput.className = "form-control";
+            amountInput.placeholder = "أدخل القيمة";
+            amountInput.min = "0";
+            amountCell.appendChild(amountInput);
+            row.appendChild(amountCell);
     
-          // زر حذف
-          const deleteButton = document.createElement("button");
-          deleteButton.className = "btn btn-danger btn-sm";
-          deleteButton.textContent = "حذف";
-          deleteButton.addEventListener("click", () => {
-            newRow.remove(); // حذف الصف
-            alert(`تم حذف المرفق: ${file.name}`);
-          });
-          actionsCell.appendChild(deleteButton);
-    
-          newRow.appendChild(actionsCell);
-          tbody.appendChild(newRow);
-    
-          // تفريغ حقل اختيار الملف
-          fileInput.value = '';
-          alert("تمت إضافة المرفق بنجاح.");
+            tbody.appendChild(row);
+          }
         });
-      });
-    </script>
+      </script>
     
     
     
