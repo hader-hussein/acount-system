@@ -448,7 +448,7 @@ box-shadow: 0 -0.125rem 0.25rem rgba(165, 163, 174, 0.3);
 }
 .alert{
   display: flex;
-  top: 20%;
+  top: 1%;
   position: absolute !important;
   z-index: 10000;
  
