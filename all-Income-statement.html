@@ -580,8 +580,7 @@
         <div class="layout-page">
           <!-- Content wrapper -->
           <div class="content-wrapper">
-            
-            <!-- Menu -->
+           <!-- Menu -->
           <aside id="layout-menu"
           class="nav-sidebar layout-menu-horizontal menu-horizontal menu bg-menu-theme flex-grow-0">
           <div class="container-xxl d-flex h-100">
@@ -970,71 +969,52 @@
                 <div class="card-body p-1 card-widget-separator">
                   <div class="row mx-0 d-flex flex-wrap  justify-content-between  mb-3 align-items-center pt-2">
                     <div class="col col-md-8 col-12  mb-md-4 mb-2 ">
-                      <strong class="py-md-3 px-md-3 text-title-hadeer text-tilte-b"><span class="text-muted">
-                        كشف الأرصدة 
-    
-                      </span>
-                      </strong>
-                    </div>
-                    <div class="col text-end">
-                      <a href="Statement-balances.html" class="btn btn-primary waves-effect waves-light btn-add"> <i class="ti-xs me-1 ti ti-plus me-1"></i>  اضافة</a>
-    
-                    </div>
-                  </div>
-      
-                
+
+                        <strong class="py-md-3 px-md-3 text-title-hadeer text-tilte-b"><span class="text-muted">
+                          القائمه الداخل
+
+                        </span>
+                        </strong>
+                      </div>
+                      <div class="col text-end">
+                        <a href="Income-statement.html" class="btn btn-primary waves-effect waves-light btn-add"> <i class="ti-xs me-1 ti ti-plus me-1"></i>  اضافة</a>
+
+                       </div>
+                   </div>
                 </div>
               </div>
               <div class="card comonent-hader-top component-button p-2 mt-4">
                 
                      <!---->
-                   <div class="card-datatable table-responsive text-nowrap tabel-all">
-                     <table class="table  table-bordered">
+                   <div class="card-datatable table-responsive  text-nowrap tabel-all">
+                     <table class="table table-bordered">
                        <thead>
-            
                          <tr class="text-center">
-                          <th rowspan="2">  اسم الحساب</th>
-                          <th colspan="2">الرصيد الافتتاحى</th>
-                          <th colspan="2">الفترة الحالية</th>
-                          <th colspan="2"> الرصيد</th>
+                           <th colspan="4">     اجمالى المصروفات</th>
+
                          </tr>
                          <tr class="text-center">
-                           <th>مدين</th>
-                           <th>دائن</th>
-                           <th>مدين</th>
-                           <th>دائن</th>
-                           <th>مدين</th>
-                           <th>دائن</th>
-
+                          <th>مجموع اسم الحساب</th>
+                          <th>بالفترة</th>
+                          <th>Accumulated</th>
+                          <th>معدل الإنجاز %</th>
                          </tr>
                        </thead>
                        <tbody class="text-center">
                          <tr>
                            <td>
-                            <a class="item-balance" href="Inquiry-general-ledger.html">المصروفات الادراية والعمومية</a>
+                            <a class="item-balance" href="Statement-balances.html">المصروفات الادراية والعمومية</a>
                           </td>
                            <td> 
                              27.814.12
                            </td>
                            <td> 27-814.12- </td>
                             <td>100.00</td>
-                            <td>100.00</td>
-                            <td>100.00</td>
-                            <td>100.00</td>
+                            
                          </tr>
                         
                        </tbody>
-                       <tfoot class="text-center">
-                           <tr class="fw-bold">
-                             <td>الاجمالى31-12-2024</td>
-                             <td>0.00</td>
-                             <td>0.00</td>
-                             <td>1,552,427.92	</td>
-                             <td>1,552,427.92	</td>
-                             <td>1,552,427.92	</td>
-                             <td>1,552,427.92	</td>
-                           </tr>
-                       </tfoot>
+                      
                      </table>
                    </div> 
 
@@ -1161,58 +1141,7 @@
      <script src="./assets/kendo.all.min.js"></script>
     <script src="./assets/vendor/js/upload.js"></script>
 
-    <script>
-      $(document).ready(function () {
-        function initializeDropDownTree(selector) {
-          $(selector).each(function () {
-            if (!$(this).data("kendoDropDownTree")) {
-              $(this).kendoDropDownTree({
-                placeholder: "Select ...",
-                filter: "startswith",
-                dataSource: [
-                  {
-                    text: "Furniture",
-                    expanded: true,
-                    items: [
-                      { text: "Tables & Chairs" },
-                      { text: "Sofas" },
-                      { text: "Occasional Furniture" },
-                    ],
-                  },
-                  {
-                    text: "Decor",
-                    expanded: true,
-                    items: [
-                      { text: "Bed Linen" },
-                      { text: "Curtains & Blinds" },
-                      { text: "Carpets" },
-                    ],
-                  },
-                ],
-                select: function (e) {
-                  var dataItem = this.dataItem(e.node); // الحصول على العنصر المحدد
-  
-                  // منع اختيار العناصر التي تحتوي على عناصر فرعية
-                  if (dataItem.hasChildren) {
-                    e.preventDefault(); // منع اختيار العنصر الرئيسي
-                    alert(
-                      "لا يمكنك اختيار العناصر الرئيسية، يرجى اختيار عنصر فرعي."
-                    );
-                  }
-                },
-              });
-            }
-          });
-        }
-  
-        // Initialize DropDownTree for existing elements
-        initializeDropDownTree(".dropdowntree");
-        initializeDropDownTree(".dropdowntree-tow");
-  
-       
-      });
-    </script>
-  
+ 
 
   </body>
 </html>

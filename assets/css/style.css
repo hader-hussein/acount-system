@@ -827,7 +827,7 @@ content: "" !important;
   filter: saturate(500%) contrast(800%) brightness(500%) invert(123%) sepia(97%) hue-rotate(190deg);
 }
 .start-tour{
-  position: absolute;
+  position: fixed;
   top:50%
 }
 [dir="rtl"] .start-tour{
@@ -837,4 +837,18 @@ left: 0px;
 [dir="ltr"] .start-tour{
 
   right: 0px;
+  }
+  .scrollable-c{
+    overflow: auto !important;
+  }
+  .scrollable-c::-webkit-scrollbar{
+    width: 0px;
+  }
+  .dropdown-notifications-list a .ti{
+    color: rgb(var(--theme-color))!important;
+  }
+  .nav-tabs.widget-nav-tabs .nav-link.active h6 ,
+  .nav-tabs.widget-nav-tabs .nav-link.active i
+  {
+    color: #fff !important;
   }

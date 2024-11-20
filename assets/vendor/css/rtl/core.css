@@ -18844,14 +18844,18 @@ html:not(.layout-menu-fixed) .menu-inner-shadow {
 .layout-navbar .navbar-dropdown.dropdown-notifications .dropdown-notifications-list .dropdown-notifications-item.marked-as-read .dropdown-notifications-read span {
   background-color: #a8aaae;
 }
-.layout-navbar .navbar-dropdown.dropdown-notifications .dropdown-notifications-list .dropdown-notifications-item:not(.marked-as-read) .dropdown-notifications-archive {
+.layout-navbar .navbar-dropdown.dropdown-notifications .dropdown-notifications-list .dropdown-notifications-item:not(.marked-as-read) .dropdown-notifications-archive,
+.dropdown-notifications-list .dropdown-notifications-item .dropdown-notifications-archive
+{
   visibility: hidden;
 }
 .layout-navbar .navbar-dropdown.dropdown-notifications .dropdown-notifications-list .dropdown-notifications-item:hover.marked-as-read .dropdown-notifications-read,
 .layout-navbar .navbar-dropdown.dropdown-notifications .dropdown-notifications-list .dropdown-notifications-item:hover.marked-as-read .dropdown-notifications-archive {
   visibility: visible;
 }
-.layout-navbar .navbar-dropdown.dropdown-notifications .dropdown-notifications-list .dropdown-notifications-item:hover:not(.marked-as-read) .dropdown-notifications-archive {
+.layout-navbar .navbar-dropdown.dropdown-notifications .dropdown-notifications-list .dropdown-notifications-item:hover:not(.marked-as-read) .dropdown-notifications-archive,
+.dropdown-notifications-list .dropdown-notifications-item:hover .dropdown-notifications-archive
+{
   visibility: visible;
 }
 .layout-navbar .navbar-dropdown.dropdown-shortcuts .dropdown-shortcuts-list {
@@ -24179,4 +24183,6 @@ a.bg-vimeo:hover, a.bg-vimeo:focus {
 .form-control,.form-select,.select2 ,.select2-selection__rendered{
   box-shadow: 0px 2px 6px #dbdade inset;
 } 
- 
+.layout-navbar .navbar-dropdown.dropdown-notifications .dropdown-notifications-list, .scrollable-c {
+  max-height: 24.08rem;
+}

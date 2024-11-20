@@ -980,7 +980,7 @@
                               <img class="w-100" src="./assets/img/icons/question.png" alt="question">
                            </div>
                            <div class="col-md-10">
-                                <form class="row component-form pt-2 align-items-end" action="" id="createModal">
+                                <form class="row component-form g-2 pt-2 align-items-end" action="" id="createModal">
                                   <div class="col-12 col-md-6 col-lg-4 mb-3">
                                     <label class="form-label" for="basic-default-date">
                                         من تاريخ
@@ -1046,7 +1046,7 @@
                                         
                                       </select>
                                   </div>
-                                  <div class="col-12 col-md-6 col-lg-4 mb-3">
+                                  <div class="col-12 col-md-6 col-lg-3 mb-3">
                                     <div>
                                       <label class="form-label" for="flexCheckChecked4">
                                         القيم الصفرية غير مسموح بها
@@ -1055,7 +1055,7 @@
                                     </div>
                                    
                                   </div>
-                                  <div class="col-12 col-md-6 col-lg-4 mb-3">
+                                  <div class="col-12 col-md-6 col-lg-2 mb-3">
                                     
                                     <div>
                                       <label class="form-label" for="flexCheckChecked5">
@@ -1064,7 +1064,7 @@
                                       <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked5">
                                     </div>
                                   </div>
-                                  <div class="col-12 col-md-6 col-lg-4 mb-3">
+                                  <div class="col-12 col-md-6 col-lg-3 mb-3">
                                     
                                     <div>
                                       <label class="form-label" for="flexCheckChecked6">
@@ -1073,7 +1073,7 @@
                                       <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked6">
                                     </div>
                                   </div>
-                                    <div class="col-12 col-md-6 col-lg-6 mb-3 ">
+                                    <div class="col-12 col-md-6 col-lg-3 mb-3 ">
                                       <div class="d-flex justify-content-between">
                                         <div class="form-check">
                                           <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
@@ -1091,10 +1091,10 @@
                                      
                                     </div>
                                   <div>
-                                    <button type="submit"  class="btn btn-primary text-white mx-md-2 mb-2">  عرض <i class="ti-xs me-1 ti ti-eye-check me-1"></i></button>
-                                    <a type="button"  class="btn btn-secondary mb-2" href="">   بى داى اف <i class="fa-solid fa-file-pdf"></i></a>
-                                    <a type="button"  class="btn btn-secondary mb-2 " href="">     اكسيل شيت <i class="fa-solid fa-file-excel"></i></a>
-                                    <a type="button"  class="btn btn-secondary mb-2" href="./Print/Trial-balance.html">      طباعة <i class="fa-solid fa-print"></i></a>
+                                    <a href="all-Trial-balance.html" class="btn btn-primary text-white mx-md-2 mb-2 mx-2">  عرض <i class="ti-xs me-1 ti ti-eye-check me-1"></i></a>
+                                    <a type="button"  class="btn btn-secondary mb-2 mx-2" href="">   بى داى اف <i class="fa-solid fa-file-pdf"></i></a>
+                                    <a type="button"  class="btn btn-secondary mb-2 mx-2" href="">     اكسيل شيت <i class="fa-solid fa-file-excel"></i></a>
+                                    <a type="button"  class="btn btn-secondary mb-2 mx-2" href="./Print/Trial-balance.html">      طباعة <i class="fa-solid fa-print"></i></a>
 
 
                                   </div>
@@ -1107,50 +1107,7 @@
                   </div>
                 </div>
               </div>
-              <div class="card comonent-hader-top component-button p-2 mt-4">
-                
-                     <!---->
-                   <div class="card-datatable  table-responsive text-nowrap tabel-all">
-                     <table class="table table-bordered">
-                       <thead class="text-center">
-                         <tr class="text-center">
-                           <th>  #</th>
-                           <th>     اسم الحساب</th>
-                           <th>      ماقبلة/مدين</th>
-
-                           <th>   ماقبلة/ دائن</th>
-
-                           <th>    الفترة الحالية/ مدين</th>
-                           <th>     الفترة الحالية / دائن</th>
-                           <th>      الرصيد/ مدين</th>
-                           <th>      الرصيد / دائن</th>
-                           
-
-                         </tr>
-                       </thead>
-                       <tbody class="text-center">
-                         <tr>
-                           <td>
-                          1
-                           </td>
-                           <td> 1-1-2024 </td>
-                           <td>
-                           
-                           </td>
-                           <td>admin@yahoo.com</td>
-                           <td>مدير النظام</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            
-                         </tr>
-                        
-                       </tbody>
-                      
-                     </table>
-                   </div> 
-
-               </div>
+             
              
               
              <!---->
@@ -1324,22 +1281,7 @@
        
       });
     </script>
-    <script>
-        $(document).ready(function() {
-  // إخفاء comonent-hader-top عند تحميل الصفحة
-  $('.component-button').hide();
-
-  // عند الضغط على زر "حفظ" داخل الـ Modal
-  $('#createModal .btn-primary').click(function(event) {
-    event.preventDefault(); // منع إعادة تحميل الصفحة
-
-    // إظهار comonent-hader-top
-    $('.component-button').show();
-    
-  });
-});
-
-    </script>
+   
 
   </body>
 </html>

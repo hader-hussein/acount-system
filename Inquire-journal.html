@@ -969,7 +969,7 @@
               <div class="card comonent-hader-top">
                 <div class="card-body py-2 px-md-2 px-2 card-widget-separator">
                   <strong class="py-md-3 px-md-3 text-title-hadeer text-tilte-b"><span class="text-muted">
-                   الاستعلام عن قيود اليومية
+                   الاستعلام عن قيود
 
                   </span>
                   </strong>
@@ -980,207 +980,107 @@
                               <img class="w-100" src="./assets/img/icons/question.png" alt="question">
                            </div>
                            <div class="col-md-10 px-0 px-md-1">
-                                <form class="row component-form pt-2 align-items-end" action="" id="createModal">
-                                  <div class="col-12 col-md-6 col-lg-4 mb-3">
-                                    <label class="form-label" for="basic-default-fullname">
-                                      مرجع السند</label>
-                                    <input type="text" class="form-control" id="basic-default-fullname" placeholder=" مرجع السند">
-                                  </div>
-                                  
-                                  <div class="col-12  col-md-6  col-lg-4 mb-3">
-                                    <label for="From-account" class="form-label">  نوع الحركة</label>
-                                    
-                                      <select id="From-account" class="select2 form-select" data-allow-clear="true">
-                                        <option value="AK">    ايداع بنكى</option>
-                                        <option value="HI">تحويل بنكى</option>
-                                        <option value="CA">قيد يومية</option>
-                                        <option value="NV">مشتريات</option>
-                                        <option value="OR">مبيعات</option>
-                                    
-                                      </select>
-                                  </div>
-                                  <div class="col-12 col-md-6 col-lg-4 mb-3">
-                                    <label class="form-label" for="basic-default-date">
-                                        من تاريخ
+                            <form class="row component-form pt-2 g-2 align-items-end" id="createModal">
+                              <div class="col-12 col-md-12 col-lg-12 mb-2">
+                                <div class="row mx-0 row-cols-md-3 row-cols-1">
+                                  <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
+                                    <label class="form-check-label" for="flexRadioDefault1">
+                                      الاستعلام عن القيود اليومية
                                     </label>
-                                    <input type="date" class="form-control" id="basic-default-date">
                                   </div>
-                                  <div class="col-12 col-md-6 col-lg-4 mb-3">
-                                    <label class="form-label" for="from-default-date">
-                                        الى تاريخ
+                                  <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                                    <label class="form-check-label" for="flexRadioDefault2">
+                                      قايمة القيود
                                     </label>
-                                    <input type="date" class="form-control" id="from-default-date">
                                   </div>
-                                  <div class="col-12 col-md-6   col-lg-4 mb-3">
-                                    <label for="From-account-user" class="form-label">  المستخدمين </label>
-                                    
-                                      <select id="From-account-user" class="select2 form-select" data-allow-clear="true">
-                                        <option value="AK">    كل المستخدمين</option>
-                                        <option value="HI"> المدير</option>
-                                        <option value="CA"> admin</option>
-                                        
-                                      </select>
-                                  </div>
-                                  <div class="col-12  col-md-6  col-lg-4 mb-3">
-                                    <label for="From-account-branh" class="form-label">  الفرع </label>
-                                    
-                                      <select id="From-account-branh" class="select2 form-select" data-allow-clear="true">
-                                        <option value="AK">    كل الفروع</option>
-                                        <option value="HI"> شارع الجمعية الخالدية</option>
-                                        <option value="CA"> شارع الجمعية فرع المروج</option>
-                                        
-                                      </select>
-                                  </div>
-                                  <div class="col-12 col-md-6 col-lg-6 mb-3">
-                                    <label class="form-label" for="flexCheckChecked4">
-                                      إظهار الحركات المغلقة 
+                                  <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
+                                    <label class="form-check-label" for="flexRadioDefault3">
+                                      مراجعه ملخص القيود
                                     </label>
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
                                   </div>
-                                  <div class="col-12 col-lg-12 mb-3">
-                                    <label class="form-label" for="basic-default-text">          البيان:</label>
-                                    <textarea class="form-control" id="basic-default-text" rows="2"> </textarea>     
-                                  
-                                  </div>
-                                  <div>
-                                    <button type="submit"  class="btn btn-primary text-white mx-2">  بحث</button>
-                                    <a type="button"  class="btn btn-secondary" href="all-Inquire-journal.html">  عرض الكل</a>
-
-                                  </div>
-          
-                                </form>
+                                </div>
+                              </div>
+                            
+                              <!-- Fields -->
+                              <div class="col-12 col-md-6 col-lg-4 mb-2 filter-group" data-group="daily-journal">
+                                <label class="form-label" for="basic-default-fullname">مرجع السند</label>
+                                <input type="text" class="form-control" id="basic-default-fullname" placeholder="مرجع السند">
+                              </div>
+                              <div class="col-12 col-md-6 col-lg-2 mb-2 filter-group" data-group="daily-journal general-list summary-review">
+                                <label class="form-label" for="basic-default-date">من تاريخ</label>
+                                <input type="date" class="form-control" id="basic-default-date">
+                              </div>
+                              <div class="col-12 col-md-6 col-lg-2 mb-2 filter-group" data-group="daily-journal general-list summary-review">
+                                <label class="form-label" for="basic-date">الى تاريخ</label>
+                                <input type="date" class="form-control" id="basic-date">
+                              </div>
+                              <div class="col-12 col-md-6 col-lg-4 mb-2 filter-group" data-group="daily-journal general-list">
+                                <label for="From-account" class="form-label">نوع الحركة</label>
+                                <select id="From-account" class="select2 form-select" data-allow-clear="true">
+                                  <option value="AK">ايداع بنكى</option>
+                                  <option value="HI">تحويل بنكى</option>
+                                  <option value="CA">قيد يومية</option>
+                                  <option value="NV">مشتريات</option>
+                                  <option value="OR">مبيعات</option>
+                                </select>
+                              </div>
+                              <div class="col-12 col-md-6 col-lg-4 mb-2 filter-group" data-group="daily-journal">
+                                <label for="From-account-user" class="form-label">المستخدمين</label>
+                                <select id="From-account-user" class="select2 form-select" data-allow-clear="true">
+                                  <option value="AK">كل المستخدمين</option>
+                                  <option value="HI">المدير</option>
+                                  <option value="CA">admin</option>
+                                </select>
+                              </div>
+                              <div class="col-12 col-md-6 col-lg-4 mb-2 filter-group" data-group="daily-journal">
+                                <label for="From-account-branh" class="form-label">الفرع</label>
+                                <select id="From-account-branh" class="select2 form-select" data-allow-clear="true">
+                                  <option value="AK">كل الفروع</option>
+                                  <option value="HI">شارع الجمعية الخالدية</option>
+                                  <option value="CA">شارع الجمعية فرع المروج</option>
+                                </select>
+                              </div>
+                              <div class="col-12 col-md-6 col-lg-4 mb-2 filter-group" data-group="general-list summary-review">
+                                <label for="side" class="form-label">الجهة</label>
+                                <select id="side" class="select2 form-select" data-allow-clear="true">
+                                  <option value="AK">طباعه</option>
+                                  <option value="HI">ارسال عبر الاميل</option>
+                                  <option value="CA">اكسل شيت</option>
+                                  <option value="CA">pdf</option>
+                                </select>
+                              </div>
+                              <div class="col-12 col-md-6 col-lg-4 mb-2 filter-group" data-group="summary-review">
+                                <label for="select-branh" class="form-label">مركز التكلفة</label>
+                                <select id="select-branh" class="select2 form-select" data-allow-clear="true">
+                                  <option value="AK">اختر مركز التكلفة</option>
+                                  <option value="HI">شركة الجمعية فرع الخالدية</option>
+                                  <option value="CA">شركة الجمعية فرع المروج</option>
+                                </select>
+                              </div>
+                              <div class="col-12 col-md-6 col-lg-4 mb-2 filter-group" data-group="daily-journal">
+                                <label class="form-label" for="flexCheckChecked4">إظهار الحركات المغلقة</label>
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
+                              </div>
+                              <div class="col-12 col-lg-12 mb-2 filter-group" data-group="daily-journal general-list summary-review">
+                                <label class="form-label" for="basic-default-text">البيان</label>
+                                <textarea class="form-control" id="basic-default-text" rows="2"></textarea>
+                              </div>
+                            
+                              <div>
+                                <button type="submit" class="btn btn-primary text-white mx-2">بحث</button>
+                                <a type="button" class="btn btn-secondary" href="all-Inquire-journal.html">عرض الكل</a>
+                              </div>
+                            </form>
+                            
                            </div>
                         </div>
                          
                       </div>
                   </div>
-                  <div class="container px-0">
-                    قائمة القيود اليومية
-                    <div class="row mx-0 align-items-center">
-                      <div class="col-md-6">
-                        <img class="m-auto d-flex" src="./assets/img/img-nav/bank-sta.jfif" alt="bank">
-                      </div>
-                      <div class="col-md-6 px-0 px-md-1">
-                        <form class="row  mx-0 component-form pt-4 justify-content-md-start justify-content-center align-items-end">
-                          
-                          <div class="col-12 col-lg-6 mb-3">
-                            <label class="form-label" for="basic-default-phone">          من:</label>
-                            <input type="date" id="basic-default-phone" class="form-control phone-mask" placeholder="     1-1-2024">
-                          </div>
-                          <div class="col-12 col-lg-6 mb-3">
-                            <label class="form-label" for="basic-default-phone">           الى:</label>
-                            <input type="date" id="basic-default-phone" class="form-control phone-mask" placeholder="     1-1-2024">
-                          </div>
-                          <div class="col-12 col-lg-6 mb-3">
-                            <label for="selectBasic" class="form-label">   
-                               نوع الحركة
-                            </label>
-                            
-                              <select id="selectBasic" class="select2 form-select" data-allow-clear="true">
-                                <option value="AK">     بنك الراجحى</option>
-                                <option value="HI">بنك الوطنى</option>
-                                <option value="CA">بنك الرياض</option>
-                               
-                            
-                              </select>
-                        
-                          </div>
-                          <div class="col-12 col-lg-6 mb-3">
-                            <label for="side" class="form-label">   
-                              الجهة
-                            </label>
-                            
-                              <select id="side" class="select2 form-select" data-allow-clear="true">
-                                <option value="AK">     طباعه </option>
-                                <option value="HI"> ارسال عبر الاميل</option>
-                                <option value="CA">اكسل شيت </option>
-                                <option value="CA"> pdf </option>
-    
-                            
-                              </select>
-                        
-                          </div>
-                          <div class="col-12 col-lg-12 mb-3">
-                            <label class="form-label" for="basic-default-text">          التعلقيات:</label>
-                            <textarea class="form-control" id="basic-default-text" rows="2"> </textarea>     
-                          
-                          </div>
-                          <div class="col-12 text-center mb-3">
-                            <button type="submit" class="btn btn-primary  waves-effect waves-light" title="تحديث"id="saveButton">
-                              <i class="ti ti-pencil  fs-4"></i> 
-                                        اظهار قائمة القيود اليومية
-                             </button>
-    
-                          </div>
-                        </form>
-                      </div>
-                  </div>
-                  </div>
-                  <div class="card comonent-hader-top p-2 mt-4 px-3">
-                    <div class="container px-0">
-                      مراجعة ملخص  القيود
-                      <div class="row mx-0 align-items-center">
-                        <div class="col-md-6">
-                          <img class="m-auto d-flex w-50" src="./assets/img/img-nav/Review-summary-report-img.jpg" alt="bank">
-                        </div>
-                        <div class="col-md-6 px-0 px-md-1">
-                          <form class="row  mx-0 component-form pt-4 justify-content-md-start justify-content-center align-items-end">
-                           
-                            <div class="col-12 col-lg-6 col-md-6  mb-3">
-                              <label class="form-label" for="basic-default-phone">          من:</label>
-                              <input type="date" id="basic-default-phone" class="form-control phone-mask" placeholder="     1-1-2024">
-                            </div>
-                            <div class="col-12 col-lg-6 col-md-6  mb-3">
-                              <label class="form-label" for="basic-default-phone">           الى:</label>
-                              <input type="date" id="basic-default-phone" class="form-control phone-mask" placeholder="     1-1-2024">
-                            </div>
-                            <div class="col-12 col-lg-6 col-md-6 mb-3">
-                              <label for="select-branh" class="form-label">   
-                                مركز التكلفة
-                              </label>
-                              
-                                <select id="select-branh" class="select2 form-select" data-allow-clear="true">
-                                  <option value="AK">       اختر مركز التكلفة</option>
-                                  <option value="HI"> شركة الجمعية فرع الخالدية</option>
-                                  <option value="CA"> شركة الجمعية فرع المروج</option>
-                                 
-                              
-                                </select>
-                          
-                            </div>
-                            <div class="col-12 col-lg-6 col-md-12  mb-3">
-                              <label for="The-side" class="form-label">   
-                                 الجهة
-                              </label>
-                              
-                                <select id="The-side" class="select2 form-select" data-allow-clear="true">
-                                  <option value="AK">     اختر  الجهه </option>
-                                  <option value="HI"> ارسال عبر الاميل</option>
-                                  <option value="CA">اكسل شيت </option>
-                                  <option value="CA"> pdf </option>
-      
-                              
-                                </select>
-                          
-                            </div>
-                            <div class="col-12 col-lg-12 mb-3">
-                              <label class="form-label" for="basic-default-text">          التعلقيات:</label>
-                              <textarea class="form-control" id="basic-default-text" rows="2"> </textarea>     
-                            
-                            </div>
-                            <div class="col-12 text-center mb-3">
-                              <button type="submit" class="btn btn-primary  waves-effect waves-light" title="تحديث"id="saveButton">
-                                <i class="ti ti-pencil  fs-4"></i> 
-                                   اظهار  مراجعة ملخص القيود
-                               </button>
-      
-                            </div>
-                          </form>
-                        </div>
-                    </div>
-                    </div>
-                      
-                  </div>
+                 
                 </div>
               </div>
               <div class="card comonent-hader-top component-button p-2 mt-4">
@@ -1425,6 +1325,46 @@
     $('.component-button').show();
     
   });
+});
+
+    </script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+  const radioButtons = document.querySelectorAll('input[name="flexRadioDefault"]');
+  const fields = document.querySelectorAll('.filter-group');
+
+  radioButtons.forEach(radio => {
+    radio.addEventListener('change', () => {
+      const selectedValue = radio.id;
+
+      // Hide all fields initially
+      fields.forEach(field => {
+        field.style.display = 'none';
+      });
+
+      // Show fields based on selected radio button
+      if (selectedValue === 'flexRadioDefault1') {
+        showFields(['daily-journal']);
+      } else if (selectedValue === 'flexRadioDefault2') {
+        showFields(['general-list']);
+      } else if (selectedValue === 'flexRadioDefault3') {
+        showFields(['summary-review']);
+      }
+    });
+  });
+
+  function showFields(groups) {
+    fields.forEach(field => {
+      groups.forEach(group => {
+        if (field.dataset.group.includes(group)) {
+          field.style.display = 'block';
+        }
+      });
+    });
+  }
+
+  // Trigger the default radio button on page load
+  document.querySelector('input[name="flexRadioDefault"]:checked').dispatchEvent(new Event('change'));
 });
 
     </script>

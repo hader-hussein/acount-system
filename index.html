@@ -37,6 +37,11 @@
   <link rel="stylesheet" href="./assets/vendor/libs/typeahead-js/typeahead.css" />
   <link rel="stylesheet" href="./assets/vendor/libs/apex-charts/apex-charts.css" />
   <link rel="stylesheet" href="./assets/vendor/libs/shepherd/shepherd.css" /><!--Tour-->
+  <link rel="stylesheet" href="./assets/vendor/libs/datatables-bs5/datatables.bootstrap5.css" />
+  <link rel="stylesheet" href="./assets/vendor/libs/datatables-responsive-bs5/responsive.bootstrap5.css" />
+  <link rel="stylesheet" href="./assets/vendor/libs/datatables-checkboxes-jquery/datatables.checkboxes.css" />
+
+  <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2024.3.1108/styles/kendo.default-v2.min.css">
 
 
   <link rel="stylesheet" href="./assets/vendor/css/rtl/theme-default.css" class="template-customizer-theme-css" />
@@ -48,6 +53,30 @@
   <script src="./assets/vendor/js/template-customizer.js"></script>
   <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
   <script src="./assets/js/config.js"></script>
+  <style>
+    .scrollable-c {
+    overflow: auto !important;
+}
+#appBar{
+  display: flex;
+ margin: 0px 20px;
+ justify-content: center;
+}
+#appBar button{
+  
+  margin: 0px 4px;
+  border-bottom: 1px solid #656464;
+}
+#expensesChart {
+            width: 100%;    /* عرض الحاوية 100% */
+            height: 400px;  /* تحديد ارتفاع ثابت للحاوية */
+        }
+        /* فئة active لتغيير لون الزر */
+#appBar button.active {
+    background-color: rgb(var(--theme-color))  !important;  /* اللون الخلفي */
+    color: white !important;                /* لون النص */
+}
+  </style>
 </head>
 
 <body>
@@ -911,7 +940,985 @@
           <!-- Content -->
 
           <div class="container-xxl flex-grow-1 container-p-y content-admin pt-lg-5 mt-md-4">
-            <h4 class="py-3 mb-4 text-title-hadeer"><span class="text-muted fw-medium"></span> Dashboard</h4>
+            <div class="card comonent-hader-top">
+              <h4 class="py-2 mb-2 px-2 text-title-hadeer"><span class="text-muted fw-medium"></span> Dashboard</h4>
+
+            </div>
+            <div class=" comonent-hader-top  mt-2">
+               <div class="row mx-0">
+                 <!--الايرادات  -->
+                 <div class="col-lg-6 mb-4">
+                  <div class="card h-100">
+                    <div class="card-header d-flex justify-content-between">
+                      <h5 class="card-title m-0 me-2">
+                        الإيراد– المصروف – الأرباح 
+                        (الشهرى)
+                      </h5>
+                    
+                    </div>
+                    <div class="card-body pb-0">
+                      <ul class="nav nav-tabs widget-nav-tabs pb-3 gap-4 mx-1 d-flex flex-nowrap" role="tablist">
+                        <li class="nav-item">
+                          <a
+                            href="javascript:void(0);"
+                            class="nav-link btn active d-flex flex-column align-items-center justify-content-center"
+                            role="tab"
+                            data-bs-toggle="tab"
+                            data-bs-target="#navs-orders-id"
+                            aria-controls="navs-orders-id"
+                            aria-selected="true">
+                            <div class="badge bg-label-secondary rounded p-2">
+                              <i class="ti ti-shopping-cart ti-sm"></i>
+                            </div>
+                            <h6 class="tab-widget-title mb-0 mt-2">الايراد</h6>
+                          </a>
+                        </li>
+                        <li class="nav-item">
+                          <a
+                            href="javascript:void(0);"
+                            class="nav-link btn d-flex flex-column align-items-center justify-content-center"
+                            role="tab"
+                            data-bs-toggle="tab"
+                            data-bs-target="#navs-sales-id"
+                            aria-controls="navs-sales-id"
+                            aria-selected="false">
+                            <div class="badge bg-label-secondary rounded p-2">
+                              <i class="ti ti-chart-bar ti-sm"></i>
+                            </div>
+                            <h6 class="tab-widget-title mb-0 mt-2">المصروف</h6>
+                          </a>
+                        </li>
+                        <li class="nav-item">
+                          <a
+                            href="javascript:void(0);"
+                            class="nav-link btn d-flex flex-column align-items-center justify-content-center"
+                            role="tab"
+                            data-bs-toggle="tab"
+                            data-bs-target="#navs-profit-id"
+                            aria-controls="navs-profit-id"
+                            aria-selected="false">
+                            <div class="badge bg-label-secondary rounded p-2">
+                              <i class="ti ti-currency-dollar ti-sm"></i>
+                            </div>
+                            <h6 class="tab-widget-title mb-0 mt-2">الارباح</h6>
+                          </a>
+                        </li>
+                       
+                       
+                      </ul>
+                      <div class="tab-content p-0 ms-0 ms-sm-2">
+                        <div class="tab-pane fade show active" id="navs-orders-id" role="tabpanel">
+                          <div id="earningReportsTabsOrders"></div>
+                        </div>
+                        <div class="tab-pane fade" id="navs-sales-id" role="tabpanel">
+                          <div id="earningReportsTabsSales"></div>
+                        </div>
+                        <div class="tab-pane fade" id="navs-profit-id" role="tabpanel">
+                          <div id="earningReportsTabsProfit"></div>
+                        </div>
+                      
+                      </div>
+                    </div>
+                  </div>
+                 </div>
+                   <!--الايرادات  -->
+                   <div class="col-lg-6 mb-4">
+                    <div class="card h-100">
+                      <div class="card-header d-flex justify-content-between">
+                        <h5 class="card-title m-0 me-2">
+                          الإيراد– المصروف  
+                          (اليومى)
+                        </h5>
+                       
+                      </div>
+                      <div class="card-body pb-0">
+                        <div>
+                          <button class="btn" id="filterToday">اليوم</button>
+                          <button class="btn" id="filterThisWeek">الأسبوع الحالي</button>
+                          <button class="btn" id="filterThisMonth">الشهر الحالي</button>
+                      </div>
+                        <div id="chart"></div>
+
+
+                      </div>
+                    </div>
+                   </div>
+                    <!--الايرادات  -->
+                 <div class="col-lg-6 mb-4">
+                  <div class="card h-100">
+                    <div class="card-header d-flex justify-content-between">
+                      <h5 class="card-title m-0 me-2">
+                        الإيراد– المصروف – الأرباح 
+                        (الكلى)
+                      </h5>
+                    
+                    </div>
+                    <div class="card-body pb-0">
+                      <ul class="nav nav-tabs widget-nav-tabs pb-3 gap-4 mx-1 d-flex flex-nowrap" role="tablist">
+                        <li class="nav-item">
+                          <a
+                            href="javascript:void(0);"
+                            class="nav-link btn active d-flex flex-column align-items-center justify-content-center"
+                            role="tab"
+                            data-bs-toggle="tab"
+                            data-bs-target="#navs-orders-id1"
+                            aria-controls="navs-orders-id"
+                            aria-selected="true">
+                            <div class="badge bg-label-secondary rounded p-2">
+                              <i class="ti ti-shopping-cart ti-sm"></i>
+                            </div>
+                            <h6 class="tab-widget-title mb-0 mt-2">الايراد</h6>
+                          </a>
+                        </li>
+                        <li class="nav-item">
+                          <a
+                            href="javascript:void(0);"
+                            class="nav-link btn d-flex flex-column align-items-center justify-content-center"
+                            role="tab"
+                            data-bs-toggle="tab"
+                            data-bs-target="#navs-sales-id1"
+                            aria-controls="navs-sales-id"
+                            aria-selected="false">
+                            <div class="badge bg-label-secondary rounded p-2">
+                              <i class="ti ti-chart-bar ti-sm"></i>
+                            </div>
+                            <h6 class="tab-widget-title mb-0 mt-2">المصروف</h6>
+                          </a>
+                        </li>
+                        <li class="nav-item">
+                          <a
+                            href="javascript:void(0);"
+                            class="nav-link btn d-flex flex-column align-items-center justify-content-center"
+                            role="tab"
+                            data-bs-toggle="tab"
+                            data-bs-target="#navs-profit-id1"
+                            aria-controls="navs-profit-id"
+                            aria-selected="false">
+                            <div class="badge bg-label-secondary rounded p-2">
+                              <i class="ti ti-currency-dollar ti-sm"></i>
+                            </div>
+                            <h6 class="tab-widget-title mb-0 mt-2">الارباح</h6>
+                          </a>
+                        </li>
+                       
+                       
+                      </ul>
+                      <div class="tab-content p-0 ms-0 ms-sm-2">
+                        <div class="tab-pane fade show active" id="navs-orders-id1" role="tabpanel">
+                          <div id="earningReportsTabsOrders"></div>
+                        </div>
+                        <div class="tab-pane fade" id="navs-sales-id1" role="tabpanel">
+                          <div id="earningReportsTabsSales"></div>
+                        </div>
+                        <div class="tab-pane fade" id="navs-profit-id1" role="tabpanel">
+                          <div id="earningReportsTabsProfit"></div>
+                        </div>
+                      
+                      </div>
+                    </div>
+                  </div>
+                 </div>
+                 <!--الايرادات حسب النوع-->
+                 <div class="col-lg-6 mb-4">
+                  <div class="card h-100">
+                    <div class="card-header d-flex justify-content-between">
+                      <h5 class="card-title m-0 me-2">
+                      الايرادات حسب النوع
+
+                      </h5>
+                    
+                    </div>
+                    <div class="card-body pb-0">
+                      <ul class="p-0 m-0">
+                        <li class="d-flex mb-3">
+                          <div class="avatar flex-shrink-0 me-3">
+                            <span class="avatar-initial rounded bg-label-primary"
+                              ><i class="ti ti-chart-pie-2 ti-sm"></i
+                            ></span>
+                          </div>
+                          <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                            <div class="me-2">
+                              <h6 class="mb-0">Net Profit</h6>
+                              <small class="text-muted">12.4k Sales</small>
+                            </div>
+                            <div class="user-progress d-flex align-items-center gap-3">
+                              <small>$1,619</small>
+                              <div class="d-flex align-items-center gap-1">
+                                <i class="ti ti-chevron-up text-success"></i>
+                                <small class="text-muted">18.6%</small>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="d-flex mb-3">
+                          <div class="avatar flex-shrink-0 me-3">
+                            <span class="avatar-initial rounded bg-label-success"
+                              ><i class="ti ti-currency-dollar ti-sm"></i
+                            ></span>
+                          </div>
+                          <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                            <div class="me-2">
+                              <h6 class="mb-0">Total Income</h6>
+                              <small class="text-muted">Sales, Affiliation</small>
+                            </div>
+                            <div class="user-progress d-flex align-items-center gap-3">
+                              <small>$3,571</small>
+                              <div class="d-flex align-items-center gap-1">
+                                <i class="ti ti-chevron-up text-success"></i>
+                                <small class="text-muted">39.6%</small>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="d-flex mb-3">
+                          <div class="avatar flex-shrink-0 me-3">
+                            <span class="avatar-initial rounded bg-label-secondary"
+                              ><i class="ti ti-credit-card ti-sm"></i
+                            ></span>
+                          </div>
+                          <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                            <div class="me-2">
+                              <h6 class="mb-0">Total Expenses</h6>
+                              <small class="text-muted">ADVT, Marketing</small>
+                            </div>
+                            <div class="user-progress d-flex align-items-center gap-3">
+                              <small>$430</small>
+                              <div class="d-flex align-items-center gap-1">
+                                <i class="ti ti-chevron-up text-success"></i>
+                                <small class="text-muted">52.8%</small>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                      <div id="reportBarChart"></div><!--apexcharts.js-->
+                    </div>
+                  </div>
+                 </div>
+                   <!--المصروفات حسب النوع-->
+                   <div class="col-lg-6 mb-4">
+                    <div class="card h-100">
+                      <div class="card-header d-flex justify-content-between">
+                        <h5 class="card-title m-0 me-2">
+                        المصروفات حسب النوع
+  
+                        </h5>
+                      
+                      </div>
+                      <div id="appBar"></div>
+
+                        <div id="expensesChart"></div>
+                    </div>
+                   </div>
+                <!--حسابات المتابعه-->
+                <div class="col-lg-6 mb-4">
+                  <div class="card h-100">
+                    <div class="card-header d-flex justify-content-between">
+                      <h5 class="card-title m-0 me-2">
+                        حسابات المتابعة 
+
+                      </h5>
+                    
+                    </div>
+                    <div class=" table-responsive text-nowrap tabel-all">
+                      <table class="table ">
+                        <thead>
+                          <tr class="text-center">
+                            <th>#</th>
+                            <th>اسم الحساب</th>
+                            <th>المبلغ</th>
+                            <th>تاريخ الاستحقاق</th>
+                            <th>الحالة</th>
+                            <th>ملاحظات</th>
+                          
+                          </tr>
+                        </thead>
+                        <tbody class="text-center">
+                          <tr>
+                            <td>
+                             #
+                            </td>
+                            <td> admin </td>
+                            <td>100000</td>
+                            <td>17-11-2024</td>
+                            <td></td>
+                            <td> </td>
+                           
+                            
+                          </tr>
+                          
+                        </tbody>
+      
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <!--المطالبات-->
+                <div class="col-lg-6 mb-4">
+                  <div class="card h-100">
+                    <div class="card-header d-flex justify-content-between">
+                      <h5 class="card-title m-0 me-2">
+                        المطالبات 
+
+                      </h5>
+                    
+                    </div>
+                    <div class=" table-responsive text-nowrap tabel-all">
+                      <table class="table ">
+                        <thead>
+                          <tr class="text-center">
+                            <th>  #</th>
+                            <th>  المشروع</th>
+                            <th>  المرحلة</th>
+                            <th>  التاريخ</th>
+                            <th>   الحساب</th>
+                            <th>  المديونية </th>
+                            <th>   قيمة المطالبة</th>
+                            <th>  الوصف</th>
+                            <th> العملة </th>
+      
+                            <th> الضريبة</th>
+                            <th> الاجمالى</th>
+                            <th> تاريخ الاستحقاق</th>
+                            <th>  الحالة</th>
+                          
+                          </tr>
+                        </thead>
+                        <tbody class="text-center">
+                          <tr>
+                            <td>
+                              admin
+                            </td>
+                            <td> admin </td>
+                            <td>17-11-2024</td>
+                            <td>17-11-2024</td>
+                            <td>1000</td>
+                            <td> 20000</td>
+                            <td>
+                            </td>
+      
+                            <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td>  <span class="badge bg-label-danger">متاخر</span></td>
+                              
+                           
+                            
+                          </tr>
+                          <tr>
+                            <td>
+                              admin
+                            </td>
+                            <td> admin </td>
+                            <td>17-11-2024</td>
+                            <td>17-11-2024</td>
+                            <td>1000</td>
+                            <td> 20000</td>
+                            <td>
+                            </td>
+      
+                            <td> </td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td>  <span class="badge bg-label-secondary">مستحق</span></td>
+                              
+                           
+                         
+                          </tr>
+                          <tr>
+                            <td>
+                              admin
+                            </td>
+                            <td> admin </td>
+                            <td>17-11-2024</td>
+                            <td>17-11-2024</td>
+                            <td>1000</td>
+                            <td> 20000</td>
+                            <td>
+                            </td>
+      
+                            <td>   
+                            </td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td>  <span class="badge bg-label-success">مدفوع</span></td>
+                           
+                          
+                          </tr>
+                          <tr>
+                            <td>
+                              admin
+                            </td>
+                            <td> admin </td>
+                            <td>17-11-2024</td>
+                            <td>17-11-2024</td>
+                            <td>1000</td>
+                            <td> 20000</td>
+                            <td>
+                            </td>
+      
+                            <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td>  <span class="badge bg-label-secondary">مستحق</span></td>
+                              
+                            
+                         
+                          </tr>
+                          <tr>
+                            <td>
+                              admin
+                            </td>
+                            <td> admin </td>
+                            <td>17-11-2024</td>
+                            <td>17-11-2024</td>
+                            <td>1000</td>
+                            <td> 20000</td>
+                            <td>
+                            </td>
+      
+                            <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td>  <span class="badge bg-label-success">مدفوع</span></td>
+                              
+                            
+                          
+                          </tr>
+                        </tbody>
+      
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                 <!--الطلبيات-->
+                 <div class="col-lg-6 mb-4">
+                  <div class="card h-100">
+                    <div class="card-header d-flex justify-content-between">
+                      <h5 class="card-title m-0 me-2">
+                        الطلبيات 
+
+                      </h5>
+                    
+                    </div>
+                    <div class="card-datatable table-responsive text-nowrap tabel-all">
+                      <table class="table">
+                        <thead>
+                          <tr class="text-center">
+                            <th>#</th>
+                            <th>التاريخ</th>
+                            <th>اسم الشخص</th>
+                            <th>الوصف</th>
+                            <th>نوع الطلب</th>
+                            <th>الحالة</th>
+                            <th>تحويل إلى</th>
+                         
+      
+                          </tr>
+                        </thead>
+                        <tbody class="text-center">
+                          <tr>
+                            <td>
+                            #
+                            </td>
+                            <td>2024-11-18</td>
+                            <td>محمد أحمد</td>
+                            <td>استفسار عن الخدمة</td>
+                            <td>استفسار</td>
+                            <td>قيد المراجعة</td>
+                            <td>مدير خدمة العملاء</td>
+                           
+      
+                           
+                          </tr>
+      
+                        </tbody>
+      
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                 <!--المهام-->
+                 <div class="col-lg-6 mb-4">
+                  <div class="card h-100">
+                    <div class="card-header d-flex justify-content-between">
+                      <h5 class="card-title m-0 me-2">
+                        المهام 
+
+                      </h5>
+                      <div class="dropdown">
+                        <button class="btn p-0" type="button" id="teamMemberList" data-bs-toggle="dropdown"
+                          aria-haspopup="true" aria-expanded="false">
+                          <i class="ti ti-dots-vertical ti-sm text-muted"></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="teamMemberList">
+                          <a class="dropdown-item" href="javascript:void(0);">Download</a>
+                          <a class="dropdown-item" href="javascript:void(0);">Refresh</a>
+                          <a class="dropdown-item" href="javascript:void(0);">Share</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="table-responsive">
+                      <table class="table table-borderless border-top table-left">
+                        <thead class="border-bottom table-light">
+                          <tr>
+                            <th>CARD</th>
+                            <th>DATE</th>
+                            <th>STATUS</th>
+                            <th>TREND</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>
+                              <div class="d-flex justify-content-start align-items-center">
+                                <div class="me-3">
+                                  <img src="../../assets/img/icons/payments/visa-img.png" alt="Visa" height="30" />
+                                </div>
+                                <div class="d-flex flex-column">
+                                  <p class="mb-0 fw-medium">*4230</p>
+                                  <small class="text-muted">Credit</small>
+                                </div>
+                              </div>
+                            </td>
+                            <td>
+                              <div class="d-flex flex-column">
+                                <p class="mb-0 fw-medium">Sent</p>
+                                <small class="text-muted text-nowrap">17 Mar 2022</small>
+                              </div>
+                            </td>
+                            <td><span class="badge bg-label-success">Verified</span></td>
+                            <td>
+                              <p class="mb-0 fw-medium">+$1,678</p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div class="d-flex justify-content-start align-items-center">
+                                <div class="me-3">
+                                  <img src="../../assets/img/icons/payments/master-card-img.png" alt="Visa"
+                                    height="30" />
+                                </div>
+                                <div class="d-flex flex-column">
+                                  <p class="mb-0 fw-medium">*5578</p>
+                                  <small class="text-muted">Credit</small>
+                                </div>
+                              </div>
+                            </td>
+                            <td>
+                              <div class="d-flex flex-column">
+                                <p class="mb-0 fw-medium">Sent</p>
+                                <small class="text-muted text-nowrap">12 Feb 2022</small>
+                              </div>
+                            </td>
+                            <td><span class="badge bg-label-danger">Rejected</span></td>
+                            <td>
+                              <p class="mb-0 fw-medium">-$839</p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div class="d-flex justify-content-start align-items-center">
+                                <div class="me-3">
+                                  <img src="../../assets/img/icons/payments/american-express-img.png" alt="Visa"
+                                    height="30" />
+                                </div>
+                                <div class="d-flex flex-column">
+                                  <p class="mb-0 fw-medium">*4567</p>
+                                  <small class="text-muted">Credit</small>
+                                </div>
+                              </div>
+                            </td>
+                            <td>
+                              <div class="d-flex flex-column">
+                                <p class="mb-0 fw-medium">Sent</p>
+                                <small class="text-muted text-nowrap">28 Feb 2022</small>
+                              </div>
+                            </td>
+                            <td><span class="badge bg-label-success">Verified</span></td>
+                            <td>
+                              <p class="mb-0 fw-medium">+$435</p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div class="d-flex justify-content-start align-items-center">
+                                <div class="me-3">
+                                  <img src="../../assets/img/icons/payments/visa-img.png" alt="Visa" height="30" />
+                                </div>
+                                <div class="d-flex flex-column">
+                                  <p class="mb-0 fw-medium">*5699</p>
+                                  <small class="text-muted">Credit</small>
+                                </div>
+                              </div>
+                            </td>
+                            <td>
+                              <div class="d-flex flex-column">
+                                <p class="mb-0 fw-medium">Sent</p>
+                                <small class="text-muted text-nowrap">8 Jan 2022</small>
+                              </div>
+                            </td>
+                            <td><span class="badge bg-label-secondary">Pending</span></td>
+                            <td>
+                              <p class="mb-0 fw-medium">+$2,345</p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div class="d-flex justify-content-start align-items-center">
+                                <div class="me-3">
+                                  <img src="../../assets/img/icons/payments/visa-img.png" alt="Visa" height="30" />
+                                </div>
+                                <div class="d-flex flex-column">
+                                  <p class="mb-0 fw-medium">*5699</p>
+                                  <small class="text-muted">Credit</small>
+                                </div>
+                              </div>
+                            </td>
+                            <td>
+                              <div class="d-flex flex-column">
+                                <p class="mb-0 fw-medium">Sent</p>
+                                <small class="text-muted text-nowrap">8 Jan 2022</small>
+                              </div>
+                            </td>
+                            <td><span class="badge bg-label-danger">Rejected</span></td>
+                            <td>
+                              <p class="mb-0 fw-medium">-$234</p>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <!--المهام-->
+                <!--الاشعارات-->
+                <div class="col-lg-6 mb-4 order-md-0">
+                  <div class="card comonent-hader-top h-100">
+                    <div class="card-header">
+                      <div class="card-title mb-0">
+                        <h5 class="mb-0"> الاشعارات </h5>
+                      </div>
+                    </div>
+
+                    <div class="card-body">
+                      <div class="dropdown-notifications-list scrollable-container scrollable-c ps ps__rtl">
+                        <ul class="list-group list-group-flush">
+                          <li class="list-group-item list-group-item-action dropdown-notifications-item">
+                            <div class="d-flex">
+                              <div class="flex-shrink-0 me-3">
+                                <div class="avatar">
+                                  <img src="./assets/img/avatars/1.png" alt class=" rounded-circle"
+                                    style="width: 38px;height: 38px;" />
+                                </div>
+                              </div>
+                              <div class="flex-grow-1">
+                                <h6 class="mb-1">Congratulation Lettie 🎉</h6>
+                                <p class="mb-0">Won the monthly best seller gold badge</p>
+                                <small class="text-muted">1h ago</small>
+                              </div>
+                              <div class="flex-shrink-0 dropdown-notifications-actions">
+                                <a href="javascript:void(0)" class="dropdown-notifications-read"><span
+                                    class="badge badge-dot"></span></a>
+                                <a href="javascript:void(0)" class="dropdown-notifications-archive"><span
+                                    class="ti ti-x"></span></a>
+                              </div>
+                            </div>
+                          </li>
+                          <li class="list-group-item list-group-item-action dropdown-notifications-item">
+                            <div class="d-flex">
+                              <div class="flex-shrink-0 me-3">
+                                <div class="avatar">
+                                  <span class="avatar-initial rounded-circle bg-label-danger">CF</span>
+                                </div>
+                              </div>
+                              <div class="flex-grow-1">
+                                <h6 class="mb-1">Charles Franklin</h6>
+                                <p class="mb-0">Accepted your connection</p>
+                                <small class="text-muted">12hr ago</small>
+                              </div>
+                              <div class="flex-shrink-0 dropdown-notifications-actions">
+                                <a href="javascript:void(0)" class="dropdown-notifications-read"><span
+                                    class="badge badge-dot"></span></a>
+                                <a href="javascript:void(0)" class="dropdown-notifications-archive"><span
+                                    class="ti ti-x"></span></a>
+                              </div>
+                            </div>
+                          </li>
+                          <li class="list-group-item list-group-item-action dropdown-notifications-item marked-as-read">
+                            <div class="d-flex">
+                              <div class="flex-shrink-0 me-3">
+                                <div class="avatar">
+                                  <img src="./assets/img/avatars/2.png" alt class=" rounded-circle"
+                                    style="width: 38px;height: 38px;" />
+                                </div>
+                              </div>
+                              <div class="flex-grow-1">
+                                <h6 class="mb-1">New Message ✉️</h6>
+                                <p class="mb-0">You have new message from Natalie</p>
+                                <small class="text-muted">1h ago</small>
+                              </div>
+                              <div class="flex-shrink-0 dropdown-notifications-actions">
+                                <a href="javascript:void(0)" class="dropdown-notifications-read"><span
+                                    class="badge badge-dot"></span></a>
+                                <a href="javascript:void(0)" class="dropdown-notifications-archive"><span
+                                    class="ti ti-x"></span></a>
+                              </div>
+                            </div>
+                          </li>
+                          <li class="list-group-item list-group-item-action dropdown-notifications-item">
+                            <div class="d-flex">
+                              <div class="flex-shrink-0 me-3">
+                                <div class="avatar">
+                                  <span class="avatar-initial rounded-circle bg-label-success"><i
+                                      class="ti ti-shopping-cart"></i></span>
+                                </div>
+                              </div>
+                              <div class="flex-grow-1">
+                                <h6 class="mb-1">Whoo! You have new order 🛒</h6>
+                                <p class="mb-0">ACME Inc. made new order $1,154</p>
+                                <small class="text-muted">1 day ago</small>
+                              </div>
+                              <div class="flex-shrink-0 dropdown-notifications-actions">
+                                <a href="javascript:void(0)" class="dropdown-notifications-read"><span
+                                    class="badge badge-dot"></span></a>
+                                <a href="javascript:void(0)" class="dropdown-notifications-archive"><span
+                                    class="ti ti-x"></span></a>
+                              </div>
+                            </div>
+                          </li>
+                          <li class="list-group-item list-group-item-action dropdown-notifications-item marked-as-read">
+                            <div class="d-flex">
+                              <div class="flex-shrink-0 me-3">
+                                <div class="avatar">
+                                  <img src="./assets/img/avatars/9.png" alt class="rounded-circle"
+                                    style="width: 38px;height: 38px;" />
+                                </div>
+                              </div>
+                              <div class="flex-grow-1">
+                                <h6 class="mb-1">Application has been approved 🚀</h6>
+                                <p class="mb-0">Your ABC project application has been approved.</p>
+                                <small class="text-muted">2 days ago</small>
+                              </div>
+                              <div class="flex-shrink-0 dropdown-notifications-actions">
+                                <a href="javascript:void(0)" class="dropdown-notifications-read"><span
+                                    class="badge badge-dot"></span></a>
+                                <a href="javascript:void(0)" class="dropdown-notifications-archive"><span
+                                    class="ti ti-x"></span></a>
+                              </div>
+                            </div>
+                          </li>
+                          <li class="list-group-item list-group-item-action dropdown-notifications-item marked-as-read">
+                            <div class="d-flex">
+                              <div class="flex-shrink-0 me-3">
+                                <div class="avatar">
+                                  <span class="avatar-initial rounded-circle bg-label-success"><i
+                                      class="ti ti-chart-pie"></i></span>
+                                </div>
+                              </div>
+                              <div class="flex-grow-1">
+                                <h6 class="mb-1">Monthly report is generated</h6>
+                                <p class="mb-0">July monthly financial report is generated</p>
+                                <small class="text-muted">3 days ago</small>
+                              </div>
+                              <div class="flex-shrink-0 dropdown-notifications-actions">
+                                <a href="javascript:void(0)" class="dropdown-notifications-read"><span
+                                    class="badge badge-dot"></span></a>
+                                <a href="javascript:void(0)" class="dropdown-notifications-archive"><span
+                                    class="ti ti-x"></span></a>
+                              </div>
+                            </div>
+                          </li>
+                          <li class="list-group-item list-group-item-action dropdown-notifications-item marked-as-read">
+                            <div class="d-flex">
+                              <div class="flex-shrink-0 me-3">
+                                <div class="avatar">
+                                  <img src="./assets/img/avatars/5.png" alt class="rounded-circle"
+                                    style="width: 38px;height: 38px;" />
+                                </div>
+                              </div>
+                              <div class="flex-grow-1">
+                                <h6 class="mb-1">Send connection request</h6>
+                                <p class="mb-0">Peter sent you connection request</p>
+                                <small class="text-muted">4 days ago</small>
+                              </div>
+                              <div class="flex-shrink-0 dropdown-notifications-actions">
+                                <a href="javascript:void(0)" class="dropdown-notifications-read"><span
+                                    class="badge badge-dot"></span></a>
+                                <a href="javascript:void(0)" class="dropdown-notifications-archive"><span
+                                    class="ti ti-x"></span></a>
+                              </div>
+                            </div>
+                          </li>
+                          <li class="list-group-item list-group-item-action dropdown-notifications-item">
+                            <div class="d-flex">
+                              <div class="flex-shrink-0 me-3">
+                                <div class="avatar">
+                                  <img src="./assets/img/avatars/6.png" alt class="rounded-circle"
+                                    style="width: 38px;height: 38px;" />
+                                </div>
+                              </div>
+                              <div class="flex-grow-1">
+                                <h6 class="mb-1">New message from Jane</h6>
+                                <p class="mb-0">Your have new message from Jane</p>
+                                <small class="text-muted">5 days ago</small>
+                              </div>
+                              <div class="flex-shrink-0 dropdown-notifications-actions">
+                                <a href="javascript:void(0)" class="dropdown-notifications-read"><span
+                                    class="badge badge-dot"></span></a>
+                                <a href="javascript:void(0)" class="dropdown-notifications-archive"><span
+                                    class="ti ti-x"></span></a>
+                              </div>
+                            </div>
+                          </li>
+                          <li class="list-group-item list-group-item-action dropdown-notifications-item marked-as-read">
+                            <div class="d-flex">
+                              <div class="flex-shrink-0 me-3">
+                                <div class="avatar">
+                                  <span class="avatar-initial rounded-circle bg-label-warning"><i
+                                      class="ti ti-alert-triangle"></i></span>
+                                </div>
+                              </div>
+                              <div class="flex-grow-1">
+                                <h6 class="mb-1">CPU is running high</h6>
+                                <p class="mb-0">CPU Utilization Percent is currently at 88.63%,</p>
+                                <small class="text-muted">5 days ago</small>
+                              </div>
+                              <div class="flex-shrink-0 dropdown-notifications-actions">
+                                <a href="javascript:void(0)" class="dropdown-notifications-read"><span
+                                    class="badge badge-dot"></span></a>
+                                <a href="javascript:void(0)" class="dropdown-notifications-archive"><span
+                                    class="ti ti-x"></span></a>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+
+
+                    </div>
+
+                  </div>
+                </div>
+                 <!--المشاريع -->
+                 <div class="col-lg-12 mb-4">
+                  <div class="card">
+                    <div class="card-datatable table-responsive">
+                      <table class="datatables-projects table border-top table-left">
+                        <thead class="table-light text-left">
+                          <tr>
+                            <th></th>
+                            <th></th>
+                            <th>Name</th>
+                            <th>Leader</th>
+                            <th>Team</th>
+                            <th class="w-px-200">Status</th>
+                            <th>Action</th>
+                          </tr>
+                        </thead>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                 <!--الأقساط المستحقة -->
+                 <div class="col-lg-6 mb-4">
+                  <div class="card h-100">
+                    <div class="card-header d-flex justify-content-between">
+                      <h5 class="card-title m-0 me-2">
+                        الأقساط المستحقة 
+
+                      </h5>
+                    
+                    </div>
+                    <div class="card-datatable table-responsive text-nowrap tabel-all">
+                      <table class="table">
+                        <thead>
+                          <tr class="text-center">
+                            <th>#</th>
+                            <th>اسم العميل</th>
+                            <th>المبلغ</th>
+                            <th>تاريخ الاستحقاق</th>
+                            <th>الحالة</th>
+                            <th>إجراءات</th>
+                         
+      
+                          </tr>
+                        </thead>
+                        <tbody class="text-center">
+                          <tr>
+                            <td>
+                            #
+                            </td>
+                       
+                            <td>محمد أحمد</td>
+                            <td> 1000</td>
+                            <td>22/11/2024</td>
+                            <td>قيد المراجعة</td>
+                            <td></td>
+                           
+      
+                           
+                          </tr>
+      
+                        </tbody>
+      
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <!--الأقساط المتاخرة -->
+                <div class="col-lg-6 mb-4">
+                  <div class="card h-100">
+                    <div class="card-header d-flex justify-content-between">
+                      <h5 class="card-title m-0 me-2">
+                        الأقساط المتاخرة 
+
+                      </h5>
+                    
+                    </div>
+                    <div class="card-datatable table-responsive text-nowrap tabel-all">
+                      <table class="table">
+                        <thead>
+                          <tr class="text-center">
+                            <th>#</th>
+                            <th>اسم العميل</th>
+                            <th>المبلغ</th>
+                            <th>تاريخ الاستحقاق</th>
+                            <th>إجراءات</th>
+                         
+      
+                          </tr>
+                        </thead>
+                        <tbody class="text-center">
+                          <tr>
+                            <td>
+                            #
+                            </td>
+                       
+                            <td>محمد أحمد</td>
+                            <td> 1000</td>
+                            <td>22/11/2024</td>
+                            <td>قيد المراجعة</td>
+                          </tr>
+      
+                        </tbody>
+      
+                      </table>
+                    </div>
+                  </div>
+                </div>
+               </div>
+            </div>
           </div>
           <div class="tour-card start-tour">
               <button class="btn btn-primary" id="shepherd-example">Start tour</button>
@@ -1009,6 +2016,8 @@
   <!-- Vendors JS -->
   <script src="./assets/vendor/js/dropdown-hover.js"></script>
   <script src="./assets/vendor/js/mega-dropdown.js"></script>
+  <script src="./assets/vendor/libs/datatables-bs5/datatables-bootstrap5.js"></script>
+
   <!-- Vendors JS -->
   <script src="./assets/vendor/libs/apex-charts/apexcharts.js"></script>
 <!-- Vendors JS -->
@@ -1023,13 +2032,193 @@
   <script src="./assets/js/ui-navbar.js"></script>
   <!-- Page JS -->
   <script src="./assets/js/charts-apex.js"></script>
-  <script src="./assets/js/cards-advance.js"></script>
 
+  <script src="./assets/js/cards-advance.js"></script>
+  <script src="./assets/kendo.all.min.js"></script>
   <script src="./assets/vendor/js/chart.js"></script>
   <script src="./assets/js/dashboards-crm.js"></script>
-  <script src="./assets/dropdowntree.js"></script>
   <script src="./assets/vendor/js/upload.js"></script>
+  <script src="./assets/js/dashboards-analytics.js"></script><!--13-11-2024--><!--خاص بداتا-->
+
   <script src="./assets/js/extended-ui-tour.js"></script><!--tour-->
+  <script>
+    $(document).ready(function () {
+        // بيانات المصروفات
+        const expensesData = [
+            { type: "الإيجارات", amount: 1000 },
+            { type: "الرواتب", amount: 5000 },
+            { type: "المرافق", amount: 800 },
+            { type: "الإعلانات", amount: 1200 },
+            { type: "الصيانة", amount: 400 }
+        ];
+
+        // إعداد AppBar
+        $("#appBar").kendoAppBar({
+            items: [
+                { type: "spacer" },
+                { type: "content", template: '<button class="btn" id="filterAll">الكل</button>' },
+                { type: "content", template: '<button class="btn" id="filterRent">الإيجارات</button>' },
+                { type: "content", template: '<button class="btn" id="filterSalaries">الرواتب</button>' },
+                { type: "content", template: '<button class="btn" id="filterUtilities">المرافق</button>' }
+            ]
+        });
+
+        // تحديث الرسم البياني بناءً على النوع المحدد
+        function updateChart(filter) {
+            const filteredData = filter
+                ? expensesData.filter(item => item.type === filter)
+                : expensesData;
+
+            $("#expensesChart").kendoChart({
+                title: {
+                    text: filter ? `مصروفات ${filter}` : "جميع المصروفات"
+                },
+                series: [{
+                    type: "pie",
+                    data: filteredData.map(item => ({
+                        category: item.type,
+                        value: item.amount
+                    }))
+                }],
+                tooltip: {
+                    visible: true,
+                    format: "{0} USD"
+                },
+                width: "100%",  // عرض الحاوية بالكامل
+                height: "100%"  // ارتفاع الحاوية بالكامل
+            });
+        }
+
+        // إعادة قياس الرسم البياني عند تغيير حجم النافذة
+        $(window).resize(function() {
+            var chart = $("#expensesChart").data("kendoChart");
+            if (chart) {
+                chart.resize();  // إعادة قياس الرسم البياني
+            }
+        });
+
+        // عرض جميع البيانات في البداية
+        updateChart();
+
+        // ربط الأزرار مع الفلاتر
+        function setActiveButton(buttonId) {
+            // إزالة فئة active من جميع الأزرار
+            $(".btn").removeClass("active");
+
+            // إضافة فئة active للزر الذي تم النقر عليه
+            $(buttonId).addClass("active");
+        }
+
+        // ربط الأزرار بتغيير الرسم البياني
+        $("#filterAll").on("click", () => {
+            updateChart();
+            setActiveButton("#filterAll");
+        });
+        $("#filterRent").on("click", () => {
+            updateChart("الإيجارات");
+            setActiveButton("#filterRent");
+        });
+        $("#filterSalaries").on("click", () => {
+            updateChart("الرواتب");
+            setActiveButton("#filterSalaries");
+        });
+        $("#filterUtilities").on("click", () => {
+            updateChart("المرافق");
+            setActiveButton("#filterUtilities");
+        });
+    });
+</script>
+<script>
+
+        // بيانات الإيرادات والمصروفات اليومية
+        const dailyData = [
+            { date: "2024-11-01", revenue: 1000, expense: 800 },
+            { date: "2024-11-02", revenue: 1200, expense: 900 },
+            { date: "2024-11-03", revenue: 1500, expense: 1000 },
+            { date: "2024-11-04", revenue: 1100, expense: 950 },
+            { date: "2024-11-05", revenue: 1600, expense: 1100 }
+        ];
+
+        // دالة لتصفية البيانات حسب الفترة المحددة
+        function filterData(filter) {
+            const today = new Date();
+            const filteredData = dailyData.filter(item => {
+                const date = new Date(item.date);
+                switch (filter) {
+                    case 'today':
+                        return date.toDateString() === today.toDateString();
+                    case 'thisWeek':
+                        const startOfWeek = today.setDate(today.getDate() - today.getDay()); // بداية الأسبوع
+                        return date >= startOfWeek && date <= today;
+                    case 'thisMonth':
+                        return date.getMonth() === today.getMonth() && date.getFullYear() === today.getFullYear();
+                    default:
+                        return true; // إرجاع جميع البيانات إذا لم يكن هناك فلتر
+                }
+            });
+            return filteredData;
+        }
+
+        // إعداد الرسم البياني باستخدام ApexCharts
+        function updateChart(filteredData) {
+            const options = {
+                chart: {
+                    type: 'bar',
+                    height: 350
+                },
+                title: {
+                    text: 'الإيراد والمصروفات اليومية'
+                },
+                colors: ['#1e90ff', '#ff6347'], // ألوان الأعمدة
+                series: [{
+                    name: 'الإيرادات',
+                    data: filteredData.map(item => item.revenue)
+                }, {
+                    name: 'المصروفات',
+                    data: filteredData.map(item => item.expense)
+                }],
+                xaxis: {
+                    categories: filteredData.map(item => item.date),
+                    title: {
+                        text: 'التاريخ'
+                    }
+                },
+                yaxis: {
+                    title: {
+                        text: 'القيمة (USD)'
+                    }
+                },
+                tooltip: {
+                    y: {
+                        formatter: (val) => `${val} USD`
+                    }
+                }
+            };
+
+            const chart = new ApexCharts(document.querySelector("#chart"), options);
+            chart.render();
+        }
+
+        // تطبيق الفلاتر عند الضغط على الأزرار
+        document.getElementById("filterToday").addEventListener("click", function () {
+            const filteredData = filterData('today');
+            updateChart(filteredData);
+        });
+
+        document.getElementById("filterThisWeek").addEventListener("click", function () {
+            const filteredData = filterData('thisWeek');
+            updateChart(filteredData);
+        });
+
+        document.getElementById("filterThisMonth").addEventListener("click", function () {
+            const filteredData = filterData('thisMonth');
+            updateChart(filteredData);
+        });
+
+        // عرض جميع البيانات في البداية
+        updateChart(dailyData);
+    </script>
+
 </body>
 
 </html>
