@@ -917,44 +917,24 @@
 
           <div class="container-xxl flex-grow-1 container-p-y content-admin pt-lg-5 mt-md-4">
             <div class="card comonent-hader-top">
-              <div class="card-body py-2 px-md-2 px-2 card-widget-separator">
-                <strong class="py-md-3 px-md-3 text-title-hadeer text-tilte-b"><span class="text-muted">
-                   العملات
-
-                  </span>
-                </strong>
-                <div class="row justify-content-center mx-0 py-2 px-md-3 px-2">
-                  <!--item-->
-                  <div class="col-xl-6 col-md-8 col-lg-6  mb-md-0 mb-2">
-                    <div class="card h-100">
-                      <div class="user-seting" data-bs-toggle="modal" data-bs-target="#createModal">
-                        <div class="row h-100">
-                          <div class="col-sm-5 col-12">
-                            <div class="d-flex align-items-center h-100 justify-content-center mt-sm-0">
-                              <img src="./assets/img/illustrations/add.png" class="img-fluid mt-sm-4 mt-md-0"
-                                alt="add-new-roles" width="83">
-                            </div>
-                          </div>
-                          <div class="col-sm-7 col-12">
-                            <div class="card-body text-sm-end text-center ps-sm-0">
-                              <button data-bs-toggle="modal" data-bs-target="#createModal"
-                                class="btn btn-primary mb-2 text-nowrap add-new-role waves-effect waves-light">
-                                اضافة
-                              </button>
-
-                              <p class="mb-0 mt-1">
-                                Add currencies . data , if it does not exist
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                    </div>
+              <div class="card-body  card-widget-separator">
+                <div class="row mx-0 align-items-center">
+                  <div class="col-md-8">
+                    <strong class="py-md-3 px-md-3 text-title-hadeer text-tilte-b"><span class="text-muted">
+                      العملات
+   
+                     </span>
+                   </strong>
                   </div>
-                  <!--item-->
-
+                  <div class="col-md-4 text-end">
+                    <button data-bs-toggle="modal" data-bs-target="#createModal"
+                    class="btn btn-primary  text-nowrap add-new-role waves-effect waves-light">
+                    <i class="fa-solid fa-plus px-2"></i> اضافة
+                  </button>
+                  </div>
                 </div>
+              
+               
               </div>
             </div>
             <div class="card comonent-hader-top p-2 mt-4">
@@ -1024,32 +1004,32 @@
                   </div>
                   <div class="modal-body">
                     <form
-                      class="row component-form pt-2 justify-content-md-start justify-content-center align-items-end">
-                      <div class="col-12  col-md-6 col-lg-4  mb-3">
+                      class="row component-form pt-2 g-2 justify-content-md-start justify-content-center align-items-end">
+                      <div class="col-12  col-md-6 col-lg-4  mb-2">
                         <label for="name-currenc" class="form-label">  الاسم المختصر للعملة </label>
 
                         <input type="text" id="name-currenc" class="form-control" placeholder="اسم المخنصر ">
 
                       </div>
-                      <div class="col-12  col-md-6 col-lg-4  mb-3">
+                      <div class="col-12  col-md-6 col-lg-4  mb-2">
                         <label for="Currency-symbol" class="form-label">رمز العملة</label>
 
                         <input type="text" id="Currency-symbol" class="form-control" placeholder="  رمز العملة">
 
                       </div>
-                      <div class="col-12  col-md-6 col-lg-4  mb-3">
+                      <div class="col-12  col-md-6 col-lg-4  mb-2">
                         <label for="Currency-name" class="form-label">اسم العملة</label>
 
                         <input type="text" id="Currency-name" class="form-control" placeholder="  اسم العملة">
 
                       </div>
-                      <div class="col-12  col-md-6 col-lg-6 mb-3">
+                      <div class="col-12  col-md-6 col-lg-6 mb-2">
                         <label for="Currency-unit" class="form-label"> اسم الوحدات الصغري للعملة</label>
 
                         <input type="text" id="Currency-unit" class="form-control" placeholder="   اسم الوحدة">
 
                       </div>
-                      <div class="col-12  col-md-6 col-lg-6  mb-3">
+                      <div class="col-12  col-md-6 col-lg-6  mb-2">
                         <label for="Currency-unit" class="form-label"> الدولة</label>
 
                         <input type="text" id="Currency-unit" class="form-control" placeholder=" الدولة ">
@@ -1079,32 +1059,32 @@
                   </div>
                   <div class="modal-body">
                     <form
-                    class="row component-form pt-2 justify-content-md-start justify-content-center align-items-end">
-                    <div class="col-12  col-md-6 col-lg-4  mb-3">
+                    class="row component-form pt-2 g-2 justify-content-md-start justify-content-center align-items-end">
+                    <div class="col-12  col-md-6 col-lg-4  mb-2">
                       <label for="name-currenc-edit" class="form-label">  الاسم المختصر للعملة </label>
 
                       <input type="text" id="name-currenc-edit" class="form-control" placeholder="اسم المخنصر ">
 
                     </div>
-                    <div class="col-12  col-md-6 col-lg-4  mb-3">
+                    <div class="col-12  col-md-6 col-lg-4  mb-2">
                       <label for="Currency-symbol-edit" class="form-label">رمز العملة</label>
 
                       <input type="text" id="Currency-symbol-edit" class="form-control" placeholder="  رمز العملة">
 
                     </div>
-                    <div class="col-12  col-md-6 col-lg-4  mb-3">
+                    <div class="col-12  col-md-6 col-lg-4  mb-2">
                       <label for="Currency-name-edit" class="form-label">اسم العملة</label>
 
                       <input type="text" id="Currency-name-edit" class="form-control" placeholder="  اسم العملة">
 
                     </div>
-                    <div class="col-12  col-md-6 col-lg-6 mb-3">
+                    <div class="col-12  col-md-6 col-lg-6 mb-2">
                       <label for="Currency-unit-edit" class="form-label"> اسم الوحدات الصغري للعملة</label>
 
                       <input type="text" id="Currency-unit-edit" class="form-control" placeholder="   اسم الوحدة">
 
                     </div>
-                    <div class="col-12  col-md-6 col-lg-6  mb-3">
+                    <div class="col-12  col-md-6 col-lg-6  mb-2">
                       <label for="Currency-unit-edit" class="form-label"> الدولة</label>
 
                       <input type="text" id="Currency-unit-edit" class="form-control" placeholder=" الدولة ">

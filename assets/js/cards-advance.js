@@ -156,6 +156,81 @@
     const barChart = new ApexCharts(reportBarChartEl, reportBarChartConfig);
     barChart.render();
   }
+// Earning Reports Bar Chart2
+  // --------------------------------------------------------------------
+  const reportBarChartEl2 = document.querySelector('#reportBarChart2'),
+    reportBarChartConfig2 = {
+      chart: {
+        height: 200,
+        type: 'bar',
+        toolbar: {
+          show: false
+        }
+      },
+      plotOptions: {
+        bar: {
+          barHeight: '60%',
+          columnWidth: '60%',
+          startingShape: 'rounded',
+          endingShape: 'rounded',
+          borderRadius: 4,
+          distributed: true
+        }
+      },
+      grid: {
+        show: false,
+        padding: {
+          top: -20,
+          bottom: 0,
+          left: -10,
+          right: -10
+        }
+      },
+      colors: [
+        config.colors_label.primary,
+        config.colors_label.primary,
+        config.colors_label.primary,
+        config.colors_label.primary,
+        config.colors.primary,
+        config.colors_label.primary,
+        config.colors_label.primary
+      ],
+      dataLabels: {
+        enabled: false
+      },
+      series: [
+        {
+          data: [40, 95, 60, 45, 90, 50, 75]
+        }
+      ],
+      legend: {
+        show: false
+      },
+      xaxis: {
+        categories: ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'],
+        axisBorder: {
+          show: false
+        },
+        axisTicks: {
+          show: false
+        },
+        labels: {
+          style: {
+            colors: labelColor,
+            fontSize: '13px'
+          }
+        }
+      },
+      yaxis: {
+        labels: {
+          show: false
+        }
+      }
+    };
+  if (typeof reportBarChartEl2 !== undefined && reportBarChartEl2 !== null) {
+    const barChart = new ApexCharts(reportBarChartEl2, reportBarChartConfig2);
+    barChart.render();
+  }
 
   // swiper loop and autoplay
   // --------------------------------------------------------------------

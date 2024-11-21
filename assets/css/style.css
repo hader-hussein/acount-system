@@ -453,13 +453,21 @@ box-shadow: 0 -0.125rem 0.25rem rgba(165, 163, 174, 0.3);
   z-index: 10000;
  
 }
+@media (min-width:1000px) {
 [dir="rtl"] .alert{
   left:40%
 }
 [dir="ltr"] .alert{
   right:40%
 }
-
+}
+@media (max-width:600px) {
+  .alert{
+    top: 8% !important;
+    padding: 9px !important;
+  }
+  
+}
 .input-groupe{
   display: grid;
   grid-template-columns: 0.25fr 1fr;
@@ -818,11 +826,14 @@ content: "" !important;
 {
   position: relative;
 }
-.col-add{
-  position: absolute;
-  top:0px;
-  left:0px
+@media (min-width:1000px) {
+  .col-add{
+    position: absolute;
+    top:0px;
+    left:0px
+  }
 }
+
 .accordion-button::after {
   filter: saturate(500%) contrast(800%) brightness(500%) invert(123%) sepia(97%) hue-rotate(190deg);
 }

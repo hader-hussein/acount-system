@@ -1253,7 +1253,7 @@
                           </div>
                         </li>
                       </ul>
-                      <div id="reportBarChart"></div><!--apexcharts.js-->
+                      <div id="reportBarChart"></div><!--cards-advance.js-->
                     </div>
                   </div>
                  </div>
@@ -1267,9 +1267,71 @@
                         </h5>
                       
                       </div>
-                      <div id="appBar"></div>
-
-                        <div id="expensesChart"></div>
+                      <div class="card-body pb-0">
+                        <ul class="p-0 m-0">
+                          <li class="d-flex mb-3">
+                            <div class="avatar flex-shrink-0 me-3">
+                              <span class="avatar-initial rounded bg-label-primary"
+                                ><i class="ti ti-chart-pie-2 ti-sm"></i
+                              ></span>
+                            </div>
+                            <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                              <div class="me-2">
+                                <h6 class="mb-0">Net Profit</h6>
+                                <small class="text-muted">12.4k Sales</small>
+                              </div>
+                              <div class="user-progress d-flex align-items-center gap-3">
+                                <small>$1,619</small>
+                                <div class="d-flex align-items-center gap-1">
+                                  <i class="ti ti-chevron-up text-success"></i>
+                                  <small class="text-muted">18.6%</small>
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                          <li class="d-flex mb-3">
+                            <div class="avatar flex-shrink-0 me-3">
+                              <span class="avatar-initial rounded bg-label-success"
+                                ><i class="ti ti-currency-dollar ti-sm"></i
+                              ></span>
+                            </div>
+                            <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                              <div class="me-2">
+                                <h6 class="mb-0">Total Income</h6>
+                                <small class="text-muted">Sales, Affiliation</small>
+                              </div>
+                              <div class="user-progress d-flex align-items-center gap-3">
+                                <small>$3,571</small>
+                                <div class="d-flex align-items-center gap-1">
+                                  <i class="ti ti-chevron-up text-success"></i>
+                                  <small class="text-muted">39.6%</small>
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                          <li class="d-flex mb-3">
+                            <div class="avatar flex-shrink-0 me-3">
+                              <span class="avatar-initial rounded bg-label-secondary"
+                                ><i class="ti ti-credit-card ti-sm"></i
+                              ></span>
+                            </div>
+                            <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                              <div class="me-2">
+                                <h6 class="mb-0">Total Expenses</h6>
+                                <small class="text-muted">ADVT, Marketing</small>
+                              </div>
+                              <div class="user-progress d-flex align-items-center gap-3">
+                                <small>$430</small>
+                                <div class="d-flex align-items-center gap-1">
+                                  <i class="ti ti-chevron-up text-success"></i>
+                                  <small class="text-muted">52.8%</small>
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                        <div id="reportBarChart2"></div><!--cards-advance.js-->
+                      </div>
                     </div>
                    </div>
                      <!--الايرادات  -->
@@ -2177,93 +2239,7 @@
   <script src="./assets/js/dashboards-analytics.js"></script><!--13-11-2024--><!--خاص بداتا-->
 
   <script src="./assets/js/extended-ui-tour.js"></script><!--tour-->
-  <script>
-    $(document).ready(function () {
-        // بيانات المصروفات
-        const expensesData = [
-            { type: "الإيجارات", amount: 1000 },
-            { type: "الرواتب", amount: 5000 },
-            { type: "المرافق", amount: 800 },
-            { type: "الإعلانات", amount: 1200 },
-            { type: "الصيانة", amount: 400 }
-        ];
 
-        // إعداد AppBar
-        $("#appBar").kendoAppBar({
-            items: [
-                { type: "spacer" },
-                { type: "content", template: '<button class="btn" id="filterAll">الكل</button>' },
-                { type: "content", template: '<button class="btn" id="filterRent">الإيجارات</button>' },
-                { type: "content", template: '<button class="btn" id="filterSalaries">الرواتب</button>' },
-                { type: "content", template: '<button class="btn" id="filterUtilities">المرافق</button>' }
-            ]
-        });
-
-        // تحديث الرسم البياني بناءً على النوع المحدد
-        function updateChart(filter) {
-            const filteredData = filter
-                ? expensesData.filter(item => item.type === filter)
-                : expensesData;
-
-            $("#expensesChart").kendoChart({
-                title: {
-                    text: filter ? `مصروفات ${filter}` : "جميع المصروفات"
-                },
-                series: [{
-                    type: "pie",
-                    data: filteredData.map(item => ({
-                        category: item.type,
-                        value: item.amount
-                    }))
-                }],
-                tooltip: {
-                    visible: true,
-                    format: "{0} USD"
-                },
-                width: "100%",  // عرض الحاوية بالكامل
-                height: "100%"  // ارتفاع الحاوية بالكامل
-            });
-        }
-
-        // إعادة قياس الرسم البياني عند تغيير حجم النافذة
-        $(window).resize(function() {
-            var chart = $("#expensesChart").data("kendoChart");
-            if (chart) {
-                chart.resize();  // إعادة قياس الرسم البياني
-            }
-        });
-
-        // عرض جميع البيانات في البداية
-        updateChart();
-
-        // ربط الأزرار مع الفلاتر
-        function setActiveButton(buttonId) {
-            // إزالة فئة active من جميع الأزرار
-            $(".btn").removeClass("active");
-
-            // إضافة فئة active للزر الذي تم النقر عليه
-            $(buttonId).addClass("active");
-        }
-
-        // ربط الأزرار بتغيير الرسم البياني
-        $("#filterAll").on("click", () => {
-            updateChart();
-            setActiveButton("#filterAll");
-        });
-        $("#filterRent").on("click", () => {
-            updateChart("الإيجارات");
-            setActiveButton("#filterRent");
-        });
-        $("#filterSalaries").on("click", () => {
-            updateChart("الرواتب");
-            setActiveButton("#filterSalaries");
-        });
-        $("#filterUtilities").on("click", () => {
-            updateChart("المرافق");
-            setActiveButton("#filterUtilities");
-        });
-    });
-</script>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
     const options = {
@@ -2294,7 +2270,7 @@ document.addEventListener("DOMContentLoaded", function () {
         plotOptions: {
             bar: {
                 horizontal: false,
-                columnWidth: '50%'
+                columnWidth: '90%'
             }
         },
         tooltip: {
