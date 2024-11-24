@@ -36,8 +36,8 @@
   <link rel="stylesheet" href="./assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
   <link rel="stylesheet" href="./assets/vendor/libs/typeahead-js/typeahead.css" />
   <link rel="stylesheet" href="./assets/vendor/libs/apex-charts/apex-charts.css" />
-  <link rel="stylesheet" href="./assets/vendor/libs/select2/select2.css" />
-  <link rel="stylesheet" href="./assets/vendor/libs/bootstrap-select/bootstrap-select.css" />
+  <link rel="stylesheet" href="./assets/vendor/libs/select2/select2.css" /><!--تابع  اى صفحة فيها select2-->
+  <link rel="stylesheet" href="./assets/vendor/libs/bootstrap-select/bootstrap-select.css" /><!--تابع  اى صفحة فيها select2-->
 
   <link href="./assets/default-ocean-blue.css" rel="stylesheet">
   <link rel="stylesheet" href="./assets/vendor/css/rtl/theme-default.css" class="template-customizer-theme-css" />
@@ -2099,8 +2099,8 @@
     <!-- Vendors JS -->
     <script src="./assets/vendor/js/dropdown-hover.js"></script>
     <script src="./assets/vendor/js/mega-dropdown.js"></script>
-    <script src="./assets/vendor/libs/select2/select2.js"></script>
-    <script src="./assets/vendor/libs/bootstrap-select/bootstrap-select.js"></script>
+    <script src="./assets/vendor/libs/select2/select2.js"></script><!--تابع  اى صفحة فيها select2-->
+    <script src="./assets/vendor/libs/bootstrap-select/bootstrap-select.js"></script><!--تابع  اى صفحة فيها select2-->
     <!-- Vendors JS -->
     <script src="./assets/vendor/libs/apex-charts/apexcharts.js"></script>
 
@@ -2116,31 +2116,10 @@
 
     <script src="./assets/vendor/js/chart.js"></script>
     <script src="./assets/js/dashboards-crm.js"></script>
-    <script src="./assets/js/forms-selects.js"></script>
+    <script src="./assets/js/forms-selects.js"></script><!--تابع  اى صفحة فيها select2-->
     <script src="./assets/kendo.all.min.js"></script>
     <script src="./assets/vendor/js/upload.js"></script>
 
-    <script>
-
-
-      $('.tabel-table').on('keydown', 'tr td', function (e) {
-        var keyCode = e.keyCode;
-        if (keyCode !== 9) return;
-
-        var $this = $(this),
-          $lastTr = $('tr:last', $('table')),
-          $lastTd = $('td:last', $lastTr);
-
-
-        if (($(e.target).closest('td')).is($lastTd)) {
-
-
-          $lastTr.after($lastTr.clone());
-
-        }
-
-      });
-    </script>
 
 </body>
 
