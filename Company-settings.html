@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="en" class="light-style layout-menu-fixed layout-compact" dir="ltr" data-theme="theme-default"
+<html lang="en" class="light-style  layout-compact" dir="ltr" data-theme="theme-default"
   data-assets-path="./assets/" data-template="horizontal-menu-template">
 
 <head>
@@ -36,8 +36,8 @@
   <link rel="stylesheet" href="./assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
   <link rel="stylesheet" href="./assets/vendor/libs/typeahead-js/typeahead.css" />
   <link rel="stylesheet" href="./assets/vendor/libs/apex-charts/apex-charts.css" />
-  <link rel="stylesheet" href="./assets/vendor/libs/select2/select2.css" />
-  <link rel="stylesheet" href="./assets/vendor/libs/bootstrap-select/bootstrap-select.css" />
+  <link rel="stylesheet" href="./assets/vendor/libs/select2/select2.css" /><!--تابع  اى صفحة فيها select2-->
+  <link rel="stylesheet" href="./assets/vendor/libs/bootstrap-select/bootstrap-select.css" /><!--تابع  اى صفحة فيها select2-->
 
   <link href="./assets/default-ocean-blue.css" rel="stylesheet" />
   <link rel="stylesheet" href="./assets/vendor/css/rtl/theme-default.css" class="template-customizer-theme-css" />
@@ -924,7 +924,7 @@
 
           <!-- Content -->
 
-          <div class="container-xxl flex-grow-1 container-p-y content-admin pt-lg-5 mt-md-4">
+          <div class="container-xxl flex-grow-1 container-p-y ">
             <div class="card comonent-hader-top">
               <div class="card-body py-2 px-md-2 px-2 pb-3 card-widget-separator">
                 <strong class="py-md-3 px-md-3 m text-title-hadeer text-tilte-b"><span class="text-muted"> اعدادت الشركة
@@ -1428,8 +1428,8 @@
   <!-- Vendors JS -->
   <script src="./assets/vendor/js/dropdown-hover.js"></script>
   <script src="./assets/vendor/js/mega-dropdown.js"></script>
-  <script src="./assets/vendor/libs/select2/select2.js"></script>
-  <script src="./assets/vendor/libs/bootstrap-select/bootstrap-select.js"></script>
+  <script src="./assets/vendor/libs/select2/select2.js"></script><!--تابع  اى صفحة فيها select2-->
+  <script src="./assets/vendor/libs/bootstrap-select/bootstrap-select.js"></script><!--تابع  اى صفحة فيها select2-->
   <!-- Vendors JS -->
   <script src="./assets/vendor/libs/apex-charts/apexcharts.js"></script>
 
@@ -1445,24 +1445,11 @@
 
   <script src="./assets/vendor/js/chart.js"></script>
   <script src="./assets/js/dashboards-crm.js"></script>
-  <script src="./assets/js/forms-selects.js"></script>
+  <script src="./assets/js/forms-selects.js"></script><!--تابع  اى صفحة فيها select2-->
   <script src="./assets/kendo.all.min.js"></script>
   <script src="./assets/vendor/js/upload.js"></script>
 
-  <script>
-    $(".tabel-table").on("keydown", "tr td", function (e) {
-      var keyCode = e.keyCode;
-      if (keyCode !== 9) return;
-
-      var $this = $(this),
-        $lastTr = $("tr:last", $("table")),
-        $lastTd = $("td:last", $lastTr);
-
-      if ($(e.target).closest("td").is($lastTd)) {
-        $lastTr.after($lastTr.clone());
-      }
-    });
-  </script>
+  
 </body>
 
 </html>
