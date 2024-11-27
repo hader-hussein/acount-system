@@ -55,7 +55,107 @@
     <script src="./assets/vendor/js/template-customizer.js"></script>
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="./assets/js/config.js"></script>
-    
+   <style>
+  .custom-select {
+    position: relative;
+    width: 100%;
+}
+
+.select-header {
+    padding: 8px 12px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    background: white;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.select-options {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    margin-top: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+.search-box {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.options-container {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.option-group {
+    border-bottom: 1px solid #eee;
+}
+
+.group-header {
+    padding: 8px 12px;
+    background: #f8f9fa;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.group-header i {
+    margin-left: 8px;
+    transition: transform 0.2s;
+}
+
+.group-items {
+    padding-right: 20px;
+    display: block;
+}
+
+.option {
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.option:hover {
+    background: #f8f9fa;
+}
+
+.group-header.closed i {
+    transform: rotate(-90deg);
+}
+
+.group-items.hide {
+    display: none;
+}
+
+
+
+.input-groupe .custom-select {
+    flex: 1;
+}
+
+/* إخفاء العناصر التي لا تطابق البحث */
+.option.hidden {
+    display: none;
+}
+
+.option-group.hidden {
+    display: none;
+}
+    </style>
   </head>
 
   <body>
@@ -1098,7 +1198,7 @@
                 </div>
               </div>
               <div class="card comonent-hader-top p-2 mt-4">
-                <form class="row component-form pt-2 g-2 justify-content-md-start justify-content-center align-items-end">
+                <form  method="post" class="row component-form pt-2 g-2 justify-content-md-start justify-content-center align-items-end">
                   <div class="col-12 col-md-6 col-lg-6 mb-2">
                     <label class="form-label" for="Account-code"> كود الحساب</label>
                     <input type="text" class="form-control" id="Account-code" disabled>
@@ -1294,17 +1394,55 @@
                     </div>
                   </div>
                   <div class="col-12 col-md-4 col-lg-3 mb-2">
-                    <label class="form-label" for="Cost-centers">    مراكز التكلفة</label>
-                    <div class="input-groupe">
-                      <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                      data-bs-target="#exampleBranch">
-                      <i class="fa-solid fa-plus"></i>
-                    </button>
-                    <input id="dropdowntree" class="dropdowntree-tow " style="padding: 0.31rem 0.875rem;" />
-
+                    <label class="form-label" for="Cost-centers">مراكز التكلفة</label>
+                    <div class="input-groupe gap-0">
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleBranch">
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+                        
+                        <div class="custom-select">
+                            <div class="select-header" id="selectHeader">
+                                <span>اختر مركز التكلفة</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="select-options" id="selectOptions">
+                                <!-- حقل البحث -->
+                                <div class="search-box">
+                                    <input type="text" id="searchInput" placeholder="بحث..." class="form-control">
+                                </div>
+                                <div class="options-container">
+                                    <div class="option-group">
+                                        <div class="group-header">
+                                          <i class="fa-solid fa-chevron-down"></i> مركز تكلفة 1
+                                        </div>
+                                        <div class="group-items show">
+                                            <div class="option" data-value="1">قسم 1</div>
+                                            <div class="option" data-value="2">سعودى 2</div>
+                                        </div>
+                                    </div>
+                                    <div class="option-group">
+                                        <div class="group-header">
+                                          <i class="fa-solid fa-chevron-down"></i> مركز تكلفة 2
+                                        </div>
+                                        <div class="group-items show">
+                                            <div class="option" data-value="3">محمد 3</div>
+                                            <div class="option" data-value="4">ايمن 4</div>
+                                        </div>
+                                    </div>
+                                    <div class="option-group">
+                                      <div class="group-header">
+                                        <i class="fa-solid fa-chevron-down"></i> مركز تكلفة 3
+                                      </div>
+                                      <div class="group-items show">
+                                          <div class="option" data-value="3">محمد 3</div>
+                                          <div class="option" data-value="4">ايمن 4</div>
+                                      </div>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-
-                  </div>
+                </div>
                   <div class="col-12 col-md-4 col-lg-3 mb-2">
                     <label class="form-label" for="Cost-centers">    فئة التكلفة</label>
                     <div class="input-groupe">
@@ -1392,7 +1530,7 @@
                               </div>
                             </div>
                   <div>
-                    <button type="button" class="btn btn-primary"> حفظ</button>
+                    <button type="submit" class="btn btn-primary"> حفظ</button>
 
                   </div>
 
@@ -1688,10 +1826,83 @@
      <script src="./assets/vendor/js/chart.js"></script>
      <script src="./assets/js/dashboards-crm.js"></script>
      <script src="./assets/js/forms-selects.js"></script>
-     <script src="./assets/kendo.all.min.js"></script>
+     <!-- <script src="./assets/kendo.all.min.js"></script> -->
     <script src="./assets/vendor/js/upload.js"></script>
 
-    <script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const selectHeader = document.getElementById('selectHeader');
+    const selectOptions = document.getElementById('selectOptions');
+    const searchInput = document.getElementById('searchInput');
+    const groupHeaders = document.querySelectorAll('.group-header');
+    const options = document.querySelectorAll('.option');
+
+    // فتح/إغلاق القائمة المنسدلة
+    selectHeader.addEventListener('click', function() {
+        const isOpen = selectOptions.style.display === 'block';
+        selectOptions.style.display = isOpen ? 'none' : 'block';
+        if (!isOpen) {
+            searchInput.focus();
+        }
+    });
+
+    // وظيفة البحث
+    searchInput.addEventListener('input', function() {
+        const searchText = this.value.toLowerCase();
+        
+        options.forEach(option => {
+            const text = option.textContent.toLowerCase();
+            const matches = text.includes(searchText);
+            option.classList.toggle('hidden', !matches);
+        });
+
+        // إخفاء المجموعات التي لا تحتوي على نتائج
+        document.querySelectorAll('.option-group').forEach(group => {
+            const visibleOptions = group.querySelectorAll('.option:not(.hidden)');
+            group.classList.toggle('hidden', visibleOptions.length === 0);
+        });
+    });
+
+    // فتح/إغلاق المجموعات
+    groupHeaders.forEach(header => {
+        header.addEventListener('click', function() {
+            const groupItems = this.nextElementSibling;
+            const isClosed = this.classList.contains('closed');
+            
+            this.classList.toggle('closed');
+            groupItems.classList.toggle('hide');
+            
+            // تغيير الأيقونة
+            const icon = this.querySelector('i');
+            icon.classList.remove('fa-chevron-down', 'fa-chevron-up');
+            icon.classList.add(isClosed ? 'fa-chevron-up' : 'fa-chevron-down');
+        });
+    });
+
+    // اختيار عنصر
+    options.forEach(option => {
+        option.addEventListener('click', function() {
+            selectHeader.querySelector('span').textContent = this.textContent;
+            selectOptions.style.display = 'none';
+        });
+    });
+
+    // منع إغلاق القائمة عند الكتابة في حقل البحث
+    searchInput.addEventListener('click', function(e) {
+        e.stopPropagation();
+    });
+
+    // إغلاق القائمة عند النقر خارجها
+    document.addEventListener('click', function(e) {
+        if (!selectHeader.contains(e.target) && !selectOptions.contains(e.target)) {
+            selectOptions.style.display = 'none';
+        }
+    });
+});
+  </script>
+
+
+    <!-- <script>
       $(document).ready(function () {
         function initializeDropDownTree(selector) {
           $(selector).each(function () {
@@ -1741,7 +1952,7 @@
   
       });
    
-    </script>
+    </script> -->
 <script>
   document.addEventListener("DOMContentLoaded", function() {
     // جلب عناصر HTML بناءً على معرّفاتها
