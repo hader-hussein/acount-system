@@ -1362,6 +1362,13 @@
                           </div>
                         </div>
                     </div>
+                    <!--1-12-2024-->
+                    <div class="col-12 col-md-4 col-lg-3 mb-2" id="price-account" style="display: none;">
+                          <label class="form-label" for="number-price">    السعر</label>
+                          <input type="text" id="number-price" class="form-control " placeholder=" السعر ">
+                       
+
+                    </div>
                     <div class="col-12 col-md-4 col-lg-3 mb-2">
                       <label class="form-label" for="total-account">   مجموع الحساب</label>
                       <div class="input-groupe">
@@ -1958,7 +1965,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // جلب عناصر HTML بناءً على معرّفاتها
     const bankAccountSection = document.getElementById("bank-account");
     const clientSupplierSection = document.getElementById("Client-supplier");
-
+    const priceAccountSection = document.getElementById("price-account");
     // الحصول على خيارات الأزرار الإشعاعية وتعيين الحدث المناسب لكل منها
     document.querySelectorAll('input[name="flexRadioDefault"]').forEach((radio) => {
       radio.addEventListener("change", toggleSections);
@@ -1968,13 +1975,18 @@ document.addEventListener('DOMContentLoaded', function() {
       // إخفاء الأقسام بشكل افتراضي
       bankAccountSection.style.display = "none";
       clientSupplierSection.style.display = "none";
-      
+      priceAccountSection.style.display = "none";//1-12-2024
       if (document.getElementById("flexbank").checked) {
         // إذا تم اختيار بنك، إظهار قسم البنك فقط
         bankAccountSection.style.display = "block";
       } else if (document.getElementById("flexclient").checked || document.getElementById("flexsupplier").checked) {
         // إذا تم اختيار عميل أو مورد، إظهار قسم العميل/المورد فقط
         clientSupplierSection.style.display = "block";
+      }
+      //1-12-2024
+      else if (document.getElementById("flexitem").checked) {
+        // إذا تم اختيار  الصنف فقط
+        priceAccountSection.style.display = "block";
       }
     }
 
