@@ -38,7 +38,7 @@
   <link rel="stylesheet" href="./assets/vendor/libs/apex-charts/apex-charts.css" />
   <link rel="stylesheet" href="./assets/vendor/libs/select2/select2.css" />
   <link rel="stylesheet" href="./assets/vendor/libs/bootstrap-select/bootstrap-select.css" />
-  <link rel="stylesheet" href="./assets/vendor/libs/dropzone/dropzone.css" /> <!--مشترك-->
+  <!-- <link rel="stylesheet" href="./assets/vendor/libs/dropzone/dropzone.css" /> حذف2-12-2024 -->
 
   <link href="./assets/default-ocean-blue.css" rel="stylesheet" /><!--مشترك-->
   <link rel="stylesheet" href="./assets/vendor/css/rtl/theme-default.css" class="template-customizer-theme-css" />
@@ -50,6 +50,85 @@
   <script src="./assets/vendor/js/template-customizer.js"></script>
   <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
   <script src="./assets/js/config.js"></script>
+  <!--2-12-2024-->
+  <style>
+  .upload-container {
+  width: 100%;
+  max-width: 400px;
+  margin: 0px auto;
+}
+
+.upload-area {
+  border: 2px dashed #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  background-color: #fff;
+  cursor: pointer;
+  transition: border 0.3s ease;
+}
+
+.upload-area.dragover {
+  border-color: #4a90e2;
+  background-color: #f8f9fa;
+}
+
+.upload-icon {
+  font-size: 24px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.upload-text {
+  color: #666;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+.file-input {
+  display: none;
+}
+
+.file-info {
+  margin-top: 10px;
+}
+
+.file-details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f8f9fa;
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+.file-name {
+  color: #333;
+  font-size: 14px;
+  margin-right: 10px;
+}
+
+.delete-btn {
+  background: none;
+  border: none;
+  color: #dc3545;
+  cursor: pointer;
+  padding: 4px 8px;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.delete-btn:hover {
+  color: #c82333;
+}
+
+/* إخفاء النص الافتراضي عند وجود ملف */
+.upload-area.has-file .upload-icon,
+.upload-area.has-file .upload-text {
+  display: none;
+}
+    </style>
 </head>
 
 <body>
@@ -926,7 +1005,7 @@
           <!-- Content -->
 
           <div class="container-xxl flex-grow-1 container-p-y ">
-            <form action="" class="row mx-0 component-form pt-2">
+            <form  class="row mx-0 component-form pt-2">
               <div class="card comonent-hader-top">
                 <div class="card-body py-2  px-1 card-widget-separator">
                   <div class="row mx-0 d-flex flex-wrap justify-content-between mb-1 align-items-center pt-2">
@@ -1105,7 +1184,9 @@
 
                             <div class="col-12 col-lg-1 col-md-2 mb-2">
                               <div class="form-check">
-                                <input class="form-check-input taxCheckbox" type="checkbox" value=""
+                                <input type="hidden" name="tax_enabled" value="0"> <!-- حقل مخفي لضمان إرسال القيمة -->
+
+                                <input class="form-check-input taxCheckbox" type="checkbox"    name="tax_enabled" value="0"
                                   id="flexCheckDefault">
                                 <label class="form-check-label" for="flexCheckDefault">
                                   الضريبة
@@ -1179,14 +1260,20 @@
                               <input type="text" class="form-control" id="name-user" placeholder=" اسم الشخص ">
                             </div>
                             <div class="col-12 col-lg-4 col-md-8 mb-2" id="file-field">
-                              <div action="/upload" class="dropzone needsclick p-0" id="dropzone-basic">
-                                <div class="dz-message needsclick">
-                                  Drop files here or click to upload
+                              <div class="upload-container"> <!--2-12-2024-->
+                                <div class="upload-area" id="uploadArea">
+                                  <i class="fa-solid fa-upload"></i>
+                                  <p class="upload-text">Drop files here or click to upload</p>
+                                  <input type="file" id="fileInput" name="file" multiple class="file-input" />
 
-
-                                </div>
-                                <div class="fallback">
-                                  <input name="file" type="file" />
+                                  <div class="file-info" id="fileInfo">
+                                    <div class="file-details" style="display: none;">
+                                      <span class="file-name">No file chosen</span>
+                                      <button class="delete-btn" title="حذف الملف">
+                                        <i class="fas fa-times"></i>
+                                      </button>
+                                    </div>
+                                  </div>
                                 </div>
                               </div>
                             </div>
@@ -2335,7 +2422,7 @@
   <script src="./assets/vendor/libs/bootstrap-select/bootstrap-select.js"></script><!--مشترك-->
   <!-- Vendors JS -->
   <script src="./assets/vendor/libs/apex-charts/apexcharts.js"></script>
-  <script src="./assets/vendor/libs/dropzone/dropzone.js"></script><!--مشترك-->
+  <!-- <script src="./assets/vendor/libs/dropzone/dropzone.js"></script>حذف 2-12-2024-->
 
   <!-- Main JS -->
   <script src="./assets/js/main.js"></script>
@@ -2351,7 +2438,7 @@
   <!-- <script src="./assets/js/dashboards-crm.js"></script> -->
   <script src="./assets/js/forms-selects.js"></script>
   <script src="./assets/kendo.all.min.js"></script>
-  <script src="./assets/js/forms-file-upload.js"></script><!--صفحة-->
+  <!-- <script src="./assets/js/forms-file-upload.js"></script> 2-12-2024-->
   <script src="./assets/vendor/js/upload.js"></script>
 
   <script>
@@ -2607,53 +2694,7 @@
 
  
 
- // دالة لإضافة صف جديد
- function addNewRow(containerId, rowSelector) {
-    let newRow = $(rowSelector).first().clone(); // استنساخ السطر من النموذج
-
-    // تدمير تهيئة select2 و dropdownTree إذا كانت مهيئة بالفعل
-    newRow.find('.select2').each(function () {
-      if ($(this).data('select2')) {
-        $(this).select2('destroy');
-      }
-    });
-
-    newRow.find('.dropdownTree').each(function () {
-      if ($(this).data('dropdownTree')) {
-        $(this).dropdownTree('destroy');
-      }
-    });
-
-    // حذف أي حاويات select2-container أو dropdownTree-container المكررة
-    newRow.find('.select2-container').remove();
-    newRow.find('.dropdownTree-container').remove();
-
-    // تغيير زر الإضافة إلى زر الحذف في السطر الجديد
-    newRow.find('.add-row').removeClass('add-row bg-primary text-bg-primary')
-      .addClass('delete-row bg-danger text-bg-danger')
-      .attr('title', 'حذف')
-      .html('<i class="fa-solid fa-trash fs-5"></i>');
-
-    // إضافة السطر الجديد إلى الحاوية المحددة
-    $(containerId).append(newRow);
-
-    // إعادة تهيئة Select2 و DropdownTree للصف الجديد
-    newRow.find('.select2').each(function () {
-      $(this).select2({
-        dropdownParent: newRow // تأكيد التهيئة داخل السطر الجديد
-      });
-    });
-
-    newRow.find('.dropdownTree').each(function () {
-      // تأكد من أنك تقوم بتطبيق تهيئة dropdownTree على العنصر الجديد
-      $(this).dropdownTree({
-        dropdownParent: newRow // تأكيد التهيئة داخل السطر الجديد
-      });
-    });
-
-    // وضع التركيز على أول عنصر قابل للتركيز داخل السطر الجديد
-    setFocusToFirstFocusable(newRow);
-  }
+ 
 
   // دالة لوضع التركيز على أول عنصر قابل للتركيز داخل السطر الجديد
   function setFocusToFirstFocusable(row) {
@@ -2690,38 +2731,49 @@
       };
       const allowedTypes = ["فاتورةالمصروف", "الايراد", "الايداعات", "قيد اليومية", "سند القبض", "سند الصرف", "المدفوعات"];  // الأنواع التي تحتاج لعرض حقل الضريبة
 
-
+    
       // دالة للتحكم بظهور حقل الضريبة
       function toggleTaxFields() {
         const bondType = $('#Bond-type-add').val();
-        const taxChecked = $('#flexCheckDefault').is(':checked');
-
+         const taxCheckbox = $('#flexCheckDefault');
+  const taxChecked = taxCheckbox.is(':checked');
         if (taxChecked && allowedTypes.includes(bondType)) {
           $('.Tax-check').show();
+          
         } else {
           $('.Tax-check').hide();
+       
+
         }
       }
+// تفعيل عند تحميل الصفحة
+$(document).ready(function() {
+  // تأكد من أن القيمة الابتدائية هي 0
+  $('#flexCheckDefault').prop('checked', false);
+});
       // تفعيل toggleTaxFields باستخدام مفتاح Enter
+     // تحديث event handler للـ Enter key
+// تحديث event handler للـ Enter key
+$(document).on('keydown', function (e) {
+  if (e.key === 'Enter') {
+    e.preventDefault();
+    const focusedElement = document.activeElement;
 
-      // تفعيل toggleTaxFields باستخدام مفتاح Enter
-      $(document).on('keydown', function (e) {
-        // تحقق إذا كان المفتاح هو Enter
-        if (e.key === 'Enter') {
-          e.preventDefault(); // منع السلوك الافتراضي (مثل إرسال النموذج)
-          const focusedElement = document.activeElement;
-
-          if (focusedElement.id === 'flexCheckDefault') {
-            focusedElement.checked = !focusedElement.checked;
-            toggleTaxFields();
-          } else if (focusedElement.id === 'repeat-checkbox') {
-            focusedElement.checked = !focusedElement.checked;
-            toggleOptions();
-          }
-        }
-
-      });
-
+    if (focusedElement.id === 'flexCheckDefault') {
+      const checkbox = $(focusedElement);
+      checkbox.prop('checked', !checkbox.prop('checked'));
+      toggleTaxFields();
+    } else if (focusedElement.id === 'repeat-checkbox') {
+      $(focusedElement).prop('checked', !$(focusedElement).prop('checked'));
+      toggleOptions();
+    }
+  }
+});
+// إضافة مستمع للتغييرات على checkbox
+// إضافة مستمع للتغييرات على checkbox
+$('#flexCheckDefault').on('change', function() {
+  toggleTaxFields();
+});
       $('#Bond-type-add').change(function () {
         const bondType = $(this).val();
         const sectionsToShow = bondTypeMapping[bondType] || [];
@@ -2802,6 +2854,80 @@
 
 
   </script>
+<script><!--2-12-2024-->
+document.addEventListener('DOMContentLoaded', function() {
+    const uploadArea = document.getElementById('uploadArea');
+    const fileInput = document.getElementById('fileInput');
+    const fileInfo = document.getElementById('fileInfo');
+    const fileDetails = fileInfo.querySelector('.file-details');
+    const fileName = fileDetails.querySelector('.file-name');
+    const deleteBtn = fileDetails.querySelector('.delete-btn');
 
+    // تفعيل اختيار الملف عند النقر على المنطقة
+    uploadArea.addEventListener('click', function(e) {
+        // تجنب تشغيل input file عند النقر على زر الحذف
+        if (!e.target.closest('.delete-btn')) {
+            fileInput.click();
+        }
+    });
+
+    // تحديث عرض الملف عند اختياره
+    fileInput.addEventListener('change', function() {
+        if (this.files.length > 0) {
+            showFileDetails(this.files[0].name);
+        }
+    });
+
+    // حذف الملف
+    deleteBtn.addEventListener('click', function(e) {
+        e.stopPropagation(); // منع انتشار الحدث للعناصر الأب
+        resetFileInput();
+    });
+
+    // معالجة السحب والإفلات
+    uploadArea.addEventListener('dragover', function(e) {
+        e.preventDefault();
+        this.classList.add('dragover');
+    });
+
+    uploadArea.addEventListener('dragleave', function(e) {
+        e.preventDefault();
+        this.classList.remove('dragover');
+    });
+
+    uploadArea.addEventListener('drop', function(e) {
+        e.preventDefault();
+        this.classList.remove('dragover');
+        
+        const files = e.dataTransfer.files;
+        if (files.length > 0) {
+            fileInput.files = files;
+            showFileDetails(files[0].name);
+        }
+    });
+
+    // دوال مساعدة
+    function showFileDetails(name) {
+        fileName.textContent = name;
+        fileDetails.style.display = 'flex';
+        uploadArea.classList.add('has-file');
+    }
+
+    function resetFileInput() {
+        fileInput.value = '';
+        fileDetails.style.display = 'none';
+        uploadArea.classList.remove('has-file');
+    }
+
+    // منع فتح الملف في المتصفح عند السحب والإفلات
+    document.addEventListener('dragover', function(e) {
+        e.preventDefault();
+    });
+
+    document.addEventListener('drop', function(e) {
+        e.preventDefault();
+    });
+});
+  </script>
 
 </html>
