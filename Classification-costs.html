@@ -948,16 +948,52 @@
                           </select>
                     
                       </div>
+                      <div class="col-12  col-lg-12  mb-2">
+                        <label class="form-label" for="name-account-type"> تقسيم  بواسطة</label>
+                       <div class=" mx-0 d-flex justify-content-between wrap" style="padding: 0.375rem 0.375rem 0.375rem !important;box-shadow: 0px 2px 6px #dbdade inset">
+                        <div class="form-check ">
+                          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexclient" checked>
+                          <label class="form-check-label" for="flexclient">
+                            الفرع
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexsupplier">
+                          <label class="form-check-label" for="flexsupplier">
+                            مركز التكلفة
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexitem1">
+                          <label class="form-check-label" for="flexitem1">
+                            حساب
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexitem2">
+                          <label class="form-check-label" for="flexitem2">
+                            المشروع
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexitem3">
+                          <label class="form-check-label" for="flexitem3">
+                            المطالبة
+                          </label>
+                        </div>
+                       </div>
+                       
+                      </div>
                       <div class="col-12 col-lg-12 mb-3">
                         <label class="form-label" for="basic-default-text">          التعلقيات:</label>
                         <textarea class="form-control" id="basic-default-text" rows="2"> </textarea>     
                       
                       </div>
-                      <div class="col-12 text-center mb-3">
-                        <button type="submit" class="btn btn-primary  waves-effect waves-light" title="تحديث"id="saveButton">
-                          <i class="ti ti-pencil  fs-4"></i> 
-                                   اظهار تصنيف التكاليف السنوية
-                         </button>
+                      <div class="col-12 mb-3">
+                        <button type="submit" class="btn btn-primary text-white mx-2 waves-effect waves-light">عرض <i class="ti-xs me-1 ti ti-eye-check me-1"></i></button>
+                        <a type="button" class="btn btn-secondary  mx-2 waves-effect waves-light" href="./Print/Trial-balance.html">      طباعة <i class="fa-solid fa-print"></i></a>
+                        <a type="button" class="btn btn-secondary  mx-2 waves-effect waves-light" href="mailto:example@example.com">  ارسال للايميل <i class="fa-solid fa-envelope"></i></a>
+
 
                       </div>
                     </form>

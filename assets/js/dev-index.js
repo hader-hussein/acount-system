@@ -6,18 +6,18 @@ $(() => {
     keyExpr: 'ID',
     allowColumnReordering: true,
     showBorders: true,
-    rtlEnabled: true,
+    // rtlEnabled: true,
     height: 600,
     columnWidth: 100,
     width: '100%',
         scrolling: {
-          mode: "virtual",
+          // mode: "virtual",
           rowRenderingMode: "virtual",
           columnRenderingMode: "virtual",
           showScrollbar: "always",
           scrollByContent: true,
           scrollByThumb: true,
-          useNative: true // استخدام التمرير الأصلي
+          // useNative: true // استخدام التمرير الأصلي
         },
     
   paging: {
@@ -87,6 +87,7 @@ pager: {
         width: 150
     }
 ],
+
     masterDetail: {
       enabled: true,
       template(container, options) {
