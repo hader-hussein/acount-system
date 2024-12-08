@@ -1,136 +1,128 @@
 $(() => {
-     const dataGrid = $('#gridContainer').dxDataGrid({
-       dataSource: orders,
-       keyExpr: 'ID',
-       columnsAutoWidth: true,
-       showBorders: true,
-       filterRow: {
-         visible: true,
-         applyFilter: 'auto',
-       },
-       searchPanel: {
-         visible: true,
-         width: 240,
-         placeholder: 'Search...',
-       },
-       headerFilter: {
-         visible: true,
-       },
-       columns: [{
-         dataField: 'OrderNumber',
-         caption: 'Invoice Number',
-         width: 140,
-         headerFilter: {
-           groupInterval: 10000,
-         },
-       }, {
-         dataField: 'OrderDate',
-         alignment: 'right',
-         dataType: 'date',
-         width: 120,
-         calculateFilterExpression(value, selectedFilterOperations, target) {
-           if (target === 'headerFilter' && value === 'weekends') {
-             return [[getOrderDay, '=', 0], 'or', [getOrderDay, '=', 6]];
-           }
-           return this.defaultCalculateFilterExpression(value, selectedFilterOperations, target);
-         },
-         headerFilter: {
-           dataSource(data) {
-             data.dataSource.postProcess = function (results) {
-               results.push({
-                 text: 'Weekends',
-                 value: 'weekends',
-               });
-               return results;
-             };
-           },
-         },
-       }, {
-         dataField: 'DeliveryDate',
-         alignment: 'right',
-         dataType: 'datetime',
-         width: 180,
-         format: 'M/d/yyyy, HH:mm',
-       }, {
-         dataField: 'SaleAmount',
-         alignment: 'right',
-         format: 'currency',
-         editorOptions: {
-           format: 'currency',
-           showClearButton: true,
-         },
-         headerFilter: {
-           dataSource: [{
-             text: 'Less than $3000',
-             value: ['SaleAmount', '<', 3000],
-           }, {
+  const columnCount = 500;
+  const rowCount = 50;
+  $('#gridContainer').dxDataGrid({
+    dataSource: employees,
+    keyExpr: 'ID',
+    allowColumnReordering: true,
+    showBorders: true,
+    rtlEnabled: true,
+    height: 600,
+    columnWidth: 100,
+    width: '100%',
+        scrolling: {
+          mode: "virtual",
+          rowRenderingMode: "virtual",
+          columnRenderingMode: "virtual",
+          showScrollbar: "always",
+          scrollByContent: true,
+          scrollByThumb: true,
+          useNative: true // استخدام التمرير الأصلي
+        },
+    
+  paging: {
+    enabled: false,
    
-             text: '$3000 - $5000',
-             value: [['SaleAmount', '>=', 3000], ['SaleAmount', '<', 5000]],
-           }, {
-   
-             text: '$5000 - $10000',
-             value: [['SaleAmount', '>=', 5000], ['SaleAmount', '<', 10000]],
-           }, {
-   
-             text: '$10000 - $20000',
-             value: [['SaleAmount', '>=', 10000], ['SaleAmount', '<', 20000]],
-           }, {
-             text: 'Greater than $20000',
-             value: ['SaleAmount', '>=', 20000],
-           }],
-         },
-       }, 'Employee', {
-         caption: 'City',
-         dataField: 'CustomerStoreCity',
-         headerFilter: {
-           search: {
-             enabled: true,
-           },
-         },
-       }],
-     }).dxDataGrid('instance');
-   
-     const applyFilterTypes = [{
-       key: 'auto',
-       name: 'Immediately',
-     }, {
-       key: 'onClick',
-       name: 'On Button Click',
-     }];
-   
-     const applyFilterModeEditor = $('#useFilterApplyButton').dxSelectBox({
-       items: applyFilterTypes,
-       value: applyFilterTypes[0].key,
-       valueExpr: 'key',
-       inputAttr: { 'aria-label': 'Apply Filter' },
-       displayExpr: 'name',
-       onValueChanged(data) {
-         dataGrid.option('filterRow.applyFilter', data.value);
-       },
-     }).dxSelectBox('instance');
-   
-     $('#filterRow').dxCheckBox({
-       text: 'Filter Row',
-       value: true,
-       onValueChanged(data) {
-         dataGrid.clearFilter();
-         dataGrid.option('filterRow.visible', data.value);
-         applyFilterModeEditor.option('disabled', !data.value);
-       },
-     });
-   
-     $('#headerFilter').dxCheckBox({
-       text: 'Header Filter',
-       value: true,
-       onValueChanged(data) {
-         dataGrid.clearFilter();
-         dataGrid.option('headerFilter.visible', data.value);
-       },
-     });
-   
-     function getOrderDay(rowData) {
-       return (new Date(rowData.OrderDate)).getDay();
-     }
-   });
-   
+  },
+  columnFixing: {
+    enabled: true
+},
+pager: {
+  visible: true,
+  allowedPageSizes: [5, 10, 'all'],
+  showPageSizeSelector: true,
+  showInfo: true,
+  showNavigationButtons: true,
+},
+  
+  columns: [
+    {
+        dataField: "Title",
+        caption: "العنوان",
+        width: 150
+    },
+    {
+        dataField: "Position",
+        caption: "الموقع",
+        width: 150
+    },
+    {
+        dataField: "State",
+        caption: "الحالة",
+        width: 150
+    },
+    {
+        dataField: "State1",
+        caption: "1 الحالة",
+        width: 150
+    },
+    {
+        dataField: "State2",
+        caption: "2 الحالة",
+        width: 150
+    },
+    {
+        dataField: "State3",
+        caption: "3 الحالة",
+        width: 150
+    },
+    {
+        dataField: "State4",
+        caption: "4 الحالة",
+        width: 150
+    },
+    {
+        dataField: "State5",
+        caption: "5 الحالة",
+        width: 150
+    },
+    {
+        dataField: "State6",
+        caption: "6 الحالة",
+        width: 150
+    },
+    {
+        dataField: "State7",
+        caption: "7 الحالة",
+        width: 150
+    }
+],
+    masterDetail: {
+      enabled: true,
+      template(container, options) {
+        const currentEmployeeData = options.data;
+
+        $('<div>')
+          .addClass('master-detail-caption')
+          .text(`${currentEmployeeData.FirstName} ${currentEmployeeData.LastName}'s Tasks:`)
+          .appendTo(container);
+
+        $('<div>')
+          .dxDataGrid({
+            columnAutoWidth: true,
+            showBorders: true,
+            columns: ['Subject', {
+              dataField: 'StartDate',
+              dataType: 'date',
+            }, {
+              dataField: 'DueDate',
+              dataType: 'date',
+            }, 'Priority', {
+              caption: 'Completed',
+              dataType: 'boolean',
+              calculateCellValue(rowData) {
+                return rowData.Status === 'Completed';
+              },
+            }],
+            dataSource: new DevExpress.data.DataSource({
+              store: new DevExpress.data.ArrayStore({
+                key: 'ID',
+                data: tasks,
+              }),
+              filter: ['EmployeeID', '=', options.key],
+            }),
+          }).appendTo(container);
+      },
+    },
+  });
+});

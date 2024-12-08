@@ -128,6 +128,7 @@
 .upload-area.has-file .upload-text {
   display: none;
 }
+
     </style>
 </head>
 
@@ -1343,8 +1344,21 @@
                             <!-- المدفوعات-->
 
                             <!--تحويلات بين الحسابات البنكية-->
-                            <div id="Transfers-between" class="col-lg-6">
+                            <div id="Transfers-between" class="col-lg-12">
                               <div class="row mx-0 g-2">
+                                <div class="col-12 col-lg-2 col-md-4 mb-2" id="filed-of-tow">
+                                  <label for="select-tooo" class="form-label"> من:<span class="start-form">*</span></label>
+    
+                                  <select id="select-tooo" class="select2 form-select" data-allow-clear="true">
+                                    <option value="AK"> متنوعة</option>
+                                    <option value="HI">Hawaii</option>
+                                    <option value="CA">California</option>
+                                    <option value="NV">Nevada</option>
+                                    <option value="OR">Oregon</option>
+    
+                                  </select>
+    
+                                </div>
                                 <div class="col-12 col-md-6 col-lg-4 mb-2">
                                   <label class="form-label" for="basic-value"> قيمة</label>
                                   <input type="text" id="basic-value" class="form-control phone-mask"
@@ -1470,23 +1484,19 @@
                               </div>
 
                               <div class="col-12 col-lg-2 col-md-3 mb-2">
-                                <label class="form-label" for="select-brench"> الفرع<span
-                                    class="start-form">*</span></label>
-                                <select id="select-brench" class="select2 form-select" data-allow-clear="true">
-                                  <option value="AK"> محمود</option>
-                                  <option value="HI">شركة العقارات</option>
-                                  <option value="CA">California</option>
-                                  <option value="NV">Nevada</option>
-                                  <option value="OR">Oregon</option>
-
+                                <label class="form-label">الفرع<span class="start-form">*</span></label>
+                                <select class="select2 form-select" data-allow-clear="true">
+                                    <option value="AK">محمود</option>
+                                    <option value="HI">شركة العقارات</option>
+                                    <option value="CA">California</option>
+                                    <option value="NV">Nevada</option>
+                                    <option value="OR">Oregon</option>
                                 </select>
-
-
-                              </div>
+                            </div>
                               <div class="col-12 col-lg-2 col-md-4 mb-2">
-                                <label class="form-label" for="select-delegate-1"> المندوب<span
+                                <label class="form-label"> المندوب<span
                                     class="start-form">*</span></label>
-                                <select id="select-delegate-1" class="select2 form-select" data-allow-clear="true">
+                                <select  class="select2 form-select" data-allow-clear="true">
                                   <option value="AK"> محمود</option>
                                   <option value="HI">شركة العقارات</option>
                                   <option value="CA">California</option>
@@ -1509,7 +1519,7 @@
                                 <div class="col-12 col-lg-2 col-md-3 mb-2 px-1">
                                   <label class="form-label" for="Tax-rate"> نسبة الضريبة<span
                                       class="start-form">*</span></label>
-                                  <input type="text" class="form-control">
+                                  <input type="text" value="20" name="" class="form-control">
 
                                 </div>
                                 <div class="col-12 col-lg-2 col-md-3 mb-2 px-1">
@@ -2619,39 +2629,74 @@
       // دالة لإضافة صف جديد في الحاوية المحددة
       function addNewRow(containerId, rowSelector) {
         let newRow = $(rowSelector).first().clone(); // استنساخ السطر من النموذج
-        // إزالة التهيئة السابقة لـ Select2 في النسخة المستنسخة فقط إذا كانت مهيئة بالفعل
-        newRow.find('.select2').each(function () {
-          if ($(this).data('select2')) {
-            $(this).select2('destroy'); // تدمير التهيئة إذا كانت موجودة
-          }
-        });
-        // حذف أي حاويات select2-container المكررة
-        newRow.find('.select2-container').remove();
+         // حذف أي حاويات select2-container المكررة
+         let originalRow = $(rowSelector).first();
+         newRow.find('.select2-container').remove();
+       
+     
+
         // تغيير زر الإضافة إلى زر الحذف في السطر الجديد
         newRow.find('.add-row, .add-alsarf,.add-Exchange,.add-Deposits,.add-Payments,.add-Revenue,.add-expense').removeClass('add-row add-alsarf add-Payments add-Exchange add-Deposits add-Revenue add-expense bg-primary text-bg-primary')
           .addClass('delete-row delete-rows delete-Exchange delete-Deposits delete-Payments delete-Revenue delete-expense bg-danger text-bg-danger')
           .attr('title', 'حذف')
           .html('<i class="fa-solid fa-trash fs-5"></i>');
 
-        // إعادة تعيين القيم في الحقول
-        newRow.find('input, textarea').val('');
+         // حفظ قيمة نسبة الضريبة من الحقل الأصلي
+    let taxRate = $(rowSelector).first().find('input[type="text"][value="20"]').val() || '15';
 
-        // إزالة أي تهيئة سابقة لـ DropDownTree من النسخة المستنسخة
-        newRow.find('.dropdowntree, .dropdowntree-tow').each(function () {
-          $(this).data("kendoDropDownTree")?.destroy();
-          $(this).empty();
-        });
+// إعادة تعيين القيم في جميع الحقول
+newRow.find('input, textarea').val('');
+
+// إعادة تعيين قيمة نسبة الضريبة في الحقل الجديد
+newRow.find('input[type="text"][value="20"]').val(taxRate);
+
 
         // إضافة السطر الجديد إلى الحاوية المحددة
         $(containerId).append(newRow);
-        // تهيئة Select2 فقط إذا لم يكن العنصر مهيأ بالفعل
-        newRow.find('.select2').each(function () {
-          if (!$(this).data('select2')) { // تأكد من أنه لم يتم تهيئته بعد
-            $(this).select2({
-              dropdownParent: newRow // تهيئة dropdown داخل السطر الجديد
-            });
-          }
+    // تهيئة Select2 للسطر الجديد
+    newRow.find('select.select2').each(function() {
+        // إزالة الـ ID لتجنب التكرار
+        $(this).removeAttr('id');
+        
+        // إعادة تهيئة Select2
+        $(this).select2({
+            dropdownParent: $(containerId),
+            width: '100%',
+            minimumResultsForSearch: 0,
+            searchInputPlaceholder: 'ابحث هنا...',
+            allowClear: true,
+            language: {
+                searching: function() {
+                    return "جاري البحث...";
+                },
+                noResults: function() {
+                    return "لا توجد نتائج";
+                }
+            }
         });
+    });
+
+    // إعادة تهيئة Select2 للسطر الأصلي
+    originalRow.find('select.select2').each(function() {
+        if (!$(this).hasClass('select2-hidden-accessible')) {
+            $(this).select2({
+                dropdownParent: $(containerId),
+                width: '100%',
+                minimumResultsForSearch: 0,
+                searchInputPlaceholder: 'ابحث هنا...',
+                allowClear: true,
+                language: {
+                    searching: function() {
+                        return "جاري البحث...";
+                    },
+                    noResults: function() {
+                        return "لا توجد نتائج";
+                    }
+                }
+            });
+        }
+    });
+
         // تهيئة DropDownTree للعناصر الجديدة
         initializeDropDownTree(newRow.find('.dropdowntree'));
         initializeDropDownTree(newRow.find('.dropdowntree-tow'));
@@ -2692,9 +2737,6 @@
 
     });
 
- 
-
- 
 
   // دالة لوضع التركيز على أول عنصر قابل للتركيز داخل السطر الجديد
   function setFocusToFirstFocusable(row) {
@@ -2717,7 +2759,7 @@
 
       const bondTypeMapping = {
         "قيد اليومية": ['#date-filed', '#date-reference', '#input-cureunt', '#input-prench', '#collaps-Movement', '#Journal-entry-container', '#file-field'],
-        "سند القبض": ['#date-filed', '#date-reference', '#input-cureunt', '#input-prench', '#credit-account-section-Debtor', '#collaps-Movement', '#alqabdatu-wasanad-alsarf'],
+        "سند القبض": ['#date-filed', '#date-reference', '#input-cureunt', '#input-prench', '#credit-account-section-Debtor', '#collaps-Movement', '#Journal-entry-container'],
         "سند الصرف": ['#date-filed', '#date-reference', '#input-cureunt', '#input-prench', '#credit-account-section', '#collaps-Movement', '#alqabdatu-Exchange'],
         "الايداعات": ['#date-filed', '#date-reference', '#input-cureunt', '#input-prench', '#filed-of', '#filed-to', '#Bank-balance', '#collaps-Movement',
           '#Journal-entry-alsarf', '#alqabdatu-Deposits'],

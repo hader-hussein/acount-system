@@ -50,14 +50,12 @@
     <link rel="stylesheet" href="./assets/css/style.css" />
     <!---->
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script>window.jQuery || document.write(decodeURIComponent('%3Cscript src="js/jquery.min.js"%3E%3C/script%3E'))</script>
-        <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/23.1.6/css/dx.material.blue.light.css" />
-        <script src="https://cdn3.devexpress.com/jslib/23.1.6/js/dx.all.js"></script><script>window.jQuery || document.write(decodeURIComponent('%3Cscript src="js/jquery.min.js"%3E%3C/script%3E'))</script>
-        <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/23.1.6/css/dx.material.blue.light.css" />
-    <!---->
-  
     
+    <!---->
+    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/17.2.3/css/dx.spa.css" />
+   <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/20.2.6/css/dx.common.css" />
+   <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/24.1.4/css/dx.material.blue.light.css" />
+        
     <!-- Helpers -->
     <script src="./assets/vendor/js/helpers.js"></script>
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
@@ -65,8 +63,10 @@
     <script src="./assets/vendor/js/template-customizer.js"></script>
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="./assets/js/config.js"></script>
+    <!--tabel-data-->
+  
     <style>
-      .signature-container {
+      /* .signature-container {
           width: 750px;
       }
   
@@ -92,6 +92,75 @@
           border-width: 0 1px;
           border-radius: 0;
       }
+      #gridContainer {
+  height: 440px;
+}
+
+.master-detail-caption {
+  padding: 0 0 5px 10px;
+  font-size: 14px;
+  font-weight: bold;
+} */
+/* .dx-datagrid {
+    direction: rtl;
+    height: 100%;
+} */
+
+#gridContainer {
+    height: 600px;
+    width: 100%;
+}
+
+.dx-datagrid-rowsview {
+    height: auto !important;
+}
+
+.dx-scrollable-container {
+    overflow: auto !important;
+}
+
+.dx-scrollable-content {
+    height: auto !important;
+}
+
+/* تحسين مظهر أشرطة التمرير */
+/* ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+} */
+
+/* تثبيت رأس الجدول */
+.dx-datagrid-headers {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background: white;
+}
+
+/* حاوية الجدول */
+.demo-container {
+    margin: 10px;
+    position: relative;
+  
+    overflow: hidden;
+}
+
+.dx-datagrid {
+    background-color: white;
+}
   </style>
   </head>
 
@@ -946,7 +1015,7 @@
                   <a href="Tax-form-report.html" class="menu-link">
                     <img class="menu-icon img-nav" src="./assets/img/img-nav/Tax-form-report.png" alt="img-nav">
 
-                    <div data-i18n=" تقرير الضريبى">    تقرير الضريبى </div>
+                    <div data-i18n=" تقري�� الضريبى">    تقرير الضريبى </div>
                   </a>
 
                 </li>
@@ -1021,8 +1090,14 @@
              </div>
                   <div class="card comonent-hader-top mt-4">
                     <div class="card-body p-1 pt-2">
-                      <div class="card-datatable table-responsive text-nowrap tabel-all">
-                        <table class="table  table-bordered">
+                    <!-- تعديل الكلاس الخاص بالجدول -->
+                    <div class="card-datatable">
+                      <div class="demo-container">
+                          <div id="gridContainer"></div>
+                      </div>
+                  </div>
+                          </div>
+                        <!-- <table class="table  table-bordered">
                           <thead>
                              <tr class="text-center">
                               <th>#</th>
@@ -1059,7 +1134,6 @@
                               <td></td>
                               <td></td>
                               <td>
-                                <!-- Button trigger modal -->
                               <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                العقود
                               </button>
@@ -1078,7 +1152,7 @@
 
                             </tr>
                           </tbody>
-                       </table>
+                       </table> -->
                       </div>
                        
                     </div>
@@ -1202,9 +1276,11 @@
     <script src="./assets/vendor/libs/i18n/i18n.js"></script>
     <script src="./assets/vendor/libs/typeahead-js/typeahead.js"></script>
     <script src="./assets/vendor/js/menu.js"></script>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <!-- endbuild -->
-    <script src="./assets/vendor/libs/datatables-bs5/datatables-bootstrap5.js"></script>
+    <!-- <script src="./assets/vendor/libs/datatables-bs5/datatables-bootstrap5.js"></script> -->
 
     <!-- Vendors JS -->
     <script src="./assets/vendor/js/dropdown-hover.js"></script>
@@ -1226,16 +1302,17 @@
      <script src="./assets/js/cards-advance.js"></script>
 
      <script src="./assets/vendor/js/chart.js"></script>
-     <script src="./assets/js/dashboards-crm.js"></script>
+     <!-- <script src="./assets/js/dashboards-crm.js"></script> -->
      <script src="./assets/js/forms-selects.js"></script>
-     <script src="./assets/kendo.all.min.js"></script>
+     <!-- <script src="./assets/kendo.all.min.js"></script> -->
     <script src="./assets/vendor/js/upload.js"></script>
-    <!--tabel-data-->
+    <script src="https://cdn3.devexpress.com/jslib/20.2.6/js/dx.all.js"></script>
     <script src="./assets/js/devdata.js"></script>
     <script src="./assets/js/dev-index.js"></script>
+   
     <!--end-->
 
-    <script>
+    <!-- <script>
       $(document).ready(function () {
           var signature = $("#signature").kendoSignature({
               maximizable: false,
@@ -1320,7 +1397,7 @@
               buttons:false
           });
       });
-      </script>
+      </script> -->
 
   </body>
 </html>

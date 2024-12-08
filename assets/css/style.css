@@ -796,7 +796,8 @@ content: "" !important;
 #filed-to .select2-container--default .select2-selection,#Bank-balance input,
 #input-Customers .select2-container--default .select2-selection,#input-Client .k-picker-solid,
 #input-value .k-picker-solid,#Supplier-account .k-picker-solid,
-#name-Supplier .select2-container--default .select2-selection,#Transfers-between input
+#name-Supplier .select2-container--default .select2-selection,#Transfers-between input,
+#filed-of-tow .select2-container--default .select2-selection
 {
   border-color: #EA5455;
 }
