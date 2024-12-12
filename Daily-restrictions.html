@@ -146,6 +146,19 @@
         background-color: #f0f0f0;
       }
     </style> 
+    <style>
+      /* التحكم في عدد العناصر المعروضة باستخدام max-height */
+      #cities {
+        max-height: 300px; /* تحديد الحد الأقصى للطول */
+        overflow-y: auto; /* تمكين التمرير عند تجاوز العناصر */
+        width: 100%; /* تعيين العرض */
+      }
+    
+      /* زيادة المسافة بين الخيارات */
+      #cities option {
+        padding: 8px; /* المسافة الداخلية */
+      }
+    </style>
 </head>
 
 <body>
@@ -1302,25 +1315,30 @@
                                 </div>
                               </div>
                             </div>
-                            <div class="col-12 col-lg-4 col-md-8 mb-2">
-                        
-                              <label for="city" class="form-label">Choose a city:</label>
+                            <!-- <div class="col-12 col-lg-2 col-md-6 mb-2">
+                              <label for="city" class="form-label">الرقم الضريبي:</label>
                               <input type="text" class="form-control" id="city" placeholder="Type to search..." autocomplete="off">
                               <div id="dropdown" style="position: relative;">
-                                <ul id="options" style="max-height: 150px; overflow-y: auto;  list-style: none; padding: 0; margin: 0; position: absolute; width: 100%; background: white; z-index: 10; display: none;">
-                                  <li>New York</li>
-                                  <li>Los Angeles</li>
-                                  <li>Chicago</li>
-                                  <li>Houston</li>
-                                  <li>Phoenix</li>
-                                  <li>Dallas</li>
-                                  <li>San Francisco</li>
-                                  <li>Miami</li>
-                                  <li>Boston</li>
-                                  <li>Seattle</li>
-                                </ul>
+                                  <ul id="options" style="max-height: 150px; overflow-y: auto; list-style: none; padding: 0; margin: 0; position: absolute; width: 100%; background: white; z-index: 10; display: none;">
+                                      <li data-value="new-yorkkkk">New Yorkم</li>
+                                      <li data-value="los-angelesن">Los Angeles</li>
+                                      <li data-value="chicagoم">Chicago</li>
+                                      <li data-value="houstonى">Houston</li>
+                                      <li data-value="phoenixن">Phoenix</li>
+                                      <li data-value="dallasة">Dallas</li>
+                                      <li data-value="san-franciscoر">San Francisco</li>
+                                      <li data-value="miamiى">Miami</li>
+                                      <li data-value="bostonت">Boston</li>
+                                      <li data-value="seattleت">Seattle</li>
+                                  </ul>
                               </div>
-                            </div>
+                          </div>
+                          
+                          <div class="col-12 col-lg-2 col-md-3 mb-2 px-1">
+                              <label class="form-label" for="name-Statement"> البيان الضريبي <span class="start-form">*</span></label>
+                              <textarea name="text" id="tax-statement" rows="1" class="form-control"></textarea>
+                          </div> -->
+                      
                             <!--سند القبض--سند الصرف-->
 
                             <div class="col-12 col-lg-3 col-md-6 mb-2" id="credit-account-section-Debtor">
@@ -1517,7 +1535,7 @@
 
                               </div>
 
-                              <div class="col-12 col-lg-8 col-md-4 mb-2">
+                              <div class="col-12 col-lg-2 col-md-4 mb-2">
                                 <label class="form-label" for="name-acount"> مركز التكلفة<span
                                     class="start-form">*</span></label>
                                 <input id="dropdowntree" class="dropdowntree-tow" style="padding: 0.31rem 0.875rem;" />
@@ -1564,25 +1582,48 @@
                                   <input type="text" value="20" name="" class="form-control">
 
                                 </div>
-                                <div class="col-12 col-lg-2 col-md-3 mb-2 px-1">
+                                <div class="col-12 col-lg-2 col-md-3 mb-2">
+                                  <label for="city" class="form-label">الرقم الضريبي:</label>
+                                  <input type="text" class="form-control" id="city" placeholder="Type to search..." autocomplete="off">
+                                  <div id="dropdown" style="position: relative;">
+                                      <ul id="options" style="max-height: 150px; overflow-y: auto; list-style: none; padding: 0; margin: 0; position: absolute; width: 100%; background: white; z-index: 10; display: none;">
+                                          <li data-value="new-yorkkkk">New Yorkم</li>
+                                          <li data-value="los-angelesن">Los Angeles</li>
+                                          <li data-value="chicagoم">Chicago</li>
+                                          <li data-value="houstonى">Houston</li>
+                                          <li data-value="phoenixن">Phoenix</li>
+                                          <li data-value="dallasة">Dallas</li>
+                                          <li data-value="san-franciscoر">San Francisco</li>
+                                          <li data-value="miamiى">Miami</li>
+                                          <li data-value="bostonت">Boston</li>
+                                          <li data-value="seattleت">Seattle</li>
+                                      </ul>
+                                  </div>
+                              </div>
+                              
+                              <div class="col-12 col-lg-4 col-md-3 mb-2 px-1">
+                                  <label class="form-label" for="name-Statement"> البيان الضريبي <span class="start-form">*</span></label>
+                                  <textarea name="text" id="tax-statement" rows="1" class="form-control"></textarea>
+                              </div>
+                                <!-- <div class="col-12 col-lg-2 col-md-3 mb-2 px-1">
                                   <label class="form-label" for="Tax-number"> الرقم الضريبى<span
                                       class="start-form">*</span></label>
                                   <input type="text" class="form-control">
 
-                                </div>
+                                </div> -->
                                 <div class="col-12 col-lg-3 col-md-3 mb-2 px-1">
                                   <label class="form-label" for="Tax-calculation "> رقم الحساب الضريبي<span
                                       class="start-form">*</span></label>
                                   <input type="text" class="form-control">
 
                                 </div>
-                                <div class="col-12 col-lg-4 col-md-3 mb-2 px-1">
+                                <!-- <div class="col-12 col-lg-4 col-md-3 mb-2 px-1">
                                   <label class="form-label" for="name-Statement"> البيان الضريبى<span
                                       class="start-form">*</span></label>
                                   <textarea name="text" rows="1" class="form-control">  </textarea>
 
 
-                                </div>
+                                </div> -->
                               </div>
                               <div class="col-12 col-lg-1 col-md-4 mb-2 col-add">
                                 <a class="bg-primary text-bg-primary p-1 d-flex align-items-center justify-content-center  rounded add-row"
@@ -2492,7 +2533,9 @@
   <script src="./assets/kendo.all.min.js"></script>
   <!-- <script src="./assets/js/forms-file-upload.js"></script> 2-12-2024-->
   <script src="./assets/vendor/js/upload.js"></script>
-
+  <script src="./assets/vendor/js/inputlist.js">//12-12-2024
+   
+    </script>
   <script>
     $(document).ready(function () {
       function initializeDropDownTree(selector) {
@@ -3168,7 +3211,8 @@ $(".k-treeview").on("keydown", function(e) {
          let originalRow = $(rowSelector).first();
          newRow.find('.select2-container').remove();
        
-     
+  
+   
 
         // تغيير زر الإضافة إلى زر الحذف في السطر الجديد
         newRow.find('.add-row, .add-alsarf,.add-Exchange,.add-Deposits,.add-Payments,.add-Revenue,.add-expense').removeClass('add-row add-alsarf add-Payments add-Exchange add-Deposits add-Revenue add-expense bg-primary text-bg-primary')
@@ -3178,6 +3222,14 @@ $(".k-treeview").on("keydown", function(e) {
 
          // حفظ قيمة نسبة الضريبة من الحقل الأصلي
     let taxRate = $(rowSelector).first().find('input[type="text"][value="20"]').val() || '15';
+    const newCityInputId = `city-${Date.now()}`; //12-12-2024
+    const newDropdownId = `options-${Date.now()}`;//12-12-2024
+    const newStatementTextAreaId = `tax-statement-${Date.now()}`;//12-12-2024
+
+    // تحديث معرّفات العناصر
+    newRow.find('#city').attr('id', newCityInputId);//12-12-2024
+    newRow.find('#options').attr('id', newDropdownId);//12-12-2024
+    newRow.find('#tax-statement').attr('id', newStatementTextAreaId);//12-12-2024
 
 // إعادة تعيين القيم في جميع الحقول
 newRow.find('input, textarea').val('');
@@ -3188,6 +3240,7 @@ newRow.find('input[type="text"][value="20"]').val(taxRate);
 
         // إضافة السطر الجديد إلى الحاوية المحددة
         $(containerId).append(newRow);
+        
     // تهيئة Select2 للسطر الجديد
     newRow.find('select.select2').each(function() {
         // إزالة الـ ID لتجنب التكرار
@@ -3238,7 +3291,8 @@ newRow.find('input[type="text"][value="20"]').val(taxRate);
 
         // وضع التركيز على أول عنصر قابل للتركيز داخل السطر الجديد
         setFocusToFirstFocusable(newRow);
-        // إضافة border للصف الجديد
+        // إضافة border للصف الجديد12-12-2024
+        initializeCityDropdown(newCityInputId, newDropdownId, newStatementTextAreaId);
 
       }
       
@@ -3506,45 +3560,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
   </script>
-<script>
-  const input = document.getElementById("city");
-  const dropdown = document.getElementById("options");
-  const listItems = dropdown.querySelectorAll("li");
 
-  // عرض القائمة عند الكتابة
-  input.addEventListener("input", () => {
-    const query = input.value.toLowerCase();
-    dropdown.style.display = "block"; // إظهار القائمة
 
-    listItems.forEach((li) => {
-      // تصفية الخيارات بناءً على الإدخال
-      if (li.textContent.toLowerCase().includes(query)) {
-        li.style.display = "block"; // إظهار الخيار إذا كان مطابقًا
-      } else {
-        li.style.display = "none"; // إخفاء الخيار إذا لم يكن مطابقًا
-      }
-    });
 
-    // إخفاء القائمة إذا لم يكن هناك نتائج
-    const hasVisibleItems = Array.from(listItems).some(li => li.style.display === "block");
-    if (!hasVisibleItems) {
-      dropdown.style.display = "none";
-    }
-  });
-
-  // تحديد الخيار عند النقر
-  listItems.forEach((li) => {
-    li.addEventListener("click", () => {
-      input.value = li.textContent; // تعيين القيمة إلى حقل الإدخال
-      dropdown.style.display = "none"; // إخفاء القائمة
-    });
-  });
-
-  // إخفاء القائمة عند النقر خارجها
-  document.addEventListener("click", (e) => {
-    if (e.target !== input && e.target !== dropdown) {
-      dropdown.style.display = "none";
-    }
-  });
-</script>
 </html>
