@@ -129,9 +129,23 @@
   display: none;
 }
 
-  
+
 
     </style>
+    <style>
+      /* تنسيق عناصر القائمة */
+      #options li {
+        padding: 8px 10px;
+        border-bottom: 1px solid #eee;
+        cursor: pointer; /* يغير المؤشر إلى كف عند الوقوف */
+        transition: background-color 0.3s ease; /* تأثير تغير اللون بسلاسة */
+      }
+    
+      /* تغيير لون الخلفية عند التمرير */
+      #options li:hover {
+        background-color: #f0f0f0;
+      }
+    </style> 
 </head>
 
 <body>
@@ -1289,38 +1303,23 @@
                               </div>
                             </div>
                             <div class="col-12 col-lg-4 col-md-8 mb-2">
-                              <!-- <label for="browser" class="form-label">Choose your browser:</label>
-                                <input class="form-control" list="browsers" id="browser" name="browser" placeholder="Type or select...">
-
-                                <datalist id="browsers">
-                                  <option value="Google Chrome">
-                                  <option value="Mozilla Firefox">
-                                  <option value="Microsoft Edge">
-                                  <option value="Opera">
-                                  <option value="Safari">
-                                    <option value="Google Chrome">
-                                      <option value="Mozilla Firefox">
-                                      <option value="Microsoft Edge">
-                                      <option value="Opera">
-                                      <option value="Safari">
-                                        <option value="Google Chrome">
-                                          <option value="Mozilla Firefox">
-                                          <option value="Microsoft Edge">
-                                          <option value="Opera">
-                                          <option value="Safari">
-                                            <option value="Google Chrome">
-                                              <option value="Mozilla Firefox">
-                                              <option value="Microsoft Edge">
-                                              <option value="Opera">
-                                              <option value="Safari">
-                                </datalist> -->
-                                <label for="city" class="form-label">Choose a city:</label>
-                                <input class="form-control" type="text" id="city" placeholder="Type to search..." autocomplete="off">
-                                <div id="dropdown" style="position: relative; ">
-                                  <ul id="options" style="max-height: 150px; overflow-y: auto;  list-style: none; padding: 1px; margin: 0; position: absolute; width: 100%; background: white; z-index: 10; display: none;">
-                                    <!-- الخيارات ستُضاف هنا ديناميكيًا -->
-                                  </ul>
-                                </div>
+                        
+                              <label for="city" class="form-label">Choose a city:</label>
+                              <input type="text" class="form-control" id="city" placeholder="Type to search..." autocomplete="off">
+                              <div id="dropdown" style="position: relative;">
+                                <ul id="options" style="max-height: 150px; overflow-y: auto;  list-style: none; padding: 0; margin: 0; position: absolute; width: 100%; background: white; z-index: 10; display: none;">
+                                  <li>New York</li>
+                                  <li>Los Angeles</li>
+                                  <li>Chicago</li>
+                                  <li>Houston</li>
+                                  <li>Phoenix</li>
+                                  <li>Dallas</li>
+                                  <li>San Francisco</li>
+                                  <li>Miami</li>
+                                  <li>Boston</li>
+                                  <li>Seattle</li>
+                                </ul>
+                              </div>
                             </div>
                             <!--سند القبض--سند الصرف-->
 
@@ -3508,40 +3507,37 @@ document.addEventListener('DOMContentLoaded', function() {
 });
   </script>
 <script>
-  const cities = ["New York", "Los Angeles", "Chicago", "Houston", "Phoenix", "Dallas", "San Francisco", "Miami", "Boston", "Seattle"];
   const input = document.getElementById("city");
   const dropdown = document.getElementById("options");
+  const listItems = dropdown.querySelectorAll("li");
 
-  // تحديث الخيارات
-  function updateOptions(query) {
-    dropdown.innerHTML = ""; // تفريغ القائمة الحالية
-    cities
-      .filter(city => city.toLowerCase().includes(query))
-      .forEach(city => {
-        const li = document.createElement("li");
-        li.textContent = city;
-        li.style.padding = "5px";
-        li.style.cursor = "pointer";
+  // عرض القائمة عند الكتابة
+  input.addEventListener("input", () => {
+    const query = input.value.toLowerCase();
+    dropdown.style.display = "block"; // إظهار القائمة
 
-        li.addEventListener("click", () => {
-          input.value = city; // تعيين القيمة عند النقر
-          dropdown.style.display = "none"; // إخفاء القائمة
-        });
+    listItems.forEach((li) => {
+      // تصفية الخيارات بناءً على الإدخال
+      if (li.textContent.toLowerCase().includes(query)) {
+        li.style.display = "block"; // إظهار الخيار إذا كان مطابقًا
+      } else {
+        li.style.display = "none"; // إخفاء الخيار إذا لم يكن مطابقًا
+      }
+    });
 
-        dropdown.appendChild(li);
-      });
-
-    dropdown.style.display = "block"; // عرض القائمة
-  }
-
-  // عرض القائمة عند التركيز على الإدخال
-  input.addEventListener("focus", () => {
-    updateOptions(input.value); // عرض الخيارات بناءً على الإدخال
+    // إخفاء القائمة إذا لم يكن هناك نتائج
+    const hasVisibleItems = Array.from(listItems).some(li => li.style.display === "block");
+    if (!hasVisibleItems) {
+      dropdown.style.display = "none";
+    }
   });
 
-  // تحديث القائمة أثناء الكتابة
-  input.addEventListener("input", () => {
-    updateOptions(input.value);
+  // تحديد الخيار عند النقر
+  listItems.forEach((li) => {
+    li.addEventListener("click", () => {
+      input.value = li.textContent; // تعيين القيمة إلى حقل الإدخال
+      dropdown.style.display = "none"; // إخفاء القائمة
+    });
   });
 
   // إخفاء القائمة عند النقر خارجها
