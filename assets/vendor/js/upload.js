@@ -39,12 +39,16 @@ $('.accordion-button').on('keydown',function (e) {
 
  // Function to handle the keyboard shortcut
  
-//  function handleKeyboardShortcut(event) {
-//     if (event.ctrlKey && event.keyCode === 83 || event.key == "Enter") {
-//         event.preventDefault(); // Prevent the browser's save dialog
-//         document.getElementById("saveButton").click(); // Trigger the "Save" button click
-//     }
-// }
+// دالة للتعامل مع اختصارات لوحة المفاتيح
+function handleKeyboardShortcut(event) {
+    if (event.ctrlKey && event.keyCode === 67) { // 67 هو الكود الخاص بـ C
+        event.preventDefault(); // منع السلوك الافتراضي
+        document.getElementById("saveButton").click(); // تفعيل زر "حفظ"
+    }
+}
+
+// إضافة مستمع الحدث للضغط على لوحة المفاتيح
+document.addEventListener("keydown", handleKeyboardShortcut);
 
 // Function to display the printout message
 // function displayPrintoutMessage() {

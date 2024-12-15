@@ -159,6 +159,14 @@
         padding: 8px; /* المسافة الداخلية */
       }
     </style>
+    <style>/*15-12-2024*/
+      .form-control:focus,.select2-container--default.select2-container--focus .select2-selection,
+      .k-picker-solid:focus,.form-control:focus,.select2-hidden-accessible:focus
+      {
+        border: 4px solid #7367f0!important;
+       
+      }
+    </style>
 </head>
 
 <body>
@@ -1545,7 +1553,7 @@
 
                               <div class="col-12 col-lg-2 col-md-3 mb-2">
                                 <label class="form-label">الفرع<span class="start-form">*</span></label>
-                                <select class="select2 form-select" data-allow-clear="true">
+                                <select class="select2 form-select"  data-allow-clear="true">
                                     <option value="AK">محمود</option>
                                     <option value="HI">شركة العقارات</option>
                                     <option value="CA">California</option>
@@ -3048,14 +3056,7 @@
 
           }
         });
-        // وظيفة لضمان ظهور العنصر المحدد داخل الإطار المرئي للقائمة
-  
-//     $(".k-treeview").on("keydown", function(e) {
-//     var treeView = $(this);
-//     if (e.key === "ArrowDown" || e.key === "ArrowUp") {
-//         treeView.scrollTop(treeView.scrollTop() + (e.key === "ArrowDown" ? 25 : -25));
-//     }
-// });
+    
 $(".k-treeview").on("keydown", function(e) {
     var treeView = $(this);
     var currentNode = treeView.find(".k-treeview-leaf").first(); // العنصر الأول الذي يحمل الفئة
@@ -3076,15 +3077,6 @@ $(".k-treeview").on("keydown", function(e) {
 
         
       }
-
-      // Initialize Select2 for the dropdowns
-      // $('.select2').select2().on("select2:select", function (e) {
-      //       // الانتقال إلى الـ input التالي في نفس السطر
-      //       let nextFocusable = $(this).closest(".row").find("input, select, textarea,checkbox").eq($(this).index() + 1);
-      //       if (nextFocusable.length) {
-      //           nextFocusable.focus();
-      //       }
-      //   });
       initializeDropDownTree(".dropdowntree");
       initializeDropDownTree(".dropdowntree-tow");
       
@@ -3207,13 +3199,11 @@ $(".k-treeview").on("keydown", function(e) {
       // دالة لإضافة صف جديد في الحاوية المحددة
       function addNewRow(containerId, rowSelector) {
         let newRow = $(rowSelector).first().clone(); // استنساخ السطر من النموذج
-         // حذف أي حاويات select2-container المكررة
+          // تهيئة DropDownTree للعناصر الجديدة فقط إذا لم تكن مهيأة مسبقًا
+          
+        // حذف أي حاويات select2-container المكررة
          let originalRow = $(rowSelector).first();
          newRow.find('.select2-container').remove();
-       
-  
-   
-
         // تغيير زر الإضافة إلى زر الحذف في السطر الجديد
         newRow.find('.add-row, .add-alsarf,.add-Exchange,.add-Deposits,.add-Payments,.add-Revenue,.add-expense').removeClass('add-row add-alsarf add-Payments add-Exchange add-Deposits add-Revenue add-expense bg-primary text-bg-primary')
           .addClass('delete-row delete-rows delete-Exchange delete-Deposits delete-Payments delete-Revenue delete-expense bg-danger text-bg-danger')
@@ -3236,8 +3226,12 @@ newRow.find('input, textarea').val('');
 
 // إعادة تعيين قيمة نسبة الضريبة في الحقل الجديد
 newRow.find('input[type="text"][value="20"]').val(taxRate);
-
-
+ //15-12-2024
+ // إزالة أي تهيئة سابقة لـ DropDownTree من النسخة المستنسخة
+ newRow.find('.dropdowntree, .dropdowntree-tow').each(function () {
+          $(this).data("kendoDropDownTree")?.destroy();
+          $(this).empty();
+        });
         // إضافة السطر الجديد إلى الحاوية المحددة
         $(containerId).append(newRow);
         
@@ -3262,40 +3256,28 @@ newRow.find('input[type="text"][value="20"]').val(taxRate);
                 }
             }
         });
-    });
+         //15-12-2024
+        // ضبط tabindex للعنصر الجديد
+    $(this).next('.select2-container').attr('tabindex', '0'); // إضافة tabindex
 
+    });
+    //15-12-2024
+// إضافة حدث focus للحاويات
+newRow.find('.select2-container').on('focus', function () {
+        $(this).siblings('select').select2('open');
+    });
     // إعادة تهيئة Select2 للسطر الأصلي
-    originalRow.find('select.select2').each(function() {
-        if (!$(this).hasClass('select2-hidden-accessible')) {
-            $(this).select2({
-                dropdownParent: $(containerId),
-                width: '100%',
-                minimumResultsForSearch: 0,
-                searchInputPlaceholder: 'ابحث هنا...',
-                allowClear: true,
-                language: {
-                    searching: function() {
-                        return "جاري البحث...";
-                    },
-                    noResults: function() {
-                        return "لا توجد نتائج";
-                    }
-                }
-            });
-        }
-    });
+ 
 
-        // تهيئة DropDownTree للعناصر الجديدة
-        initializeDropDownTree(newRow.find('.dropdowntree'));
+    initializeDropDownTree(newRow.find('.dropdowntree'));
         initializeDropDownTree(newRow.find('.dropdowntree-tow'));
-
         // وضع التركيز على أول عنصر قابل للتركيز داخل السطر الجديد
         setFocusToFirstFocusable(newRow);
         // إضافة border للصف الجديد12-12-2024
         initializeCityDropdown(newCityInputId, newDropdownId, newStatementTextAreaId);
 
       }
-      
+    
       // دالة لحذف السطر المحدد بناءً على القسم النشط
       function deleteFocusedRow() {
         let focusedRow = $(':focus').closest('.row');
@@ -3314,7 +3296,7 @@ newRow.find('input[type="text"][value="20"]').val(taxRate);
 
       function setFocusToFirstFocusable(row) {
         // وضع التركيز على أول عنصر يحتوي على DropDownTree أو input أو textarea
-        let firstFocusable = row.find('#dropdowntree, input, textarea,.dropdowntree-tow').first();
+        let firstFocusable = row.find('#dropdowntree, input,select, textarea,.dropdowntree-tow').first();
         if (firstFocusable.length) {
           firstFocusable.focus();
         }
@@ -3327,13 +3309,6 @@ newRow.find('input[type="text"][value="20"]').val(taxRate);
     });
 
 
-  // دالة لوضع التركيز على أول عنصر قابل للتركيز داخل السطر الجديد
-  function setFocusToFirstFocusable(row) {
-    let firstFocusable = row.find('input, textarea, select').first();
-    if (firstFocusable.length) {
-      firstFocusable.focus();
-    }
-  }
 
   // إضافة صف جديد باستخدام Tab
 
