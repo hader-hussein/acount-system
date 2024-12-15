@@ -38,10 +38,10 @@ $('.accordion-button').on('keydown',function (e) {
  
 
  // Function to handle the keyboard shortcut
- 
+ //15-12-2024
 // دالة للتعامل مع اختصارات لوحة المفاتيح
 function handleKeyboardShortcut(event) {
-    if (event.ctrlKey && event.keyCode === 67) { // 67 هو الكود الخاص بـ C
+    if (event.ctrlKey && event.keyCode === 83) { // 83 هو الكود الخاص بـ s
         event.preventDefault(); // منع السلوك الافتراضي
         document.getElementById("saveButton").click(); // تفعيل زر "حفظ"
     }
