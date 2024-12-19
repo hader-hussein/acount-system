@@ -145,6 +145,7 @@
       #options li:hover {
         background-color: #f0f0f0;
       }
+ 
     </style> 
     <style>
       /* التحكم في عدد العناصر المعروضة باستخدام max-height */
@@ -1047,7 +1048,7 @@
           <!-- Content -->
 
           <div class="container-xxl flex-grow-1 container-p-y ">
-            <form  class="row mx-0 component-form pt-2">
+            <form  class="row mx-0 component-form pt-2" >
               <div class="card comonent-hader-top">
                 <div class="card-body py-2  px-1 card-widget-separator">
                   <div class="row mx-0 d-flex flex-wrap justify-content-between mb-1 align-items-center pt-2">
@@ -1528,7 +1529,13 @@
                               <div class="col-12 col-lg-2 col-md-4 mb-2">
                                 <label class="form-label" for="name-acount"> مركز التكلفة<span
                                     class="start-form">*</span></label>
-                                <input id="dropdowntree" class="dropdowntree-tow" style="padding: 0.31rem 0.875rem;" />
+                                    <select class="select2 form-select cost-center-select"  data-allow-clear="true">
+                                      <option value="AK">محمود</option>
+                                      <option value="HI">شركة العقارات</option>
+                                      <option value="CA">California</option>
+                                      <option value="NV">Nevada</option>
+                                      <option value="OR">Oregon</option>
+                                  </select>
 
 
                               </div>
@@ -2524,19 +2531,42 @@
             $(this).kendoDropDownTree({
               placeholder: "Select ...",
               filter: "startswith",
+              autoBind: true,
+              autoWidth: true,
               dataSource: [
                 {
                   text: "Furniture",
                   expanded: true,
+                  enable: false,
+               
                   items: [
-                    { text: "Tables & Chairs" },
+                    { text: "Tables & Chairsاااااااااااااااااااااااااا" },
                     { text: "Sofas" },
-                    { text: "Occasional Furniture" },
+                    { text: "Occasional Furnitureاااااااااااااااااااااا" },
                   ],
                 },
                 {
                   text: "Decor",
                   expanded: true,
+                  enable: false,
+                  items: [
+                    { text: "Bed Linen" },
+                    { text: "Curtains & Blinds" },
+                    { text: "Carpetsااااااااااااااااااا" },
+                  ],
+                },{
+                  text: "Decor",
+                  expanded: true,
+                  enable: false,
+                  items: [
+                    { text: "Bed Linen" },
+                    { text: "Curtains & Blinds" },
+                    { text: "Carpetsننننننننننننننننننننننننننننننننننننن" },
+                  ],
+                },{
+                  text: "Decor",
+                  expanded: true,
+                  enable: false,
                   items: [
                     { text: "Bed Linen" },
                     { text: "Curtains & Blinds" },
@@ -2545,6 +2575,7 @@
                 },{
                   text: "Decor",
                   expanded: true,
+                  enable: false,
                   items: [
                     { text: "Bed Linen" },
                     { text: "Curtains & Blinds" },
@@ -2553,6 +2584,7 @@
                 },{
                   text: "Decor",
                   expanded: true,
+                  enable: false,
                   items: [
                     { text: "Bed Linen" },
                     { text: "Curtains & Blinds" },
@@ -2561,22 +2593,7 @@
                 },{
                   text: "Decor",
                   expanded: true,
-                  items: [
-                    { text: "Bed Linen" },
-                    { text: "Curtains & Blinds" },
-                    { text: "Carpets" },
-                  ],
-                },{
-                  text: "Decor",
-                  expanded: true,
-                  items: [
-                    { text: "Bed Linen" },
-                    { text: "Curtains & Blinds" },
-                    { text: "Carpets" },
-                  ],
-                },{
-                  text: "Decor",
-                  expanded: true,
+                  enable: false,
                   items: [
                     { text: "Bed Linen" },
                     { text: "Curtains & Blinds" },
@@ -3006,6 +3023,7 @@
                   ],
                 },
               ],
+              
               select: function (e) {
                 var dataItem = this.dataItem(e.node);
                 if (dataItem.hasChildren) {
@@ -3195,9 +3213,11 @@ $(".k-treeview").on("keydown", function(e) {
 
 // إعادة تعيين القيم في جميع الحقول
 newRow.find('input, textarea').val('');
+newRow.find('.cost-center-select').empty().append('<option></option>'); // تفريغ مركز التكلفة فقط
 
 // إعادة تعيين قيمة نسبة الضريبة في الحقل الجديد
 newRow.find('input[type="text"][value="20"]').val(taxRate);
+
  //15-12-2024
  // إزالة أي تهيئة سابقة لـ DropDownTree من النسخة المستنسخة
  newRow.find('.dropdowntree, .dropdowntree-tow').each(function () {
@@ -3206,7 +3226,16 @@ newRow.find('input[type="text"][value="20"]').val(taxRate);
         });
         // إضافة السطر الجديد إلى الحاوية المحددة
         $(containerId).append(newRow);
-        
+        newRow.find('.cost-center-select').select2({
+        dropdownParent: $('containerId'),
+        width: '100%',
+        placeholder: "اختر مركز التكلفة...",
+        allowClear: true,
+        language: {
+            searching: function () { return "جاري البحث..."; },
+            noResults: function () { return "لا توجد نتائج"; }
+        }
+    });
     // تهيئة Select2 للسطر الجديد
     newRow.find('select.select2').each(function() {
         // إزالة الـ ID لتجنب التكرار
@@ -3243,6 +3272,44 @@ newRow.find('.select2-container').on('focus', function () {
 
     initializeDropDownTree(newRow.find('.dropdowntree'));
         initializeDropDownTree(newRow.find('.dropdowntree-tow'));
+        // الحدث لتغيير مركز التكلفة بناءً على اختيار اسم الحساب
+    newRow.find('.dropdowntree-tow').on('change', function () {
+        const accountId = $(this).val(); // الحصول على معرف الحساب المختار
+        const costCenterSelect = newRow.find('.cost-center-select'); // مركز التكلفة المرتبط
+
+        if (accountId) {
+            // جلب مراكز التكلفة بناءً على معرف الحساب
+            fetchCostCenters(accountId).then(costCenters => {
+                costCenterSelect.empty(); // تفريغ الخيارات السابقة
+                costCenterSelect.append('<option></option>'); // إضافة خيار فارغ
+
+                // تعبئة الخيارات الجديدة
+                costCenters.forEach(center => {
+                    costCenterSelect.append(`<option value="${center.id}">${center.name}</option>`);
+                });
+
+                // إعادة تهيئة Select2
+                costCenterSelect.select2({
+                    dropdownParent: $('#expenses-table'),
+                    width: '100%',
+                    placeholder: "اختر مركز التكلفة...",
+                    allowClear: true,
+                    language: {
+                        searching: function () { return "جاري البحث..."; },
+                        noResults: function () { return "لا توجد نتائج"; }
+                    }
+                });
+            }).catch(error => {
+                console.error("Error fetching cost centers:", error);
+                alert("حدث خطأ أثناء جلب مراكز التكلفة. يرجى المحاولة لاحقًا.");
+            });
+        } else {
+            // إذا لم يتم اختيار اسم حساب، اترك مركز التكلفة فارغًا
+            costCenterSelect.empty().select2({
+                placeholder: "اختر اسم الحساب أولاً..."
+            });
+        }
+    });
         // وضع التركيز على أول عنصر قابل للتركيز داخل السطر الجديد
         setFocusToFirstFocusable(newRow);
         // إضافة border للصف الجديد12-12-2024
