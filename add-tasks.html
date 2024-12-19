@@ -38,7 +38,7 @@
   <link rel="stylesheet" href="./assets/vendor/libs/apex-charts/apex-charts.css" />
   <link rel="stylesheet" href="./assets/vendor/libs/select2/select2.css" />
   <link rel="stylesheet" href="./assets/vendor/libs/bootstrap-select/bootstrap-select.css" />
-  <link rel="stylesheet" href="./assets/vendor/libs/dropzone/dropzone.css" />
+
   <link href="./assets/default-ocean-blue.css" rel="stylesheet">
   <link rel="stylesheet" href="./assets/vendor/css/rtl/theme-default.css" class="template-customizer-theme-css" />
   <link rel="stylesheet" href="./assets/css/style.css" />
@@ -1334,7 +1334,7 @@
     <script src="./assets/vendor/libs/bootstrap-select/bootstrap-select.js"></script>
     <!-- Vendors JS -->
     <script src="./assets/vendor/libs/apex-charts/apexcharts.js"></script>
-    <script src="./assets/vendor/libs/dropzone/dropzone.js"></script>
+   
     <!-- Main JS -->
     <script src="./assets/js/main.js"></script>
 
@@ -1348,9 +1348,10 @@
     <script src="./assets/vendor/js/chart.js"></script>
     <script src="./assets/js/dashboards-crm.js"></script>
     <script src="./assets/js/forms-selects.js"></script>
-    <script src="./assets/js/forms-file-upload.js"></script>
+   
     <script src="./assets/kendo.all.min.js"></script>
     <script src="./assets/vendor/js/upload.js"></script>
+    <script src="./assets/vendor/js/file.js"></script><!--19-12-2024-file-->
     <script>
       $(document).ready(function () {
         // تهيئة Select2
@@ -1388,81 +1389,7 @@
       });
       
     </script>
- <script><!--2-12-2024-->
-  document.addEventListener('DOMContentLoaded', function() {
-      const uploadArea = document.getElementById('uploadArea');
-      const fileInput = document.getElementById('fileInput');
-      const fileInfo = document.getElementById('fileInfo');
-      const fileDetails = fileInfo.querySelector('.file-details');
-      const fileName = fileDetails.querySelector('.file-name');
-      const deleteBtn = fileDetails.querySelector('.delete-btn');
-  
-      // تفعيل اختيار الملف عند النقر على المنطقة
-      uploadArea.addEventListener('click', function(e) {
-          // تجنب تشغيل input file عند النقر على زر الحذف
-          if (!e.target.closest('.delete-btn')) {
-              fileInput.click();
-          }
-      });
-  
-      // تحديث عرض الملف عند اختياره
-      fileInput.addEventListener('change', function() {
-          if (this.files.length > 0) {
-              showFileDetails(this.files[0].name);
-          }
-      });
-  
-      // حذف الملف
-      deleteBtn.addEventListener('click', function(e) {
-          e.stopPropagation(); // منع انتشار الحدث للعناصر الأب
-          resetFileInput();
-      });
-  
-      // معالجة السحب والإفلات
-      uploadArea.addEventListener('dragover', function(e) {
-          e.preventDefault();
-          this.classList.add('dragover');
-      });
-  
-      uploadArea.addEventListener('dragleave', function(e) {
-          e.preventDefault();
-          this.classList.remove('dragover');
-      });
-  
-      uploadArea.addEventListener('drop', function(e) {
-          e.preventDefault();
-          this.classList.remove('dragover');
-          
-          const files = e.dataTransfer.files;
-          if (files.length > 0) {
-              fileInput.files = files;
-              showFileDetails(files[0].name);
-          }
-      });
-  
-      // دوال مساعدة
-      function showFileDetails(name) {
-          fileName.textContent = name;
-          fileDetails.style.display = 'flex';
-          uploadArea.classList.add('has-file');
-      }
-  
-      function resetFileInput() {
-          fileInput.value = '';
-          fileDetails.style.display = 'none';
-          uploadArea.classList.remove('has-file');
-      }
-  
-      // منع فتح الملف في المتصفح عند السحب والإفلات
-      document.addEventListener('dragover', function(e) {
-          e.preventDefault();
-      });
-  
-      document.addEventListener('drop', function(e) {
-          e.preventDefault();
-      });
-  });
-    </script>
+
 </body>
 
 </html>
