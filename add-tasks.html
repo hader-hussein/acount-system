@@ -1301,6 +1301,8 @@
             $('#template-row').parent().append(newRow);
                // إعادة تهيئة Select2 للحقول الجديدة
       newRow.find('.select2').select2();
+      $('#template-row').find('.select2').select2();  // تهيئة Select2 على السطر الأساسي أيضًا
+
         });
     
         // عند الضغط على زر "حذف"
