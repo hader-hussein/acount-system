@@ -49,7 +49,87 @@
   <script src="./assets/vendor/js/template-customizer.js"></script>
   <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
   <script src="./assets/js/config.js"></script>
-
+  <style>
+    .upload-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 0px auto;
+  }
+  
+  .upload-area {
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    background-color: #fff;
+    cursor: pointer;
+    transition: border 0.3s ease;
+  }
+  
+  .upload-area.dragover {
+    border-color: #4a90e2;
+    background-color: #f8f9fa;
+  }
+  
+  .upload-icon {
+    font-size: 24px;
+    margin-bottom: 10px;
+    display: block;
+  }
+  
+  .upload-text {
+    color: #666;
+    margin-bottom: 15px;
+    font-size: 14px;
+  }
+  
+  .file-input {
+    display: none;
+  }
+  
+  .file-info {
+    margin-top: 10px;
+  }
+  
+  .file-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f8f9fa;
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+  }
+  
+  .file-name {
+    color: #333;
+    font-size: 14px;
+    margin-right: 10px;
+  }
+  
+  .delete-btn {
+    background: none;
+    border: none;
+    color: #dc3545;
+    cursor: pointer;
+    padding: 4px 8px;
+    font-size: 14px;
+    transition: color 0.3s ease;
+  }
+  
+  .delete-btn:hover {
+    color: #c82333;
+  }
+  
+  /* إخفاء النص الافتراضي عند وجود ملف */
+  .upload-area.has-file .upload-icon,
+  .upload-area.has-file .upload-text {
+    display: none;
+  }
+  
+  
+  
+      </style>
 </head>
 
 <body>
@@ -1052,11 +1132,11 @@
                                      <div class="col-12 col-md-6 col-lg-2 mb-2">
                                       <div class="input-container">
                                         <label for="installments-count">عدد الأقساط:</label>
-                                        <input type="number" class="form-control" id="installments-count" min="1" placeholder="أدخل عدد الأقساط">
+                                        <input type="number" class="form-control installments-count"  min="1" placeholder="أدخل عدد الأقساط">
                                       </div>
                                      </div>
                                      <div class="col-12 table-responsive text-nowrap tabel-all">
-                                      <table style="display: none;" class="table  table-bordered" id="installments-table">
+                                      <table style="display: none;" class="table  table-bordered installments-table" >
                                         <thead>
                                           <tr class="text-center">
                                             <th>رقم القسط</th>
@@ -1064,21 +1144,27 @@
                                             <th>القيمة</th>
                                           </tr>
                                         </thead>
-                                        <tbody id="installments-body">
+                                        <tbody class="installments-body">
                                           <!-- سيتم إنشاء الأسطر هنا ديناميكيًا -->
                                         </tbody>
                                       </table>
                                      </div>
                                      
-                                     <div class="col-12 col-md-12 col-lg-8 mb-2">
-                                      <div action="/upload" class="dropzone needsclick p-0" id="dropzone-basic">
-                                        <div class="dz-message needsclick">
-                                          Drop files here or click to upload
-            
-            
-                                        </div>
-                                        <div class="fallback">
-                                          <input name="file" type="file" />
+                                     <div class="col-12 col-lg-4 col-md-8 mb-2 file-field" id="">
+                                      <div class="upload-container"> <!--2-12-2024-->
+                                        <div class="upload-area" >
+                                          <i class="fa-solid fa-upload"></i>
+                                          <p class="upload-text">Drop files here or click to upload</p>
+                                          <input type="file" id="fileInput" name="file" multiple class="file-input" />
+                
+                                          <div class="file-info">
+                                            <div class="file-details" style="display: none;">
+                                              <span class="file-name">No file chosen</span>
+                                              <button type="button" class="delete-btn" title="حذف الملف">
+                                                <i class="fas fa-times"></i>
+                                              </button>
+                                            </div>
+                                          </div>
                                         </div>
                                       </div>
                                     </div>
@@ -1136,8 +1222,8 @@
                       </div>
                   
                       <div class="col-12 col-md-6 col-lg-2 mb-2">
-                        <label for="priority1" class="form-label">  الفترة:</label>
-                        <select id="priority1" name="priority1"  class="form-control select2">
+                        <label  class="form-label">  الفترة:</label>
+                        <select  name="priority1"  class="form-control select2">
                               <option value=" شهرى"> شهرى</option>
                               <option value="ربع سنوى">ربع سنوى</option>
                               <option value="نص سنوى">نصف سنوى</option>
@@ -1148,11 +1234,45 @@
                       
                      <div class="col-12 col-md-6 col-lg-2 mb-2">
                       <div class="input-container">
-                        <label for="installments-count-edit">عدد الأقساط:</label>
-                        <input type="number" class="form-control" id="installments-count-edit" min="1" placeholder="أدخل عدد الأقساط">
+                        <label for="installments-count">عدد الأقساط:</label>
+                        <input type="number" class="form-control installments-count" id="" min="1" placeholder="أدخل عدد الأقساط">
                       </div>
                      </div>
+                     <div class="col-12 table-responsive text-nowrap tabel-all">
+                      <table style="display: none;" class="table  table-bordered installments-table" id="">
+                        <thead>
+                          <tr class="text-center">
+                            <th>رقم القسط</th>
+                            <th>تاريخ الاستحقاق</th>
+                            <th>القيمة</th>
+                          </tr>
+                        </thead>
+                        <tbody class="installments-body">
+                          <!-- سيتم إنشاء الأسطر هنا ديناميكيًا -->
+                        </tbody>
+                      </table>
+                     </div>
+                     
+                     <div class="col-12 col-lg-4 col-md-8 mb-2 file-field" id="">
+                      <div class="upload-container"> <!--2-12-2024-->
+                        <div class="upload-area" >
+                          <i class="fa-solid fa-upload"></i>
+                          <p class="upload-text">Drop files here or click to upload</p>
+                          <input type="file" id="fileInput" name="file" multiple class="file-input" />
 
+                          <div class="file-info">
+                            <div class="file-details" style="display: none;">
+                              <span class="file-name">No file chosen</span>
+                              <button type="button" class="delete-btn" title="حذف الملف">
+                                <i class="fas fa-times"></i>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                 
+                      
                       <div class="col-12 col-lg-12 mb-2">
                         <label class="form-label" for="basic-default-decerption">
                           الوصف<span class="start-form">*</span></label>
@@ -1163,7 +1283,7 @@
                         <i class="fa-solid fa-check mx-2"></i>حفظ
                       </button>
                     </div>
-        </form>
+                     </form>
                   </div>
 
                 </div>
@@ -1328,7 +1448,7 @@
     <script src="./assets/js/forms-file-upload.js"></script>
     <script src="./assets/kendo.all.min.js"></script>
     <script src="./assets/vendor/js/upload.js"></script>
-    <script>
+    <!-- <script>
       $(document).ready(function () {
         // عند الضغط على زر "إضافة"
         $(document).on('click', '.add-row', function () {
@@ -1355,8 +1475,9 @@
             $(this).closest('.row').remove(); // حذف الصف الحالي
         });
       });
-    </script>
-      <script>
+    </script> -->
+
+      <!-- <script>
         document.addEventListener("DOMContentLoaded", () => {
           let attachmentCounter = 0; // عدد المرفقات الحالي
       
@@ -1409,56 +1530,137 @@
             alert("تمت إضافة المرفق بنجاح.");
           });
         });
-      </script>
+      </script> -->
        <script>
-        const countInput = document.getElementById("installments-count");
-        const table = document.getElementById("installments-table");
-        const tbody = document.getElementById("installments-body");
-    
-        countInput.addEventListener("input", () => {
-          const count = parseInt(countInput.value, 10);
-    
-          // التحقق من صحة المدخلات
-          if (isNaN(count) || count <= 0) {
-            table.style.display = "none"; // إخفاء الجدول إذا كانت القيمة غير صحيحة
-            tbody.innerHTML = ""; // تفريغ الأسطر
-            return;
-          }
-    
-          table.style.display = "table"; // إظهار الجدول
-          tbody.innerHTML = ""; // تفريغ الأسطر قبل إنشاء الأسطر الجديدة
-    
-          for (let i = 1; i <= count; i++) {
-            const row = document.createElement("tr");
-    
-            // رقم القسط
-            const installmentNumberCell = document.createElement("td");
-            installmentNumberCell.textContent = i;
-            row.appendChild(installmentNumberCell);
-    
-            // تاريخ الاستحقاق
-            const dueDateCell = document.createElement("td");
-            const dueDateInput = document.createElement("input");
-            dueDateInput.type = "date";
-            dueDateInput.className = "form-control";
-            dueDateCell.appendChild(dueDateInput);
-            row.appendChild(dueDateCell);
-    
-            // القيمة
-            const amountCell = document.createElement("td");
-            const amountInput = document.createElement("input");
-            amountInput.type = "number";
-            amountInput.className = "form-control";
-            amountInput.placeholder = "أدخل القيمة";
-            amountInput.min = "0";
-            amountCell.appendChild(amountInput);
-            row.appendChild(amountCell);
-    
-            tbody.appendChild(row);
-          }
-        });
+       document.querySelectorAll(".component-form").forEach((form) => {
+  const countInput = form.querySelector(".installments-count");
+  const table = form.querySelector(".installments-table");
+  const tbody = form.querySelector(".installments-body");
+
+  if (countInput && table && tbody) {
+    countInput.addEventListener("input", () => {
+      const count = parseInt(countInput.value, 10);
+
+      // Validate the input
+      if (isNaN(count) || count <= 0) {
+        table.style.display = "none"; // Hide the table if the value is invalid
+        tbody.innerHTML = ""; // Clear the rows
+        return;
+      }
+
+      table.style.display = "table"; // Show the table
+      tbody.innerHTML = ""; // Clear the rows before creating new ones
+
+      for (let i = 1; i <= count; i++) {
+        const row = document.createElement("tr");
+
+        // Installment number
+        const installmentNumberCell = document.createElement("td");
+        installmentNumberCell.textContent = i;
+        row.appendChild(installmentNumberCell);
+
+        // Due date
+        const dueDateCell = document.createElement("td");
+        const dueDateInput = document.createElement("input");
+        dueDateInput.type = "date";
+        dueDateInput.className = "form-control";
+        dueDateCell.appendChild(dueDateInput);
+        row.appendChild(dueDateCell);
+
+        // Amount
+        const amountCell = document.createElement("td");
+        const amountInput = document.createElement("input");
+        amountInput.type = "number";
+        amountInput.className = "form-control";
+        amountInput.placeholder = "أدخل القيمة";
+        amountInput.min = "0";
+        amountCell.appendChild(amountInput);
+        row.appendChild(amountCell);
+
+        tbody.appendChild(row);
+      }
+    });
+  }
+});
       </script>
-    
+    <script><!--2-12-2024-->
+     document.addEventListener('DOMContentLoaded', function () {
+  const fileFields = document.querySelectorAll('.file-field');
+
+  fileFields.forEach((fileField) => {
+    const uploadArea = fileField.querySelector('.upload-area');
+    const fileInput = fileField.querySelector('.file-input');
+    const fileInfo = fileField.querySelector('.file-info');
+    const fileDetails = fileInfo.querySelector('.file-details');
+    const fileName = fileDetails.querySelector('.file-name');
+    const deleteBtn = fileDetails.querySelector('.delete-btn');
+
+    // تفعيل اختيار الملف عند النقر على المنطقة
+    uploadArea.addEventListener('click', function (e) {
+      if (!e.target.closest('.delete-btn')) {
+        fileInput.click();
+      }
+    });
+
+    // تحديث عرض الملف عند اختياره
+    fileInput.addEventListener('change', function () {
+      if (this.files.length > 0) {
+        showFileDetails(this.files[0].name);
+      }
+    });
+
+    // حذف الملف
+    deleteBtn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      resetFileInput();
+    });
+
+    // معالجة السحب والإفلات
+    uploadArea.addEventListener('dragover', function (e) {
+      e.preventDefault();
+      this.classList.add('dragover');
+    });
+
+    uploadArea.addEventListener('dragleave', function (e) {
+      e.preventDefault();
+      this.classList.remove('dragover');
+    });
+
+    uploadArea.addEventListener('drop', function (e) {
+      e.preventDefault();
+      this.classList.remove('dragover');
+
+      const files = e.dataTransfer.files;
+      if (files.length > 0) {
+        fileInput.files = files;
+        showFileDetails(files[0].name);
+      }
+    });
+
+    // دوال مساعدة
+    function showFileDetails(name) {
+      fileName.textContent = name;
+      fileDetails.style.display = 'flex';
+      uploadArea.classList.add('has-file');
+    }
+
+    function resetFileInput() {
+      fileInput.value = '';
+      fileDetails.style.display = 'none';
+      uploadArea.classList.remove('has-file');
+    }
+  });
+
+  // منع فتح الملف في المتصفح عند السحب والإفلات
+  document.addEventListener('dragover', function (e) {
+    e.preventDefault();
+  });
+
+  document.addEventListener('drop', function (e) {
+    e.preventDefault();
+  });
+});
+        </script>
     
     
     
