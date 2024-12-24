@@ -966,25 +966,28 @@
            
             <div class="container-xxl flex-grow-1 container-p-y ">
               <div class="card comonent-hader-top">
-                <div class="card-body py-2 px-md-2 px-2 card-widget-separator">
-                  <strong class="py-md-3 px-md-3 text-title-hadeer text-tilte-b"><span class="text-muted">
-                    تسوية الحساب البنكي
-
-                  </span>
-                  </strong>
-                  <div class="row  mt-5 justify-content-center">
-                    <div class="col-xl-8 col-lg-10 col-md-10">
+                <div class="card-body card-widget-separator">
+                  
+                  <div class="row  mx-0 ">
+                    <div class="col-lg-3">
+                      <strong class=" text-title-hadeer text-tilte-b"><span class="text-muted">
+                        تسوية الحساب البنكي
+    
+                      </span>
+                      </strong>
+                    </div>
+                    <div class="col-xl-9 col-lg-9 col-md-10">
                       <div class="card h-100 card-border-shadow-gray">
                         <div class="row h-100 align-items-center">
-                          <div class="col-sm-5">
+                          <div class="col-sm-4">
                             <div class="d-flex align-items-end h-100 justify-content-center mt-sm-0 mt-3">
                               <img src="./assets/img/illustrations/Checklist.jpg" class="img-fluid mt-sm-4 mt-md-0" alt="add-new-roles" width="300">
     
                             </div>
                           </div>
-                          <div class="col-sm-7">
-                            <form class="row component-form  mt-4  mb-4 pt-4 px-2 align-items-center justify-content-center">
-                              <div class="col-12  col-lg-12 mb-3">
+                          <div class="col-sm-8">
+                            <form class="row component-form g-2  mt-4  mb-4 pt-4 px-2 align-items-center justify-content-center">
+                              <div class="col-12  col-lg-6 col-lg-6 mb-3">
                                 <label for="From-account" class="form-label">        اختيار الحساب البنكى </label>
                                 
                                   <select id="From-account" class="select2 form-select" data-allow-clear="true">
@@ -996,11 +999,11 @@
                                 
                                   </select>
                               </div>
-                              <div class="mb-3 col-lg-12 col-12">
+                              <div class="mb-3 col-lg-6 col-lg-6 col-12">
                                 <label class="form-label" for="form-repeater">    اختر الملف<span class="start-form">*</span></label>
                                 <input type="file" id="form-repeater" class="form-control">
                               </div>
-                             <div class="mb-3 col-12 col-lg-12 col-xl-8">
+                             <div class="mb-3">
                               <button class="btn btn-primary  waves-effect waves-light" > تسوية</button>
                               <a href="#">
                                 <button class=" btn btn-secondary btn-main" name="download" id="download_template">تنزيل<i class="fa-solid fa-download px-1"></i>
@@ -1018,7 +1021,58 @@
                   </div>
                 </div>
               </div>
-              
+              <div class="card comonent-hader-top  p-2 mt-4" >
+                
+                <!---->
+              <div class="card-datatable table-responsive tabel-all">
+                <table class="table  table-bordered">
+                  <thead>
+                    <tr class="text-center">
+                      <th>  #</th>
+                      <th>     نوع الحركة</th>
+                      <th>    مرجع السند</th>
+                      <th>    تاريخ </th>
+                      <th>  مدين</th>
+                      <th>    creidt </th>
+                
+                      <th>      البيان</th>
+                      <th>     link</th>
+                    
+
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                     1
+                      </td>
+                      <td> بنك</td>
+                      <td>
+                      5
+                      </td>
+                      <td>10-10-2024</td>
+                      <td> 20.00</td>
+                       <td></td>
+                       <td></td>
+                       <td class="text-center">
+                        <a class="btn bg-primary text-bg-primary p-1  me-3 rounded" href="#">
+                          <i class="fa-solid fa-link"></i>
+                        </a>
+                       </td>
+                      
+                    </tr>
+                   
+                  </tbody>
+                 <tfoot>
+                   <tr>
+                     <td colspan="6" class="text-center bg-primary text-white"> الاجمالى</td>
+                     <td colspan="2" class="text-center bg-primary text-white">200</td>
+                   </tr>
+                 </tfoot>
+                </table>
+              </div> 
+
+          </div>
              
              
               
