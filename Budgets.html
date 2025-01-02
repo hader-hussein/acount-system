@@ -55,7 +55,13 @@
     <script src="./assets/vendor/js/template-customizer.js"></script>
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="./assets/js/config.js"></script>
-    
+    <!-- <style>
+     .table-budgets .form-control,.table-budgets td {
+    width: auto;
+    min-width: 100px; 
+    flex-grow: 1; 
+}
+    </style> -->
   </head>
 
   <body>
@@ -981,16 +987,16 @@
                          <form>
                               <!---->
                             <div class="card-datatable table-responsive text-nowrap tabel-all">
-                              <table class="table  table-bordered">
+                              <table class="table  table-bordered table-budgets">
                                 <thead>
                                   <tr class="text-center">
                                     <th rowspan="2">  #</th>
-                                    <th rowspan="2">    دليل المحاسبى</th>
-                                    <th rowspan="2">    كود الحساب</th>
-                                    <th rowspan="2">    الفترة</th>
+                                    <!-- <th rowspan="2">    دليل المحاسبى</th>
+                                    <th rowspan="2">    كود الحساب</th> -->
+                                    <!-- <th rowspan="2">    الفترة</th>
                                     <th rowspan="2">     القيمة</th>
                                     <th rowspan="2">   Dim. incl.	</th>
-                                    <th rowspan="2">    Last Year</th>
+                                    <th rowspan="2">    Last Year</th> -->
                                     <th rowspan="2">القيد المحاسبى</th>
                                     <th colspan="12">شهور السنة</th>
                                     
@@ -1016,29 +1022,31 @@
                                    1
                                     </td>
                                  
-                                    <td> 1-1-2024 </td>
-                                    <td class="px-1 w-50">
+                                    <td class="px-1">  
+                                        <input id="dropdowntree" class="dropdowntree-tow"style="padding: 0.31rem 0.875rem;" />
+                                    </td>
+                                    <td class="px-1 ">
                                       <input type="text" class="form-control">
                                     </td>
-                                    <td class="px-1 w-50">                      
-                                              <input id="dropdowntree" class="dropdowntree-tow"style="padding: 0.31rem 0.875rem;" />
+                                    <td class="px-1 ">  
+                                      <input type="text" class="form-control">                    
                                     </td>
-                                    <td class="px-1 w-50"> <input type="text" class="form-control"></td>
+                                    <td class="px-1 "> <input type="text" class="form-control"></td>
+                                    <td class="px-1"><input type="text" class="form-control"></td>
+                                    <td class="px-1 "><input type="text" class="form-control"></td>
+                                    <td class="px-1"><input type="text" class="form-control"></td>
+                                    <td class="px-1 "><input type="text" class="form-control"></td>
+                                    <td class="px-1 "><input type="text" class="form-control"></td>
+                                    <td class="px-1"><input type="text" class="form-control"></td>
+                                    <td class="px-1 "><input type="text" class="form-control"></td>
+                                    <td class="px-1 "><input type="text" class="form-control"></td>
+                                    <td class="px-1 "><input type="text" class="form-control"></td>
+                                    <!-- <td class="px-1 w-50"><input type="text" class="form-control"></td> -->
+                                    <!-- <td class="px-1 w-50"><input type="text" class="form-control"></td>
                                     <td class="px-1 w-50"><input type="text" class="form-control"></td>
                                     <td class="px-1 w-50"><input type="text" class="form-control"></td>
                                     <td class="px-1 w-50"><input type="text" class="form-control"></td>
-                                    <td class="px-1 w-50"><input type="text" class="form-control"></td>
-                                    <td class="px-1 w-50"><input type="text" class="form-control"></td>
-                                    <td class="px-1 w-50"><input type="text" class="form-control"></td>
-                                    <td class="px-1 w-50"><input type="text" class="form-control"></td>
-                                    <td class="px-1 w-50"><input type="text" class="form-control"></td>
-                                    <td class="px-1 w-50"><input type="text" class="form-control"></td>
-                                    <td class="px-1 w-50"><input type="text" class="form-control"></td>
-                                    <td class="px-1 w-50"><input type="text" class="form-control"></td>
-                                    <td class="px-1 w-50"><input type="text" class="form-control"></td>
-                                    <td class="px-1 w-50"><input type="text" class="form-control"></td>
-                                    <td class="px-1 w-50"><input type="text" class="form-control"></td>
-                                    <td class="px-1 w-50"><input type="text" class="form-control"></td>
+                                    <td class="px-1 w-50"><input type="text" class="form-control"></td> -->
 
                                   </tr>
                                  
@@ -1238,6 +1246,12 @@ $(document).ready(function() {
        
       });
     </script>
-  
+  <script>
+    document.querySelectorAll('.form-control').forEach(input => {
+        input.addEventListener('input', function () {
+            this.style.width = `${this.value.length + 1}ch`; // Adjust width dynamically
+        });
+    });
+</script>
   </body>
 </html>

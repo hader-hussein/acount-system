@@ -1235,8 +1235,9 @@
                      <div class="col-12 col-md-6 col-lg-2 mb-2">
                       <div class="input-container">
                         <label for="installments-count">عدد الأقساط:</label>
-                        <input type="number" class="form-control installments-count" id="" min="1" placeholder="أدخل عدد الأقساط">
-                      </div>
+                        <input type="number" min="2" class="form-control installments-count" id="installments_count" placeholder="أدخل عدد الأقساط">
+                        <input type="hidden" id="installments-count-edit" value="0">
+                    </div>
                      </div>
                      <div class="col-12 table-responsive text-nowrap tabel-all">
                       <table style="display: none;" class="table  table-bordered installments-table" id="">
@@ -1532,56 +1533,75 @@
         });
       </script> -->
        <script>
-       document.querySelectorAll(".component-form").forEach((form) => {
-  const countInput = form.querySelector(".installments-count");
-  const table = form.querySelector(".installments-table");
-  const tbody = form.querySelector(".installments-body");
+    document.querySelectorAll(".component-form").forEach((form) => {
+    const countInput = form.querySelector(".installments-count");
+    const table = form.querySelector(".installments-table");
+    const tbody = form.querySelector(".installments-body");
 
-  if (countInput && table && tbody) {
-    countInput.addEventListener("input", () => {
-      const count = parseInt(countInput.value, 10);
+    if (countInput && table && tbody) {
+        countInput.addEventListener("input", () => {
+            let count = parseInt(countInput.value, 10);
+            const minCount = parseInt(countInput.getAttribute("min"), 10) || 0;
+            const dbRows = Array.from(tbody.querySelectorAll("tr[data-from-db]")); // الصفوف من قاعدة البيانات
+            const newRows = Array.from(tbody.querySelectorAll("tr:not([data-from-db])")); // الصفوف الجديدة
 
-      // Validate the input
-      if (isNaN(count) || count <= 0) {
-        table.style.display = "none"; // Hide the table if the value is invalid
-        tbody.innerHTML = ""; // Clear the rows
-        return;
-      }
+            const dbRowCount = dbRows.length; // عدد صفوف قاعدة البيانات
 
-      table.style.display = "table"; // Show the table
-      tbody.innerHTML = ""; // Clear the rows before creating new ones
+            // اجعل الحد الأدنى هو عدد صفوف قاعدة البيانات
+            countInput.setAttribute("min", dbRowCount);
 
-      for (let i = 1; i <= count; i++) {
-        const row = document.createElement("tr");
+            if (isNaN(count) || count < dbRowCount) {
+                count = dbRowCount; // إذا كان الإدخال أقل من الحد الأدنى، قم بإعادته إلى الحد الأدنى
+                countInput.value = dbRowCount;
+            }
 
-        // Installment number
-        const installmentNumberCell = document.createElement("td");
-        installmentNumberCell.textContent = i;
-        row.appendChild(installmentNumberCell);
+            // تحديث الجدول بناءً على العدد الجديد
+            table.style.display = "table";
 
-        // Due date
-        const dueDateCell = document.createElement("td");
-        const dueDateInput = document.createElement("input");
-        dueDateInput.type = "date";
-        dueDateInput.className = "form-control";
-        dueDateCell.appendChild(dueDateInput);
-        row.appendChild(dueDateCell);
+            // إذا كان العدد أقل من الصفوف الموجودة (فقط الصفوف الجديدة تحذف)
+            if (count < dbRows.length + newRows.length) {
+                const rowsToRemove = Math.min(newRows.length, dbRows.length + newRows.length - count);
+                for (let i = 0; i < rowsToRemove; i++) {
+                    const rowToRemove = newRows.pop(); // احذف آخر صف جديد
+                    rowToRemove.remove();
+                }
+            } else {
+                // إذا كان العدد الجديد أكبر
+                for (let i = dbRows.length + newRows.length + 1; i <= count; i++) {
+                    const row = document.createElement("tr");
 
-        // Amount
-        const amountCell = document.createElement("td");
-        const amountInput = document.createElement("input");
-        amountInput.type = "number";
-        amountInput.className = "form-control";
-        amountInput.placeholder = "أدخل القيمة";
-        amountInput.min = "0";
-        amountCell.appendChild(amountInput);
-        row.appendChild(amountCell);
+                    // رقم القسط
+                    const installmentNumberCell = document.createElement("td");
+                    installmentNumberCell.textContent = i;
+                    row.appendChild(installmentNumberCell);
 
-        tbody.appendChild(row);
-      }
-    });
-  }
+                    // تاريخ الاستحقاق
+                    const dueDateCell = document.createElement("td");
+                    const dueDateInput = document.createElement("input");
+                    dueDateInput.type = "date";
+                    dueDateInput.name = "installment_date[]";
+                    dueDateInput.className = "form-control";
+                    dueDateCell.appendChild(dueDateInput);
+                    row.appendChild(dueDateCell);
+
+                    // المبلغ
+                    const amountCell = document.createElement("td");
+                    const amountInput = document.createElement("input");
+                    amountInput.type = "number";
+                    amountInput.name = "amount[]";
+                    amountInput.className = "form-control";
+                    amountInput.placeholder = "أدخل القيمة";
+                    amountInput.min = "0";
+                    amountCell.appendChild(amountInput);
+                    row.appendChild(amountCell);
+
+                    tbody.appendChild(row);
+                }
+            }
+        });
+    }
 });
+
       </script>
     <script><!--2-12-2024-->
      document.addEventListener('DOMContentLoaded', function () {
